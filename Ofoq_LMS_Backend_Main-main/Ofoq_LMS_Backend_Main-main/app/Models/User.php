@@ -1,0 +1,116 @@
+<?php
+
+namespace App\Models;
+
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
+
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class User extends Authenticatable
+{
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable, HasApiTokens, HasRoles;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'role',
+        'profile_picture',
+        'phone',
+        'nationality',
+        'qualification',
+        'media_work_sector',
+        'date_of_birth',
+        'previous_field',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+
+    public function courses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'user_courses');
+    }
+
+    public function quizzes(): HasMany
+    {
+        return $this->hasMany(UserQuiz::class);
+    }
+
+    public function certificates(): HasMany
+    {
+        return $this->hasMany(Certificate::class);
+    }
+
+    public function lessonProgress(): HasMany
+    {
+        return $this->hasMany(UserLessonProgress::class);
+    }
+
+    public function quizAttempts(): HasMany
+    {
+        return $this->hasMany(UserQuizAttempt::class);
+    }
+
+    public function enrollments(): HasMany
+    {
+        return $this->hasMany(UserCourse::class);
+    }
+
+    public function favoriteCourses(): BelongsToMany
+    {
+        return $this->belongsToMany(Course::class, 'user_favorite_courses');
+    }
+
+    public function categoryEnrollments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(\App\Models\UserCategoryEnrollment::class);
+    }
+
+    public function diplomaCertificates(): HasMany
+    {
+        return $this->hasMany(DiplomaCertificate::class);
+    }
+
+    public function videoWatchSessions(): HasMany
+    {
+        return $this->hasMany(VideoWatchSession::class);
+    }
+
+    public function videoWatchEvents(): HasMany
+    {
+        return $this->hasMany(VideoWatchEvent::class);
+    }
+}

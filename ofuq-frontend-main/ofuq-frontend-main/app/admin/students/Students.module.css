@@ -1,0 +1,100 @@
+/* Students Management Styles - scoped via CSS Module container */
+
+.studentsPage {
+  /* container to scope students management styles */
+}
+
+/* Top-level wrapper */
+.studentsPage :global(.students-management) {
+  direction: rtl;
+  padding: 24px;
+}
+
+/* Header */
+.studentsPage :global(.sm-header) { margin-bottom: 16px; }
+.studentsPage :global(.sm-title) { font-size: 24px; font-weight: 700; }
+.studentsPage :global(.sm-subtitle) { color: #666; margin-top: 4px; }
+
+/* Controls toolbar */
+.studentsPage :global(.sm-controls) {
+  display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+  margin-bottom: 14px; background: #fff; border: 1px solid #eee;
+  border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 12px 16px;
+}
+
+.studentsPage :global(.sm-input),
+.studentsPage :global(.sm-select) {
+  padding: 8px 12px; border: 1px solid #ddd; border-radius: 10px;
+  background: #fff; height: 38px; transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+}
+.studentsPage :global(.sm-input) { min-width: 360px; font-size: 14px; }
+.studentsPage :global(.sm-select) {
+  min-width: 280px; appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  background-image: url('/icons/dropdown-arrow.svg'); background-repeat: no-repeat; background-size: 16px 16px;
+  background-position: left 10px center; padding-left: 32px;
+}
+.studentsPage :global(.sm-reset-btn) {
+  background: #0298BA; color: #fff; border: 1px solid #e5e7eb; width: 170px;
+}
+
+/* Interactions */
+.studentsPage :global(.sm-input:hover),
+.studentsPage :global(.sm-select:hover) { border-color: #cfd8dc; }
+
+.studentsPage :global(.sm-input:focus),
+.studentsPage :global(.sm-select:focus) { border-color: #0298BA; box-shadow: 0 0 0 3px rgba(2,152,186,0.15); }
+
+.studentsPage :global(.sm-btn) { transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease; }
+.studentsPage :global(.sm-btn:hover) { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+.studentsPage :global(.sm-reset-btn:hover) { background: #eef2f7; color: #0298BA; border: #0298BA 1px solid; }
+.studentsPage :global(.sm-input::placeholder) { color: #9aa5b1; }
+
+/* General stats bar */
+.studentsPage :global(.sm-stats) {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 12px 0 16px;
+}
+.studentsPage :global(.sm-stat-card) {
+  background: #ffffff; border-right: 5px solid #0298BA; border-radius: 12px; padding: 14px 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08); text-align: center;
+}
+.studentsPage :global(.sm-stat-label) { color: #555; font-weight: 600; margin-bottom: 6px; }
+.studentsPage :global(.sm-stat-value) { font-size: 22px; font-weight: 800; color: #222; }
+.studentsPage :global(.sm-stat-positive) { color: #0b7a28; }
+.studentsPage :global(.sm-stat-negative) { color: #c20000; }
+
+@media (max-width: 768px) {
+  .studentsPage :global(.sm-stats) { grid-template-columns: 1fr; }
+}
+
+/* Table */
+.studentsPage :global(.sm-table-wrapper) {
+  background: #fff; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); overflow-x: auto;
+}
+.studentsPage :global(.sm-table) { width: 100%; border-collapse: collapse; }
+.studentsPage :global(.sm-table thead th) {
+  background: #eeeded; text-align: right; padding: 12px; font-weight: 600; border-bottom: 1px solid #eee;
+}
+.studentsPage :global(.sm-table thead th:first-child) { width: 60px; text-align: center; }
+.studentsPage :global(.sm-table tbody td) { padding: 12px; border-bottom: 1px solid #f1f1f1; }
+.studentsPage :global(.sm-table tbody td:first-child) { text-align: center; font-weight: 600; color: #0298BA; }
+
+.studentsPage :global(.sm-actions) { display: flex; gap: 8px; }
+.studentsPage :global(.sm-btn) { padding: 8px 12px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; }
+.studentsPage :global(.view-btn) { background: #e8f4ff; color: #0366d6; }
+.studentsPage :global(.view-cert-btn) { background: #f0e8ff; color: #6b2bd6; }
+.studentsPage :global(.delete-btn) { background: #ffe8e8; color: #d60303; }
+.studentsPage :global(.block-btn) { background: #fff5e5; color: #a96b00; }
+
+.studentsPage :global(.blocked-badge) { background: #ffeded; color: #c20000; padding: 6px 10px; border-radius: 999px; font-size: 12px; }
+.studentsPage :global(.active-badge) { background: #eefdf2; color: #0b7a28; padding: 6px 10px; border-radius: 999px; font-size: 12px; }
+
+/* Modal */
+.studentsPage :global(.sm-modal) {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 50; padding: 16px;
+}
+.studentsPage :global(.sm-modal-content) {
+  background: #fff; width: min(100%, 1200px); max-height: 85vh; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  padding: 20px; position: relative; overflow: auto;
+}

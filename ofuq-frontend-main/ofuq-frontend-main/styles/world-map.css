@@ -1,0 +1,640 @@
+/* World Map Section Styles */
+.world-map-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.world-map-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(1, 158, 187, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(65, 66, 208, 0.1) 0%, transparent 50%);
+  animation: backgroundShift 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.world-map-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(1, 158, 187, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(65, 66, 208, 0.3), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(1, 158, 187, 0.2), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(65, 66, 208, 0.2), transparent);
+  background-repeat: repeat;
+  background-size: 150px 100px;
+  animation: particleFloat 20s linear infinite;
+  pointer-events: none;
+}
+
+.world-map-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.world-map-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  background: radial-gradient(circle at center, rgba(1, 158, 187, 0.05) 0%, transparent 70%);
+  animation: pulseGlow 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #019EBB, #4142D0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShine 3s ease-in-out infinite;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #718096;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Map Container */
+.map-container {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(1, 158, 187, 0.1);
+}
+
+.map-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+  border-color: rgba(1, 158, 187, 0.3);
+}
+
+.map-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #019EBB, #4142D0, #019EBB);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Geography and Marker Styles */
+.geography-path {
+  fill: #e2e8f0;
+  stroke: #cbd5e0;
+  stroke-width: 0.5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.geography-path:hover {
+  fill: #bee3f8;
+  stroke: #019EBB;
+  stroke-width: 1;
+  filter: drop-shadow(0 2px 4px rgba(1, 158, 187, 0.3));
+}
+
+.marker-group {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.marker-group:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(1, 158, 187, 0.4));
+}
+
+.marker-group:hover .marker-circle {
+  fill: #4142D0;
+  stroke-width: 3;
+}
+
+.marker-circle {
+  fill: #019EBB;
+  stroke: white;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+/* Tooltip Styles */
+.tooltip {
+  pointer-events: none;
+  font-family: 'Cairo', sans-serif;
+  z-index: 1000;
+}
+
+.tooltip-rect {
+  fill: white;
+  stroke: #019EBB;
+  stroke-width: 2;
+  rx: 8;
+  ry: 8;
+  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.15));
+}
+
+.tooltip-text {
+  fill: #1a202c;
+  font-size: 14px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.tooltip-count {
+  fill: #019EBB;
+  font-size: 12px;
+  font-weight: 500;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.tooltip-label {
+  fill: #718096;
+  font-size: 10px;
+  font-weight: 400;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+/* Statistics Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+  --icon-color: #000000; /* أسود واضح */
+}
+
+.stats-grid.dark-icons {
+  --icon-color: #1f2937; /* أسود فاتح سيكا */
+}
+
+.stat-card {
+  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(135deg, rgba(1,158,187,0.35), rgba(65,66,208,0.35)) border-box;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 28px 22px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(1, 158, 187, 0.15);
+}
+
+.stat-card:active {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.stat-card:focus-visible {
+  outline: 3px solid rgba(1, 158, 187, 0.3);
+  outline-offset: 2px;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: none;
+  transform: none;
+  transition: none;
+  transform-origin: initial;
+}
+
+.stat-card:hover::before {
+  transform: none;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: none;
+  border-radius: 24px;
+  z-index: -1;
+  opacity: 0;
+  animation: none;
+  transition: none;
+  filter: none;
+}
+
+.stat-card:hover::after {
+  opacity: 0;
+  transform: none;
+}
+
+.stat-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #019EBB, #4142D0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(1, 158, 187, 0.3);
+}
+
+.stat-card:hover .stat-icon {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(1, 158, 187, 0.3);
+}
+
+.stat-body {
+  position: relative;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.stat-number::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #019EBB, #4142D0);
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-number::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 4px;
+}
+
+.stat-card:hover .stat-number {
+  color: #0284a3;
+}
+
+.stat-card:hover .stat-label {
+  color: #1a202c;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 4px;
+}
+
+.stat-description {
+  font-size: 0.9rem;
+  color: #718096;
+  line-height: 1.4;
+}
+
+.stat-card:hover .stat-description {
+  color: #4a5568;
+}
+
+/* --- Progress Ring around stat icons and header chip --- */
+@property --progress {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+.stat-progress {
+  --thickness: 6px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    conic-gradient(#019EBB calc(var(--progress) * 1%), #e9f2f8 0);
+  transition: transform .3s ease, box-shadow .3s ease, --progress .6s ease;
+  box-shadow: 0 6px 14px rgba(1, 158, 187, 0.12);
+}
+
+.stat-progress::after {
+  content: "";
+  position: absolute;
+  inset: var(--thickness);
+  border-radius: inherit;
+  background: #ffffff;
+}
+
+.stat-progress-inner {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-progress-inner .stat-icon {
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+  color: var(--icon-color);
+  fill: var(--icon-color) !important;
+  stroke: var(--icon-color) !important;
+  font-size: 28px;
+  box-shadow: none;
+  filter: drop-shadow(0 2px 4px rgba(1, 158, 187, 0.25));
+}
+
+/* Force inner SVG shapes to adopt the same black color inside world map section */
+.world-map-section .stat-icon * {
+  fill: var(--icon-color) !important;
+  stroke: var(--icon-color) !important;
+}
+
+.stat-card:hover .stat-progress {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 22px rgba(1, 158, 187, 0.18);
+}
+
+.stat-title {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 16px;
+  
+}
+
+.stat-chip {
+  margin-inline-start: auto;
+  background: linear-gradient(90deg, #e6f6ff, #f1fbff);
+  color: #0c4a6e;
+  border: 1px solid rgba(1, 158, 187, 0.2);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes textShine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes backgroundShift {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes progressRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+    transform: rotate(0deg);
+  }
+  25% {
+    background-position: 100% 0%;
+    transform: rotate(90deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: rotate(180deg);
+  }
+  75% {
+    background-position: 0% 100%;
+    transform: rotate(270deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .world-map-section {
+    padding: 40px 16px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .map-container {
+    padding: 20px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .stat-progress {
+    width: 64px;
+    height: 64px;
+    --thickness: 5px;
+  }
+  .stat-title { font-size: 15px; }
+  .stat-chip { font-size: 11px; padding: 3px 8px; }
+}
+
+@media (max-width: 768px) {
+  .world-map-section {
+    padding: 30px 12px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .map-container {
+    padding: 16px;
+    height: 300px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .stat-card {
+    padding: 24px 20px;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .stat-progress {
+    width: 56px;
+    height: 56px;
+    --thickness: 5px;
+  }
+  .stat-title { font-size: 14px; }
+  .stat-chip { font-size: 11px; padding: 3px 8px; }
+  
+  .tooltip-rect {
+    width: 160px;
+    height: 50px;
+  }
+  
+  .tooltip-text {
+    font-size: 12px;
+  }
+  
+  .tooltip-count {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .world-map-section {
+    padding: 20px 8px;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .map-container {
+    padding: 12px;
+    height: 250px;
+  }
+  
+  .stat-card {
+    padding: 20px 16px;
+  }
+  
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: var(--icon-color);
+  }
+  .stat-progress { width: 50px; height: 50px; --thickness: 4px; }
+  .stat-title { font-size: 13px; }
+  .stat-chip { font-size: 10px; padding: 2px 7px; }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+  }
+}

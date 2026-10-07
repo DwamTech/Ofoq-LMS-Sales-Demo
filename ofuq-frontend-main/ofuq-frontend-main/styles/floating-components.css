@@ -1,0 +1,288 @@
+/* Scroll to Top Component Styles */
+.scroll-to-top {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9999; /* زيادة z-index للتأكد من الظهور */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #028FAF 0%, #025a6b 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #025a6b 0%, #028FAF 100%);
+}
+
+.scroll-btn:active {
+  transform: translateY(0);
+}
+
+.scroll-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.scroll-btn:hover::before {
+  left: 100%;
+}
+
+/* Social Media Float Component Styles */
+.social-media-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+.social-media-float.open .social-links {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #666;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform: scale(0);
+  animation-delay: var(--delay);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-media-float.open .social-link {
+  transform: scale(1);
+  animation: socialLinkAppear 0.3s ease forwards;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+  color: var(--color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.social-link:hover::before {
+  opacity: 0.1;
+}
+
+.social-toggle-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #019EBB 0%, #0288a3 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(1, 158, 187, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.social-toggle-btn:hover {
+  background: linear-gradient(135deg, #017a94 0%, #016b7f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(1, 158, 187, 0.4);
+}
+
+.social-toggle-btn:hover::before {
+  opacity: 1;
+}
+
+.social-toggle-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(1, 158, 187, 0.3);
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+.toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Animations */
+@keyframes socialLinkAppear {
+  0% {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(90deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    left: 15px;
+    bottom: 15px;
+  }
+  
+  .scroll-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .social-media-float {
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-toggle-btn {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    left: 10px;
+    bottom: 10px;
+  }
+  
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-media-float {
+    right: 10px;
+    bottom: 10px;
+  }
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .social-toggle-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .scroll-btn,
+  .social-toggle-btn {
+    border: 2px solid currentColor;
+  }
+  
+  .social-link {
+    border: 1px solid #ccc;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top,
+  .social-links,
+  .social-link,
+  .scroll-btn,
+  .social-toggle-btn,
+  .toggle-icon {
+    transition: none;
+    animation: none;
+  }
+  
+  .social-media-float.open .social-link {
+    animation: none;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,682 @@
+/* تنسيق الهيدر */
+.header {
+  direction: ltr;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: linear-gradient(135deg, #029CBE 0%, #0288a8 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-bottom: 3px solid #029CBE;
+}
+
+/* تنسيق الحاوية الرئيسية */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* الجزء الأيسر - زر القائمة للموبايل */
+.header-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* زر القائمة للموبايل */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.mobile-menu-toggle:active {
+  transform: scale(0.95);
+}
+
+.mobile-menu-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* الجزء الأيمن - البروفايل والإشعارات */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  direction: ltr; /* تغيير الاتجاه لليسار */
+}
+
+/* تنسيق قائمة البروفايل */
+.profile-menu-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-menu-container:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-name {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.profile-role {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+/* القائمة المنسدلة للبروفايل */
+.profile-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -280px; /* تحريك القائمة أكثر إلى اليسار */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  min-width: 320px; /* زيادة العرض */
+  max-width: 350px;
+  overflow: hidden;
+  z-index: 1050; /* زيادة z-index أكثر ليكون أعلى من الـ sidebar */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  animation: dropdownSlide 0.3s ease-out;
+}
+
+/* رأس القائمة المنسدلة */
+.profile-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: linear-gradient(135deg, #029CBE 0%, #0288a8 100%);
+  color: white;
+}
+
+.profile-dropdown-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.dropdown-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-dropdown-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-dropdown-info p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* عناصر القائمة المنسدلة */
+.profile-dropdown-items {
+  padding: 8px 0;
+}
+
+.profile-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px; /* زيادة الهوامش الداخلية */
+  cursor: pointer;
+  transition: all 0.3s ease; /* تحسين الانتقال */
+  color: #333;
+  font-size: 14px; /* زيادة حجم الخط */
+  font-weight: 500;
+  width: 100%; /* عرض كامل */
+  border: none;
+  background: none;
+  text-align: right; /* محاذاة النص لليمين */
+}
+
+.profile-dropdown-item:hover {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  transform: translateX(-2px); /* تأثير حركة بسيط */
+  box-shadow: inset 3px 0 0 #029CBE; /* خط جانبي ملون */
+}
+
+.profile-dropdown-item.logout {
+  color: #dc3545;
+  border-top: 1px solid #e9ecef;
+  margin-top: 8px; /* زيادة المسافة */
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-dropdown-item.logout:hover {
+  background: linear-gradient(135deg, rgba(220, 53, 69, 0.08) 0%, rgba(220, 53, 69, 0.15) 100%);
+  transform: translateX(-2px);
+  box-shadow: inset 3px 0 0 #dc3545;
+}
+
+/* تأثير الموجة عند النقر */
+.profile-dropdown-item.logout::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(220, 53, 69, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.profile-dropdown-item.logout:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* فاصل مرئي داخل القائمة */
+.dropdown-separator {
+  height: 1px;
+  background: #e9ecef;
+  margin: 4px 0;
+}
+
+
+
+/* تنسيق أيقونة الإشعارات */
+.notifications-icon {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notifications-icon:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.notifications-icon svg {
+  display: block;
+}
+
+/* شارة الإشعارات */
+.notification-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #ff4757;
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 8px;
+  min-width: 13px;
+  text-align: center;
+  line-height: 1.2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* تأثير نبضة لطيف عند الضغط على صورة البروفايل */
+.profile-avatar.click-effect {
+  animation: avatarPulse 0.5s ease-out;
+}
+
+@keyframes avatarPulse {
+  0% { box-shadow: 0 0 0 0 rgba(2, 156, 190, 0.6); }
+  100% { box-shadow: 0 0 0 12px rgba(2, 156, 190, 0); }
+}
+
+
+
+
+/* قائمة الإشعارات */
+.notifications-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  min-width: 256px;
+  max-width: 320px;
+  overflow: hidden;
+  z-index: 1001;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  animation: dropdownSlide 0.3s ease-out;
+  pointer-events: auto;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* رأس قائمة الإشعارات */
+.notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  background: linear-gradient(135deg, #029CBE 0%, #0288a8 100%);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notifications-header h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.notifications-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* عناصر الإشعارات */
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.notification-item:last-of-type {
+  border-bottom: none;
+}
+
+.notification-item:hover {
+  background: #f8f9fa;
+}
+
+.notification-item.unread {
+  background: rgba(2, 156, 190, 0.05);
+  border-left: 3px solid #029CBE;
+}
+
+.notification-item.unread::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  width: 8px;
+  height: 8px;
+  background: #029CBE;
+  border-radius: 50%;
+}
+
+.notification-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-title {
+  margin: 0 0 3px 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+}
+
+.notification-time {
+  margin: 0;
+  font-size: 10px;
+  color: #666;
+}
+
+/* تذييل قائمة الإشعارات */
+.notifications-footer {
+  padding: 10px 16px;
+  background: #f8f9fa;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+}
+
+.view-all-notifications {
+  color: #029CBE;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.view-all-notifications:hover {
+  color: #0288a8;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    height: 48px;
+  }
+  
+  .header-container {
+    padding: 0 12px;
+  }
+  
+  /* إظهار زر القائمة في الموبايل */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .profile-menu-container {
+    padding: 6px 10px;
+    gap: 8px;
+  }
+  
+  .profile-avatar {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .profile-name {
+    font-size: 12px;
+  }
+  
+  .profile-role {
+    font-size: 10px;
+  }
+  
+  .profile-dropdown-menu {
+    min-width: 260px;
+    right: -8px;
+  }
+  
+  .notifications-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .notifications-menu {
+    min-width: 240px;
+    right: -8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 8px;
+  }
+  
+  /* إظهار زر القائمة في الموبايل */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .profile-details {
+    display: none; /* إخفاء اسم المستخدم في الشاشات الصغيرة */
+  }
+  
+  .profile-dropdown-menu {
+    min-width: 240px;
+    right: -12px;
+  }
+  
+  .notifications-menu {
+    min-width: 200px;
+    right: -12px;
+  }
+  .header-right{
+      display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  right: 0;
+  direction: ltr;
+  }
+}
+
+
+/* Animation for smooth interactions */
+.header * {
+  box-sizing: border-box;
+}
+
+/* Ensure header doesn't interfere with page content */
+body {
+  /* padding-top: 56px; */
+}
+
+/* Admin dashboard header refinement */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.header-container {
+  position: relative;
+  max-width: none;
+  padding: 0 18px;
+}
+
+.header-right {
+  flex: 0 0 auto;
+  min-width: 230px;
+  justify-content: flex-start;
+}
+
+.header-left {
+  flex: 0 0 48px;
+  justify-content: flex-end;
+}
+
+.dashboard-quick-nav {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  direction: rtl;
+}
+
+.dashboard-quick-link {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 13px;
+  border-radius: 999px;
+  color: #334155;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.dashboard-quick-link:hover {
+  background: #ffffff;
+  color: #0288a8;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.profile-menu-container {
+  min-height: 42px;
+  padding: 5px 7px 5px 12px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  backdrop-filter: none;
+}
+
+.profile-menu-container:hover {
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+}
+
+.profile-avatar {
+  width: 34px;
+  height: 34px;
+  border-color: #d5f3f8;
+}
+
+.profile-name {
+  color: #0f172a;
+  font-size: 12px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-dropdown-menu {
+  left: 0;
+  right: auto;
+  top: calc(100% + 8px);
+  border-radius: 10px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+}
+
+.profile-dropdown-header {
+  background: #029CBE;
+}
+
+.mobile-menu-toggle {
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.mobile-menu-toggle:hover {
+  background: #eef8fb;
+  color: #0288a8;
+}
+
+@media (max-width: 980px) {
+  .dashboard-quick-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-right {
+    min-width: 0;
+  }
+
+  .header-left {
+    flex-basis: 44px;
+  }
+
+  .profile-dropdown-menu {
+    left: 0;
+    right: auto;
+  }
+}
+

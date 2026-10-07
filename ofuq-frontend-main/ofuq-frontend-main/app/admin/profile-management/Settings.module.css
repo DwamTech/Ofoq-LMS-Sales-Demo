@@ -1,0 +1,135 @@
+/* Admin Settings/Profile Management - CSS Module with scoped :global */
+
+.settingsPage {
+  padding: 20px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.settingsPage :global(.settings-header) {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.settingsPage :global(.settings-title) {
+  margin: 0;
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.settingsPage :global(.settings-subtitle) {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+.settingsPage :global(.profile-section),
+.settingsPage :global(.password-section) {
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.settingsPage :global(.form-group) {
+  margin-bottom: 16px;
+}
+
+.settingsPage :global(.form-label) {
+  display: block;
+  margin-bottom: 6px;
+  color: #374151;
+  font-weight: 600;
+}
+
+.settingsPage :global(.form-input) {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color 0.2s ease;
+  text-align: right;
+}
+
+.settingsPage :global(.form-input:focus) {
+  outline: none;
+  border-color: #0299BA;
+  box-shadow: 0 0 0 3px rgba(2, 153, 186, 0.1);
+}
+
+.settingsPage :global(.save-button) {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #0299BA;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.settingsPage :global(.save-button:disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.settingsPage :global(.save-button:hover) {
+  filter: brightness(1.1);
+}
+
+/* Profile Image Section */
+.profileImageSection {
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.profileImageContainer {
+  width: 120px;
+  height: 120px;
+  margin: 16px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%);
+  border: 3px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profilePlaceholder {
+  font-size: 48px;
+  color: #9ca3af;
+}
+
+.imageUploadButton {
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #0299BA 0%, #067d99 100%);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.imageUploadButton:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}

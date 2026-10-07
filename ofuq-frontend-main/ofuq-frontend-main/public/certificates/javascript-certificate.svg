@@ -1,0 +1,45 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Border -->
+  <rect x="20" y="20" width="760" height="560" fill="none" stroke="#019EBB" stroke-width="8"/>
+  <rect x="40" y="40" width="720" height="520" fill="none" stroke="#016A7A" stroke-width="2"/>
+  
+  <!-- Header -->
+  <text x="400" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#019EBB">شهادة إتمام الدورة</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="150" cy="150" r="30" fill="#019EBB" opacity="0.1"/>
+  <circle cx="650" cy="150" r="30" fill="#019EBB" opacity="0.1"/>
+  
+  <!-- Main content -->
+  <text x="400" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">هذه الشهادة تُمنح إلى</text>
+  
+  <text x="400" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#019EBB">أحمد محمد علي</text>
+  
+  <line x1="200" y1="250" x2="600" y2="250" stroke="#019EBB" stroke-width="2"/>
+  
+  <text x="400" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#333">لإتمامه بنجاح دورة</text>
+  
+  <text x="400" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#016A7A">دورة البرمجة بلغة JavaScript</text>
+  
+  <text x="400" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">بتاريخ 28 نوفمبر 2024</text>
+  
+  <!-- Signature area -->
+  <text x="200" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">المدرب</text>
+  <line x1="120" y1="490" x2="280" y2="490" stroke="#333" stroke-width="1"/>
+  <text x="200" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">م. خالد أحمد</text>
+  
+  <text x="600" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">مدير المنصة</text>
+  <line x1="520" y1="490" x2="680" y2="490" stroke="#333" stroke-width="1"/>
+  <text x="600" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">أ. سارة محمود</text>
+  
+  <!-- Certificate ID -->
+  <text x="400" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#999">رقم الشهادة: CERT-JS-002</text>
+  
+  <!-- Decorative seal -->
+  <circle cx="700" cy="450" r="40" fill="none" stroke="#019EBB" stroke-width="3"/>
+  <circle cx="700" cy="450" r="35" fill="none" stroke="#019EBB" stroke-width="1"/>
+  <text x="700" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#019EBB">منصة الأفق</text>
+</svg>

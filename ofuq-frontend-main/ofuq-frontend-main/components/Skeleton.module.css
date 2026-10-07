@@ -1,0 +1,327 @@
+/* Skeleton Loading Styles - Premium Design */
+
+/* Base Skeleton Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Base Skeleton Class */
+.skeleton {
+    background: linear-gradient(90deg,
+            #f0f0f0 0%,
+            #e8e8e8 20%,
+            #f5f5f5 40%,
+            #e8e8e8 60%,
+            #f0f0f0 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    border-radius: 8px;
+}
+
+/* Dark Theme Variant */
+.skeleton-dark {
+    background: linear-gradient(90deg,
+            #2a2a2a 0%,
+            #333333 20%,
+            #3a3a3a 40%,
+            #333333 60%,
+            #2a2a2a 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    border-radius: 8px;
+}
+
+/* Skeleton Types */
+.skeleton-text {
+    height: 16px;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.skeleton-text-sm {
+    height: 12px;
+}
+
+.skeleton-text-lg {
+    height: 24px;
+}
+
+.skeleton-title {
+    height: 32px;
+    width: 60%;
+    margin-bottom: 16px;
+}
+
+.skeleton-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.skeleton-avatar-lg {
+    width: 80px;
+    height: 80px;
+}
+
+.skeleton-button {
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+}
+
+.skeleton-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+}
+
+.skeleton-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Video Player Skeleton */
+.skeleton-video {
+    width: 100%;
+    height: 400px;
+    max-height: 50vh;
+    background: linear-gradient(135deg,
+            #1a1a1a 0%,
+            #2a2a2a 50%,
+            #1a1a1a 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.2s ease-in-out infinite;
+    border-radius: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skeleton-video::after {
+    content: '';
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Breadcrumb Skeleton */
+.skeleton-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.skeleton-breadcrumb-item {
+    height: 20px;
+    width: 80px;
+}
+
+.skeleton-breadcrumb-item:last-child {
+    width: 120px;
+    background: linear-gradient(90deg,
+            #0891b2 0%,
+            #0e7490 50%,
+            #0891b2 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+    border-radius: 20px;
+}
+
+/* Navigation Skeleton */
+.skeleton-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f7f7f7;
+    border-top: 1px solid #e5e5e5;
+}
+
+.skeleton-nav-btn {
+    height: 40px;
+    width: 100px;
+    border-radius: 24px;
+}
+
+/* Course Content Skeleton */
+.skeleton-course-content {
+    padding: 24px;
+    background: #fff;
+}
+
+.skeleton-chapter {
+    margin-bottom: 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.skeleton-chapter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: #f9fafb;
+}
+
+.skeleton-chapter-title {
+    height: 20px;
+    width: 40%;
+}
+
+.skeleton-lesson {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.skeleton-lesson-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.skeleton-lesson-title {
+    height: 16px;
+    flex: 1;
+}
+
+/* Course Card Skeleton */
+.skeleton-course-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-course-card-image {
+    width: 100%;
+    height: 180px;
+}
+
+.skeleton-course-card-content {
+    padding: 16px;
+}
+
+.skeleton-course-card-title {
+    height: 24px;
+    width: 80%;
+    margin-bottom: 12px;
+}
+
+.skeleton-course-card-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.skeleton-course-card-meta-item {
+    height: 14px;
+    width: 60px;
+}
+
+.skeleton-course-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.skeleton-course-card-price {
+    height: 24px;
+    width: 80px;
+}
+
+.skeleton-course-card-btn {
+    height: 36px;
+    width: 100px;
+    border-radius: 18px;
+}
+
+/* Grid Layout for Cards */
+.skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 24px;
+}
+
+/* Table Skeleton */
+.skeleton-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.skeleton-table-row {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.skeleton-table-cell {
+    height: 16px;
+    flex: 1;
+    margin-right: 16px;
+}
+
+/* Stats Skeleton */
+.skeleton-stats {
+    display: flex;
+    gap: 24px;
+    padding: 16px 0;
+}
+
+.skeleton-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.skeleton-stat-value {
+    height: 32px;
+    width: 60px;
+}
+
+.skeleton-stat-label {
+    height: 14px;
+    width: 80px;
+}
+
+/* Watch Page Skeleton Container */
+.watch-skeleton-container {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+}

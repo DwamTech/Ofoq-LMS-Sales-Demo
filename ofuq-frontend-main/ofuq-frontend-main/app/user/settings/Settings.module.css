@@ -1,0 +1,412 @@
+/* Settings Page - CSS Module with scoped :global rules */
+
+.settingsPage {}
+
+/* Dashboard container shim to keep layout */
+.settingsPage :global(.dashboard-container) {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Settings Page Styles */
+.settingsPage :global(.settings-page) {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.settingsPage :global(.settings-header) {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.settingsPage :global(.settings-title) {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.settingsPage :global(.settings-subtitle) {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Tabs Navigation */
+.settingsPage :global(.settings-tabs) {
+  display: flex;
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  gap: 0.5rem;
+}
+
+.settingsPage :global(.tab-button) {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: #5a4fcf27;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.settingsPage :global(.tab-button:hover) {
+  background: rgba(1, 158, 187, 0.1);
+  color: #019EBB;
+}
+
+.settingsPage :global(.tab-button.active) {
+  background: #019EBB;
+  color: white;
+  box-shadow: 0 2px 8px rgba(1, 158, 187, 0.3);
+}
+
+/* Tab Content */
+.settingsPage :global(.tab-content) {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.settingsPage :global(.tab-content.active) {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Profile Section */
+.settingsPage :global(.profile-section) {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.settingsPage :global(.profile-image-section) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.settingsPage :global(.profile-image-container) { position: relative; margin-bottom: 1rem; }
+
+.settingsPage :global(.profile-image) {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #019EBB, #702DFF33);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.settingsPage :global(.profile-image:hover) {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(1, 158, 187, 0.3);
+}
+
+.settingsPage :global(.profile-img) { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+.settingsPage :global(.profile-placeholder) { font-size: 3rem; }
+
+.settingsPage :global(.camera-icon) {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #019EBB;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: white;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.settingsPage :global(.profile-image-actions) { display: flex; gap: 1rem; }
+
+.settingsPage :global(.image-button) {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.settingsPage :global(.image-button.primary) { background: #019EBB; color: white; }
+
+.settingsPage :global(.image-button.primary:hover) {
+  background: #017a94;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 158, 187, 0.3);
+}
+
+.settingsPage :global(.image-button.secondary) { background: #f8f9fa; color: #666; border: 1px solid #ddd; }
+
+.settingsPage :global(.image-button.secondary:hover) { background: #e9ecef; color: #333; }
+
+/* Form Styles */
+.settingsPage :global(.settings-form) { max-width: 100%; }
+
+.settingsPage :global(.form-row) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.settingsPage :global(.form-group) { margin-bottom: 1.5rem; }
+
+.settingsPage :global(.form-label) {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.settingsPage :global(.form-input) {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+}
+
+.settingsPage :global(.form-input:focus) {
+  outline: none;
+  border-color: #019EBB;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(1, 158, 187, 0.1);
+}
+
+.settingsPage :global(.form-input::placeholder) { color: #999; }
+
+/* Form hint text */
+.settingsPage :global(.form-hint) {
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Password Section */
+.settingsPage :global(.password-section) {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.settingsPage :global(.password-notice) {
+  background: linear-gradient(135deg, #702DFF33, rgba(112, 45, 255, 0.1));
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  color: #5a4fcf;
+  font-size: 0.9rem;
+  border-left: 4px solid #702DFF;
+}
+
+.settingsPage :global(.forgot-password-link) {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #019EBB;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.settingsPage :global(.forgot-password-link:hover) { text-decoration: underline; }
+
+/* Preferences Section */
+.settingsPage :global(.preferences-section) {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.settingsPage :global(.preference-group) {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.settingsPage :global(.preference-group:last-of-type) { border-bottom: none; margin-bottom: 2rem; }
+
+.settingsPage :global(.preference-title) {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.settingsPage :global(.preference-item) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.settingsPage :global(.preference-label) { font-size: 1rem; color: #555; font-weight: 500; }
+
+/* Toggle Switch */
+.settingsPage :global(.toggle-switch) {
+  width: 50px;
+  height: 26px;
+  background: #ddd;
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.settingsPage :global(.toggle-switch.active) { background: #019EBB; }
+
+.settingsPage :global(.toggle-slider) {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.settingsPage :global(.toggle-switch.active) .toggle-slider { transform: translateX(24px); }
+
+/* Language Selection */
+.settingsPage :global(.language-selection) { display: flex; gap: 0.5rem; }
+
+.settingsPage :global(.language-button) {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.settingsPage :global(.language-button:hover) { border-color: #019EBB; color: #019EBB; }
+
+.settingsPage :global(.language-button.active) { background: #019EBB; border-color: #019EBB; color: white; }
+
+/* Save Button */
+.settingsPage :global(.save-button) {
+  background: linear-gradient(135deg, #019EBB, #017a94);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.settingsPage :global(.save-button:hover) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(1, 158, 187, 0.4); }
+.settingsPage :global(.save-button:active) { transform: translateY(0); }
+
+/* Image Modal Styles */
+.settingsPage :global(.image-modal-overlay) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.settingsPage :global(.image-modal-content) {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: scale(0.8) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.settingsPage :global(.modal-close-button) {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.settingsPage :global(.modal-close-button:hover) { background: rgba(0, 0, 0, 0.9); transform: scale(1.1); }
+
+.settingsPage :global(.modal-image-container) { display: flex; align-items: center; justify-content: center; min-height: 400px; min-width: 400px; }
+.settingsPage :global(.modal-image) { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; }
+
+.settingsPage :global(.modal-placeholder) { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem; color: #666; }
+.settingsPage :global(.modal-placeholder-icon) { font-size: 4rem; margin-bottom: 1rem; opacity: 0.5; }
+.settingsPage :global(.modal-placeholder p) { font-size: 1.1rem; margin: 0; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settingsPage :global(.settings-page) { padding: 1rem; }
+  .settingsPage :global(.settings-tabs) { flex-direction: column; }
+  .settingsPage :global(.tab-button) { text-align: center; }
+  .settingsPage :global(.form-row) { grid-template-columns: 1fr; gap: 1rem; }
+  .settingsPage :global(.profile-image) { width: 100px; height: 100px; font-size: 2.5rem; }
+  .settingsPage :global(.profile-image-actions) { flex-direction: column; align-items: center; }
+  .settingsPage :global(.language-selection) { flex-direction: column; }
+  .settingsPage :global(.preference-item) { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .settingsPage :global(.modal-image-container) { min-height: 300px; min-width: 300px; }
+}

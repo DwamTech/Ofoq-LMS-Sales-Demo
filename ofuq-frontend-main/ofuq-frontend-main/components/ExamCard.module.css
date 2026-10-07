@@ -1,0 +1,299 @@
+.container {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    border-color: rgba(1, 158, 187, 0.2);
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.viewButton {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .viewButton {
+    transform: translateY(0);
+}
+
+.diplomaBadge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #019EBB;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 16px;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 3.3rem;
+    /* Ensure consistent height for 2 lines */
+}
+
+.courseStatus {
+    align-self: flex-start;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: #e8f7fa;
+    color: #087e96;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.progressContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progressInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.progressLabel {
+    color: #666;
+}
+
+.progressPercentage {
+    color: #019EBB;
+    font-weight: 700;
+}
+
+.progressBarBg {
+    width: 100%;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progressBarFill {
+    height: 100%;
+    background: #019EBB;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.actionButton {
+    width: 100%;
+    padding: 12px;
+    background: #f8f9fa;
+    color: #1a1a1a;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.actionButton:hover {
+    background: #019EBB;
+    color: white;
+    border-color: #019EBB;
+}
+
+/* حاوية الأزرار المكدسة */
+.actionButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+/* حالة التعطيل للزر */
+.actionButton:disabled {
+    background: #e9ecef;
+    color: #a1a1a1;
+    border-color: #ddd;
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+.actionButton:disabled:hover {
+    background: #e9ecef;
+    color: #a1a1a1;
+    border-color: #ddd;
+}
+
+/* رسالة عدم وجود اختبار نهائي */
+.noExamMessage {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #92400e;
+    border: 1px solid #fbbf24;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.loading,
+.error,
+.emptyState {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    color: #666;
+    background: #f9f9f9;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+.error {
+    color: #dc3545;
+    background: #fff5f5;
+}
+
+/* Pagination */
+.paginationControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+.pageButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    color: #555;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pageButton:hover:not(:disabled) {
+    background: #019EBB;
+    color: white;
+    border-color: #019EBB;
+}
+
+.pageButton:disabled {
+    background: #f5f5f5;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    color: #666;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .imageWrapper {
+        height: 200px;
+    }
+}

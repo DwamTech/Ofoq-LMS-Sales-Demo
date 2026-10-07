@@ -1,0 +1,761 @@
+/* Exam Details Styles */
+.exam-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: auto;
+}
+
+/* Back Button */
+.back-button {
+  background: linear-gradient(135deg, #019EBB, #0288A3);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  font-family: 'Cairo', sans-serif;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #0288A3, #028BAB);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(1, 158, 187, 0.3);
+}
+
+/* Course Header */
+.course-header {
+  background: linear-gradient(135deg, #019EBB 0%, #0288A3 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.course-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+}
+
+.completion-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.completion-bar {
+  width: 100%;
+  max-width: 400px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.completion-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.completion-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Cairo', sans-serif;
+}
+
+/* Lessons Table */
+.lessons-table-container {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.table-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.lessons-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.lessons-table thead {
+  background: linear-gradient(135deg, #019EBB 0%, #0288A3 100%);
+  color: white;
+}
+
+.lessons-table th {
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: 'Cairo', sans-serif;
+}
+
+.lessons-table td {
+  padding: 20px 15px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  font-family: 'Cairo', sans-serif;
+}
+
+.lessons-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.lessons-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table Cell Styles */
+.lesson-name {
+  text-align: right !important;
+  font-weight: 600;
+  color: #333;
+  max-width: 300px;
+}
+
+.exam-date {
+  color: #666;
+  font-weight: 500;
+}
+
+.result .has-result {
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.result .no-result {
+  color: #999;
+  font-style: italic;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Cairo', sans-serif;
+}
+
+.status-completed {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  color: white;
+}
+
+.status-incomplete {
+  background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+  color: white;
+}
+
+/* Action Buttons */
+.action-button {
+  background: linear-gradient(135deg, #019EBB, #0288A3);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-family: 'Cairo', sans-serif;
+}
+
+.action-button:hover {
+  background: linear-gradient(135deg, #0288A3, #028BAB);
+  transform: translateY(-2px);
+}
+
+/* Certificate Section Styles */
+.certificate-section {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+}
+
+.certificate-not-eligible {
+  background: linear-gradient(135deg, #FFE5E5, #FFF0F0);
+  border: 2px solid #FF6B6B;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.certificate-not-eligible p {
+  color: #FF6B6B;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.certificate-loading {
+  color: #6c757d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.certificate-loading p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.certificate-completed {
+  background: linear-gradient(135deg, #E8F5E8, #F0FFF0);
+  border: 2px solid #4CAF50;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.certificate-completed p {
+  color: #4CAF50;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+.certificate-pending {
+  background: linear-gradient(135deg, #FFF8E1, #FFFDE7);
+  border: 2px solid #FFC107;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.certificate-pending p {
+  color: #F57C00;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Certificate Preview Block */
+.certificate-preview-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 8px;
+}
+
+.certificate-preview-iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 480px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.certificate-download-btn {
+  display: inline-block;
+  margin-top: 14px;
+  text-decoration: none;
+}
+
+.certificate-request {
+  background: linear-gradient(135deg, #E3F2FD, #F3E5F5);
+  border: 2px solid #2196F3;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.certificate-request p {
+  color: #1976D2;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+}
+
+.certificate-request-btn {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Cairo', sans-serif;
+  min-width: 200px;
+}
+
+.certificate-request-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #45A049, #7CB342);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.certificate-request-btn:disabled {
+  background: linear-gradient(135deg, #CCCCCC, #DDDDDD);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.certificate-download-btn {
+  background: linear-gradient(135deg, #019EBB, #0288A3);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Cairo', sans-serif;
+  min-width: 200px;
+}
+
+.certificate-download-btn:hover {
+  background: linear-gradient(135deg, #0288A3, #028BAB);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(1, 158, 187, 0.3);
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  background: linear-gradient(135deg, #FFEBEE, #FFF5F5);
+  color: #D32F2F;
+  border: 1px solid #EF5350;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(1, 158, 187, 0.3);
+}
+
+.action-button.continue {
+  background: linear-gradient(135deg, #FF9800, #FFA726);
+}
+
+.action-button.continue:hover {
+  background: linear-gradient(135deg, #F57C00, #FF9800);
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .exam-details-container {
+    max-width: 100%;
+    padding: 18px;
+  }
+  
+  .course-header {
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .course-name {
+    font-size: 2.3rem;
+  }
+  
+  .lessons-table-container {
+    padding: 25px;
+  }
+  
+  .table-title {
+    font-size: 1.8rem;
+  }
+  
+  .lessons-table th,
+  .lessons-table td {
+    padding: 18px 12px;
+  }
+  
+  .lesson-name {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .exam-details-container {
+    padding: 16px;
+  }
+  
+  .course-header {
+    padding: 22px;
+    margin-bottom: 22px;
+  }
+  
+  .course-name {
+    font-size: 2.1rem;
+  }
+  
+  .completion-bar {
+    max-width: 350px;
+    height: 10px;
+  }
+  
+  .completion-text {
+    font-size: 1.1rem;
+  }
+  
+  .lessons-table-container {
+    padding: 22px;
+  }
+  
+  .table-title {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+  
+  .lessons-table th,
+  .lessons-table td {
+    padding: 16px 10px;
+    font-size: 1rem;
+  }
+  
+  .lesson-name {
+    max-width: 250px;
+    font-size: 0.95rem;
+  }
+  
+  .status-badge {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+  
+  .action-button {
+    padding: 9px 18px;
+    font-size: 0.85rem;
+  }
+  
+  .back-button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .exam-details-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .course-header {
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .course-name {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .completion-bar {
+    max-width: 300px;
+    height: 8px;
+  }
+  
+  .completion-text {
+    font-size: 1rem;
+  }
+  
+  .lessons-table-container {
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .certificate-preview-iframe {
+    height: 380px;
+  }
+  
+  .table-title {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+  
+  .table-wrapper {
+    border-radius: 8px;
+  }
+  
+  .lessons-table {
+    border-radius: 8px;
+  }
+  
+  .lessons-table th,
+  .lessons-table td {
+    padding: 15px 10px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .lesson-name {
+    max-width: 200px;
+    font-size: 0.85rem;
+    text-align: center !important;
+  }
+  
+  .exam-date {
+    font-size: 0.8rem;
+  }
+  
+  .result .has-result {
+    font-size: 1rem;
+  }
+  
+  .result .no-result {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  
+  .status-badge {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  
+  .action-button {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    min-width: 80px;
+  }
+  
+  .back-button {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+ 
+  .exam-details-container {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .course-header {
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: 24%;
+  }
+  
+  .course-name {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  
+  .completion-section {
+    gap: 8px;
+  }
+  
+  .completion-bar {
+    max-width: 250px;
+    height: 6px;
+  }
+  
+  .completion-text {
+    font-size: 0.9rem;
+  }
+  
+  .lessons-table-container {
+    padding: 15px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 24%;
+  }
+
+  .certificate-preview-iframe {
+    height: 320px;
+  }
+  
+  .table-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .table-wrapper {
+    border-radius: 6px;
+  }
+  
+  .lessons-table {
+    border-radius: 6px;
+  }
+  
+  .lessons-table th,
+  .lessons-table td {
+    padding: 12px 8px;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  .lessons-table th {
+    font-size: 0.85rem;
+  }
+  
+  .lesson-name {
+    max-width: 150px;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    text-align: center !important;
+  }
+  
+  .exam-date {
+    font-size: 0.7rem;
+  }
+  
+  .result .has-result {
+    font-size: 0.9rem;
+  }
+  
+  .result .no-result {
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+  
+  .status-badge {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    border-radius: 15px;
+    white-space: nowrap;
+  }
+  
+  .action-button {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    min-width: 70px;
+    border-radius: 6px;
+  }
+  
+  .back-button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    margin-left: 24%;
+  }
+}
+
+@media (max-width: 360px) {
+  .exam-details-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .course-header {
+    padding: 15px;
+    width: 100%;
+    max-width: 220px;
+  
+  }
+  
+  .course-name {
+    font-size: 1.3rem;
+  }
+  
+  .completion-bar {
+    max-width: 200px;
+  }
+  
+  .lessons-table-container {
+    padding: 12px;
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .table-title {
+    font-size: 1.2rem;
+  }
+  
+  .lessons-table th,
+  .lessons-table td {
+    padding: 10px 6px;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+  
+  .lesson-name {
+    max-width: 120px;
+    font-size: 0.7rem;
+    text-align: center !important;
+  }
+  
+  .result .no-result {
+    white-space: nowrap;
+  }
+  
+  .status-badge {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+    white-space: nowrap;
+  }
+  
+  .action-button {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    min-width: 60px;
+  }
+}

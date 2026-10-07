@@ -1,0 +1,1077 @@
+/* Auth Page Styles */
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #4142D0, #B9B9F4, #ABDAEF, #0AD5FA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+.auth-form-container {
+  width: min(878px, 95vw);
+  max-width: 878px;
+  min-height: 600px;
+  height: auto;
+  background: white;
+  border-radius: 24px;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  padding-top: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo inside form */
+.auth-form-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-form-logo img {
+  max-height: 110px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Tab Switch Buttons */
+.auth-tabs {
+  width: min(685px, 90vw);
+  max-width: 685px;
+  height: 75px;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.auth-tab {
+  flex: 1;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.auth-tab {
+  background-color: #E9E9FB;
+  color: #4142D0;
+}
+
+.auth-tab.active {
+  background-color: #4142D0;
+  color: white;
+}
+
+.auth-tab:hover {
+  opacity: 0.9;
+}
+
+/* Form Content Container */
+.form-content {
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+/* Google Login Button */
+.google-login-btn {
+  width: min(400px, 90vw);
+  max-width: 400px;
+  height: 60px;
+  padding: 10px 24px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.google-login-btn:hover {
+  border-color: #4142D0;
+  box-shadow: 0 2px 8px rgba(65, 66, 208, 0.1);
+}
+
+.google-icon {
+  width: 24px;
+  height: 24px;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIyLjU2IDEyLjI1QzIyLjU2IDExLjQ3IDIyLjQ5IDEwLjcyIDIyLjM2IDEwSDEyVjE0LjI2SDE3LjkyQzE3LjY2IDE1LjYgMTYuOTIgMTYuNzQgMTUuODQgMTcuNVYyMC4yNkgxOS4yOEMyMS4zNiAxOC4yNSAyMi41NiAxNS41MyAyMi41NiAxMi4yNVoiIGZpbGw9IiM0Mjg1RjQiLz4KPHBhdGggZD0iTTEyIDI0QzE1LjI0IDI0IDE3Ljk1IDIyLjkyIDE5LjI4IDIwLjI2TDE1Ljg0IDE3LjVDMTQuNzggMTguMTMgMTMuNDcgMTguNSAxMiAxOC41QzguODggMTguNSA2LjIxIDE2LjQ1IDUuMjcgMTMuNjlIMi4xOFYxNi41M0MzLjUxIDIwLjE3IDcuNDYgMjQgMTIgMjRaIiBmaWxsPSIjMzRBODUzIi8+CjxwYXRoIGQ9Ik01LjI3IDEzLjY5QzUuMDMgMTMuMDYgNC45IDEyLjM4IDQuOSAxMS42OUM0LjkgMTEgNS4wMyAxMC4zMiA1LjI3IDkuNjlWNi44NUgyLjE4QzEuNDMgOC4zNSAxIDkuOTYgMSAxMS42OUMxIDEzLjQyIDEuNDMgMTUuMDMgMi4xOCAxNi41M0w1LjI3IDEzLjY5WiIgZmlsbD0iI0ZCQkMwNCIvPgo8cGF0aCBkPSJNMTIgNS41QzEzLjYyIDUuNSAxNS4wNiA2LjA5IDE2LjIgNy4yTDE5LjI4IDQuMTJDMTcuOTUgMi45MiAxNS4yNCAyIDEyIDJDNy40NiAyIDMuNTEgNS44MyAyLjE4IDkuNDdMNS4yNyAxMi4zMUM2LjIxIDkuNTUgOC44OCA3LjUgMTIgNy41WiIgZmlsbD0iI0VBNDMzNSIvPgo8L3N2Zz4K') no-repeat center;
+  background-size: contain;
+}
+
+/* Divider */
+
+.divider {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin: 20px 0; 
+}
+
+.line {
+  flex-grow: 1; 
+  height: 1px; 
+  background-color: #000000; 
+  width: 300px;
+}
+
+.text {
+  font-family: Arial, sans-serif; 
+  font-size: 1.2em;
+  color: #000000;
+  margin: 0 15px;
+  white-space: nowrap;
+}
+
+/* Form Fields */
+.form-field {
+  width: min(600px, 90vw);
+  max-width: 600px;
+  margin-bottom: 15px;
+}
+
+.form-input {
+  width: 100%;
+  height: 50px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333;
+  background: white;
+  transition: all 0.3s ease;
+  direction: rtl;
+  text-align: right;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4142D0;
+  box-shadow: 0 0 0 3px rgba(65, 66, 208, 0.1);
+}
+
+.form-input::placeholder {
+  color: #000000;
+  font-size: 16px;
+}
+
+/* Login Button */
+.login-btn {
+  width: 300px;
+  height: 50px;
+  background: #019EBB;
+  color: white;
+  border: none;
+  border-radius: 17px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 12px auto;
+  display: block;
+}
+
+.login-btn:hover {
+  background: #3638b8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(65, 66, 208, 0.3);
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+  text-align: right;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.forgot-password-link a {
+  color: #4142D0;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+  color: #3638b8;
+}
+
+/* Footer Links Styles */
+.auth-footer-links {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.auth-footer-links .footer-link {
+  color: #6c757d;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.auth-footer-links .footer-link:hover {
+  color: #4142D0;
+  text-decoration: underline;
+}
+
+.auth-footer-links .link-separator {
+  margin: 0 1rem;
+  color: #dee2e6;
+}
+
+.footer-link {
+  
+  color: #666;
+  font-size: 16px;
+}
+
+.footer-link a {
+  color: #4142D0;
+  text-decoration:underline;
+  font-weight: 600;
+}
+
+.footer-link a:hover {
+  text-decoration: underline;
+}
+/* Name Fields Row */
+.name-fields-row {
+  display: flex;
+  gap: 20px;
+  width: min(600px, 90vw);
+  max-width: 600px;
+  margin-bottom: 15px;
+}
+
+.name-field {
+  flex: 1;
+}
+
+.name-field .form-input {
+  width: 100%;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablet Styles (768px and below) */
+@media (max-width: 768px) {
+  .auth-page {
+    padding: 15px;
+  }
+  
+  .auth-form-container {
+    padding: 30px 25px;
+    border-radius: 20px;
+    min-height: auto;
+  }
+  
+  .auth-tabs {
+    width: min(600px, 95vw);
+    height: 65px;
+    top: 30px;
+  }
+  
+  .auth-tab {
+    font-size: 16px;
+  }
+  
+  .form-content {
+    margin-top: 125px;
+  }
+  
+  .google-login-btn {
+    width: min(350px, 95vw);
+    height: 55px;
+    font-size: 15px;
+  }
+  
+  .form-field,
+  .name-fields-row {
+    width: min(500px, 95vw);
+  }
+  
+  .form-input {
+    height: 45px;
+    font-size: 15px;
+    padding: 8px 18px;
+  }
+  
+  .login-btn {
+    width: 280px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile Styles (480px and below) */
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 10px;
+  }
+  
+  .auth-form-container {
+    padding: 25px 20px;
+    border-radius: 16px;
+    width: min(400px, 98vw);
+  }
+  
+  .auth-tabs {
+    width: min(350px, 98vw);
+    height: 55px;
+    top: 25px;
+  }
+  
+  .auth-tab {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .form-content {
+    margin-top: 0px;
+  }
+  
+  .google-login-btn {
+    width: min(300px, 98vw);
+    height: 50px;
+    font-size: 14px;
+    padding: 8px 20px;
+    gap: 10px;
+  }
+  
+  .form-field,
+  .name-fields-row {
+    width: min(320px, 98vw);
+  }
+  
+  .name-fields-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-input {
+    height: 42px;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 10px;
+  }
+  
+  .forgot-password-link {
+    text-align: center;
+  }
+  
+  .forgot-password-link a {
+    font-size: 13px;
+  }
+  
+  .login-btn {
+    width: 250px;
+    height: 42px;
+    font-size: 15px;
+    border-radius: 15px;
+  }
+  
+  .footer-link {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .divider {
+    margin: 15px 0;
+  }
+  
+  .line {
+    width: 120px;
+  }
+  
+  .text {
+    font-size: 1em;
+    margin: 0 10px;
+  }
+}
+
+/* Extra Small Mobile Styles (360px and below) */
+@media (max-width: 360px) {
+  .auth-form-container {
+    padding: 20px 15px;
+    width: min(340px, 99vw);
+  }
+  
+  .auth-tabs {
+    width: min(310px, 99vw);
+    height: 50px;
+  }
+  
+  .auth-tab {
+    font-size: 13px;
+  }
+  
+  .google-login-btn {
+    width: min(280px, 99vw);
+    height: 48px;
+    font-size: 13px;
+  }
+  
+  .form-field,
+  .name-fields-row {
+    width: min(300px, 99vw);
+  }
+  
+  .form-input {
+    height: 40px;
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+  
+  .forgot-password-link a {
+    font-size: 12px;
+  }
+  
+  .login-btn {
+    width: 220px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .footer-link {
+    font-size: 13px;
+  }
+}
+
+/* Forgot Password Form Styles */
+.forgot-password-content {
+
+  text-align: center;
+}
+
+.forgot-password-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  direction: rtl;
+}
+
+.forgot-password-subtitle {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  direction: rtl;
+  text-align: center;
+}
+
+.forgot-password-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: right;
+  width: 100%;
+}
+
+.reset-btn {
+  width: 300px;
+  height: 50px;
+  background: #019EBB;
+  color: white;
+  border: none;
+  border-radius: 17px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px auto;
+  display: block;
+
+}
+
+.reset-btn:hover {
+  background: #017a94;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 158, 187, 0.3);
+}
+
+.back-to-login {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-to-login a {
+  color: #4142D0;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+}
+
+.back-to-login a:hover {
+  color: #3638b8;
+}
+
+/* Responsive styles for forgot password form */
+@media (max-width: 768px) {
+  .forgot-password-title {
+    font-size: 28px;
+  }
+  
+  .forgot-password-subtitle {
+    font-size: 15px;
+    max-width: 400px;
+  }
+  
+  .reset-btn {
+    width: 280px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .forgot-password-content {
+    margin-top: 0px;
+  }
+  
+  .forgot-password-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .forgot-password-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+    max-width: 320px;
+  }
+  
+  .reset-btn {
+    width: 250px;
+    height: 42px;
+    font-size: 15px;
+    border-radius: 15px;
+  }
+  
+  .back-to-login a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .forgot-password-title {
+    font-size: 22px;
+  }
+  
+  .forgot-password-subtitle {
+    font-size: 13px;
+    max-width: 280px;
+  }
+  
+  .reset-btn {
+    width: 220px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .back-to-login a {
+    font-size: 13px;
+  }
+}
+
+/* Verification Code Form Styles */
+.verification-content {
+  text-align: center;
+}
+
+.verification-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  direction: rtl;
+}
+
+.verification-subtitle {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  direction: rtl;
+  text-align: center;
+}
+
+.email-highlight {
+  color: #4142D0;
+  font-weight: 600;
+}
+
+.verification-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.code-inputs-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  direction: rtl;
+}
+
+.code-input {
+  width: 50px;
+  height: 60px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.code-input:focus {
+  outline: none;
+  border-color: #4142D0;
+  box-shadow: 0 0 0 3px rgba(65, 66, 208, 0.1);
+}
+
+.code-input:not(:placeholder-shown) {
+  border-color: #4142D0;
+  background-color: #f8f9ff;
+}
+
+.verify-btn {
+  width: 300px;
+  height: 50px;
+  background: #019EBB;
+  color: white;
+  border: none;
+  border-radius: 17px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 10px auto 30px;
+  display: block;
+}
+
+.verify-btn:hover:not(:disabled) {
+  background: #017a94;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 158, 187, 0.3);
+}
+
+.verify-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.resend-section {
+  margin-bottom: 20px;
+}
+
+.resend-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: #4142D0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+.resend-btn:hover {
+  color: #3638b8;
+}
+
+.back-to-forgot {
+  text-align: center;
+}
+
+.back-to-forgot a {
+  color: #4142D0;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-to-forgot a:hover {
+  color: #3638b8;
+}
+
+/* Responsive styles for verification code form */
+@media (max-width: 768px) {
+  .verification-title {
+    font-size: 28px;
+  }
+  
+  .verification-subtitle {
+    font-size: 15px;
+  }
+  
+  .code-input {
+    width: 45px;
+    height: 55px;
+    font-size: 22px;
+  }
+  
+  .verify-btn {
+    width: 280px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .verification-content {
+    margin-top: 0px;
+  }
+  
+  .verification-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .verification-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  
+  .code-inputs-container {
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+  
+  .code-input {
+    width: 40px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .verify-btn {
+    width: 250px;
+    height: 42px;
+    font-size: 15px;
+    border-radius: 15px;
+  }
+  
+  .resend-text {
+    font-size: 13px;
+  }
+  
+  .resend-btn {
+    font-size: 14px;
+  }
+  
+  .back-to-forgot a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .verification-title {
+    font-size: 22px;
+  }
+  
+  .verification-subtitle {
+    font-size: 13px;
+  }
+  
+  .code-inputs-container {
+    gap: 6px;
+  }
+  
+  .code-input {
+    width: 35px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .verify-btn {
+    width: 220px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .resend-text {
+    font-size: 12px;
+  }
+  
+  .resend-btn {
+    font-size: 13px;
+  }
+  
+  .back-to-forgot a {
+    font-size: 13px;
+  }
+}
+
+/* New Password Form Styles */
+.new-password-content {
+  text-align: center;
+}
+
+.new-password-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  direction: rtl;
+}
+
+.new-password-subtitle {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  direction: rtl;
+  text-align: center;
+}
+
+.new-password-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle-btn:hover {
+  color: #4142D0;
+}
+
+.password-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.form-input.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.error-message {
+  display: block;
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: right;
+  direction: rtl;
+}
+
+.general-error {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ffeaea;
+  border: 1px solid #e74c3c;
+  border-radius: 8px;
+  width: min(600px, 90vw);
+}
+
+.reset-password-btn {
+  width: 300px;
+  height: 50px;
+  background: #019EBB;
+  color: white;
+  border: none;
+  border-radius: 17px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px auto;
+  display: block;
+}
+
+.reset-password-btn:hover {
+  background: #017a94;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 158, 187, 0.3);
+}
+
+.back-to-verification {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-to-verification a {
+  color: #4142D0;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-to-verification a:hover {
+  color: #3638b8;
+}
+
+/* Responsive styles for new password form */
+@media (max-width: 768px) {
+  .new-password-title {
+    font-size: 28px;
+  }
+  
+  .new-password-subtitle {
+    font-size: 15px;
+    max-width: 400px;
+  }
+  
+  .reset-password-btn {
+    width: 280px;
+    height: 45px;
+    font-size: 16px;
+  }
+  
+  .password-toggle-btn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .new-password-content {
+    /* margin-top: 40px; */
+  }
+  .auth-form-logo img{
+    margin-top: 20px;
+  }
+  
+  .new-password-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .new-password-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+    max-width: 320px;
+  }
+  
+  .reset-password-btn {
+    width: 250px;
+    height: 42px;
+    font-size: 15px;
+    border-radius: 15px;
+  }
+  
+  .password-toggle-btn {
+    font-size: 14px;
+    left: 12px;
+  }
+  
+  .error-message {
+    font-size: 13px;
+  }
+  
+  .back-to-verification a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .new-password-title {
+    font-size: 22px;
+  }
+  
+  .new-password-subtitle {
+    font-size: 13px;
+    max-width: 280px;
+  }
+  
+  .reset-password-btn {
+    width: 220px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .password-toggle-btn {
+    font-size: 13px;
+    left: 10px;
+  }
+  
+  .error-message {
+    font-size: 12px;
+  }
+  
+  .back-to-verification a {
+    font-size: 13px;
+  }
+}

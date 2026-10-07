@@ -1,0 +1,53 @@
+/* Terms and Conditions - CSS Module with scoped :global rules */
+
+.termsPage {
+  padding: 20px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.termsPage :global(.page-header) { text-align: center; margin-bottom: 20px; }
+.termsPage :global(.page-header h1) { margin: 0; font-size: 2rem; color: #1f2937; }
+.termsPage :global(.page-header p) { margin-top: 8px; color: #6b7280; }
+
+.termsPage :global(.editor-container) {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.termsPage :global(.toolbar) { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.termsPage :global(.toolbar-group) { display: inline-flex; gap: 8px; align-items: center; }
+.termsPage :global(.toolbar-btn) {
+  background: #e2e8f0; border: none; border-radius: 8px; padding: 8px 12px; cursor: pointer; transition: background 0.2s ease; font-weight: 600; color: #374151;
+}
+.termsPage :global(.toolbar-btn:hover) { background: #cbd5e1; }
+.termsPage :global(.toolbar-btn.active) { background: #fd7e14; color: white; }
+.termsPage :global(.font-size-select) { padding: 8px 12px; border: 2px solid #e2e8f0; border-radius: 8px; background: white; }
+.termsPage :global(.color-picker) { width: 36px; height: 36px; border: none; background: transparent; cursor: pointer; }
+
+.termsPage :global(.text-editor) {
+  min-height: 300px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  line-height: 1.8;
+  color: #111827;
+  background: #fafafa;
+}
+.termsPage :global(.text-editor:focus) { outline: none; border-color: #fd7e14; box-shadow: 0 0 0 3px rgba(253,126,20,0.1); }
+
+.termsPage :global(.editor-actions) { display: flex; gap: 12px; margin-top: 16px; }
+.termsPage :global(.save-btn),
+.termsPage :global(.cancel-btn) {
+  padding: 10px 16px; border-radius: 10px; border: none; cursor: pointer; font-weight: 600; transition: filter 0.2s ease;
+}
+.termsPage :global(.save-btn) { background: #fd7e14; color: white; }
+.termsPage :global(.save-btn:hover) { filter: brightness(1.1); }
+.termsPage :global(.cancel-btn) { background: #e5e7eb; color: #111827; }
+.termsPage :global(.cancel-btn:hover) { filter: brightness(0.95); }

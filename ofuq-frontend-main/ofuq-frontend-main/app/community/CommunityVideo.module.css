@@ -1,0 +1,277 @@
+/* Language switch styles for Community page */
+.switchContainer {
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.switchButtons {
+  display: inline-flex;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  padding: 6px;
+}
+
+.switchBtn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.switchBtn:hover {
+  background: #f4f4f4;
+}
+
+.switchBtnActive {
+  background: #0070f3;
+  color: #fff;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #2d3748;
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #019EBB, #4142D0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.languageSwitchContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  padding: 0.5rem;
+  background: rgba(248, 250, 252, 0.8);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(1, 158, 187, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.languageButton {
+  padding: 1rem 2rem;
+  border: none;
+  background: transparent;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Cairo', sans-serif;
+  color: #718096;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-width: 100px;
+  text-align: center;
+}
+
+.languageButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.languageButton:hover::before {
+  left: 100%;
+}
+
+.languageButton:hover {
+  color: #019EBB;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(1, 158, 187, 0.2);
+}
+
+.languageButton.active {
+  background: linear-gradient(135deg, #019EBB, #028BAB);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(1, 158, 187, 0.3);
+}
+
+.languageButton.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 16px;
+}
+
+/* Features Icons Section */
+.featuresSection {
+  padding: 40px 20px;
+  direction: rtl;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .featuresGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.featureCard {
+  background: linear-gradient(180deg, rgba(1, 158, 187, 0.06), rgba(65, 66, 208, 0.06));
+  border: 1px solid rgba(1, 158, 187, 0.25);
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  color: #2d3748;
+  cursor: default;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 8px 24px rgba(1, 158, 187, 0.08);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transform-style: preserve-3d;
+}
+
+.featureCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120px 60px at 50% 40%, rgba(1, 158, 187, 0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(65, 66, 208, 0.18), 0 8px 20px rgba(1, 158, 187, 0.12);
+  border-color: rgba(65, 66, 208, 0.35);
+}
+
+.featureCard:hover::after {
+  opacity: 1;
+}
+
+/* sheen effect */
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  width: 60%;
+  height: 180%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: translateX(-70%) rotate(18deg);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.featureCard:hover::before {
+  transform: translateX(170%) rotate(18deg);
+}
+
+.featureCard:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(65, 66, 208, 0.28);
+}
+
+.featureIcon {
+  font-size: 56px;
+  line-height: 1;
+  color: #028BAB;
+  filter: drop-shadow(0 4px 8px rgba(1, 158, 187, 0.2));
+  position: relative;
+  z-index: 2;
+  animation: iconPulse 5.5s ease-in-out infinite;
+}
+
+.featureCard:hover .featureIcon {
+  color: #4142D0;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: 'Cairo', sans-serif;
+  color: #1a202c;
+  position: relative;
+  margin-top: 12px;
+}
+
+.featureTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #019EBB, #4142D0);
+  opacity: 0.7;
+  transition: width 0.25s ease, opacity 0.25s ease;
+}
+
+.featureCard:hover .featureTitle::after {
+  width: 86px;
+  opacity: 0.95;
+}
+
+/* centered circular icon wrapper */
+.featureIconWrap {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #019EBB, #4142D0);
+  padding: 4px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(65, 66, 208, 0.18);
+}
+
+.featureIconWrap::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: inset 0 6px 12px rgba(1, 158, 187, 0.12);
+}
+
+.featureCard:hover .featureIconWrap {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(65, 66, 208, 0.22), inset 0 0 0 6px rgba(1, 158, 187, 0.12);
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}

@@ -1,0 +1,399 @@
+.root {}
+
+.root :global(.admin-courses-container) {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.root :global(.admin-courses-header) {
+  background: linear-gradient(135deg, #028FAF 0%, #025a6b 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(2, 143, 175, 0.3);
+}
+
+.root :global(.admin-courses-title) {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.root :global(.admin-courses-subtitle) {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.root :global(.admin-courses-actions) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.root :global(.btn-primary) {
+  background: linear-gradient(135deg, #028FAF 0%, #025a6b 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(2, 143, 175, 0.3);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.root :global(.btn-primary:hover) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(2, 143, 175, 0.4);
+  background: linear-gradient(135deg, #025a6b 0%, #01404b 100%);
+}
+
+.root :global(.btn-secondary) {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(100, 116, 139, 0.3);
+}
+
+.root :global(.btn-secondary:hover) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(100, 116, 139, 0.4);
+}
+
+.root :global(.btn-danger) {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.3);
+}
+
+.root :global(.btn-success) {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+}
+
+/* Modal */
+.root :global(.modal-overlay) {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.root :global(.modal-content) {
+  background: #fff;
+  width: 95%;
+  max-width: 800px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.root :global(.modal-header) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.root :global(.close-btn) {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Form */
+.root :global(.course-form) {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0 0 16px 16px;
+}
+
+.root :global(.form-section) { margin-bottom: 1.5rem; }
+.root :global(.form-section-title) {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.root :global(.form-group) { margin-bottom: 1rem; }
+.root :global(.form-label) {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.root :global(.form-input),
+.root :global(.form-textarea),
+.root :global(.form-select) {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.root :global(.form-grid) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.root :global(.form-grid-full) { grid-column: 1 / -1; }
+
+.root :global(.form-actions) {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* List & Table */
+.root :global(.admin-courses-list) {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.root :global(.section-title) {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.root :global(.table-container) {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.root :global(.admin-table) {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.root :global(.admin-table th) {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  padding: 1rem;
+  text-align: right;
+  font-weight: 600;
+  color: #334155;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.root :global(.admin-table td) {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #475569;
+}
+
+.root :global(.actions-cell) {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.root :global(.btn-action) {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* Loading & Error */
+.root :global(.loading) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.root :global(.spinner) {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #028FAF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Production modal refinement */
+.root :global(.modal-overlay) {
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(4px);
+  padding: 18px;
+  z-index: 1000;
+}
+
+.root :global(.modal-content) {
+  max-width: 760px;
+  max-height: min(90vh, 860px);
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+}
+
+.root :global(.modal-header) {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 18px 22px;
+  background: #ffffff;
+}
+
+.root :global(.modal-header h2) {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.root :global(.close-btn) {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.root :global(.close-btn:hover) {
+  background: #eef2f7;
+}
+
+.root :global(.course-form) {
+  max-height: calc(min(90vh, 860px) - 74px);
+  overflow-y: auto;
+  padding: 20px 22px 0;
+}
+
+.root :global(.form-section-title) {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.root :global(.form-grid) {
+  gap: 16px;
+}
+
+.root :global(.form-label) {
+  color: #334155;
+}
+
+.root :global(.form-input),
+.root :global(.form-textarea),
+.root :global(.form-select) {
+  min-height: 44px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.root :global(.form-input:hover),
+.root :global(.form-textarea:hover),
+.root :global(.form-select:hover) {
+  border-color: #94a3b8;
+}
+
+.root :global(.form-actions) {
+  position: sticky;
+  bottom: 0;
+  margin: 18px -22px 0;
+  padding: 14px 22px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+@media (max-width: 640px) {
+  .root :global(.modal-overlay) {
+    align-items: flex-end;
+    padding: 10px;
+  }
+
+  .root :global(.modal-content) {
+    max-height: 92vh;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .root :global(.form-actions) {
+    flex-direction: column-reverse;
+  }
+
+  .root :global(.form-actions button) {
+    width: 100%;
+  }
+}
+
+.root :global(.error) {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 1rem 1.25rem;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  margin: 1rem;
+}
+
+.root :global(.back-button) {
+  margin-inline-end: 1rem;
+}

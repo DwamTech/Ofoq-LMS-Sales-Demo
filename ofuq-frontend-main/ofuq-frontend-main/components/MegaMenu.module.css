@@ -1,0 +1,315 @@
+/* MegaMenu Styles - Professional RTL Design */
+
+.megaMenu {
+    display: flex;
+    align-items: center;
+    direction: rtl;
+}
+
+.menuList {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menuItem {
+    position: relative;
+}
+
+.menuLink {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #019EBB;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+.menuLink:hover {
+    background: #019EBB;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(1, 158, 187, 0.3);
+}
+
+.menuLink.active {
+    background: #019EBB;
+    color: white;
+}
+
+.menuIcon {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.menuLabel {
+    font-size: 13px;
+}
+
+.dropdownArrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    margin-right: 4px;
+}
+
+.dropdownArrow.rotated {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Panel */
+.dropdownPanel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 280px;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(1, 158, 187, 0.1);
+    padding: 16px;
+    z-index: 1000;
+    animation: dropdownSlide 0.25s ease-out;
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdownGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+}
+
+.dropdownItem {
+    position: relative;
+}
+
+.dropdownItem.hasSubmenu {
+    position: relative;
+}
+
+.dropdownLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.dropdownLink:hover {
+    background: linear-gradient(135deg, rgba(1, 158, 187, 0.08) 0%, rgba(1, 158, 187, 0.15) 100%);
+    color: #019EBB;
+    transform: translateX(-3px);
+}
+
+.dropdownIcon {
+    font-size: 18px;
+    color: #019EBB;
+    display: flex;
+    align-items: center;
+}
+
+.submenuArrow {
+    margin-right: auto;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Nested Submenu Panel */
+.submenuPanel {
+    position: absolute;
+    top: 0;
+    min-width: 200px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(1, 158, 187, 0.1);
+    padding: 12px;
+    z-index: 1001;
+    animation: submenuSlide 0.2s ease-out;
+}
+
+/* Left column items - submenu opens to the right */
+.submenuLeft {
+    left: calc(100% + 10px);
+    right: auto;
+}
+
+/* Right column items - submenu opens to the left */
+.submenuRight {
+    right: calc(100% + 10px);
+    left: auto;
+}
+
+@keyframes submenuSlide {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.submenuLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.submenuLink:hover {
+    background: linear-gradient(135deg, rgba(1, 158, 187, 0.08) 0%, rgba(1, 158, 187, 0.15) 100%);
+    color: #019EBB;
+}
+
+.submenuIcon {
+    font-size: 16px;
+    color: #019EBB;
+    display: flex;
+    align-items: center;
+}
+
+/* Coming Soon Badge & Disabled Links */
+.comingSoon {
+    /* No visual change - same as regular items */
+}
+
+.disabledLink {
+    cursor: default;
+    pointer-events: none;
+}
+
+.disabledLink:hover {
+    background: rgba(255, 255, 255, 0.98);
+    transform: none;
+}
+
+.comingSoonBadge {
+    margin-right: auto;
+    padding: 2px 8px;
+    background: linear-gradient(135deg, #f0ad4e 0%, #ec971f 100%);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+/* Verify Certificate Button - Premium Golden Style */
+.verifyBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+    background-size: 200% 200%;
+    color: #1a1a2e;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    animation: shimmer 3s infinite ease-in-out;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.verifyBtn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+}
+
+.verifyBtn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.verifyIcon {
+    font-size: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive - Hide menu on small screens */
+@media (max-width: 1200px) {
+    .menuLabel {
+        display: none;
+    }
+
+    .menuLink {
+        padding: 10px 12px;
+    }
+
+    .dropdownArrow {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .megaMenu {
+        display: none;
+    }
+}

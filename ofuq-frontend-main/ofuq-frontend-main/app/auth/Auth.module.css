@@ -1,0 +1,43 @@
+/* Auth Page Styles - CSS Modules */
+.authPage {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #4142D0, #B9B9F4, #ABDAEF, #0AD5FA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Cairo', sans-serif;
+  position: relative;
+  direction: rtl;
+  unicode-bidi: isolate;
+  flex-direction: column;
+}
+
+.authFooterLinks {
+  position: static;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.footerLink {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footerLink:hover {
+  opacity: 0.8;
+}
+
+.linkSeparator {
+  color: white;
+  margin: 0 5px;
+}

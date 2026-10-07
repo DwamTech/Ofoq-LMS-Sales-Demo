@@ -1,0 +1,980 @@
+/* Diploma Details Page Styles - CSS Module */
+/* Using global CSS variables defined in globals.css */
+
+/* Loading and Error States */
+.loadingSection,
+.errorSection {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.loader {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  animation: pulse 2s infinite;
+}
+
+.errorBox {
+  background: #fef2f2;
+  border: 2px solid #fecaca;
+  color: #b91c1c;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+}
+
+.errorTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.errorMessage {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.retryButton {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retryButton:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Main Page Container */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+/* Enhanced Hero Section */
+.hero {
+  position: relative;
+  background: rgba(var(--primary-color-rgb), 0.24);
+  color: var(--text-color);
+  padding: 4rem 2rem;
+  overflow: hidden;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.heroPattern {
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, white 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, white 2px, transparent 2px);
+  background-size: 50px 50px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+.heroText {
+  flex: 1;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: var(--text-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heroSubtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.heroMeta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.metaBadge {
+  background: rgba(1, 158, 187, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border: 1px solid rgba(1, 158, 187, 0.2);
+  color: var(--primary-color);
+}
+
+.metaIcon {
+  font-size: 1.2rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.enrollButton,
+.viewCoursesButton {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #26C0D8 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.enrollButton:hover,
+.viewCoursesButton:hover {
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-color) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.viewCoursesButton {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.buttonText {
+  position: relative;
+  z-index: 2;
+}
+
+.buttonIcon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.enrollButton:hover .buttonIcon,
+.viewCoursesButton:hover .buttonIcon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.enrollStatus {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.enrollStatus.success {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.enrollStatus.error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+/* Details Section */
+.detailsSection {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.detailsGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.coverWrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.coverWrapper:hover {
+  transform: translateY(-5px);
+}
+
+.coverImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.coverWrapper:hover .coverImage {
+  transform: scale(1.05);
+}
+
+.coverOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.coverWrapper:hover .coverOverlay {
+  opacity: 1;
+}
+
+.playButton {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.playButton:hover {
+  transform: scale(1.1);
+  background: white;
+}
+
+.detailsContent {
+  padding: 1rem 0;
+}
+
+.detailsTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.detailsDescription {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.detailsMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+.metaItem strong {
+  color: var(--text-primary);
+  min-width: 80px;
+}
+
+.freeTag,
+.paidTag,
+.priceTag,
+.countTag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.freeTag {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.paidTag {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.priceTag {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.countTag {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+.detailsActions {
+  margin-top: 2rem;
+}
+
+.enrollButtonSecondary,
+.viewCoursesButtonSecondary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(1, 158, 187, 0.25);
+}
+
+.enrollButtonSecondary:hover,
+.viewCoursesButtonSecondary:hover {
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary-dark));
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 24px rgba(2, 139, 171, 0.35);
+}
+
+.viewCoursesButtonSecondary {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.viewCoursesButtonSecondary:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Shine effect overlay */
+.enrollButtonSecondary::before,
+.viewCoursesButtonSecondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  opacity: 0;
+}
+
+.enrollButtonSecondary:hover::before,
+.viewCoursesButtonSecondary:hover::before {
+  animation: shine 0.9s ease;
+  opacity: 1;
+}
+
+@keyframes shine {
+  0% { left: -40%; }
+  100% { left: 120%; }
+}
+
+/* Small icon next to text */
+.buttonIconSmall {
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  transition: transform 0.25s ease;
+}
+
+.enrollButtonSecondary:hover .buttonIconSmall,
+.viewCoursesButtonSecondary:hover .buttonIconSmall { transform: scale(1.15); }
+
+.enrollButtonSecondary:focus-visible,
+.viewCoursesButtonSecondary:focus-visible {
+  outline: 3px solid rgba(1, 158, 187, 0.35);
+  outline-offset: 2px;
+}
+
+/* Enhanced Courses Section */
+.coursesSection {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.sectionHeader {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.sectionLine {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.coursesGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.emptyState p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* Enhanced Course Cards */
+.courseCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transform: translateY(0);
+}
+
+.courseCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.courseImageWrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.courseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.courseCard:hover .courseImage {
+  transform: scale(1.08);
+}
+
+.courseOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.courseCard:hover .courseOverlay {
+  opacity: 1;
+}
+
+.coursePlayButton {
+  background: rgba(255, 255, 255, 0.95);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.courseCard:hover .coursePlayButton {
+  transform: scale(1.1);
+  background: white;
+}
+
+.courseBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.courseContent {
+  padding: 1.5rem;
+}
+
+.courseTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.courseDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.courseMeta {
+  margin-bottom: 1rem;
+}
+
+.courseInstructor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.instructorIcon {
+  font-size: 1.1rem;
+}
+
+.courseFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.courseAction {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.arrowIcon {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+.courseCard:hover .arrowIcon {
+  transform: translateX(-3px);
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
+}
+
+/* Responsive Design - Mobile First Approach */
+@media (max-width: 480px) {
+  .page {
+    padding: 0.5rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+    min-height: 60vh;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .heroMeta {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .metaBadge {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .enrollButton,
+  .viewCoursesButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    min-width: 160px;
+  }
+
+  .detailsSection {
+    padding: 2rem 1rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .coverImage {
+    height: 200px;
+  }
+
+  .coursesSection {
+    padding: 2rem 1rem;
+  }
+
+  .coursesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .courseCard {
+    padding: 1rem;
+  }
+
+  .courseTitle {
+    font-size: 1rem;
+  }
+
+  .courseDescription {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .page {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+    min-height: 65vh;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .heroMeta {
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .metaBadge {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .enrollButton,
+  .viewCoursesButton {
+    padding: 0.9rem 2rem;
+    font-size: 1.05rem;
+    min-width: 180px;
+  }
+
+  .detailsSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .coverImage {
+    height: 250px;
+  }
+
+  .coursesSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .courseCard {
+    padding: 1.25rem;
+  }
+
+  .courseTitle {
+    font-size: 1.1rem;
+  }
+
+  .courseDescription {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page {
+    padding: 1.5rem;
+  }
+
+  .hero {
+    padding: 3.5rem 2rem;
+    min-height: 70vh;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr auto;
+    gap: 2.5rem;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .detailsSection {
+    padding: 3.5rem 2rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+  }
+
+  .coverImage {
+    height: 300px;
+  }
+
+  .coursesSection {
+    padding: 3.5rem 2rem;
+  }
+
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .page {
+    padding: 2rem;
+  }
+
+  .hero {
+    padding: 4rem 2rem;
+  }
+
+  .detailsSection {
+    padding: 4rem 2rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 350px 1fr;
+    gap: 3.5rem;
+  }
+
+  .coverImage {
+    height: 350px;
+  }
+
+  .coursesSection {
+    padding: 4rem 2rem;
+  }
+
+  .coursesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1441px) {
+  .page {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .hero {
+    padding: 5rem 2rem;
+  }
+
+  .detailsSection {
+    padding: 5rem 2rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 400px 1fr;
+    gap: 4rem;
+  }
+
+  .coverImage {
+    height: 400px;
+  }
+
+  .coursesSection {
+    padding: 5rem 2rem;
+  }
+
+  .coursesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+/* Additional responsive utilities */
+@media (max-width: 768px) {
+  .heroPattern {
+    background-size: 30px 30px;
+  }
+
+  .heroActions {
+    align-items: center;
+    width: 100%;
+  }
+
+  .enrollButton,
+  .viewCoursesButton {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .courseImage,
+  .coverImage {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    min-height: 50vh;
+    padding: 2rem 1rem;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+  }
+}

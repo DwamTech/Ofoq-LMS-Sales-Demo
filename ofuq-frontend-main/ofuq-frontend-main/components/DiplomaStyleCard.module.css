@@ -1,0 +1,191 @@
+/* Enhanced Course Cards - Diploma Style */
+.courseCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transform: translateY(0);
+  display: block;
+}
+
+.courseCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.courseImageWrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.courseImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.courseCard:hover .courseImage {
+  transform: scale(1.08);
+}
+
+.courseOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.courseCard:hover .courseOverlay {
+  opacity: 1;
+}
+
+.coursePlayButton {
+  background: rgba(255, 255, 255, 0.95);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  color: #4142D0;
+}
+
+.courseCard:hover .coursePlayButton {
+  transform: scale(1.1);
+  background: white;
+}
+
+.courseBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #4142D0, #6366f1);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.courseContent {
+  padding: 1.5rem;
+}
+
+.courseTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.courseDescription {
+  font-size: 0.95rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.courseMeta {
+  margin-bottom: 1rem;
+}
+
+.courseInstructor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.instructorIcon {
+  font-size: 1.1rem;
+  color: #4142D0;
+}
+
+.courseFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.courseAction {
+  font-weight: 600;
+  color: #4142D0;
+  font-size: 0.95rem;
+}
+
+.arrowIcon {
+  font-size: 1.1rem;
+  color: #4142D0;
+  transition: transform 0.3s ease;
+}
+
+.courseCard:hover .arrowIcon {
+  transform: translateX(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .courseImageWrapper {
+    height: 180px;
+  }
+  
+  .courseContent {
+    padding: 1.25rem;
+  }
+  
+  .courseTitle {
+    font-size: 1.1rem;
+  }
+  
+  .courseDescription {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courseImageWrapper {
+    height: 160px;
+  }
+  
+  .courseContent {
+    padding: 1rem;
+  }
+  
+  .courseTitle {
+    font-size: 1rem;
+  }
+  
+  .courseDescription {
+    font-size: 0.85rem;
+  }
+}

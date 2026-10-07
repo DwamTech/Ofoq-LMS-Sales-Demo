@@ -1,0 +1,65 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Third Party Services
+    |--------------------------------------------------------------------------
+    |
+    | This file is for storing the credentials for third party services such
+    | as Mailgun, Postmark, AWS and more. This file provides the de facto
+    | location for this type of information, allowing packages to have
+    | a conventional file to locate the various service credentials.
+    |
+    */
+
+    'postmark' => [
+        'token' => env('POSTMARK_TOKEN'),
+    ],
+
+    'resend' => [
+        'key' => env('RESEND_KEY'),
+    ],
+
+    'ses' => [
+        'key' => env('AWS_ACCESS_KEY_ID'),
+        'secret' => env('AWS_SECRET_ACCESS_KEY'),
+        'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+    ],
+
+    'slack' => [
+        'notifications' => [
+            'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
+            'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
+        ],
+    ],
+
+    'google' => [
+    'client_id' => env('GOOGLE_CLIENT_ID'),
+    'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+    'redirect' => env('GOOGLE_REDIRECT_URL'),
+    ],
+
+    'certificate_generator' => [
+        'url' => env('CERTIFICATE_GENERATOR_URL', 'http://localhost:3000'),
+        'api_key' => env('CERTIFICATE_GENERATOR_API_KEY', ''),
+        'timeout' => env('CERTIFICATE_GENERATOR_TIMEOUT', 60),
+    ],
+
+    'browsershot' => [
+        'node_path' => env('BROWSERSHOT_NODE_PATH'),
+        'node_path_windows' => env('BROWSERSHOT_NODE_PATH_WINDOWS'),
+        'chrome_path' => env('BROWSERSHOT_CHROME_PATH'),
+        'chrome_path_linux' => env('BROWSERSHOT_CHROME_PATH_LINUX'),
+        'chrome_path_windows' => env('BROWSERSHOT_CHROME_PATH_WINDOWS'),
+        'no_sandbox' => env('BROWSERSHOT_NO_SANDBOX', false),
+    ],
+
+    'bunny' => [
+        'library_id' => env('BUNNY_LIBRARY_ID'),
+        'api_key' => env('BUNNY_API_KEY'),
+        'pull_zone' => env('BUNNY_PULL_ZONE'),
+    ],
+
+];

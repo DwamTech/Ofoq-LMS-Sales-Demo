@@ -1,0 +1,70 @@
+.filterContainer {
+    margin-bottom: 24px;
+}
+
+.filterTitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.filterScroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+.filterScroll::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.filterChip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.filterChip:hover {
+    background: #f8f9fa;
+    border-color: #d0d0d0;
+    transform: translateY(-1px);
+}
+
+.filterChip.active {
+    background: #019EBB;
+    border-color: #019EBB;
+    color: white;
+    box-shadow: 0 4px 12px rgba(1, 158, 187, 0.2);
+}
+
+.filterCount {
+    background: rgba(0, 0, 0, 0.08);
+    color: inherit;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.filterChip.active .filterCount {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}

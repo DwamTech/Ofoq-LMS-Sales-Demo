@@ -1,0 +1,480 @@
+/* النافذة المنبثقة - الطبقة الخلفية */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+/* حاوية النافذة المنبثقة */
+.popup-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: popupSlideIn 0.3s ease-out;
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* رأس النافذة */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #028FAF 0%, #025a6b 100%);
+  color: white;
+}
+
+.popup-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* محتوى النافذة */
+.popup-content {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* أقسام المحتوى */
+.course-info-section,
+.stats-section,
+.chapters-section,
+.timestamps-section {
+  margin-bottom: 32px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-header h3::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #028FAF 0%, #025a6b 100%);
+  border-radius: 2px;
+}
+
+/* شبكة المعلومات */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-right: 4px solid #028FAF;
+}
+
+.info-item .label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.info-item .value {
+  font-weight: 500;
+  color: #1f2937;
+  text-align: left;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status.published {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.draft {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.description {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 8px;
+  border-right: 4px solid #028FAF;
+}
+
+.description .label {
+  font-weight: 600;
+  color: #374151;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.description p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* قسم الإحصائيات */
+.stats-section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #028FAF 0%, #025a6b 100%);
+  color: white;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  min-width: 120px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* قسم الفصول */
+.chapters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chapter-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.chapter-header {
+  background: #f8fafc;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.chapter-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.chapter-meta {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.chapter-id {
+  background: #028FAF;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.chapter-description {
+  padding: 12px 20px;
+  margin: 0;
+  color: #6b7280;
+  font-style: italic;
+  background: #fafbfc;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* قائمة الدروس */
+.lessons-list {
+  padding: 16px 20px;
+}
+
+.lesson-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.lesson-item:last-child {
+  border-bottom: none;
+}
+
+.lesson-info {
+  flex: 1;
+}
+
+.lesson-title {
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.lesson-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.lesson-status {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.lesson-status.published {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.lesson-status.draft {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.lesson-id {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* قسم التواريخ */
+.timestamps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.timestamp-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-right: 4px solid #028FAF;
+}
+
+.timestamp-item .label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.timestamp-item .value {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .popup-overlay {
+    padding: 10px;
+  }
+  
+  .popup-container {
+    max-height: 95vh;
+  }
+  
+  .popup-header {
+    padding: 20px 24px;
+  }
+  
+  .popup-header h2 {
+    font-size: 20px;
+  }
+  
+  .popup-content {
+    padding: 24px 20px;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-card {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .chapter-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .lesson-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .lesson-meta {
+    flex-wrap: wrap;
+  }
+}
+
+/* تنسيقات العناصر الجديدة */
+.chapter-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lessons-count {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.lessons-header {
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.lessons-header h5 {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.lesson-number {
+  background: #028FAF;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.no-lessons, .no-chapters {
+  text-align: center;
+  padding: 24px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.no-lessons p, .no-chapters p {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .popup-header {
+    padding: 16px 20px;
+  }
+  
+  .popup-content {
+    padding: 20px 16px;
+  }
+  
+  .section-header h3 {
+    font-size: 18px;
+  }
+  
+  .stat-number {
+    font-size: 24px;
+  }
+}

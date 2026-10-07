@@ -1,0 +1,599 @@
+/* Checkout Page Styles */
+.checkout-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #028FAF 0%, #025a6b 100%);
+  padding: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.checkout-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.checkout-header {
+  text-align: center;
+  margin-bottom: 32px;
+  color: white;
+}
+
+.checkout-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  direction: rtl;
+}
+
+.checkout-subtitle {
+  font-size: 1.04rem;
+  opacity: 0.9;
+  font-weight: 300;
+  direction: rtl;
+}
+
+/* Main Content */
+.checkout-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Course Card */
+.course-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.course-image-section {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.course-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image {
+  transform: scale(1.05);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 6.4px 12.8px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.72rem;
+  box-shadow: 0 3.2px 12px rgba(255, 107, 107, 0.4);
+  direction: rtl;
+}
+
+.course-details {
+  padding: 24px;
+}
+
+.course-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  direction: rtl;
+  line-height: 1.3;
+}
+
+.course-description {
+  font-size: 0.88rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  direction: rtl;
+  line-height: 1.6;
+}
+
+.course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6.4px;
+  color: #34495e;
+  font-weight: 500;
+}
+
+.meta-icon {
+  width: 16px;
+  height: 16px;
+  fill: #3498db;
+}
+
+.course-features {
+  border-top: 1px solid #ecf0f1;
+  padding-top: 20px;
+}
+
+.features-title {
+  font-size: 1.04rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  direction: rtl;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 9.6px;
+  padding: 6.4px 0;
+  color: #34495e;
+  direction: rtl;
+}
+
+.feature-icon2 {
+  width: 14.4px;
+  height: 14.4px;
+  fill: #27ae60;
+  flex-shrink: 0;
+}
+
+/* Purchase Section */
+.purchase-section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 16px;
+  height: fit-content;
+}
+
+/* Pricing Table Styles */
+.price-table {
+  margin-bottom: 20px;
+}
+
+.price-table-title {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 16px;
+  text-align: center;
+  direction: rtl;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3.2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pricing-table tr:last-child {
+  border-bottom: none;
+}
+
+.pricing-table td {
+  padding: 12px 16px;
+  direction: rtl;
+}
+
+.price-label {
+  font-weight: 500;
+  color: #34495e;
+  font-size: 0.8rem;
+}
+
+.price-value {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.price-value.original {
+  color: #95a5a6;
+  text-decoration: line-through;
+}
+
+.price-value.discount {
+  color: #e74c3c;
+  font-size: 0.96rem;
+}
+
+.price-value.savings {
+  color: #27ae60;
+}
+
+.total-row {
+  background: linear-gradient(135deg, #028FAF, #025a6b);
+  color: white;
+}
+
+.total-row .price-label,
+.total-row .price-value {
+  color: white;
+  font-weight: 700;
+  font-size: 0.96rem;
+}
+
+.total-label {
+  font-size: 1.04rem !important;
+}
+
+.price-value.final {
+  font-size: 1.2rem !important;
+  color: white !important;
+}
+
+.purchase-button {
+  width: 100%;
+  background: linear-gradient(135deg, #028FAF, #025a6b);
+  color: white;
+  border: none;
+  padding: 14.4px 24px;
+  border-radius: 12px;
+  font-size: 1.04rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  direction: rtl;
+  position: relative;
+  overflow: hidden;
+}
+
+.purchase-button:hover:not(:disabled) {
+  transform: translateY(-1.6px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.purchase-button:active {
+  transform: translateY(0);
+}
+
+.purchase-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.purchase-button.processing {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+}
+
+.button-icon {
+  width: 19.2px;
+  height: 19.2px;
+  fill: currentColor;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.security-badges {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 16px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.security-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6.4px;
+  color: #7f8c8d;
+  font-size: 0.72rem;
+}
+
+.security-icon {
+  width: 19.2px;
+  height: 19.2px;
+  fill: #27ae60;
+}
+
+/* Toast Notification Styles */
+.toast-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  animation: slideInRight 0.5s ease-out;
+}
+
+.toast {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 280px;
+  max-width: 360px;
+  position: relative;
+  overflow: hidden;
+  direction: rtl;
+}
+
+.toast.success {
+  border-left: 4px solid #27ae60;
+}
+
+.toast::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3.2px;
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  animation: progressBar 4s linear;
+}
+
+.toast-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 4px 0;
+}
+
+.toast-message {
+  font-size: 0.76rem;
+  color: #7f8c8d;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #95a5a6;
+  cursor: pointer;
+  padding: 0;
+  width: 19.2px;
+  height: 19.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.toast-close:hover {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes progressBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .checkout-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .purchase-section {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    padding: 12px;
+  }
+  
+  .checkout-title {
+    font-size: 1.76rem;
+  }
+  
+  .checkout-subtitle {
+    font-size: 0.88rem;
+  }
+  
+  .course-details {
+    padding: 16px;
+  }
+  
+  .course-title {
+    font-size: 1.28rem;
+  }
+  
+  .course-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .purchase-section {
+    padding: 16px;
+  }
+  
+  .purchase-button {
+    font-size: 0.88rem;
+    padding: 12px 20px;
+  }
+
+  .toast-container {
+    top: 8px;
+    right: 8px;
+    left: 8px;
+  }
+
+  .toast {
+    min-width: auto;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-header {
+    margin-bottom: 20px;
+  }
+  
+  .checkout-title {
+    font-size: 1.44rem;
+  }
+  
+  .checkout-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .course-image-section {
+    height: 160px;
+  }
+  
+  .course-details {
+    padding: 12px;
+  }
+  
+  .course-title {
+    font-size: 1.12rem;
+  }
+  
+  .course-description {
+    font-size: 0.8rem;
+  }
+  
+  .purchase-section {
+    padding: 12px;
+  }
+  
+  .security-badges {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .security-item {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .pricing-table td {
+    padding: 9.6px 12px;
+  }
+
+  .price-label,
+  .price-value {
+    font-size: 0.72rem;
+  }
+
+  .total-row .price-label,
+  .total-row .price-value {
+    font-size: 0.8rem;
+  }
+
+  .price-value.final {
+    font-size: 0.96rem !important;
+  }
+}
+
+/* Footer Links Styles */
+.checkout-footer-links {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.checkout-footer-links .footer-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.checkout-footer-links .footer-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.checkout-footer-links .link-separator {
+  margin: 0 1rem;
+  color: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,10 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="120" height="120" rx="15" fill="url(#gradient0_linear_1_1)"/>
+<text x="60" y="75" font-family="Arial" font-size="24" fill="white" text-anchor="middle" font-weight="bold">أفق</text>
+<defs>
+<linearGradient id="gradient0_linear_1_1" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+<stop stop-color="#667eea"/>
+<stop offset="1" stop-color="#764ba2"/>
+</linearGradient>
+</defs>
+</svg>
