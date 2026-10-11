@@ -3,8 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import styles from './ScrollToTop.module.css';
 import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
+import { isBrandedPublicRoute } from './brand/publicRoutes';
 
 const ScrollToTop = () => {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
   // Show button when page is scrolled down
@@ -30,6 +33,8 @@ const ScrollToTop = () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
   }, []);
+
+  if (isBrandedPublicRoute(pathname)) return null;
 
   return (
     <div className={clsx(styles['scroll-to-top'], isVisible && styles.visible)} style={{ display: 'block' }}>

@@ -1,10 +1,11 @@
 "use client";
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { ArrowUpLeft, LockKeyhole } from "lucide-react";
+import { ArrowUpLeft, LockKeyhole, BookOpen, GraduationCap, Users, BarChart3 } from "lucide-react";
 import { adminRead, adminNumber } from "@/utils/adminShowcase";
 import styles from "./AdminShowcase.module.css";
 import { BrandLogo } from '@/components/brand/BrandLogo';
+import { FRONTEND_CHANGE } from '@/lib/frontendStore';
 export function useAdminRead<T>(path: string | null) {
   const [state, setState] = useState<{
     path: string | null;
@@ -12,6 +13,7 @@ export function useAdminRead<T>(path: string | null) {
     error: boolean;
   }>({ path: null, data: null, error: false });
   const [retry, setRetry] = useState(0);
+  useEffect(()=>{const refresh=()=>setRetry(value=>value+1);window.addEventListener(FRONTEND_CHANGE,refresh);return()=>window.removeEventListener(FRONTEND_CHANGE,refresh);},[]);
   useEffect(() => {
     if (!path) return;
     const controller = new AbortController();
@@ -129,8 +131,16 @@ export function Metric({
   value: number;
   definition: string;
 }) {
+  const Icon = label.includes("مقرر")
+    ? BookOpen
+    : label.includes("دبلوم")
+      ? GraduationCap
+      : label.includes("طلاب")
+        ? Users
+        : BarChart3;
   return (
     <div className={styles.metric}>
+      <Icon className={styles.metricIcon} size={20} aria-hidden="true" />
       <span>{label}</span>
       <strong>{adminNumber(value)}</strong>
       <small>{definition}</small>
@@ -225,16 +235,7 @@ export function Restricted({
   );
 }
 export function MutationNote({ label }: { label: string }) {
-  return (
-    <div className={styles.mutationNote}>
-      <button type="button" disabled aria-describedby="admin-mutation-note">
-        {label} · قراءة فقط
-      </button>
-      <p id="admin-mutation-note">
-        هذه العملية متاحة في النسخة التشغيلية، وتم تعطيلها في وضع الاستعراض.
-      </p>
-    </div>
-  );
+  return null;
 }
 export function Pagination({
   meta,

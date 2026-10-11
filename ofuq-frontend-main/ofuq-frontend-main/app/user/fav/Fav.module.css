@@ -174,3 +174,11 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 16px;
 }
+/* Favorites retain their behavior with the student brand surfaces. */
+.favPage :global(.fav-section) { padding:0; max-width:none; }
+.favPage :global(.fav-header) { padding:28px; border:1px solid #ddd1e7; border-radius:24px; background:radial-gradient(ellipse at 10% 0,#e8dcf1,transparent 70%),#fffdf780; margin-bottom:24px; }
+.favPage :global(.fav-title) { font-size:36px; font-weight:500; color:#49385f; }.favPage :global(.fav-subtitle) { color:#796b84; font-size:16px; }
+.favPage :global(.fav-section-title) { font-size:23px; font-weight:500; color:#49385f; }.favPage :global(.fav-more-btn) { background:#635080; border-radius:13px; box-shadow:none; }.favPage :global(.fav-more-btn:hover) { background:#49385f; }
+.favPage :global(.fav-empty) { border:1px solid #ddd1e7; border-radius:20px; padding:28px; background:linear-gradient(135deg,#fffdf7,#f0e9f7); font-size:15px; color:#796b84; }
+.favPage :global(.fav-modal) { background:#fffdf7; border-radius:22px; border:1px solid #ddd1e7; }.favPage :global(.fav-modal-header) { border-color:#ddd1e7; }.favPage :global(.fav-modal-title) { color:#49385f; }
+@media(max-width:650px) { .favPage :global(.fav-header) { padding:22px 18px; }.favPage :global(.fav-title) { font-size:27px; }.favPage :global(.fav-subtitle) { font-size:15px; }.favPage :global(.fav-top-actions) { flex-wrap:wrap; gap:10px; }.favPage :global(.fav-empty) { padding:24px 18px; } }

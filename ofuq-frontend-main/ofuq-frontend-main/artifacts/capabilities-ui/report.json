@@ -1,0 +1,62 @@
+[
+  {
+    "width": 1440,
+    "open": 5,
+    "overflow": [],
+    "descriptionSizes": [
+      16,
+      16,
+      16,
+      16,
+      16
+    ]
+  },
+  {
+    "width": 1024,
+    "open": 5,
+    "overflow": [],
+    "descriptionSizes": [
+      16,
+      16,
+      16,
+      16,
+      16
+    ]
+  },
+  {
+    "width": 768,
+    "open": 5,
+    "overflow": [],
+    "descriptionSizes": [
+      16,
+      16,
+      16,
+      16,
+      16
+    ]
+  },
+  {
+    "width": 390,
+    "open": 5,
+    "overflow": [],
+    "descriptionSizes": [
+      15,
+      15,
+      15,
+      15,
+      15
+    ]
+  },
+  {
+    "width": 360,
+    "open": 5,
+    "overflow": [],
+    "descriptionSizes": [
+      15,
+      15,
+      15,
+      15,
+      15
+    ]
+  }
+]

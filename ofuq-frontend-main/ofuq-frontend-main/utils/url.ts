@@ -8,11 +8,9 @@ export function getBackendAssetUrl(relativePath: string | null | undefined): str
   if (!relativePath || relativePath.trim() === '') {
     return '/banner.jpg';
   }
-  const assetsBase = ((http?.defaults?.baseURL)
-    || process.env.NEXT_PUBLIC_ASSETS_BASE_URL
-    || process.env.NEXT_PUBLIC_API_BASE_URL
-    || process.env.NEXT_PUBLIC_API_URL
-    || '').replace(/\/api\/?$/, '').replace(/\/+$/, '');
+  if (relativePath.startsWith('data:') || relativePath.startsWith('blob:')) return relativePath;
+  if (relativePath.includes('/storage/') || /https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?/.test(relativePath)) return '/banner.jpg';
+  const assetsBase = '';
   let raw = relativePath.trim();
 
   // 1) لو يحتوي السلسلة على رابط http/https في أي مكان، نستخرج وننظّفه

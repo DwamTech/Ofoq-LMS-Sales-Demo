@@ -1,0 +1,262 @@
+[
+  {
+    "width": 1440,
+    "scrollWidth": 1425,
+    "heroHeight": 769.28125,
+    "titleFont": "76.32px",
+    "textMotion": [
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.08s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.24s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.4s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.56s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.72s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.88s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "1.04s",
+        "opacity": "1"
+      }
+    ],
+    "educationIcon": true,
+    "aiIcon": false,
+    "smallText": [],
+    "overflow": [],
+    "content": "للأكاديميات والجهات التدريبية الطموحة\nمنصتك التعليمية.\nلإدارة التجربة\nالتعليمية.\n\nمنصتك لإدارة البرامج والتعلّم والاختبارات والشهادات. لتمنح فريقك وضوحًا أكبر، ومتعلميك تجربة متصلة.\n\nاستكشف المنصة\nشاهد كيف تتصل الرحلة\nمنظومة واحدة. مسارات متصلة.\nمنصتك التعليمية / ADMIN\n نظرة عامة\nالدبلومات\nالمقررات\nالطلاب\nالتقارير\nبنية الواجهة · عرض توضيحي\nتجربة المنصة\nالصورة الكاملة. في مكان واحد.\n01\nالبرامج\nمسار مترابط\n02\nالمتعلمون\nمتابعة منظمة\n03\nالتقارير\nإنجاز موثق\nالدبلومات المنشورة\n\nيمكن استكشاف البرامج من كتالوج المنصة.\n\nالمحتوى ← التعلم ← التقييم ← الشهادة\nمن أول خطوة\nإلى إنجاز موثّق.\nبرنامج\nتعلم\nشهادة\nتكوين من بنية الواجهات الحالية · أسماء برامج فعلية",
+    "links": [
+      "/experience",
+      "#journey"
+    ]
+  },
+  {
+    "width": 1024,
+    "scrollWidth": 1009,
+    "heroHeight": 790.375,
+    "titleFont": "48px",
+    "textMotion": [
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.08s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.24s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.4s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.56s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.72s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.88s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "1.04s",
+        "opacity": "1"
+      }
+    ],
+    "educationIcon": true,
+    "aiIcon": false,
+    "smallText": [],
+    "overflow": [],
+    "content": "للأكاديميات والجهات التدريبية الطموحة\nمنصتك التعليمية.\nلإدارة التجربة\nالتعليمية.\n\nمنصتك لإدارة البرامج والتعلّم والاختبارات والشهادات. لتمنح فريقك وضوحًا أكبر، ومتعلميك تجربة متصلة.\n\nاستكشف المنصة\nشاهد كيف تتصل الرحلة\nمنظومة واحدة. مسارات متصلة.\nمنصتك التعليمية / ADMIN\n نظرة عامة\nالدبلومات\nالمقررات\nالطلاب\nالتقارير\nبنية الواجهة · عرض توضيحي\nتجربة المنصة\nالصورة الكاملة. في مكان واحد.\n01\nالبرامج\nمسار مترابط\n02\nالمتعلمون\nمتابعة منظمة\n03\nالتقارير\nإنجاز موثق\nالدبلومات المنشورة\n\nيمكن استكشاف البرامج من كتالوج المنصة.\n\nالمحتوى ← التعلم ← التقييم ← الشهادة\nمن أول خطوة\nإلى إنجاز موثّق.\nبرنامج\nتعلم\nشهادة\nتكوين من بنية الواجهات الحالية · أسماء برامج فعلية",
+    "links": [
+      "/experience",
+      "#journey"
+    ]
+  },
+  {
+    "width": 768,
+    "scrollWidth": 753,
+    "heroHeight": 1288.1875,
+    "titleFont": "57.6px",
+    "textMotion": [
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.08s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.24s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.4s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.56s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.72s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.88s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "1.04s",
+        "opacity": "1"
+      }
+    ],
+    "educationIcon": true,
+    "aiIcon": false,
+    "smallText": [],
+    "overflow": [],
+    "content": "للأكاديميات والجهات التدريبية الطموحة\nمنصتك التعليمية.\nلإدارة التجربة\nالتعليمية.\n\nمنصتك لإدارة البرامج والتعلّم والاختبارات والشهادات. لتمنح فريقك وضوحًا أكبر، ومتعلميك تجربة متصلة.\n\nاستكشف المنصة\nشاهد كيف تتصل الرحلة\nمنظومة واحدة. مسارات متصلة.\nمنصتك التعليمية / ADMIN\n نظرة عامة\nالدبلومات\nالمقررات\nالطلاب\nالتقارير\nبنية الواجهة · عرض توضيحي\nتجربة المنصة\nالصورة الكاملة. في مكان واحد.\n01\nالبرامج\nمسار مترابط\n02\nالمتعلمون\nمتابعة منظمة\n03\nالتقارير\nإنجاز موثق\nالدبلومات المنشورة\n\nيمكن استكشاف البرامج من كتالوج المنصة.\n\nالمحتوى ← التعلم ← التقييم ← الشهادة\nمن أول خطوة\nإلى إنجاز موثّق.\nبرنامج\nتعلم\nشهادة\nتكوين من بنية الواجهات الحالية · أسماء برامج فعلية",
+    "links": [
+      "/experience",
+      "#journey"
+    ]
+  },
+  {
+    "width": 390,
+    "scrollWidth": 390,
+    "heroHeight": 1425.21875,
+    "titleFont": "40.95px",
+    "textMotion": [
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.08s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.24s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.4s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.56s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.72s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.88s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "1.04s",
+        "opacity": "1"
+      }
+    ],
+    "educationIcon": true,
+    "aiIcon": false,
+    "smallText": [],
+    "overflow": [],
+    "content": "للأكاديميات والجهات التدريبية الطموحة\nمنصتك التعليمية.\nلإدارة التجربة\nالتعليمية.\n\nمنصتك لإدارة البرامج والتعلّم والاختبارات والشهادات. لتمنح فريقك وضوحًا أكبر، ومتعلميك تجربة متصلة.\n\nاستكشف المنصة\nشاهد كيف تتصل الرحلة\nمنظومة واحدة. مسارات متصلة.\nمنصتك التعليمية / ADMIN\n نظرة عامة\nالدبلومات\nالمقررات\nالطلاب\nالتقارير\nبنية الواجهة · عرض توضيحي\nتجربة المنصة\nالصورة الكاملة. في مكان واحد.\n01\nالبرامج\nمسار مترابط\n02\nالمتعلمون\nمتابعة منظمة\n03\nالتقارير\nإنجاز موثق\nالدبلومات المنشورة\n\nيمكن استكشاف البرامج من كتالوج المنصة.\n\nالمحتوى ← التعلم ← التقييم ← الشهادة\nمن أول خطوة\nإلى إنجاز موثّق.\nبرنامج\nتعلم\nشهادة\nتكوين من بنية الواجهات الحالية · أسماء برامج فعلية",
+    "links": [
+      "/experience",
+      "#journey"
+    ]
+  },
+  {
+    "width": 360,
+    "scrollWidth": 360,
+    "heroHeight": 1448.25,
+    "titleFont": "40px",
+    "textMotion": [
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.08s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.24s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.4s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.56s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.72s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "0.88s",
+        "opacity": "1"
+      },
+      {
+        "animation": "Showcase_heroTextEntrance__2Xs36",
+        "delay": "1.04s",
+        "opacity": "1"
+      }
+    ],
+    "educationIcon": true,
+    "aiIcon": false,
+    "smallText": [],
+    "overflow": [],
+    "content": "للأكاديميات والجهات التدريبية الطموحة\nمنصتك التعليمية.\nلإدارة التجربة\nالتعليمية.\n\nمنصتك لإدارة البرامج والتعلّم والاختبارات والشهادات. لتمنح فريقك وضوحًا أكبر، ومتعلميك تجربة متصلة.\n\nاستكشف المنصة\nشاهد كيف تتصل الرحلة\nمنظومة واحدة. مسارات متصلة.\nمنصتك التعليمية / ADMIN\n نظرة عامة\nالدبلومات\nالمقررات\nالطلاب\nالتقارير\nبنية الواجهة · عرض توضيحي\nتجربة المنصة\nالصورة الكاملة. في مكان واحد.\n01\nالبرامج\nمسار مترابط\n02\nالمتعلمون\nمتابعة منظمة\n03\nالتقارير\nإنجاز موثق\nالدبلومات المنشورة\n\nيمكن استكشاف البرامج من كتالوج المنصة.\n\nالمحتوى ← التعلم ← التقييم ← الشهادة\nمن أول خطوة\nإلى إنجاز موثّق.\nبرنامج\nتعلم\nشهادة\nتكوين من بنية الواجهات الحالية · أسماء برامج فعلية",
+    "links": [
+      "/experience",
+      "#journey"
+    ]
+  }
+]

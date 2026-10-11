@@ -2,6 +2,7 @@
 import { brand } from '@/lib/brand'
 import { useState } from 'react';
 import VideoSection from '../VideoSection';
+import { ArrowUpLeft, VideoOff } from 'lucide-react';
 import styles from './PublicEducation.module.css';
 
 import { communityVideos } from './communityMediaSources';
@@ -18,9 +19,10 @@ export default function CommunityMedia({ available }: { available: Record<Langua
     </div>
     <div id="community-media" role="tabpanel" aria-labelledby={`media-${language}`}>
       {available[language] ? <VideoSection key={language} videoUrl={communityVideos[language]} title={`مجتمع ${brand.name}`} useIframe /> : <div className={styles.unavailableMedia}>
+        <span data-media-empty-icon aria-hidden="true"><VideoOff size={34}/></span>
         <h2>الفيديو غير متاح حاليًا</h2>
         <p>تعذّر الوصول إلى مصدر الفيديو الأصلي. يمكنك متابعة استكشاف البرامج التعليمية المتاحة.</p>
-        <a href="/diploms">استكشف البرامج ←</a>
+        <a href="/diploms">استكشف البرامج <ArrowUpLeft size={19} aria-hidden="true"/></a>
       </div>}
     </div>
   </section>;

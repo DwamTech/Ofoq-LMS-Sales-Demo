@@ -1,5 +1,6 @@
 // Authentication service for handling API calls
 import apiClient from './apiClient';
+import { isLocalPreview, localPreviewUser } from '@/lib/localPreview';
 
 
 export interface User {
@@ -86,16 +87,7 @@ export const signup = async (data: SignupData): Promise<AuthResponse> => {
 
 // Google OAuth authentication
 export const googleAuth = (): void => {
-  try {
-    // Get the backend URL from environment or use default
-    const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
-
-    // Redirect to the backend Google OAuth endpoint
-    window.location.href = `${backendUrl}/auth/google`;
-  } catch (error) {
-    console.error('Google Auth Error:', error);
-    throw new Error('فشل في تسجيل الدخول عبر Google');
-  }
+  window.location.assign('/user');
 };
 
 // Handle Google OAuth callback (for processing the token from URL)
@@ -233,6 +225,7 @@ export const signin = async (data: SigninData): Promise<AuthResponse> => {
 
 // Signout function
 export const signout = async (): Promise<void> => {
+  if (isLocalPreview) return;
   try {
     let token: string | null = null;
     if (typeof window !== 'undefined') {
@@ -292,6 +285,7 @@ export const signout = async (): Promise<void> => {
 
 // Get current user from localStorage
 export const getCurrentUser = (): User | null => {
+  if (isLocalPreview && typeof window !== 'undefined') return localPreviewUser();
   try {
     if (typeof window === 'undefined') return null; // Check if running on client side
     const userData = window.localStorage?.getItem('user_data');
@@ -304,6 +298,7 @@ export const getCurrentUser = (): User | null => {
 
 // Check if user is authenticated
 export const isAuthenticated = (): boolean => {
+  if (isLocalPreview && typeof window !== 'undefined') return true;
   if (typeof window === 'undefined') return false; // Check if running on client side
   try {
     const token = window.localStorage?.getItem('auth_token');
@@ -318,6 +313,7 @@ export const isAuthenticated = (): boolean => {
 
 // Get auth token
 export const getAuthToken = (): string | null => {
+  if (isLocalPreview) return 'frontend-local-session';
   if (typeof window === 'undefined') return null; // Check if running on client side
   try {
     const t = window.localStorage?.getItem('auth_token');
@@ -330,6 +326,7 @@ export const getAuthToken = (): string | null => {
 
 // Get user profile from API
 export const getProfile = async (): Promise<User> => {
+  if (isLocalPreview) return localPreviewUser();
   try {
     const token = getAuthToken();
     if (!token) {

@@ -1,0 +1,698 @@
+[
+  {
+    "id": 2001,
+    "title": "أساسيات HTML وCSS",
+    "description": "ابدأ ببناء صفحات ويب منظمة وتعلّم التنسيق والتخطيطات المتجاوبة من خلال مشروع عملي.",
+    "category_id": 1001,
+    "section_id": 1,
+    "price": 0,
+    "is_free": true,
+    "duration": 8,
+    "students_count": 160,
+    "created_at": "2026-10-01T10:00:00Z",
+    "instructor_id": 301,
+    "instructor": {
+      "id": 301,
+      "name": "أحمد محمود",
+      "title": "مطور واجهات ويب",
+      "image": "/avatar.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20011,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 200101,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 200102,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20012,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 200103,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 200104,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2002,
+    "title": "تطوير التطبيقات باستخدام React",
+    "description": "تعلّم المكونات وإدارة الحالة والتعامل مع البيانات، وطبّق المفاهيم في واجهة ويب تفاعلية.",
+    "category_id": 1001,
+    "section_id": 1,
+    "price": 700,
+    "is_free": false,
+    "duration": 16,
+    "students_count": 120,
+    "created_at": "2026-10-02T10:00:00Z",
+    "instructor_id": 301,
+    "instructor": {
+      "id": 301,
+      "name": "أحمد محمود",
+      "title": "مطور واجهات ويب",
+      "image": "/avatar.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20021,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 200201,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 200202,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20022,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 200203,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 200204,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2003,
+    "title": "مبادئ تجربة المستخدم",
+    "description": "اكتشف أساليب البحث مع المستخدمين وبناء الشخصيات ورسم رحلة الاستخدام وتحديد فرص التحسين.",
+    "category_id": 1002,
+    "section_id": 1,
+    "price": 350,
+    "is_free": false,
+    "duration": 10,
+    "students_count": 105,
+    "created_at": "2026-09-20T10:00:00Z",
+    "instructor_id": 302,
+    "instructor": {
+      "id": 302,
+      "name": "سارة حسن",
+      "title": "مصممة تجربة المستخدم",
+      "image": "/profile2.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20031,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 200301,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 200302,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20032,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 200303,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 200304,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2004,
+    "title": "تصميم الواجهات والنماذج الأولية",
+    "description": "صمّم نظامًا بصريًا متناسقًا وواجهات قابلة للاستخدام، وحوّل أفكارك إلى نموذج تفاعلي.",
+    "category_id": 1002,
+    "section_id": 1,
+    "price": 600,
+    "is_free": false,
+    "duration": 14,
+    "students_count": 98,
+    "created_at": "2026-09-21T10:00:00Z",
+    "instructor_id": 302,
+    "instructor": {
+      "id": 302,
+      "name": "سارة حسن",
+      "title": "مصممة تجربة المستخدم",
+      "image": "/profile2.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20041,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 200401,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 200402,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20042,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 200403,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 200404,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2005,
+    "title": "تحليل البيانات باستخدام Excel",
+    "description": "تعلّم تنظيف البيانات والدوال والجداول المحورية واستخراج مؤشرات عملية من ملفات البيانات.",
+    "category_id": 1003,
+    "section_id": 1,
+    "price": 450,
+    "is_free": false,
+    "duration": 12,
+    "students_count": 190,
+    "created_at": "2026-09-15T10:00:00Z",
+    "instructor_id": 303,
+    "instructor": {
+      "id": 303,
+      "name": "محمد علي",
+      "title": "محلل بيانات",
+      "image": "/profile.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20051,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 200501,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 200502,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20052,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 200503,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 200504,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2006,
+    "title": "بناء التقارير باستخدام Power BI",
+    "description": "اربط مصادر البيانات وصمّم تقارير تفاعلية ولوحات معلومات تساعد على متابعة الأداء.",
+    "category_id": 1003,
+    "section_id": 1,
+    "price": 850,
+    "is_free": false,
+    "duration": 18,
+    "students_count": 145,
+    "created_at": "2026-09-16T10:00:00Z",
+    "instructor_id": 303,
+    "instructor": {
+      "id": 303,
+      "name": "محمد علي",
+      "title": "محلل بيانات",
+      "image": "/profile.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20061,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 200601,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 200602,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20062,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 200603,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 200604,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2007,
+    "title": "أساسيات إدارة المشاريع",
+    "description": "تعلّم تعريف نطاق المشروع وتقسيم المهام وتقدير الموارد وبناء جدول زمني قابل للمتابعة.",
+    "category_id": 1004,
+    "section_id": 2,
+    "price": 300,
+    "is_free": false,
+    "duration": 9,
+    "students_count": 110,
+    "created_at": "2026-09-10T10:00:00Z",
+    "instructor_id": 304,
+    "instructor": {
+      "id": 304,
+      "name": "نور إبراهيم",
+      "title": "مديرة مشاريع",
+      "image": "/profile2.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20071,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 200701,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 200702,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20072,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 200703,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 200704,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2008,
+    "title": "إدارة الفرق والعمل المرن",
+    "description": "طوّر أساليب التواصل وتوزيع المسؤوليات، واكتشف مبادئ العمل المرن ومتابعة تقدم الفريق.",
+    "category_id": 1004,
+    "section_id": 2,
+    "price": 500,
+    "is_free": false,
+    "duration": 11,
+    "students_count": 88,
+    "created_at": "2026-09-11T10:00:00Z",
+    "instructor_id": 304,
+    "instructor": {
+      "id": 304,
+      "name": "نور إبراهيم",
+      "title": "مديرة مشاريع",
+      "image": "/profile2.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20081,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 200801,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 200802,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20082,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 200803,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 200804,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2009,
+    "title": "استراتيجية التسويق الرقمي",
+    "description": "حدّد جمهورك وأهدافك وقنواتك التسويقية، وابنِ خطة حملات واضحة قابلة للقياس.",
+    "category_id": 1005,
+    "section_id": 3,
+    "price": 400,
+    "is_free": false,
+    "duration": 10,
+    "students_count": 155,
+    "created_at": "2026-09-05T10:00:00Z",
+    "instructor_id": 305,
+    "instructor": {
+      "id": 305,
+      "name": "مريم خالد",
+      "title": "متخصصة تسويق رقمي",
+      "image": "/profile2.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20091,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 200901,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 200902,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20092,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 200903,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 200904,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2010,
+    "title": "كتابة المحتوى وصناعة القصص",
+    "description": "تعلّم صياغة رسائل واضحة وبناء خطة محتوى وكتابة قصص تناسب جمهورك وهوية مشروعك.",
+    "category_id": 1005,
+    "section_id": 3,
+    "price": 250,
+    "is_free": false,
+    "duration": 7,
+    "students_count": 132,
+    "created_at": "2026-09-06T10:00:00Z",
+    "instructor_id": 305,
+    "instructor": {
+      "id": 305,
+      "name": "مريم خالد",
+      "title": "متخصصة تسويق رقمي",
+      "image": "/profile2.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20101,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 201001,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 201002,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20102,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 201003,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 201004,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2011,
+    "title": "تصميم المحتوى التعليمي",
+    "description": "حوّل أهداف التعلّم إلى وحدات ودروس وأنشطة، واكتب محتوى واضحًا يساعد على الفهم والتطبيق.",
+    "category_id": 1006,
+    "section_id": 4,
+    "price": 0,
+    "is_free": true,
+    "duration": 8,
+    "students_count": 220,
+    "created_at": "2026-09-01T10:00:00Z",
+    "instructor_id": 306,
+    "instructor": {
+      "id": 306,
+      "name": "خالد يوسف",
+      "title": "مصمم تعليمي",
+      "image": "/avatar.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20111,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 201101,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 201102,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20112,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 201103,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 201104,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2012,
+    "title": "التقييم والتعلّم التفاعلي",
+    "description": "صمّم أنشطة واختبارات مرتبطة بأهداف المقرر، واستخدم التغذية الراجعة لتطوير تجربة التعلّم.",
+    "category_id": 1006,
+    "section_id": 4,
+    "price": 0,
+    "is_free": true,
+    "duration": 6,
+    "students_count": 175,
+    "created_at": "2026-09-02T10:00:00Z",
+    "instructor_id": 306,
+    "instructor": {
+      "id": 306,
+      "name": "خالد يوسف",
+      "title": "مصمم تعليمي",
+      "image": "/avatar.jpg"
+    },
+    "status": "published",
+    "is_published": true,
+    "cover_image": "/banner.jpg",
+    "chapters_count": 2,
+    "lessons_count": 4,
+    "chapters": [
+      {
+        "id": 20121,
+        "title": "الأساسيات والمفاهيم",
+        "lessons": [
+          {
+            "id": 201201,
+            "title": "مقدمة المقرر وأهداف التعلّم",
+            "duration_seconds": 900
+          },
+          {
+            "id": 201202,
+            "title": "المفاهيم الأساسية",
+            "duration_seconds": 1800
+          }
+        ]
+      },
+      {
+        "id": 20122,
+        "title": "التطبيق العملي",
+        "lessons": [
+          {
+            "id": 201203,
+            "title": "تطبيق على مشروع تدريبي",
+            "duration_seconds": 2400
+          },
+          {
+            "id": 201204,
+            "title": "مراجعة وتقييم التعلّم",
+            "duration_seconds": 1200
+          }
+        ]
+      }
+    ]
+  }
+]

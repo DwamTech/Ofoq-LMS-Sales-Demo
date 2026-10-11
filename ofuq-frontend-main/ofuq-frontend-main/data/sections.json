@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "التقنية",
+    "slug": "tech",
+    "icon": "PiCode",
+    "is_published": true,
+    "display_order": 1
+  },
+  {
+    "id": 2,
+    "name": "الإدارية",
+    "slug": "management",
+    "icon": "PiBriefcase",
+    "is_published": true,
+    "display_order": 2
+  },
+  {
+    "id": 3,
+    "name": "الإعلامية",
+    "slug": "media",
+    "icon": "PiMegaphone",
+    "is_published": true,
+    "display_order": 3
+  },
+  {
+    "id": 4,
+    "name": "التربوية",
+    "slug": "educational",
+    "icon": "PiChalkboardTeacher",
+    "is_published": true,
+    "display_order": 4
+  }
+]

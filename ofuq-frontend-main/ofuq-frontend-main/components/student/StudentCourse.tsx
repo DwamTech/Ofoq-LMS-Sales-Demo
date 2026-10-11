@@ -107,8 +107,8 @@ export default function StudentCourseView({ courseId }: { courseId: number }) {
             <Link href={`/course-details/${enrolled.id}`}>
               تفاصيل المقرر العامة ↗
             </Link>
-            {state === "exam-active" && (
-              <Link href={examHref(courseId)}>عرض الاختبار الحالي ←</Link>
+            {enrolled.has_final_exam && (
+              <Link href={examHref(courseId)}>ابدأ الاختبار النهائي ←</Link>
             )}
             {state === "completed" && (
               <Link href={`/user/my-certificates?course=${courseId}`}>
@@ -120,7 +120,7 @@ export default function StudentCourseView({ courseId }: { courseId: number }) {
         <div className={styles.lessonTotals}>
           <strong>{lessons.length}</strong>
           <span>دروس متاحة للاستكشاف</span>
-          <small>المشاهدة لا تغيّر التقدم في جلسة العرض.</small>
+          <small>أكمل الدروس لتحفظ تقدمك، ثم حل الاختبار للحصول على الشهادة.</small>
         </div>
       </section>
       <section className={styles.section}>

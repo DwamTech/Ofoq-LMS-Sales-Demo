@@ -3,20 +3,14 @@ import HomeHeader from '../../components/HomeHeader';
 import Footer from '../../components/Footer';
 import CommunityMedia from '../../components/brand/CommunityMedia';
 import { communityVideos } from '../../components/brand/communityMediaSources';
-import styles from '../../components/brand/PublicEducation.module.css';
+import { BookOpen, Briefcase, MessagesSquare, Mic } from 'lucide-react';
+import styles from './Community.module.css';
 export const dynamic = 'force-dynamic';
 export default async function CommunityPage() {
-  const statuses = await Promise.all(Object.entries(communityVideos).map(async ([language, url]) => {
-    try {
-      const response = await fetch(url, { cache: 'no-store', signal: AbortSignal.timeout(5000) });
-      await response.body?.cancel();
-      return [language, response.ok] as const;
-    } catch { return [language, false] as const; }
-  }));
-  const available = Object.fromEntries(statuses) as Record<keyof typeof communityVideos, boolean>;
-  return <div><HomeHeader /><main>
-    <header className={styles.courseHero}><p>المحتوى والمجتمع</p><h1>مجتمع {brand.name}</h1><p>استكشف المحتوى التعليمي، وتابع مواد المجتمع عند توفرها.</p></header>
+  const available = {ar:false,en:false,fr:false};
+  return <div><HomeHeader /><main className={styles.page}>
+    <header className={styles.hero}><span className={styles.heroIcon} aria-hidden="true"><MessagesSquare size={30}/></span><p className={styles.eyebrow}>المحتوى والمجتمع</p><h1>مجتمع <em>{brand.name}</em></h1><p className={styles.description}>استكشف المحتوى التعليمي، وتابع مواد المجتمع عند توفرها.</p></header>
     <CommunityMedia available={available} />
-    <section className={styles.communityTopics} aria-label="أقسام المجتمع"><span>حقائب تدريبية</span><span>كتب ومناهج</span><span>محاضرات</span></section>
+    <section className={styles.topics} aria-label="أقسام المجتمع">{([['حقائب تدريبية', Briefcase], ['كتب ومناهج', BookOpen], ['محاضرات', Mic]] as const).map(([label, Icon]) => <div className={styles.topic} key={label}><span aria-hidden="true"><Icon size={26}/></span><h2>{label}</h2></div>)}</section>
   </main><Footer /></div>;
 }

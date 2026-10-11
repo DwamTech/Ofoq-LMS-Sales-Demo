@@ -14,6 +14,7 @@ import { getAllCourses, type Course } from "@/utils/courseService";
 import { getPublicSectionsSafe, type Section } from "@/utils/sectionService";
 import { getBackendAssetUrl } from "@/utils/url";
 import styles from "../diploms/diploms.module.css";
+import { AlertCircle, BookOpen } from 'lucide-react';
 
 function CoursesContent() {
   const searchParams = useSearchParams();
@@ -83,7 +84,7 @@ function CoursesContent() {
   const pageTitle = activeSection ? `كورسات ${activeSection.name}` : `كورسات ${brand.name}`;
 
   return (
-    <main>
+    <main className={styles.page}>
       <HeroSearchSection
         title={pageTitle}
         onSearch={setSearchQuery}
@@ -99,7 +100,7 @@ function CoursesContent() {
               <div className={styles["popular-badge"]}>الكورسات</div>
               <h2 className={styles["popular-title"]}>
                 {searchQuery ? `نتائج البحث عن "${searchQuery}"` : activeSection ? `كورسات ${activeSection.name}` : "الكورسات المتاحة"}
-                <span style={{ fontSize: "16px", color: "#666", marginRight: "10px" }}>
+                <span className={styles.resultCount}>
                   ({loading ? "..." : filteredCourses.length} كورس)
                 </span>
               </h2>
@@ -114,7 +115,7 @@ function CoursesContent() {
                 ))}
               </>
             ) : error ? (
-              <div className={styles["error-state"]}>{error}</div>
+              <div className={styles["error-state"]} role="alert"><span className={styles.stateIcon}><AlertCircle size={32} aria-hidden="true"/></span><p>{error}</p></div>
             ) : filteredCourses.length > 0 ? (
               filteredCourses.map((course) => (
                 <CourseCard
@@ -132,7 +133,7 @@ function CoursesContent() {
                 />
               ))
             ) : (
-              <div className={styles["empty-state"]}>لا توجد كورسات تطابق معايير البحث</div>
+              <div className={styles["empty-state"]} role="status"><span className={styles.stateIcon}><BookOpen size={32} aria-hidden="true"/></span><p>لا توجد كورسات تطابق معايير البحث</p></div>
             )}
           </div>
         </div>

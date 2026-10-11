@@ -1,8 +1,9 @@
 import { brand } from '@/lib/brand'
 import Link from 'next/link'
-import { ArrowUpLeft } from 'lucide-react'
+import { ArrowDownLeft, ArrowUpLeft, BookOpen, Compass, GraduationCap, Layers3, LayoutDashboard, ShieldCheck, Target } from 'lucide-react'
 import { PublicNavigation, PublicFooter } from '@/components/brand/PublicShell'
-import styles from '@/components/brand/Showcase.module.css'
+import { BrandLogo } from '@/components/brand/BrandLogo'
+import styles from './About.module.css'
 
 const sections = [
   ['intro', 'التعريف', 'مساحة واحدة للتجربة التعليمية.', `${brand.name} منصة عربية تجمع إدارة البرامج والمقررات وتجربة الطالب والاختبارات والشهادات والتقارير. تخدم الأكاديميات والجهات التدريبية التي تحتاج إلى تنظيم العمل التعليمي ومتابعته.`],
@@ -14,5 +15,37 @@ const sections = [
 ] as const
 
 export default function AboutPage() {
-  return <div id="top"><PublicNavigation/><main><section className={styles.section}><span className={styles.eyebrow}>التجربة التعليمية</span><div className={styles.sectionIntro}><h1 className={styles.capabilityTitle}>التعليم يستحق<br/>تجربة متصلة.</h1><p>منتج للأكاديميات والجهات التدريبية. يجمع التفاصيل التي تجعل البرنامج التعليمي تجربة مترابطة.</p></div><nav className={styles.aboutIndex} aria-label="أقسام التعريف">{sections.map(([id, label]) => <a href={`#${id}`} key={id}>{label} ↙</a>)}</nav></section><section className={styles.section}><div className={styles.capabilities}><div className={styles.capabilityTitle}><span className={styles.eyebrow}>{brand.name}</span>من أول برنامج،<br/>إلى آخر شهادة.<br/><Link href="/auth" className={styles.catalogLink}>استكشف {brand.name} <ArrowUpLeft size={19}/></Link></div><div>{sections.map(([id, label, title, content]) => <article id={id} key={id} className={styles.aboutArticle}><span className={styles.eyebrow}>{label}</span><h2>{title}</h2><p>{content}</p></article>)}</div></div></section></main><PublicFooter/></div>
+  const icons = [Layers3, Compass, Target, ShieldCheck, BookOpen, LayoutDashboard]
+  return <div id="top"><PublicNavigation/><main className={styles.page}>
+    <section className={styles.hero} aria-labelledby="about-title">
+      <div className={styles.heroGrid}>
+        <div className={styles.heroCopy}>
+          <span className={styles.eyebrow}><span/>التجربة التعليمية</span>
+          <h1 id="about-title">التعليم يستحق<br/><em>تجربة متصلة.</em></h1>
+          <p>منتج للأكاديميات والجهات التدريبية. يجمع التفاصيل التي تجعل البرنامج التعليمي تجربة مترابطة.</p>
+        </div>
+        <div className={styles.visual} aria-hidden="true">
+          <div className={styles.visualOrbit}/><div className={styles.visualOrbitOuter}/>
+          <svg viewBox="0 0 400 300" fill="none"><path d="M85 75L200 150L315 75M200 150L200 260"/></svg>
+          <div className={styles.visualHub}><BrandLogo variant="icon" decorative/></div>
+          {[BookOpen, LayoutDashboard, GraduationCap].map((Icon,i)=><span className={styles.visualNode} data-node={i} key={i}><Icon size={30}/></span>)}
+        </div>
+      </div>
+      <nav className={styles.index} aria-label="أقسام التعريف">{sections.map(([id, label],i)=>{const Icon=icons[i];return <a href={`#${id}`} key={id}><Icon size={18} aria-hidden="true"/><span>{label}</span><ArrowDownLeft size={16} aria-hidden="true"/></a>})}</nav>
+    </section>
+    <section className={styles.details}>
+      <div className={styles.detailsGrid}>
+        <aside className={styles.intro}>
+          <span className={styles.eyebrow}>{brand.name}</span>
+          <h2>من أول برنامج،<br/>إلى آخر <em>شهادة.</em></h2>
+          <div className={styles.path} aria-hidden="true"><Layers3 size={22}/><i/><BookOpen size={22}/><i/><GraduationCap size={24}/></div>
+          <Link href="/auth" className={styles.action}>استكشف {brand.name} <ArrowUpLeft size={20} aria-hidden="true"/></Link>
+        </aside>
+        <div className={styles.articles}>{sections.map(([id,label,title,content],i)=>{const Icon=icons[i];return <article id={id} key={id} className={styles.article}>
+          <div className={styles.articleTop}><span className={styles.articleIcon}><Icon size={24} aria-hidden="true"/></span><span className={styles.articleLabel}>{label}</span></div>
+          <h2>{title}</h2><p>{content}</p>
+        </article>})}</div>
+      </div>
+    </section>
+  </main><PublicFooter/></div>
 }

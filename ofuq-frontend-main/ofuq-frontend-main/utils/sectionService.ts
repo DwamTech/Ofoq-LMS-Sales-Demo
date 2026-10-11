@@ -1,4 +1,5 @@
 import apiClient from './apiClient';
+import { useLocalCatalog, localSections } from '@/lib/localCatalog';
 
 export interface Section {
   id: number;
@@ -43,6 +44,7 @@ const normalizeSectionsResponse = (result: ApiListResponse<Section> | Section[])
 };
 
 export const getPublicSections = async (): Promise<Section[]> => {
+  if (useLocalCatalog) return localSections();
   const response = await apiClient.get('/sections');
   return normalizeSectionsResponse(response.data);
 };

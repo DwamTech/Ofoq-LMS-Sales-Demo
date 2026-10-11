@@ -8,6 +8,8 @@ import {
 } from "react";
 import { loadAdminData, type AdminData } from "@/utils/adminShowcase";
 import styles from "./AdminShowcase.module.css";
+import { FRONTEND_CHANGE } from '@/lib/frontendStore';
+import { localAdminData } from '@/lib/localWorkspaceData';
 const Context = createContext<AdminData | null>(null);
 export function useAdmin() {
   const data = useContext(Context);
@@ -18,6 +20,7 @@ export function AdminProvider({ children }: { children: ReactNode }) {
   const [data, setData] = useState<AdminData | null>(null);
   const [error, setError] = useState(false);
   const [retry, setRetry] = useState(0);
+  useEffect(()=>{const refresh=()=>setData(localAdminData());window.addEventListener(FRONTEND_CHANGE,refresh);window.addEventListener('storage',refresh);return()=>{window.removeEventListener(FRONTEND_CHANGE,refresh);window.removeEventListener('storage',refresh);};},[]);
   useEffect(() => {
     const controller = new AbortController();
     let active = true;

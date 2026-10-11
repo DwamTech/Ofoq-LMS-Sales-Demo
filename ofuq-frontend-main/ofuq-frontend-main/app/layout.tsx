@@ -9,6 +9,7 @@ import '@/styles/students-management.css'
 import '@/styles/toast.css'
 import 'react-phone-number-input/style.css'
 import DemoReadOnlyNotice from '@/components/DemoReadOnlyNotice'
+import LocalPreviewEntry from '@/components/LocalPreviewEntry'
 import { PublicBrandBoundary } from '@/components/brand/PublicShell'
 
 const SITE_TITLE = brand.name;
@@ -74,6 +75,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body>
+        <LocalPreviewEntry />
         <PublicBrandBoundary>{children}</PublicBrandBoundary>
         <DemoReadOnlyNotice />
       </body>

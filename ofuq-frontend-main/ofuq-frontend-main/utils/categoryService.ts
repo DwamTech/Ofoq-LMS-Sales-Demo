@@ -1,5 +1,6 @@
 // خدمة إدارة الدبلومات (الأقسام سابقًا) - Diploma Management Service
 import apiClient from './apiClient';
+import { useLocalCatalog, localPrograms, localProgram } from '@/lib/localCatalog';
 
 // ---------------------------------------------------------------- //
 // 1. الواجهات الأساسية (Interfaces)
@@ -270,6 +271,7 @@ export const getAdminCategory = async (id: number): Promise<Diploma> => {
  * GET /api/categories
  */
 export const getPublicDiplomas = async (params?: { section?: string; section_id?: number; search?: string }): Promise<Diploma[]> => {
+  if (useLocalCatalog) return localPrograms(params).filter(program=>program.is_published!==false);
   try {
     console.log('[GetPublicDiplomas] Sending request to /api/categories');
     // نفترض أن هذا الـ endpoint لا يتطلب مصادقة، لذا قد نستخدم apiClient أو http مباشر
@@ -292,6 +294,7 @@ export const getPublicDiplomas = async (params?: { section?: string; section_id?
  * [Public] جلب العدد الإجمالي للدبلومات المنشورة عبر meta.total
  */
 export const getPublicDiplomasCount = async (): Promise<number> => {
+  if (useLocalCatalog) return localPrograms().length;
   try {
     const response = await apiClient.get('/categories', { params: { per_page: 1 } });
     const result = response.data;
@@ -315,6 +318,11 @@ export const getPublicDiplomasCount = async (): Promise<number> => {
  * GET /api/categories/{slug}
  */
 export const getPublicDiplomaDetails = async (slug: string): Promise<Diploma> => {
+  if (useLocalCatalog) {
+    const program = localProgram(slug);
+    if (!program) throw new Error('لم يتم العثور على البرنامج');
+    return program;
+  }
   try {
     console.log(`[GetPublicDiplomaDetails] Sending request to /api/categories/${slug}`);
     const response = await apiClient.get(`/categories/${slug}`);

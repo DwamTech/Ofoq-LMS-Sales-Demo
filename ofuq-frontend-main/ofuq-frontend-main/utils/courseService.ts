@@ -1,4 +1,8 @@
 import apiClient from './apiClient';
+import { useLocalCatalog, localCourses, localCourse } from '@/lib/localCatalog';
+import { isLocalPreview } from '@/lib/localPreview';
+import { getBackendAssetUrl } from './url';
+import { readFrontend } from '@/lib/frontendStore';
 
 // Helper to handle localized strings (e.g. { ar: "...", en: "..." })
 const getLocalized = (val: any): string => {
@@ -12,10 +16,11 @@ const getLocalized = (val: any): string => {
 
 // Helper to construct full storage URL
 const getStorageUrl = (path: string | null | undefined): string | undefined => {
+  if(isLocalPreview)return path?getBackendAssetUrl(path):undefined;
   if (!path) return undefined;
   if (path.startsWith('http')) return path;
 
-  let baseUrl = process.env.NEXT_PUBLIC_API_URL || '';
+  let baseUrl = '';
   // Remove /api suffix if present to get the root URL
   if (baseUrl.endsWith('/api')) {
     baseUrl = baseUrl.slice(0, -4);
@@ -253,6 +258,7 @@ export const deleteCourse = async (id: number): Promise<void> => {
  * [Public] جلب الكورسات المميزة
  */
 export const getFeaturedCourses = async (): Promise<Course[]> => {
+  if (useLocalCatalog) return localCourses({ per_page: 6 });
   try {
     const response = await apiClient.get<{ data: any[] }>('/courses/featured');
 
@@ -297,6 +303,7 @@ export const getAllCourses = async (params?: {
   sort?: string;
   per_page?: number;
 }): Promise<Course[]> => {
+  if (useLocalCatalog) return localCourses(params).filter(course=>course.status==='published');
   try {
     const response = await apiClient.get<any>('/allCourses', { params: { per_page: 1000, ...(params || {}) } });
     const payload = response?.data?.data?.data
@@ -375,6 +382,7 @@ export const getAllCourses = async (params?: {
  * [Public] جلب تفاصيل كورس واحد
  */
 export const getCourseDetails = async (courseId: string | number): Promise<Course | null> => {
+  if (useLocalCatalog) return localCourse(courseId);
   try {
     const response = await apiClient.get<{ data: Course }>(`/course/${courseId}`, { cacheTTL: 300 });
 
@@ -426,6 +434,7 @@ export type CourseAccessResult = {
 export const checkCourseAccess = async (
   courseId: number | string
 ): Promise<CourseAccessResult> => {
+  if (isLocalPreview) return { allowed:readFrontend().enrolled.includes(Number(courseId)), statusCode:localCourse(courseId) ? 200 : 404 };
   try {
     const res = await apiClient.get<any>(`/courses/${courseId}/progress`);
     return { allowed: true, statusCode: 200, data: res?.data };

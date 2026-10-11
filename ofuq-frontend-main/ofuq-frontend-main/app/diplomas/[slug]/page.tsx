@@ -22,6 +22,7 @@ import { type Course } from '../../../utils/courseService';
 import { getBackendAssetUrl } from '../../../utils/url';
 import { isAuthenticated } from '../../../utils/authService';
 import styles from './DiplomaDetails.module.css';
+import { isLocalPreview } from '@/lib/localPreview';
 
 // نوسّع نوع الدبلومة ليشمل المقررات المتوقعة من الـ API
 type DiplomaDetails = Diploma & { courses?: Course[] };
@@ -129,6 +130,7 @@ export default function DiplomaDetailsPage() {
       return;
     }
 
+    if (isLocalPreview) { await enrollInDiploma(diploma.id); router.push(`/user/diplomas/${diploma.slug}`); return; }
     const loggedIn = isAuthenticated();
     if (!loggedIn) {
       setEnrollStatus({ type: 'error', message: 'يرجى تسجيل الدخول لإتمام التسجيل' });

@@ -227,7 +227,7 @@ export const downloadCertificatePdf = (fileUrl: string): void => {
   }
   
   // إذا كان الرابط نسبيًا، نضيف BASE_URL
-  const fullUrl = fileUrl.startsWith('http') ? fileUrl : `${String(process.env.NEXT_PUBLIC_API_URL || '').replace(/\/api\/?$/, '')}${fileUrl}`;
+  const fullUrl = fileUrl;
   
   // فتح الرابط في نافذة جديدة لتنزيل الملف
   window.open(fullUrl, '_blank');

@@ -1,5 +1,8 @@
 import { http } from "@/lib/http";
 import { getAuthToken, type User } from "@/utils/authService";
+import { isLocalPreview } from '@/lib/localPreview';
+import { localAdminData } from '@/lib/localWorkspaceData';
+import { localAdminRead } from '@/lib/localAdminReads';
 
 export interface AdminLesson {
   id: number;
@@ -176,6 +179,7 @@ export async function adminRead<T>(
   path: string,
   signal?: AbortSignal,
 ): Promise<T> {
+  if (isLocalPreview) return localAdminRead(path) as T;
   const token = getAuthToken();
   if (!token) throw new Error("Authentication required");
   return (
@@ -186,6 +190,7 @@ export async function adminRead<T>(
   ).data;
 }
 export async function loadAdminData(signal: AbortSignal): Promise<AdminData> {
+  if (isLocalPreview) return localAdminData();
   const profile = await adminRead<User | { user: User }>("/profile", signal);
   const user = "user" in profile ? profile.user : profile;
   if (user.role !== "admin") throw new Error("Admin required");
@@ -261,3 +266,4 @@ export function adminNavigationActive(path: string, href: string) {
     return path.startsWith(href) && !path.startsWith("/admin/reports/bunny");
   return path === href || path.startsWith(href + "/");
 }
+

@@ -19,6 +19,7 @@ import { getPublicDiplomas, type Diploma } from '../../utils/categoryService'; /
 import { getBackendAssetUrl } from '../../utils/url'; // تأكد من المسار
 import { getPublicSectionsSafe, type Section } from '../../utils/sectionService';
 import styles from './diploms.module.css';
+import { BookOpen, AlertCircle } from 'lucide-react';
 
 interface DiplomaCardViewModel {
   id: string;
@@ -144,7 +145,7 @@ function DiplomsContent() {
   const pageTitle = activeSection ? `دبلومات ${activeSection.name}` : `دبلومات ${brand.name}`;
 
   return (
-    <main>
+    <main className={styles.page}>
       <HeroSearchSection
         title={pageTitle}
         onSearch={setSearchQuery}
@@ -160,7 +161,7 @@ function DiplomsContent() {
               <div className={styles['popular-badge']}>الدبلومات</div>
               <h2 className={styles['popular-title']}>
                 {searchQuery ? `نتائج البحث عن "${searchQuery}"` : activeSection ? `دبلومات ${activeSection.name}` : 'الدبلومات المتاحة'}
-                <span style={{ fontSize: '16px', color: '#666', marginRight: '10px' }}>
+                <span className={styles.resultCount}>
                   ({loading ? '...' : filteredDiplomas.length} دبلوم)
                 </span>
               </h2>
@@ -176,7 +177,7 @@ function DiplomsContent() {
                 ))}
               </>
             ) : error ? (
-              <div className={styles['error-state']}>{error}</div>
+              <div className={styles['error-state']} role="alert"><span className={styles.stateIcon}><AlertCircle size={32} aria-hidden="true"/></span><p>{error}</p></div>
             ) : filteredDiplomas.length > 0 ? (
               filteredDiplomas.map((diploma) => (
                 <DiplomaCard // <-- استخدام الكومبوننت الجديد
@@ -193,7 +194,7 @@ function DiplomsContent() {
                 />
               ))
             ) : (
-              <div className={styles['empty-state']}>لا توجد دبلومات تطابق معايير البحث</div>
+              <div className={styles['empty-state']} role="status"><span className={styles.stateIcon}><BookOpen size={32} aria-hidden="true"/></span><p>لا توجد دبلومات تطابق معايير البحث</p></div>
             )}
           </div>
         </div>

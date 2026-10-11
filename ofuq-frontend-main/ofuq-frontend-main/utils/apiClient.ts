@@ -1,6 +1,7 @@
 import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { http } from '@/lib/http';
 import { getAuthToken } from './authService';
+import { isLocalPreview } from '@/lib/localPreview';
 
 // إضافة ترويسة Authorization تلقائيًا كما كان سابقًا
 http.interceptors.request.use(
@@ -40,6 +41,7 @@ function defaultTTL(url: string): number {
 // مُغلف بسيط حول http يُضيف التخزين المؤقت + منع التكرار لطلبات GET
 const apiClient = {
   async get<T = any>(url: string, config?: RequestConfig): Promise<AxiosResponse<T>> {
+    if (isLocalPreview) return http.get<T>(url, config);
     const ttl = Number(config?.cacheTTL ?? defaultTTL(url));
     const key = buildKey(url, config);
 

@@ -11,6 +11,7 @@ import type { User } from '@/utils/authService';
 import { HorizonIntro } from './HorizonIntro';
 import { AdminWorld, StudentWorld } from './PersonaWorlds';
 import styles from './Experience.module.css';
+import { isLocalPreview } from '@/lib/localPreview';
 
 export default function ExperienceGateway({ enabled, program }: { enabled: boolean; program: { name: string; courses: number } | null }) {
   const reduced = useReducedMotion();
@@ -46,6 +47,7 @@ export default function ExperienceGateway({ enabled, program }: { enabled: boole
   useEffect(() => { if (error) errorRef.current?.focus(); }, [error]);
 
   const select = async (persona: DemoPersona, confirmed = false) => {
+    if (isLocalPreview) { window.location.assign(experienceRoutes[persona]); return; }
     if (busy) return;
     setStage('ready'); setActive(persona); setError('');
     if ((user || localStorage.getItem('auth_token')) && !confirmed) { setConfirm(persona); return; }
@@ -63,12 +65,12 @@ export default function ExperienceGateway({ enabled, program }: { enabled: boole
   };
 
   return <main className={styles.gateway} data-experience-ready={hydrated} data-session-checked={!checkingSession} data-intro={stage} aria-busy={busy || checkingSession}>
-    <nav className={styles.navigation} aria-label={`تنقل تجربة ${brand.name}`}><Link href="/" aria-label={`العودة إلى موقع ${brand.name}`}><BrandMark/></Link><Link href="/"><ArrowRight size={16}/> العودة للموقع</Link><Link href={experienceRoutes.login}>الدخول المعتاد <ArrowUpLeft size={16}/></Link></nav>
+    <nav className={styles.navigation} aria-label={`تنقل تجربة ${brand.name}`}><Link href="/" aria-label={`العودة إلى موقع ${brand.name}`}><BrandMark/></Link><Link href="/"><ArrowRight size={16}/> العودة للموقع</Link></nav>
     <header className={styles.sceneHeading}><span className={styles.eyebrow}>التجربة التعليمية</span><h1>أهلًا بك في <em>{brand.name}.</em></h1><p>من هنا، تتّسع الرحلة. اختر المنظور الذي تريد استكشافه.</p><HorizonIntro stage={stage}/>{stage !== 'ready' && <button type="button" className={styles.skip} onClick={() => setStage('ready')} aria-controls="experience-worlds">تخطَّ المقدمة ←</button>}</header>
-    <div className={styles.sessionNote}><LockKeyhole size={15}/><span>{enabled ? 'جلسة عرض حقيقية · حسابات اصطناعية · استكشاف للقراءة فقط' : 'الدخول التجريبي غير مفعّل هنا · تسجيل الدخول المعتاد محفوظ'}</span>{user && <span>جلسة حالية: {user.role === 'student' ? 'طالب' : 'إدارة'} · اختيار تجربة أخرى يستبدل الجلسة</span>}</div>
+    <div className={styles.sessionNote}><LockKeyhole size={15}/><span>{isLocalPreview ? 'معاينة محلية · بيانات تجريبية · دخول مباشر بدون تسجيل' : enabled ? 'جلسة عرض حقيقية · حسابات اصطناعية · استكشاف للقراءة فقط' : 'الدخول التجريبي غير مفعّل هنا · تسجيل الدخول المعتاد محفوظ'}</span>{user && !isLocalPreview && <span>جلسة حالية: {user.role === 'student' ? 'طالب' : 'إدارة'} · اختيار تجربة أخرى يستبدل الجلسة</span>}</div>
     <section id="experience-worlds" className={styles.worlds} aria-label="اختر تجربة المنصة">
       {(['student','admin'] as const).map(persona => <article key={persona} className={`${styles.world} ${persona === 'student' ? styles.student : styles.admin}`} data-selected={active === persona}>
-        <div className={styles.worldHeading}><span className={styles.eyebrow}>{persona === 'student' ? `التجربة التعليمية` : '02 / THE BIGGER PICTURE'}</span><h2>{persona === 'student' ? 'رحلتك، نحو أبعد.' : 'كلّ التفاصيل. رؤية واحدة.'}</h2><p>{persona === 'student' ? 'مقرراتك، تقدمك، اختباراتك وإنجازاتك. مساحة تتابع فيها تعلّمك خطوةً بخطوة.' : 'البرامج والطلاب والتقارير. استكشف أدوات تشغيل التجربة التعليمية من داخل المنصة.'}</p></div>
+        <div className={styles.worldHeading}><span className={styles.eyebrow}>{persona === 'student' ? `التجربة التعليمية` : '02 / THE BIGGER PICTURE'}</span><h2><span className={styles.personaTitle}>{persona === 'student' ? 'لوحة الطلاب' : 'لوحة الإدارة'}</span><span className={styles.worldTagline}>{persona === 'student' ? 'رحلتك، نحو أبعد.' : 'كلّ التفاصيل. رؤية واحدة.'}</span></h2><p>{persona === 'student' ? 'مقرراتك، تقدمك، اختباراتك وإنجازاتك. مساحة تتابع فيها تعلّمك خطوةً بخطوة.' : 'البرامج والطلاب والتقارير. استكشف أدوات تشغيل التجربة التعليمية من داخل المنصة.'}</p></div>
         {persona === 'student' ? <StudentWorld program={program}/> : <AdminWorld/>}
         <div className={styles.worldFooter}><span>{persona === 'student' ? 'تعلم · تقييم · إنجاز' : 'تنظيم · متابعة · تشغيل'}</span><button type="button" id={`enter-${persona}`} disabled={busy || checkingSession} onClick={() => void select(persona)} onFocus={() => setActive(persona)} onPointerEnter={() => setActive(persona)} aria-describedby="entry-disclosure">{busy && active === persona ? 'جارٍ التحقق من الجلسة…' : persona === 'student' ? 'لوحة الطلاب' : 'لوحة الإدارة'}<ArrowUpLeft size={20}/></button></div>
       </article>)}

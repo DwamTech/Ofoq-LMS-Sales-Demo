@@ -3,12 +3,14 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { validatedStoredIdentity } from '@/utils/demoGateway';
 import type { User } from '@/utils/authService';
+import { isLocalPreview } from '@/lib/localPreview';
 
 export default function SessionGuard({ children, admin = false }: { children: ReactNode; admin?: boolean }) {
   const router = useRouter();
   const [status, setStatus] = useState<'checking'|'allowed'|'error'>('checking');
   const [retry, setRetry] = useState(0);
   useEffect(() => {
+    if (isLocalPreview) { setStatus('allowed'); return; }
     const controller = new AbortController();
     let active = true;
     setStatus('checking');

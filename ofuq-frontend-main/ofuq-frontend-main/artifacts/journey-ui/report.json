@@ -1,0 +1,132 @@
+[
+  {
+    "width": 1440,
+    "step": "0",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 858.6875,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "program"
+  },
+  {
+    "width": 1440,
+    "step": "1",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 858.109375,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "student"
+  },
+  {
+    "width": 1440,
+    "step": "2",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 885.09375,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "exam"
+  },
+  {
+    "width": 1440,
+    "step": "3",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 886.15625,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "certificate"
+  },
+  {
+    "width": 1440,
+    "step": "4",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 858.6875,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "admin"
+  },
+  {
+    "width": 1024,
+    "step": "0",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 846.875,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "program"
+  },
+  {
+    "width": 1024,
+    "step": "1",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 834.875,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "student"
+  },
+  {
+    "width": 1024,
+    "step": "2",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 861.078125,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "student"
+  },
+  {
+    "width": 1024,
+    "step": "3",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 862.140625,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "certificate"
+  },
+  {
+    "width": 1024,
+    "step": "4",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 846.875,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "admin"
+  },
+  {
+    "width": 768,
+    "step": "0",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 0,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "program"
+  },
+  {
+    "width": 390,
+    "step": "0",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 0,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "program"
+  },
+  {
+    "width": 360,
+    "step": "0",
+    "headingVisible": true,
+    "activeSteps": 1,
+    "stepsBottom": 0,
+    "overflow": [],
+    "mobileCards": 5,
+    "perspective": "program"
+  }
+]

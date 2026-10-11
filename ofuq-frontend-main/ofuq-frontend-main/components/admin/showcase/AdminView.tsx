@@ -11,9 +11,15 @@ import {
 } from "./AdminStudents";
 import { EntityReport, Instructors, Reports } from "./AdminReports";
 import { Intro, Panel, Restricted } from "./AdminPrimitives";
+import LocalAdminManager from './LocalAdminManager';
 const positiveId = (value: string | null | undefined) =>
   value && /^\d+$/.test(value) && Number(value) > 0 ? Number(value) : undefined;
 export default function AdminView() {
+  const path=usePathname();
+  const settings=['/admin/supervisors','/admin/profile-management','/admin/database-backups'].some(route=>path.startsWith(route));
+  return <><LocalAdminManager key={path}/>{!settings&&<AdminViewContent/>}</>;
+}
+function AdminViewContent() {
   const path = usePathname(),
     query = useSearchParams();
   if (path === "/admin") return <AdminOverview />;

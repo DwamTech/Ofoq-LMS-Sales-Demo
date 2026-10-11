@@ -410,3 +410,14 @@
   .settingsPage :global(.preference-item) { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   .settingsPage :global(.modal-image-container) { min-height: 300px; min-width: 300px; }
 }
+/* Brand presentation shared with the student workspace. */
+.settingsPage { width:100%; padding:0; max-width:none; }
+.settingsPage :global(.settings-header) { text-align:start; padding:28px; border:1px solid #ddd1e7; border-radius:24px; background:radial-gradient(ellipse at 10% 0,#e8dcf1,transparent 70%),#fffdf780; }
+.settingsPage :global(.settings-title) { font-size:36px; font-weight:500; color:#49385f; }.settingsPage :global(.settings-subtitle) { font-size:16px; color:#796b84; }
+.settingsPage :global(.profile-section),.settingsPage :global(.password-section) { background:#fffdf7; border:1px solid #ddd1e7; border-radius:22px; padding:28px; margin-bottom:22px; box-shadow:0 8px 24px #392c4d04; }
+.settingsPage :global(.form-label) { font-size:15px; color:#635080; }.settingsPage :global(.form-input) { border-color:#d5c6e2; border-radius:12px; background:#faf8fc; color:#29233b; font-size:16px; min-width:0; }
+.settingsPage :global(.form-input:focus) { border-color:#9580ad; box-shadow:0 0 0 3px #63508018; }.settingsPage :global(.form-hint) { color:#796b84; font-size:13px; }
+.settingsPage :global(.save-button),.settingsPage :global(.image-button.primary) { background:#635080; border-radius:13px; box-shadow:none; }.settingsPage :global(.save-button:hover),.settingsPage :global(.image-button.primary:hover) { background:#49385f; box-shadow:0 6px 18px #63508018; }
+.settingsPage :global(.image-button.secondary) { background:#f0e9f7; border-color:#ddd1e7; color:#635080; border-radius:13px; }.settingsPage :global(.profile-image) { background:linear-gradient(130deg,#eee4f6,#edf2de); color:#635080; border-color:#ddd1e7; }.settingsPage :global(.camera-icon) { background:#635080; }
+.settingsPage :global(.password-notice) { background:#edf2de; color:#68764e; border-radius:14px; border-color:#dce3c6; }.settingsPage :global(.forgot-password-link) { color:#635080; }
+@media(max-width:650px) { .settingsPage :global(.settings-header) { padding:22px 18px; }.settingsPage :global(.settings-title) { font-size:27px; }.settingsPage :global(.settings-subtitle) { font-size:15px; }.settingsPage :global(.profile-section),.settingsPage :global(.password-section) { padding:22px 16px; }.settingsPage :global(.form-row) { grid-template-columns:minmax(0,1fr); }.settingsPage :global(.image-button) { max-width:100%; white-space:normal; } }

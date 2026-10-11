@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useStudent } from "./StudentProvider";
 import { PageIntro } from "./LearningPrimitives";
+import { CertificatePreview } from '@/components/brand/CertificatePreview';
 import {
   issuedCertificate,
   downloadStudentCertificate,
@@ -65,8 +66,7 @@ export default function StudentCertificates() {
         eyebrow="ACHIEVEMENT / SOMETHING TO KEEP"
         title="للإنجاز، أثر يبقى."
       >
-        شهاداتك الصادرة، باسمك ومرجعها الحقيقي. كل تنزيل يسترجع الملف الموجود
-        دون توليد شهادة.
+        شهاداتك الصادرة باسمك. يمكنك معاينتها، وتنزيل نسخة PDF، والتحقق من رقمها.
       </PageIntro>
       <div className={styles.certificateIntro}>
         <Award size={42} />
@@ -171,7 +171,7 @@ export default function StudentCertificates() {
                 </Link>
                 <button type="button" onClick={() => setPreview(certificate)}>
                   <Eye size={17} />
-                  بيانات الشهادة
+                  معاينة الشهادة
                 </button>
               </div>
               {!certificate.file_path && (
@@ -200,9 +200,9 @@ export default function StudentCertificates() {
             </button>
           </div>
           <p>
-            هذه بيانات السجل وليست معاينة مولّدة لملف PDF. يسترجع زر التنزيل
-            المستند الفعلي.
+            معاينة الشهادة وبيانات الإنجاز المحفوظة في تجربتك المحلية.
           </p>
+          <CertificatePreview studentName={preview.user_name} courseTitle={preview.course_title} grade="ناجح" date={preview.issued_at} serial={preview.serial_number}/>
           <dl>
             <dt>الطالب</dt>
             <dd>{preview.user_name || user.name}</dd>

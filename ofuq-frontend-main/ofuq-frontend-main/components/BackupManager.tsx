@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { http as axios } from '@/lib/http';
 import { FaDatabase, FaDownload, FaRedo, FaTrash, FaPlus, FaUpload, FaExclamationTriangle, FaCheckCircle, FaTimesCircle, FaShieldAlt } from 'react-icons/fa';
 import styles from './BackupManager.module.css';
 import Toast from './Toast';
@@ -45,7 +45,7 @@ export default function BackupManager() {
     const [toastType, setToastType] = useState<'success' | 'error' | 'warning' | 'info' | 'confirm'>('info');
     const [backupPendingDeletion, setBackupPendingDeletion] = useState<Backup | null>(null);
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+    const API_URL = '';
 
     // Load backups
     useEffect(() => {

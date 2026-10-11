@@ -186,8 +186,7 @@ function Workspace() {
         <div className={styles.notice}>
           <ShieldCheck size={16} />
           <span>
-            بيانات عرض اصطناعية محفوظة في النظام · قراءة فقط · ليست مؤشرات
-            تجارية فعلية
+            تجربة محلية كاملة · الإضافات والتعديلات محفوظة في هذا المتصفح
           </span>
         </div>
         {error && <p role="alert">{error}</p>}

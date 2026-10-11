@@ -87,11 +87,11 @@ function Workspace({ children }: { children: ReactNode }) {
         );
       })}
       <div className={styles.navSecondary}>
-        <Link href="/user/settings" onClick={() => setOpen(false)}>
+        <Link href="/user/settings" aria-current={path === "/user/settings" ? "page" : undefined} onClick={() => setOpen(false)}>
           <UserRound size={18} />
           الملف والإعدادات
         </Link>
-        <Link href="/user/fav" onClick={() => setOpen(false)}>
+        <Link href="/user/fav" aria-current={path === "/user/fav" ? "page" : undefined} onClick={() => setOpen(false)}>
           <Heart size={18} />
           المفضلة
         </Link>
@@ -114,7 +114,7 @@ function Workspace({ children }: { children: ReactNode }) {
       </a>
       <aside className={styles.sidebar}>
         <Link href="/" aria-label={`${brand.name} — العودة للموقع`}>
-          <BrandMark compact />
+          <BrandMark compact theme="dark" />
         </Link>
         <p className={styles.kicker}>مساحة التعلّم</p>
         <nav aria-label="تنقل الطالب">{links}</nav>
@@ -158,8 +158,7 @@ function Workspace({ children }: { children: ReactNode }) {
         )}
         {isDemoMode && (
           <div className={styles.demoNotice} role="note">
-            حساب عرض اصطناعي · التقدم والشهادات حقيقية داخل بيانات العرض ·
-            الاستكشاف للقراءة فقط
+            تجربة محلية كاملة · تقدمك ونتائجك محفوظة في هذا المتصفح
           </div>
         )}
         <main id="student-main" className={styles.main}>
