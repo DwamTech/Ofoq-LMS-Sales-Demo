@@ -1,4 +1,6 @@
 'use client';
+import { BrandLogo } from '@/components/brand/BrandLogo'
+import { brand } from '@/lib/brand'
 
 import React from 'react';
 import Link from 'next/link';
@@ -10,19 +12,19 @@ export default function AboutOfuqSection() {
       <div className={styles.box}>
         <header className={styles.header}>
           <h2 id="about-ofuq-title" className={styles.title}>
-            <span className={styles.titleAccent}>عن منصة أفق</span>
+            <span className={styles.titleAccent}>عن {brand.name}</span>
           </h2>
           <div className={styles.titleLine} aria-hidden="true" />
         </header>
 
         <div className={styles.content}>
           <aside className={styles.logoCard} aria-hidden="true">
-            <img src="/mahad_alofk2.png" alt="شعار منصة أفق" className={styles.logo} />
+            <BrandLogo className={styles.logo}/>
           </aside>
 
           <div className={styles.textArea}>
             <p className={styles.description}>
-              أفق منصة تعليمية رائدة تقدّم برامج دبلوم احترافية تجمع بين الأصالة والمعاصرة، وتؤسس تجربة تعلم عالية الجودة.
+              {brand.name} منصة تعليمية رائدة تقدّم برامج دبلوم احترافية تجمع بين الأصالة والمعاصرة، وتؤسس تجربة تعلم عالية الجودة.
               نُصمّم مناهج متوازنة ومتكاملة تسد الفجوة بين النظرية والممارسة، وتواكب احتياجات سوق العمل وتحديات العصر.
             </p>
 

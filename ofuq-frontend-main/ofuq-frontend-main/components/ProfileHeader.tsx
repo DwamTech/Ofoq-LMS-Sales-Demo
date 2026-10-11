@@ -1,7 +1,8 @@
 'use client';
+import { BrandLogo } from '@/components/brand/BrandLogo'
+import { brand, publicBrandText } from '@/lib/brand'
 
 import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { isAuthenticated, getCurrentUser, signout, User } from '../utils/authService';
@@ -103,13 +104,7 @@ const ProfileHeader = () => {
           {!(pathname?.startsWith('/dashboard') || pathname?.startsWith('/user') || pathname?.startsWith('/admin')) && (
             <div className={ph['header-logo']}>
               <Link href="/">
-                <Image
-                  src="/mahad_alofk2.png"
-                  alt="منصة أفق"
-                  width={120}
-                  height={50}
-                  className={ph['logo-image']}
-                />
+                <BrandLogo className={ph['logo-image']}/>
               </Link>
             </div>
           )}
@@ -117,8 +112,8 @@ const ProfileHeader = () => {
           {/* Desktop Navigation Links - Centered */}
           <nav className={clsx(ph['header-nav'], ph['desktop-nav'])}>
             <Link href="/" prefetch={false} className={clsx(ph['nav-link1'], pathname === '/' && ph['active'])}>الرئيسية</Link>
-            <Link href="/diploms" prefetch={false} className={clsx(ph['nav-link1'], (pathname?.startsWith('/diploms') || pathname?.startsWith('/course-details')) && ph['active'])}>دبلومات منصة أفق</Link>
-            <Link href="/community" prefetch={false} className={clsx(ph['nav-link1'], pathname?.startsWith('/community') && ph['active'])}>مجتمع أفق</Link>
+            <Link href="/diploms" prefetch={false} className={clsx(ph['nav-link1'], (pathname?.startsWith('/diploms') || pathname?.startsWith('/course-details')) && ph['active'])}>دبلومات {brand.name}</Link>
+            <Link href="/community" prefetch={false} className={clsx(ph['nav-link1'], pathname?.startsWith('/community') && ph['active'])}>مجتمع {brand.name}</Link>
             <Link href="/user/fav" prefetch={false} className={clsx(ph['nav-link1'], pathname?.startsWith('/user/fav') && ph['active'])}>المفضلة</Link>
             <Link href="/about" prefetch={false} className={clsx(ph['nav-link1'], pathname?.startsWith('/about') && ph['active'])}>من نحن</Link>
           </nav>
@@ -143,7 +138,7 @@ const ProfileHeader = () => {
                     <img src={profileImageUrl} alt="Profile" width={36} height={36} className={styles['profile-image']} style={{ borderRadius: '50%', objectFit: 'cover' }} />
                   </div>
                   <div className={styles['profile-details']}>
-                    <span className={styles['profile-name']}>مرحباً، {user?.name}</span>
+                    <span className={styles['profile-name']}>مرحباً، {publicBrandText(user?.name ?? "")}</span>
                   </div>
                 </div>
 
@@ -201,8 +196,8 @@ const ProfileHeader = () => {
           </div>
           <nav className={ph['sidebar-nav']}>
             <Link href="/" prefetch={false} className={clsx(ph['sidebar-link'], pathname === '/' && ph['sidebar-active'])} onClick={closeSidebar}>الرئيسية</Link>
-            <Link href="/diploms" prefetch={false} className={clsx(ph['sidebar-link'], (pathname?.startsWith('/diploms') || pathname?.startsWith('/course-details')) && ph['sidebar-active'])} onClick={closeSidebar}>دبلومات منصة أفق</Link>
-            <Link href="/community" prefetch={false} className={clsx(ph['sidebar-link'], pathname?.startsWith('/community') && ph['sidebar-active'])} onClick={closeSidebar}>مجتمع أفق</Link>
+            <Link href="/diploms" prefetch={false} className={clsx(ph['sidebar-link'], (pathname?.startsWith('/diploms') || pathname?.startsWith('/course-details')) && ph['sidebar-active'])} onClick={closeSidebar}>دبلومات {brand.name}</Link>
+            <Link href="/community" prefetch={false} className={clsx(ph['sidebar-link'], pathname?.startsWith('/community') && ph['sidebar-active'])} onClick={closeSidebar}>مجتمع {brand.name}</Link>
             <Link href="/favorites" prefetch={false} className={clsx(ph['sidebar-link'], pathname?.startsWith('/favorites') && ph['sidebar-active'])} onClick={closeSidebar}>المفضلة</Link>
             <Link href="/about" prefetch={false} className={clsx(ph['sidebar-link'], pathname?.startsWith('/about') && ph['sidebar-active'])} onClick={closeSidebar}>من نحن</Link>
           </nav>

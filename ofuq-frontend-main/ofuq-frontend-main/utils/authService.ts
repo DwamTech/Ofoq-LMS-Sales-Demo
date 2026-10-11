@@ -254,6 +254,8 @@ export const signout = async (): Promise<void> => {
         console.log('[Signout] Clearing localStorage');
         window.localStorage?.removeItem('auth_token');
         window.localStorage?.removeItem('user_data');
+        window.localStorage?.removeItem('ofoq_demo_session');
+        window.dispatchEvent(new Event('auth-change'));
         console.log('[Signout] Storage cleared');
       } catch (e) {
         console.warn('[Signout] localStorage unavailable during clear', e);
@@ -268,6 +270,8 @@ export const signout = async (): Promise<void> => {
         console.log('[Signout] Clearing localStorage on error');
         window.localStorage?.removeItem('auth_token');
         window.localStorage?.removeItem('user_data');
+        window.localStorage?.removeItem('ofoq_demo_session');
+        window.dispatchEvent(new Event('auth-change'));
       } catch (e) {
         console.warn('[Signout] localStorage unavailable during clear (error path)', e);
       }

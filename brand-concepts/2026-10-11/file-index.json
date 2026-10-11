@@ -1,0 +1,367 @@
+{
+  "root": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11",
+  "scope": "Standalone creative approval only",
+  "count": 60,
+  "files": [
+    {
+      "filename": "FONT-LICENSE.txt",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/FONT-LICENSE.txt",
+      "bytes": 4901,
+      "sha256": "30ea9a65267609c0f6f4c0a9d3744967d306c989f30de744f69cde202408bd57"
+    },
+    {
+      "filename": "README.md",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/README.md",
+      "bytes": 14866,
+      "sha256": "5e60fc7c94a0a971e644fdc4b9585b6fd37f4a92d0204e6772e4f8f8fdaa86bb"
+    },
+    {
+      "filename": "build-concepts.py",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/build-concepts.py",
+      "bytes": 11907,
+      "sha256": "74007148c3c96f3347186850a6cb924e2a608db231f04ea437ac0a2cf0e9ec40"
+    },
+    {
+      "filename": "comparison-board.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/comparison-board.png",
+      "bytes": 291035,
+      "sha256": "4b713b15c9b407681ccb03dab466b5b1c1b5cc30a6059484fc5b94e06e00efa8"
+    },
+    {
+      "filename": "comparison-board.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/comparison-board.svg",
+      "bytes": 523083,
+      "sha256": "5b2820986ea74cdc4e87462811387cf1e2b09eccb3baf55c18e5b7316b9753fb"
+    },
+    {
+      "filename": "comparison-board@2x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/comparison-board@2x.png",
+      "bytes": 649996,
+      "sha256": "4cd36e5b412685f272fa8902d6e93546693e83a21d0ab551e192433c0b4daf16"
+    },
+    {
+      "filename": "concept-A-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-dark.svg",
+      "bytes": 5608,
+      "sha256": "784f5b804377aa84d184e69cb329d86a2163e06ebbb305ed4cdfd3a00c369a08"
+    },
+    {
+      "filename": "concept-A-dark@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-dark@4x.png",
+      "bytes": 51025,
+      "sha256": "4a2f33c5877f3b89e165b3cddaea9c6452003a22edfffff78f7c8f089b521b98"
+    },
+    {
+      "filename": "concept-A-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-light.svg",
+      "bytes": 5608,
+      "sha256": "c67fb27665b5cd674435648a079b3c3a0d138b8f73e5fde692a5e18e5d56da3e"
+    },
+    {
+      "filename": "concept-A-light@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-light@4x.png",
+      "bytes": 52915,
+      "sha256": "36bad86f043b9078e4e5525e3c5e70c687390cf093f121bc0ac896b3adc8b1d9"
+    },
+    {
+      "filename": "concept-A-mono.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-mono.svg",
+      "bytes": 5608,
+      "sha256": "23ca4994b54162a5b17cb1ed85cb601aaac8c58cddf63d48be2ec26319868eb2"
+    },
+    {
+      "filename": "concept-A-mono@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-mono@4x.png",
+      "bytes": 47896,
+      "sha256": "6aff9689eb1e6249f97a6c9bd8b87aeaf9609a327ed906a49574c8949cc388f6"
+    },
+    {
+      "filename": "concept-A-preview-dark.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-preview-dark.png",
+      "bytes": 60349,
+      "sha256": "27b9b5a63e459e72cf6e3fdebf106bfce42d624bf2935f437c6e472e171238bd"
+    },
+    {
+      "filename": "concept-A-preview-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-preview-dark.svg",
+      "bytes": 22166,
+      "sha256": "860a2c07b10875efd5180ca1434522dd27bd7cc28941c73308ec744a30843571"
+    },
+    {
+      "filename": "concept-A-preview-light.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-preview-light.png",
+      "bytes": 60677,
+      "sha256": "490d56f123df542f254e7dd76f9f8d583198c7e2c4550d7c3d6695a372f207de"
+    },
+    {
+      "filename": "concept-A-preview-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-preview-light.svg",
+      "bytes": 22166,
+      "sha256": "601e1ac93e9d5d4efb232def293f3249446afc63e0a6e5386a23e844c52cd984"
+    },
+    {
+      "filename": "concept-A-symbol-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-symbol-dark.svg",
+      "bytes": 591,
+      "sha256": "2d0b9325edce1e8fb44b9cb6ec1780a340d4be8eb3d9170d5deb5779e18c6f18"
+    },
+    {
+      "filename": "concept-A-symbol-dark@16x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-symbol-dark@16x.png",
+      "bytes": 29046,
+      "sha256": "1a4af7420f1fd90cd5846cf1011d8ced569beeb26e461ae2a294d698e211e971"
+    },
+    {
+      "filename": "concept-A-symbol-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-symbol-light.svg",
+      "bytes": 591,
+      "sha256": "59f5fbb6a35d9791325ec24d6ac4eae71cd9d2d637062b91a223961b39f21a77"
+    },
+    {
+      "filename": "concept-A-symbol-light@16x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-symbol-light@16x.png",
+      "bytes": 30246,
+      "sha256": "daaf6690becf84db4eeddbacac904c90308c4125404c05957c8d5cce762a6408"
+    },
+    {
+      "filename": "concept-A-symbol-mono.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-A-symbol-mono.svg",
+      "bytes": 591,
+      "sha256": "e6a2a8e3137e2d3055b5cae81100961ba7c82985a6307df5ab357e4dc5690a63"
+    },
+    {
+      "filename": "concept-B-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-dark.svg",
+      "bytes": 5563,
+      "sha256": "6fea034523bdf62c59830faca743a29f3f8f0d85350ebd56eef2b30f2d930547"
+    },
+    {
+      "filename": "concept-B-dark@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-dark@4x.png",
+      "bytes": 38540,
+      "sha256": "04e0f4c91192e476fdd46ed43ce5d2ac42e722ab776e2579d886c46b5e4b8ddb"
+    },
+    {
+      "filename": "concept-B-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-light.svg",
+      "bytes": 5563,
+      "sha256": "624bc1ba06efa30e90bab5a6cb23884cdbbcd721c7a3848b9ea5e19bbb79aedd"
+    },
+    {
+      "filename": "concept-B-light@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-light@4x.png",
+      "bytes": 40129,
+      "sha256": "2fb2838ec1e58c7916a14828ab06b972c7955f8d0dc316247b2e8a28952c8b5f"
+    },
+    {
+      "filename": "concept-B-mono.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-mono.svg",
+      "bytes": 5563,
+      "sha256": "9ca8ff75de62dbac891915d5786347c17e0ffb2213188703fcca3ff834fa24a8"
+    },
+    {
+      "filename": "concept-B-mono@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-mono@4x.png",
+      "bytes": 36245,
+      "sha256": "73daf7e543f220e8e0305ea86894cfc25533868ea1f5ce9d1e12a59a7079a1e5"
+    },
+    {
+      "filename": "concept-B-preview-dark.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-preview-dark.png",
+      "bytes": 50733,
+      "sha256": "7a209bb342bf1fda957ec99e265a06a106f7c5890f4c4e5d8e95854fdecc8121"
+    },
+    {
+      "filename": "concept-B-preview-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-preview-dark.svg",
+      "bytes": 21444,
+      "sha256": "53ea1a1c307b64802d4fe647eb28b4f833d4771182f2a513454816c63f247242"
+    },
+    {
+      "filename": "concept-B-preview-light.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-preview-light.png",
+      "bytes": 50677,
+      "sha256": "3b17d2eec026175541588f1c74040709479278a2d2e3f1671e457d965ccaa2ee"
+    },
+    {
+      "filename": "concept-B-preview-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-preview-light.svg",
+      "bytes": 21444,
+      "sha256": "011f2d6068e7c2d3bd69087f51c6702efe10fa7538232f53fadb3c2172e2d80a"
+    },
+    {
+      "filename": "concept-B-symbol-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-symbol-dark.svg",
+      "bytes": 389,
+      "sha256": "d1feb46cba36985ce24b4a75de287073fc5d2d3fd5594aa2042ef9de96cebc34"
+    },
+    {
+      "filename": "concept-B-symbol-dark@16x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-symbol-dark@16x.png",
+      "bytes": 27545,
+      "sha256": "0922b5f09547fde15290307582785d7038a6f412a8644b6ca678c1b1ab5a8dfb"
+    },
+    {
+      "filename": "concept-B-symbol-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-symbol-light.svg",
+      "bytes": 389,
+      "sha256": "ca2747b518aa7ef3d1c33dfdde6b3b96ae3d3e2cefc9b081af00eabdc6be37f1"
+    },
+    {
+      "filename": "concept-B-symbol-light@16x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-symbol-light@16x.png",
+      "bytes": 28316,
+      "sha256": "c4c9a561061be16bc5198a0ccae98216e89354bccc592468d90b21f59c43195e"
+    },
+    {
+      "filename": "concept-B-symbol-mono.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-B-symbol-mono.svg",
+      "bytes": 389,
+      "sha256": "69e22bc085d3a7ef760e485db663db0e3bbd1024784bacb4b9e522c79a07d76d"
+    },
+    {
+      "filename": "concept-C-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-dark.svg",
+      "bytes": 5897,
+      "sha256": "bf7129ab1f559b03f175e67f9642b12dbddafea616a27d57b6290140fdb6984a"
+    },
+    {
+      "filename": "concept-C-dark@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-dark@4x.png",
+      "bytes": 43985,
+      "sha256": "8a868521c6b37e99358cd4fd8c1e95dc45581d1ba4e93cf228b1c9222667af88"
+    },
+    {
+      "filename": "concept-C-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-light.svg",
+      "bytes": 5897,
+      "sha256": "bd28324d70cb5515a0e9638afab48b0d7a588b73b4b3a32da411b38886037660"
+    },
+    {
+      "filename": "concept-C-light@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-light@4x.png",
+      "bytes": 45584,
+      "sha256": "1f408e0ae0c10adf83ac81e8f28c6805986cdc7ea044cd6d92e578276b12120f"
+    },
+    {
+      "filename": "concept-C-mono.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-mono.svg",
+      "bytes": 5897,
+      "sha256": "71b1b8440b497f122465aa7cb971e7b25aab46b0448d5e1d8d3cb23280f08917"
+    },
+    {
+      "filename": "concept-C-mono@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-mono@4x.png",
+      "bytes": 41465,
+      "sha256": "1faf9af65a4fbd582ecf231cc1fb52b2bd70948ef61fa7d919d644b40b90bd0d"
+    },
+    {
+      "filename": "concept-C-preview-dark.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-preview-dark.png",
+      "bytes": 52939,
+      "sha256": "074f0aaeddfd29732fc094728dc044568e722889f3ef634188787ab6de7d5d29"
+    },
+    {
+      "filename": "concept-C-preview-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-preview-dark.svg",
+      "bytes": 23013,
+      "sha256": "d9cf7987b60327aa59e387e28612461e9bc8b67c84a8b7147f8005b6db4fb6fc"
+    },
+    {
+      "filename": "concept-C-preview-light.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-preview-light.png",
+      "bytes": 52972,
+      "sha256": "f8b2c185b9ed93b117a42a3467bc7ccb1a7adcd136190c557fe1362c64b31909"
+    },
+    {
+      "filename": "concept-C-preview-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-preview-light.svg",
+      "bytes": 23013,
+      "sha256": "a78ecbeee23783ec3edd5550812621007a12e7752509bb623da4a1a285fa3797"
+    },
+    {
+      "filename": "concept-C-symbol-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-symbol-dark.svg",
+      "bytes": 484,
+      "sha256": "1c67b3ec4837429af80751b4914e127ce4b2e5b5ecff3b09efa8231eead6233a"
+    },
+    {
+      "filename": "concept-C-symbol-dark@16x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-symbol-dark@16x.png",
+      "bytes": 26399,
+      "sha256": "87b25e572eadc9aa4f0356df14502bb937e31972c3bdaac87c01760a7cc8b13d"
+    },
+    {
+      "filename": "concept-C-symbol-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-symbol-light.svg",
+      "bytes": 484,
+      "sha256": "69f96751335c019946dbdbd77d121388ee2fa13dc149a2ac66b3b7c171456ac5"
+    },
+    {
+      "filename": "concept-C-symbol-light@16x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-symbol-light@16x.png",
+      "bytes": 27393,
+      "sha256": "8f1abed1e91e2b0d89921f52fde10af42ef382d685998bfc24a94ba8d28e871d"
+    },
+    {
+      "filename": "concept-C-symbol-mono.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/concept-C-symbol-mono.svg",
+      "bytes": 484,
+      "sha256": "d5f516de011c1705934f7bb7bf83eebc841731b71518efd733b726071de12744"
+    },
+    {
+      "filename": "drawing-review.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/drawing-review.png",
+      "bytes": 32222,
+      "sha256": "c0ad21994f16f82740f6663acd40697d3f5467c06f7084c235e85e03d12cf690"
+    },
+    {
+      "filename": "drawing-review.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/drawing-review.svg",
+      "bytes": 17944,
+      "sha256": "568040b6cb032768d60dbd09e4cd430e6ca2eddbf762909e151bdc7020f8f75e"
+    },
+    {
+      "filename": "letter-reference.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/letter-reference.png",
+      "bytes": 12823,
+      "sha256": "0cf57d0c359c1516fb26e721b4b4c5e9605b637f118ae0c092770879635bc99c"
+    },
+    {
+      "filename": "letter-reference.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/letter-reference.svg",
+      "bytes": 3776,
+      "sha256": "ce9eecf53def08f9fc8e69f2230f8d03dbdf7e98f7784040b8a4503196c254b4"
+    },
+    {
+      "filename": "render-concepts.mjs",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/render-concepts.mjs",
+      "bytes": 1240,
+      "sha256": "745dbd381b8d34a7c80cd6da17994af82180e355c5111d4e473640686c20a297"
+    },
+    {
+      "filename": "review.html",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/review.html",
+      "bytes": 1560,
+      "sha256": "e8ab2940b7fa3d9bc887618927af2d2b250bef58b49c7b2d73dae0f83007c206"
+    },
+    {
+      "filename": "shaping-evidence.json",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/shaping-evidence.json",
+      "bytes": 53182,
+      "sha256": "dc4a16cf422b31a88ac7f9761c0ebcccca55080e0e653e3093b2acd3e26890da"
+    },
+    {
+      "filename": "validation-results.json",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/validation-results.json",
+      "bytes": 15570,
+      "sha256": "38b10541cfda17af8ce2eaf8442f8f6b21d8e64717db54cd7f4fc9898c47491c"
+    },
+    {
+      "filename": "verify-concepts.mjs",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/2026-10-11/verify-concepts.mjs",
+      "bytes": 2932,
+      "sha256": "43bb10aff8cf78e10aebc2ac29620c84a0a442a3b03cca844d827e09be4cf997"
+    }
+  ]
+}

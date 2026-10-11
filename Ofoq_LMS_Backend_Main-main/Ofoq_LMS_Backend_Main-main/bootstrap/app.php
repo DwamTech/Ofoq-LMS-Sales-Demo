@@ -30,8 +30,17 @@ return Application::configure(basePath: dirname(__DIR__))
             // Removed EnsureFrontendRequestsAreStateful to enforce token-only API auth
             'throttle:api',
             \App\Http\Middleware\EnsureDemoIsReadOnly::class,
+            \App\Http\Middleware\RestrictDemoGatewayToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ]);
+
+        // In demo mode a mutation must be rejected before authentication or
+        // role checks. Otherwise an unauthenticated POST can return 401 even
+        // though the operation is meant to be uniformly read-only.
+        $middleware->prependToPriorityList(
+            \Illuminate\Contracts\Auth\Middleware\AuthenticatesRequests::class,
+            \App\Http\Middleware\EnsureDemoIsReadOnly::class,
+        );
 
         // Route middleware aliases
         $middleware->alias([

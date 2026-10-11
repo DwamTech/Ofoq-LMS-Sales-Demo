@@ -1,6 +1,7 @@
+import { brand } from '@/lib/brand'
 export const metadata = {
-  title: 'منصة أفق للتعليم عن بعد',
-  description: 'تسجيل الدخول إلى منصة أفق للتعليم عن بعد',
+  title: brand.name,
+  description: `تسجيل الدخول إلى ${brand.name}`,
 }
 
 export default function RootLayout({

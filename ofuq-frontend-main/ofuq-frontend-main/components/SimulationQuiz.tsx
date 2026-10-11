@@ -1,4 +1,5 @@
 'use client';
+import { brand } from '@/lib/brand'
 
 import React, { useState } from 'react';
 import '../styles/quiz.css';
@@ -140,7 +141,7 @@ const SimulationQuiz: React.FC<SimulationQuizProps> = ({
 const defaultSimulationQuestions: SimulationQuestion[] = [
   {
     id: 1,
-    question: "ما هو الهدف الأساسي من دراسة العلوم الشرعية في منصة أفق؟",
+    question: `ما هو الهدف الأساسي من دراسة العلوم الشرعية في ${brand.name}؟`,
     options: [
       "فهم النصوص الشرعية وتطبيقها في الحياة العملية",
       "حفظ النصوص فقط دون فهم",
@@ -150,7 +151,7 @@ const defaultSimulationQuestions: SimulationQuestion[] = [
   },
   {
     id: 2,
-    question: "أي من التالي يُعتبر من أهم مبادئ التربية الحديثة التي يركز عليها منصة أفق؟",
+    question: `أي من التالي يُعتبر من أهم مبادئ التربية الحديثة التي يركز عليها ${brand.name}؟`,
     options: [
       "التعلم النشط والتفاعلي",
       "الحفظ والتلقين فقط",
@@ -160,7 +161,7 @@ const defaultSimulationQuestions: SimulationQuestion[] = [
   },
   {
     id: 3,
-    question: "ما هي أهمية دمج التقنية في التعليم وفقاً لرؤية منصة أفق؟",
+    question: `ما هي أهمية دمج التقنية في التعليم وفقاً لرؤية ${brand.name}؟`,
     options: [
       "تحسين جودة التعلم ومواكبة العصر الرقمي",
       "استبدال المعلم بالتقنية",
@@ -170,7 +171,7 @@ const defaultSimulationQuestions: SimulationQuestion[] = [
   },
   {
     id: 4,
-    question: "كيف يساهم الإعلام التربوي في تحقيق أهداف منصة أفق؟",
+    question: `كيف يساهم الإعلام التربوي في تحقيق أهداف ${brand.name}؟`,
     options: [
       "نشر المحتوى التعليمي والتربوي بطرق مبتكرة وجذابة",
       "الترفيه فقط دون محتوى تعليمي",
@@ -180,7 +181,7 @@ const defaultSimulationQuestions: SimulationQuestion[] = [
   },
   {
     id: 5,
-    question: "ما الذي يميز منهج منصة أفق في الجمع بين الأصالة والمعاصرة؟",
+    question: `ما الذي يميز منهج ${brand.name} في الجمع بين الأصالة والمعاصرة؟`,
     options: [
       "الاستفادة من التراث الإسلامي مع استخدام الأساليب التعليمية الحديثة",
       "التركيز على التراث فقط",

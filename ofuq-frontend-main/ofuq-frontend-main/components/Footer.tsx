@@ -1,8 +1,12 @@
 'use client';
+import { BrandLogo } from '@/components/brand/BrandLogo'
+import { brand } from '@/lib/brand'
 
 import React, { useEffect, useMemo, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { isBrandedPublicRoute } from './brand/publicRoutes';
+import { PublicFooter } from './brand/PublicShell';
 import styles from './Footer.module.css';
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa6';
@@ -11,7 +15,7 @@ import { getPublicDiplomas, type Diploma } from '../utils/categoryService';
 
 const Footer = () => {
   const techSupportNumber = '201555855857';
-  const techSupportWhatsappMessage = 'دعم فني لمنصة أفق:\n\n';
+  const techSupportWhatsappMessage = `دعم فني ل${brand.name}:\n\n`;
   const techSupportWhatsappLink = `https://wa.me/${techSupportNumber}?text=${encodeURIComponent(techSupportWhatsappMessage)}`;
   const emailAddress = 'info@ofuq.academy';
   const locationText = 'القاهرة - مصر';
@@ -63,17 +67,11 @@ const Footer = () => {
           <div className={styles['logo-section']}>
             <div className={styles['logo-card']}>
               <Link href="/" className={styles['logo-link']}>
-                <Image
-                  src="/logo.png"
-                  alt="منصة أفق"
-                  width={240}
-                  height={130}
-                  className={styles['footer-logo']}
-                />
+                <BrandLogo className={styles['footer-logo']}/>
               </Link>
             </div>
             <p className={styles['footer-description']}>
-              أفق منصة تعليمية رائدة متخصصة في بناء وتقديم برامج دبلوم احترافية في مجالات متنوعة تجمع بين الأصالة والمعاصرة. تأسست المنصة لسد الفجوة بين التعليم النظري والممارسة العملية من خلال مناهج علمية مبتكرة ومتكاملة تواكب احتياجات سوق العمل وتحديات العصر.
+              {brand.name} منصة تعليمية رائدة متخصصة في بناء وتقديم برامج دبلوم احترافية في مجالات متنوعة تجمع بين الأصالة والمعاصرة. تأسست المنصة لسد الفجوة بين التعليم النظري والممارسة العملية من خلال مناهج علمية مبتكرة ومتكاملة تواكب احتياجات سوق العمل وتحديات العصر.
             </p>
           </div>
         </div>
@@ -126,7 +124,7 @@ const Footer = () => {
 
             <motion.div className={styles['contact-item']} whileHover={{ scale: 1.01 }}>
               <FaEnvelope className={styles['contact-icon']} />
-              <span>{emailAddress}</span>
+              <span>البريد الإلكتروني للدعم</span>
               <motion.a
                 href={`mailto:${emailAddress}`}
                 className={`${styles['contact-btn']} ${styles['contact-btn-outline']}`}
@@ -191,7 +189,7 @@ const Footer = () => {
               <li className={styles['footer-item']}>لا توجد دبلومات حالياً</li>
             )}
 
-            <Link prefetch={false} href="/community"><li className={styles['footer-item']}>مجتمع أفق</li></Link>
+            <Link prefetch={false} href="/community"><li className={styles['footer-item']}>مجتمع {brand.name}</li></Link>
           </ul>
         </div>
       </div>
@@ -206,7 +204,7 @@ const Footer = () => {
             whileHover={{ scale: 1.05, color: '#00aaff' }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
-            Developed by Dwam Tech منصة أفق. Copyright © All Rights Reserved.
+            {brand.name} © جميع الحقوق محفوظة.
           </motion.a>
         </p>
       </div>
@@ -216,4 +214,7 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default function ScopedFooter() {
+  const path = usePathname();
+  return isBrandedPublicRoute(path) ? <PublicFooter /> : <Footer />;
+}

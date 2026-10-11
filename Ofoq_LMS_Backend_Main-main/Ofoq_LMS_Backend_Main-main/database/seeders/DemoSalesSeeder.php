@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
+use App\Support\DemoEnvironmentGuard;
 
 /**
  * Explicit-only, deterministic sales dataset for an empty, migrated demo database.
@@ -22,6 +23,7 @@ class DemoSalesSeeder extends Seeder
 
     public function run(): void
     {
+        DemoEnvironmentGuard::assertLocalDemo();
         $this->assertSchema();
         DB::transaction(function (): void {
             $sections = $this->seedSections();
@@ -83,10 +85,37 @@ class DemoSalesSeeder extends Seeder
         ];
         $diplomas = [];
         foreach ($diplomaData as $i => [$name, $description, $section]) {
-            $diplomas[] = CategoryOfCourse::firstOrCreate(['slug' => 'demo-sales-diploma-'.($i + 1)], [
-                'name' => $name, 'description' => $description.' '.self::MARKER, 'section_id' => $sections[$section]->id,
-                'is_published' => true, 'is_free' => false, 'price' => 1499 + $i * 200, 'display_order' => $i + 1, 'total_views' => 1200 + $i * 180,
-            ]);
+            $attributes = [
+                'name' => $name,
+                'description' => $description.' '.self::MARKER,
+                'section_id' => $sections[$section]->id,
+                'is_published' => true,
+                'is_free' => false,
+                'price' => 1499 + $i * 200,
+                'display_order' => $i + 1,
+                'total_views' => 1200 + $i * 180,
+            ];
+
+            // Do not key this by a slug that the model's Arabic slug observer
+            // replaces on create. The marker plus name is the stable identity
+            // of this seeder's records and prevents repeated runs creating
+            // empty, suffixed diploma duplicates.
+            $diploma = CategoryOfCourse::query()
+                ->where('name', $name)
+                ->where('description', 'like', '%'.self::MARKER.'%')
+                ->withCount('courses')
+                ->orderByDesc('courses_count')
+                ->orderBy('id')
+                ->first();
+
+            if ($diploma) {
+                $diploma->fill($attributes);
+                $diploma->save();
+            } else {
+                $diploma = CategoryOfCourse::create($attributes);
+            }
+
+            $diplomas[] = $diploma;
         }
         $courseNames = [
             ['HTML وCSS لبناء صفحات احترافية',0], ['JavaScript وتطبيقات الويب التفاعلية',0], ['React لتطوير الواجهات الحديثة',0], ['Laravel وبناء واجهات API',0],
@@ -162,11 +191,33 @@ class DemoSalesSeeder extends Seeder
         $result = [];
         for ($i = 1; $i <= self::STUDENTS; $i++) {
             $registered = now()->subDays(15 + (($i * 17) % 240));
-            $result[] = User::firstOrCreate(['email' => sprintf('student%03d@demo.ofoq.local', $i)], [
-                'name' => $names[($i - 1) % count($names)].' '.(($i - 1) % 37 + 1), 'password' => $password, 'role' => 'student',
-                'phone' => sprintf('+2010%07d', $i), 'nationality' => $countries[($i - 1) % count($countries)],
-                'qualification' => 'بكالوريوس', 'created_at' => $registered, 'updated_at' => $registered,
-            ]);
+            $email = sprintf('student%03d@demo.ofoq.local', $i);
+            $phone = sprintf('+2010%07d', $i);
+
+            // A designated showcase student may deliberately be given a
+            // stable public-facing email while retaining this original phone.
+            // Treat either deterministic identity as the same seeded person;
+            // never try to recreate it and violate the unique phone index.
+            $student = User::query()
+                ->where('email', $email)
+                ->orWhere('phone', $phone)
+                ->first();
+
+            if (! $student) {
+                $student = User::create([
+                    'email' => $email,
+                    'name' => $names[($i - 1) % count($names)].' '.(($i - 1) % 37 + 1),
+                    'password' => $password,
+                    'role' => 'student',
+                    'phone' => $phone,
+                    'nationality' => $countries[($i - 1) % count($countries)],
+                    'qualification' => 'بكالوريوس',
+                    'created_at' => $registered,
+                    'updated_at' => $registered,
+                ]);
+            }
+
+            $result[] = $student;
         }
         return $result;
     }

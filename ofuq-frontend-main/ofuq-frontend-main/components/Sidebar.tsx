@@ -1,4 +1,6 @@
 "use client";
+import { BrandLogo } from '@/components/brand/BrandLogo'
+import { brand } from '@/lib/brand'
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -124,7 +126,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen = false, onClose }) => {
     <aside className={`${styles.sidebar} ${isMobileOpen ? styles.open : ''}`}>
       <div className={styles['sidebar-header']}>
         <Link href="/" className={styles['sidebar-logo']} onClick={handleNavigate} title="الانتقال إلى الصفحة الرئيسية">
-          <img src="/logo.png" alt="منصة أفق للتعليم عن بعد" />
+          <BrandLogo/>
           <span className={styles['home-badge']} aria-hidden="true">
             <Home size={14} strokeWidth={2.4} />
           </span>
@@ -159,7 +161,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMobileOpen = false, onClose }) => {
       </nav>
 
       <div className={styles['sidebar-footer']}>
-        <p className={styles['footer-text']}>© منصة أفق للتعليم عن بعد</p>
+        <p className={styles['footer-text']}>© {brand.name}</p>
       </div>
     </aside>
   );

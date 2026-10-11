@@ -1,0 +1,120 @@
+[
+  {
+    "test": "production HTTP /",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": true
+  },
+  {
+    "test": "production HTTP /about",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": true
+  },
+  {
+    "test": "production HTTP /courses",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": true
+  },
+  {
+    "test": "production HTTP /diploms",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": true
+  },
+  {
+    "test": "production HTTP /community",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": true
+  },
+  {
+    "test": "production HTTP /privacy",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": true
+  },
+  {
+    "test": "production HTTP /terms",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": true
+  },
+  {
+    "test": "production HTTP /search",
+    "statusCode": 307,
+    "location": null,
+    "status": "PASS",
+    "brandScope": false
+  },
+  {
+    "test": "production HTTP /verify-certificate",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": true
+  },
+  {
+    "test": "production HTTP /auth",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": false
+  },
+  {
+    "test": "production HTTP /user",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": false
+  },
+  {
+    "test": "production HTTP /admin",
+    "statusCode": 200,
+    "location": null,
+    "status": "PASS",
+    "brandScope": false
+  },
+  {
+    "test": "production HTTP /brand-lab",
+    "statusCode": 404,
+    "location": null,
+    "status": "PASS",
+    "brandScope": false
+  },
+  {
+    "test": "genuine public API /categories",
+    "statusCode": 200,
+    "count": 5,
+    "status": "PASS"
+  },
+  {
+    "test": "homepage uses real program names",
+    "names": [
+      "دبلومة تطوير الويب الشامل",
+      "دبلومة البرمجة بلغة Python",
+      "دبلومة تصميم واجهات وتجربة المستخدم",
+      "دبلومة تحليل البيانات",
+      "دبلومة المهارات الرقمية والذكاء الاصطناعي"
+    ],
+    "status": "PASS"
+  },
+  {
+    "test": "genuine public API /allCourses",
+    "statusCode": 200,
+    "count": 12,
+    "status": "PASS"
+  },
+  {
+    "test": "homepage manifest JavaScript gzip (not network benchmark)",
+    "bytes": 174419
+  }
+]

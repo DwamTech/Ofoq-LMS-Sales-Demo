@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { ProgramArtwork } from './brand/ProgramArtwork';
+import { publicDescription, publicPrice } from './brand/publicContent';
 import styles from './DiplomaCard.module.css';
 
 export interface DiplomaCardProps {
@@ -21,11 +23,6 @@ const truncate = (text: string, max: number = 140): string => {
   return clean.slice(0, Math.max(0, max - 1)) + '…';
 };
 
-const formatPrice = (amount: number): string => {
-  const n = Number(amount || 0);
-  return n.toLocaleString('ar-SA');
-};
-
 export default function DiplomaCard({
   id,
   name,
@@ -38,17 +35,17 @@ export default function DiplomaCard({
 }: DiplomaCardProps) {
   const href = `/diplomas/${slug}`; // رابط صفحة تفاصيل الدبلومة
   const imgSrc = image || '/logo.png'; // صورة افتراضية عند غياب الصورة
-  const displayPrice = isFree ? 'مجاني' : `${formatPrice(price)} ر.س`;
+  const displayPrice = publicPrice(price, isFree);
 
   return (
     <Link href={href} prefetch={false} className={styles['diploma-card']} data-id={id}>
       <div className={styles['diploma-card-image-wrapper']}>
-        <img className={styles['diploma-card-image']} src={imgSrc} alt={name} />
+        <ProgramArtwork title={name} image={imgSrc} identity={slug} className={styles['diploma-card-image']} />
       </div>
 
       <div className={styles['diploma-card-content']}>
         <h3 className={styles['diploma-card-title']}>{name}</h3>
-        <p className={styles['diploma-card-description']}>{truncate(description)}</p>
+        <p className={styles['diploma-card-description']}>{truncate(publicDescription(description))}</p>
 
         <div className={styles['diploma-card-meta']}>
           <span className={styles['diploma-card-price']}>{displayPrice}</span>

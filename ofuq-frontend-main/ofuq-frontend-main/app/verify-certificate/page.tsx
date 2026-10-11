@@ -1,4 +1,5 @@
 'use client';
+import { brand } from '@/lib/brand'
 
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -130,7 +131,7 @@ function VerifyCertificateContent() {
         <div className="hero-content">
           <h1 className="hero-title">التحقق من الشهادات</h1>
           <p className="hero-subtitle">
-            تحقق من صحة الشهادات الصادرة عن منصة أفق للتعليم
+            تحقق من صحة الشهادات الصادرة عن {brand.name}
           </p>
           <p className="hero-description">
             أدخل الرقم التسلسلي الموجود على الشهادة للتحقق من صحتها ومعلوماتها
@@ -236,14 +237,15 @@ function VerifyCertificateContent() {
 
               <div className="verification-badge">
                 <div className="badge-icon">🔒</div>
-                <span>تم التحقق من قبل منصة أفق</span>
+                <span>تم التحقق من قبل {brand.name}</span>
               </div>
+              {result.serial_number?.startsWith('OFOQ-') && <p>شهادة تاريخية صُدرت بالهوية السابقة. لم يتغير ملفها أو رقمها أو مرجع التحقق.</p>}
             </div>
           )}
 
           <div className="verify-footer">
             <p className="footer-text">
-              هذه الخدمة مقدمة من منصة أفق للتعليم عن بعد
+              هذه الخدمة مقدمة من {brand.name}
             </p>
             <p className="footer-subtext">
               للاستفسارات أو المساعدة، يرجى التواصل مع فريق الدعم

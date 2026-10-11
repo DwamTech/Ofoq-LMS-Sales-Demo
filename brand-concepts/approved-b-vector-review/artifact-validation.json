@@ -1,0 +1,426 @@
+{
+  "pass": 34,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "ICO has exact required native-size frames",
+      "status": "PASS",
+      "details": [
+        [
+          16,
+          16
+        ],
+        [
+          24,
+          24
+        ],
+        [
+          32,
+          32
+        ],
+        [
+          48,
+          48
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          256,
+          256
+        ]
+      ]
+    },
+    {
+      "name": "mansatak-horizontal-dark.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 7,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-horizontal-light.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 7,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-horizontal-mono-white.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 7,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-horizontal-mono.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 7,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-icon-dark.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 5,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-icon-light.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 5,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-icon-mono-white.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 5,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-icon-mono.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 5,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-stacked-dark.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 7,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-stacked-light.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 7,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-stacked-mono-white.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 7,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-stacked-mono.svg: vector structure",
+      "status": "PASS",
+      "details": {
+        "paths": 7,
+        "duplicateIds": 0
+      }
+    },
+    {
+      "name": "mansatak-horizontal-dark@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          2400,
+          928
+        ],
+        "inkBounds": [
+          97,
+          64,
+          2276,
+          897
+        ]
+      }
+    },
+    {
+      "name": "mansatak-horizontal-light@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          2400,
+          928
+        ],
+        "inkBounds": [
+          97,
+          64,
+          2276,
+          897
+        ]
+      }
+    },
+    {
+      "name": "mansatak-horizontal-mono-white@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          2400,
+          928
+        ],
+        "inkBounds": [
+          97,
+          64,
+          2276,
+          897
+        ]
+      }
+    },
+    {
+      "name": "mansatak-horizontal-mono@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          2400,
+          928
+        ],
+        "inkBounds": [
+          97,
+          64,
+          2276,
+          897
+        ]
+      }
+    },
+    {
+      "name": "mansatak-icon-dark@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          896,
+          896
+        ],
+        "inkBounds": [
+          48,
+          48,
+          844,
+          845
+        ]
+      }
+    },
+    {
+      "name": "mansatak-icon-light@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          896,
+          896
+        ],
+        "inkBounds": [
+          48,
+          48,
+          844,
+          845
+        ]
+      }
+    },
+    {
+      "name": "mansatak-icon-mono-white@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          896,
+          896
+        ],
+        "inkBounds": [
+          48,
+          48,
+          844,
+          845
+        ]
+      }
+    },
+    {
+      "name": "mansatak-icon-mono@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          896,
+          896
+        ],
+        "inkBounds": [
+          48,
+          48,
+          844,
+          845
+        ]
+      }
+    },
+    {
+      "name": "mansatak-stacked-dark@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          1488,
+          1744
+        ],
+        "inkBounds": [
+          97,
+          48,
+          1390,
+          1685
+        ]
+      }
+    },
+    {
+      "name": "mansatak-stacked-light@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          1488,
+          1744
+        ],
+        "inkBounds": [
+          97,
+          48,
+          1390,
+          1685
+        ]
+      }
+    },
+    {
+      "name": "mansatak-stacked-mono-white@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          1488,
+          1744
+        ],
+        "inkBounds": [
+          97,
+          48,
+          1390,
+          1685
+        ]
+      }
+    },
+    {
+      "name": "mansatak-stacked-mono@4x.png: transparent valid export, no edge clipping",
+      "status": "PASS",
+      "details": {
+        "mode": "RGBA",
+        "size": [
+          1488,
+          1744
+        ],
+        "inkBounds": [
+          97,
+          48,
+          1390,
+          1685
+        ]
+      }
+    },
+    {
+      "name": "favicon 16px: native output",
+      "status": "PASS",
+      "details": {
+        "size": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "name": "favicon 24px: native output",
+      "status": "PASS",
+      "details": {
+        "size": [
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "name": "favicon 32px: native output",
+      "status": "PASS",
+      "details": {
+        "size": [
+          32,
+          32
+        ]
+      }
+    },
+    {
+      "name": "favicon 48px: native output",
+      "status": "PASS",
+      "details": {
+        "size": [
+          48,
+          48
+        ]
+      }
+    },
+    {
+      "name": "favicon 64px: native output",
+      "status": "PASS",
+      "details": {
+        "size": [
+          64,
+          64
+        ]
+      }
+    },
+    {
+      "name": "favicon 180px: native output",
+      "status": "PASS",
+      "details": {
+        "size": [
+          180,
+          180
+        ]
+      }
+    },
+    {
+      "name": "favicon 192px: native output",
+      "status": "PASS",
+      "details": {
+        "size": [
+          192,
+          192
+        ]
+      }
+    },
+    {
+      "name": "favicon 256px: native output",
+      "status": "PASS",
+      "details": {
+        "size": [
+          256,
+          256
+        ]
+      }
+    },
+    {
+      "name": "favicon 512px: native output",
+      "status": "PASS",
+      "details": {
+        "size": [
+          512,
+          512
+        ]
+      }
+    }
+  ]
+}

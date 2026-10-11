@@ -1,4 +1,5 @@
 'use client';
+import { brand } from '@/lib/brand'
 
 const SIMULATION_ENABLED = false;
 
@@ -31,6 +32,8 @@ import { isAuthenticated, getAuthToken } from '../../utils/authService';
 import { Course, getCourseDetails, getCourseProgress, getCourseProgressDetails, checkCourseAccess } from '../../utils/courseService';
 import Toast from '../../components/Toast';
 import { isDemoMode } from '../../utils/demoMode';
+import StudentWorkspace from '@/components/student/StudentWorkspace';
+import StudentLessonView from '@/components/student/StudentLesson';
 import '@/styles/toast.css';
 
 const watchSessionStartCache = new Map<string, {
@@ -592,7 +595,7 @@ function WatchPageContent() {
                 الرئيسية
               </a>
               <a href="/diploms" className={styles['breadcrumb-item']}>
-                دبلومات أفق
+                دبلومات {brand.name}
               </a>
               <a
                 href={`/diplomas/${(course.category as any)?.name?.slug || (course.category as any)?.slug || (course.category as any)?.id || ''}`}
@@ -713,10 +716,14 @@ function WatchPageContent() {
 }
 
 // المكون الأساسي الذي يُصدّر
+function DemoWatchPage() {
+  const params = useSearchParams();
+  return <StudentWorkspace><StudentLessonView courseId={Number(params.get('courseId'))} chapterId={Number(params.get('chapterId'))} lessonId={Number(params.get('lessonId'))}/></StudentWorkspace>;
+}
 export default function WatchPage() {
   return (
     <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>جاري التحميل...</div>}>
-      <WatchPageContent />
+      {isDemoMode ? <DemoWatchPage/> : <WatchPageContent />}
     </Suspense>
   );
 }

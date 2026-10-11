@@ -1,4 +1,5 @@
 "use client";
+import { brand } from '@/lib/brand'
 
 import { Suspense, useState, useMemo, useEffect } from 'react';
 export const dynamic = 'force-dynamic';
@@ -140,7 +141,7 @@ function DiplomsContent() {
     sectionSlug ? sections.find((section) => section.slug === sectionSlug) : undefined
   ), [sectionSlug, sections]);
 
-  const pageTitle = activeSection ? `دبلومات ${activeSection.name}` : 'دبلومات منصة أفق';
+  const pageTitle = activeSection ? `دبلومات ${activeSection.name}` : `دبلومات ${brand.name}`;
 
   return (
     <main>

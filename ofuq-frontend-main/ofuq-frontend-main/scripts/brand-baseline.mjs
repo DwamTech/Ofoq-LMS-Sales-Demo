@@ -1,0 +1,15 @@
+import { spawnSync } from 'node:child_process';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+const out = resolve('artifacts/mansatak');
+await mkdir(out, {recursive:true});
+const run = (args) => spawnSync(process.execPath,args,{encoding:'utf8',windowsHide:true,maxBuffer:30_000_000});
+const ts = run(['node_modules/typescript/bin/tsc','--noEmit','--pretty','false']);
+const lint = run(['node_modules/eslint/bin/eslint.js','app','components','utils','lib','-f','json']);
+const jest = run(['node_modules/jest/bin/jest.js','--runInBand']);
+const domain = spawnSync('php',['artisan','demo:admin-read-audit'],{cwd:resolve('../../Ofoq_LMS_Backend_Main-main/Ofoq_LMS_Backend_Main-main'),env:{...process.env,DEMO_ENTRY_DATABASE:'ofoq_demo'},encoding:'utf8',windowsHide:true});
+if(domain.status!==0) throw Error('Isolated demo audit unavailable');
+const records = JSON.parse(lint.stdout);
+const result = {typescript:ts.stdout.split(/\r?\n/).filter(l=>l.includes('error TS')),lint:{errors:records.reduce((n,r)=>n+r.errorCount,0),warnings:records.reduce((n,r)=>n+r.warningCount,0),files:records.map(r=>({file:r.filePath,errors:r.errorCount,warnings:r.warningCount}))},jest:{exitCode:jest.status,output:jest.stdout+jest.stderr},domain:JSON.parse(domain.stdout),config:await readFile('next.config.js','utf8')};
+await writeFile(resolve(out,'baseline.json'),JSON.stringify(result,null,2));
+console.log(JSON.stringify({typescript:result.typescript.length,lintErrors:result.lint.errors,lintWarnings:result.lint.warnings,jest:result.jest.output.split(/\r?\n/).filter(l=>/^Tests:|^Test Suites:/.test(l)),domainTables:Object.keys(result.domain.domain_tables).length}));

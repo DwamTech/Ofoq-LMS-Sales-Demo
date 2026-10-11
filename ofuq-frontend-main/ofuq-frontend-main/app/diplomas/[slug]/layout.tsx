@@ -1,11 +1,13 @@
+import { brand } from '@/lib/brand'
 import type { Metadata } from 'next';
 import { getPublicDiplomaDetails } from '@/utils/categoryService';
+import { publicDescription } from '@/components/brand/publicContent';
 
-const SITE_TITLE = 'منصة أفق للتعليم والتدريب';
+const SITE_TITLE = brand.name;
 
 function trimDescription(text?: string, max = 180): string {
   if (!text) return 'دبلومات احترافية تجمع بين الأصالة والمعاصرة بمنهج متكامل يدمج المعرفة والمهارات التطبيقية.';
-  const cleaned = String(text).replace(/\s+/g, ' ').trim();
+  const cleaned = publicDescription(text);
   return cleaned.length > max ? cleaned.slice(0, max - 1) + '…' : cleaned;
 }
 

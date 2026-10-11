@@ -51,30 +51,32 @@ class UserLessonController extends Controller
             ], 403);
         }
 
-        // Track lesson progress
-        $lessonProgress = UserLessonProgress::firstOrCreate(
-            [
-                'user_id' => $user->id,
-                'lesson_id' => $id
-            ],
-            [
-                'status' => 'in_progress',
-                'started_at' => now()
-            ]
-        );
+        // Viewing a lesson must not create or update learning records in demo mode.
+        if (!config('demo.enabled')) {
+            // Track lesson progress only outside the read-only demo.
+            $lessonProgress = UserLessonProgress::firstOrCreate(
+                [
+                    'user_id' => $user->id,
+                    'lesson_id' => $id
+                ],
+                [
+                    'status' => 'in_progress',
+                    'started_at' => now()
+                ]
+            );
 
-        // If lesson wasn't completed before, mark as in progress
-        if ($lessonProgress->status === 'not_started') {
-            $lessonProgress->update([
-                'status' => 'in_progress',
-                'started_at' => now()
-            ]);
+            // If lesson wasn't completed before, mark as in progress.
+            if ($lessonProgress->status === 'not_started') {
+                $lessonProgress->update([
+                    'status' => 'in_progress',
+                    'started_at' => now()
+                ]);
+            }
+
+            $this->touchTrackingStartMetadata($lessonProgress);
+
+            $this->updateCourseProgress($user->id, $course->id);
         }
-
-        $this->touchTrackingStartMetadata($lessonProgress);
-
-        // Update course progress
-        $this->updateCourseProgress($user->id, $course->id);
 
         return response()->json([
             'message' => 'Lesson fetched successfully',
@@ -202,6 +204,7 @@ class UserLessonController extends Controller
      */
     private function updateCourseProgress($userId, $courseId)
     {
+        if (config('demo.enabled')) return;
         // Get total lessons in course
         $totalLessons = Lesson::whereHas('chapter', function($query) use ($courseId) {
             $query->where('course_id', $courseId);
@@ -292,6 +295,10 @@ class UserLessonController extends Controller
         $enrollment = UserCourse::where('user_id', $user->id)
             ->where('course_id', $courseId)
             ->first();
+
+        if (config('demo.enabled') && !$enrollment) {
+            return response()->json(['code' => 'DEMO_PROGRESS_NOT_PREPARED', 'message' => 'No persisted course progress is available for this demo enrollment.'], 409);
+        }
 
         // Get lesson progress
         $lessonProgress = UserLessonProgress::where('user_id', $user->id)

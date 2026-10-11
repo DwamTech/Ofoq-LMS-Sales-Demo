@@ -1,3 +1,4 @@
+import { brand } from '@/lib/brand'
 export default function Head() {
   const description =
     'اكتشف دبلومات ومنهجيات تدريبية متوازنة تجمع التعلم بالممارسة والتعلم المدمج والمشروعات التطبيقية، مع مدربين خبراء وتقنيات حديثة لرحلة تعليمية فعالة.';
@@ -13,7 +14,7 @@ export default function Head() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'منصة أفق للتعليم والتدريب',
+            name: brand.name,
             url: '/',
             logo: '/logo.png',
             sameAs: [],

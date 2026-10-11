@@ -1,0 +1,608 @@
+{
+  "reports": [
+    {
+      "test": "Homepage 1440 approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 200,
+          "height": 76.703125,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 38.4000244140625,
+          "height": 38.39990234375,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "mono",
+          "width": 150,
+          "height": 57.53125,
+          "name": "منصتك التعليمية",
+          "filter": "brightness(0)",
+          "ink": "rgb(0, 0, 0)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 200,
+          "height": 76.703125,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Homepage 1440 no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Homepage 768 approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 200,
+          "height": 76.703125,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "mono",
+          "width": 150,
+          "height": 57.53125,
+          "name": "منصتك التعليمية",
+          "filter": "brightness(0)",
+          "ink": "rgb(0, 0, 0)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "mono",
+          "width": 150,
+          "height": 57.53125,
+          "name": "منصتك التعليمية",
+          "filter": "brightness(0)",
+          "ink": "rgb(0, 0, 0)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 200,
+          "height": 76.703125,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Homepage 768 no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Homepage 390 approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 146,
+          "height": 56,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "mono",
+          "width": 133,
+          "height": 51,
+          "name": "منصتك التعليمية",
+          "filter": "brightness(0)",
+          "ink": "rgb(0, 0, 0)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "mono",
+          "width": 133,
+          "height": 51,
+          "name": "منصتك التعليمية",
+          "filter": "brightness(0)",
+          "ink": "rgb(0, 0, 0)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 146,
+          "height": 56,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Homepage 390 no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Homepage 360 approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 146,
+          "height": 56,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "mono",
+          "width": 133,
+          "height": 51,
+          "name": "منصتك التعليمية",
+          "filter": "brightness(0)",
+          "ink": "rgb(0, 0, 0)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "mono",
+          "width": 133,
+          "height": 51,
+          "name": "منصتك التعليمية",
+          "filter": "brightness(0)",
+          "ink": "rgb(0, 0, 0)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 146,
+          "height": 56,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Homepage 360 no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Mobile menu opens",
+      "status": "PASS"
+    },
+    {
+      "test": "Mobile menu Escape closes",
+      "status": "PASS"
+    },
+    {
+      "test": "Login approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 200,
+          "height": 76.703125,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Login no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Login mobile approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 146,
+          "height": 56,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Login mobile no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Experience gateway approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 200,
+          "height": 76.703125,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Experience gateway no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Student desktop approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 150,
+          "height": 57.53125,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Student desktop no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Student mobile approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": false
+    },
+    {
+      "test": "Student mobile no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Student mobile navigation opens",
+      "status": "PASS"
+    },
+    {
+      "test": "Certificates interface approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 146,
+          "height": 56,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 146,
+          "height": 56,
+          "name": "منصتك التعليمية",
+          "filter": "none",
+          "ink": "rgb(41, 35, 59)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Certificates interface no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Historical diploma PDF unchanged",
+      "status": "PASS",
+      "bytes": 42979
+    },
+    {
+      "test": "Historical course PDF unchanged",
+      "status": "PASS",
+      "bytes": 42520
+    },
+    {
+      "test": "Admin mobile approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "brightness(0) invert(1)",
+          "ink": "rgb(246, 244, 237)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Admin mobile no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Admin desktop approved artwork, RTL and alternatives",
+      "status": "PASS",
+      "old": [],
+      "overflow": false,
+      "logos": [
+        {
+          "theme": "dark",
+          "width": 118,
+          "height": 45.25,
+          "name": "منصتك التعليمية",
+          "filter": "brightness(0) invert(1)",
+          "ink": "rgb(246, 244, 237)",
+          "loaded": true,
+          "vector": false
+        },
+        {
+          "theme": "auto",
+          "width": 40,
+          "height": 40,
+          "name": null,
+          "filter": "brightness(0) invert(1)",
+          "ink": "rgb(246, 244, 237)",
+          "loaded": true,
+          "vector": false
+        }
+      ],
+      "mask": true,
+      "rtl": true,
+      "requireLogo": true
+    },
+    {
+      "test": "Admin desktop no horizontal page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Both dark admin marks are reversed",
+      "status": "PASS"
+    },
+    {
+      "test": "Gateway login, role switch and logout preserve security",
+      "status": "PASS"
+    },
+    {
+      "test": "No runtime/hydration exceptions",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "test": "Demo domain tables unchanged",
+      "status": "PASS",
+      "tables": 38
+    }
+  ],
+  "screens": [
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\homepage-1440.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\homepage-1440-viewport.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\footer.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\homepage-768.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\homepage-768-viewport.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\homepage-390.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\homepage-390-viewport.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\homepage-360.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\homepage-360-viewport.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\mobile-navigation.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\login.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\login-mobile.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\experience-gateway.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\student-desktop.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\student-mobile.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\student-mobile-menu.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\student-certificates.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\admin-mobile.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak-approved\\admin-desktop.png"
+  ],
+  "summary": {
+    "pass": 33,
+    "fail": 0
+  }
+}

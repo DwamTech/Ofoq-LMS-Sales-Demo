@@ -1,12 +1,19 @@
 'use client';
+import { brand } from '@/lib/brand'
 
 import React from 'react';
 import styles from './SocialMediaFloat.module.css';
+import { usePathname } from 'next/navigation';
+import { isBrandedPublicRoute } from './brand/publicRoutes';
+
+export const WHATSAPP_LINK = `https://wa.me/201555855857?text=${encodeURIComponent(`دعم فني ل${brand.name}:\n\n`)}`;
 
 const SocialMediaFloat = () => {
-  const whatsappNumber = '201555855857';
-  const whatsappMessage = 'دعم فني لمنصة أفق:\n\n';
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  const pathname = usePathname();
+  const whatsappLink = WHATSAPP_LINK;
+  // Public pages expose the same destination as an inline footer action.
+  // Keep the original floating behavior outside the public brand scope.
+  if (isBrandedPublicRoute(pathname)) return null;
 
   return (
     <div className={styles['whatsapp-float']}>

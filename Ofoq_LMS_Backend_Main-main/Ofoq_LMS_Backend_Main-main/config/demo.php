@@ -11,6 +11,13 @@ return [
     |
     */
     'enabled' => filter_var(env('DEMO_MODE', false), FILTER_VALIDATE_BOOLEAN),
+    // Server-only, opt-in. Public deployment is deliberately not enabled by this local guard.
+    'entry' => [
+        'enabled' => filter_var(env('DEMO_ENTRY_ENABLED', false), FILTER_VALIDATE_BOOLEAN),
+        'signing_key' => env('DEMO_ENTRY_SIGNING_KEY', ''),
+        'database' => env('DEMO_ENTRY_DATABASE', ''),
+        'frontend_origin' => env('DEMO_ENTRY_FRONTEND_ORIGIN', ''),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -24,5 +31,6 @@ return [
     'allowed_route_names' => [
         'login',
         'auth.logout',
+        'demo.entry',
     ],
 ];

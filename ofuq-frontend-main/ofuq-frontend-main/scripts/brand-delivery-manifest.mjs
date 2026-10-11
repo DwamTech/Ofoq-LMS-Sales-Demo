@@ -1,0 +1,10 @@
+import {readFile,readdir,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const source=JSON.parse(await readFile('artifacts/mansatak/source-audit.json','utf8'));
+const paths=[...source.centralizedConsumers,'lib/brand.ts','components/brand/ProgramGraphic.tsx','components/brand/ShowcaseMotion.tsx','components/student/StudentCertificates.tsx','components/brand/BrandLogo.test.tsx','components/brand/BrandLogo.module.css','components/brand/BrandSystem.module.css','public/logo.svg','public/logo.png','public/mahad_alofk2.png','public/mahad_alofk.jpg','public/icons/logo.svg','public/images/ofuq-logo.png','public/favicon.svg','public/favicon.ico','public/certificates/sample-certificate.svg','public/certificates/javascript-certificate.svg','public/licenses/ofoq-brand-fonts.txt','assets/favicon.ico','assets/tab_icon.png','assets/mahad_alofk2.png','assets/mahad_alofk.jpg','docs/retired-brand/certifecate_cover.jpg','docs/mansatak-brand-identity.md'];
+for(const f of await readdir('public/brand'))paths.push('public/brand/'+f);
+for(const f of await readdir('scripts'))if(f.startsWith('brand-')||['build-brand-vectors.py','migrate-public-brand.mjs','finish-brand-migration.mjs','clean-brand-imports.mjs','brand-static-patch.mjs','export-brand-assets.mjs','finish-brand-exports.py'].includes(f))paths.push('scripts/'+f);
+const lum=hex=>hex.match(/\w\w/g).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((s,v,i)=>s+v*[.2126,.7152,.0722][i],0);
+const contrast=[['29233B','F6F4ED'],['F6F4ED','29233B'],['D8EF73','29233B']].map(([fg,bg])=>({foreground:'#'+fg,background:'#'+bg,ratio:(Math.max(lum(fg),lum(bg))+.05)/(Math.min(lum(fg),lum(bg))+.05)}));
+await writeFile('artifacts/mansatak/changed-files.json',JSON.stringify({root:resolve('.'),frontendOnly:true,files:[...new Set(paths)].sort(),retiredSource:'assets/certifecate_cover.jpg moved to docs/retired-brand/certifecate_cover.jpg',logoContrast:contrast},null,2));
+console.log(JSON.stringify({files:[...new Set(paths)].length,logoContrast:contrast}));

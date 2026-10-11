@@ -1,6 +1,6 @@
 "use client";
+import { BrandLogo } from '@/components/brand/BrandLogo'
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { signout } from '../utils/authService';
@@ -83,14 +83,7 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ isOpen = false, onC
               width: '100%'
             }}
           >
-            <Image
-              src="/mahad_alofk2.png"
-              alt="منصة أفق للتعليم عن بعد - الانتقال إلى الصفحة الرئيسية"
-              width={200}
-              height={110}
-              className="sidebar-logo"
-              priority
-            />
+            <BrandLogo className="sidebar-logo"/>
           </button>
         </div>
       </div>

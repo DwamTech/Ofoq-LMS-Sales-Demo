@@ -530,7 +530,7 @@ class CertificateController extends Controller
             ->with(['course.category'])
             ->orderBy('issued_at', 'desc')
             ->get()
-            ->map(function ($certificate) {
+            ->map(function ($certificate) use ($user) {
                 $certificateData = is_array($certificate->certificate_data)
                     ? $certificate->certificate_data
                     : (json_decode($certificate->certificate_data ?? '[]', true) ?? []);
@@ -538,6 +538,9 @@ class CertificateController extends Controller
                 return [
                     'id' => $certificate->id,
                     'type' => 'course',
+                    'source' => 'legacy-course',
+                    'status' => $certificate->issued_at ? 'issued' : 'pending',
+                    'user_name' => $user->name,
                     'course_title' => optional($certificate->course)->title,
                     'diploma_name' => optional(optional($certificate->course)->category)->name,
                     'issued_at' => optional($certificate->issued_at)->format('F d, Y'),
@@ -557,7 +560,7 @@ class CertificateController extends Controller
             ->with(['course.category'])
             ->orderBy('created_at', 'desc')
             ->get()
-            ->map(function ($certificate) {
+            ->map(function ($certificate) use ($user) {
                 $certificateData = is_array($certificate->certificate_data)
                     ? $certificate->certificate_data
                     : (json_decode($certificate->certificate_data ?? '[]', true) ?? []);
@@ -565,6 +568,9 @@ class CertificateController extends Controller
                 return [
                     'id' => $certificate->id,
                     'type' => 'course',
+                    'source' => 'course',
+                    'status' => $certificate->status,
+                    'user_name' => $user->name,
                     'course_title' => optional($certificate->course)->title,
                     'diploma_name' => optional(optional($certificate->course)->category)->name,
                     'issued_at' => $certificate->created_at->format('F d, Y'),
@@ -584,7 +590,7 @@ class CertificateController extends Controller
             ->with('diploma')
             ->orderBy('issued_at', 'desc')
             ->get()
-            ->map(function ($certificate) {
+            ->map(function ($certificate) use ($user) {
                 $certificateData = is_array($certificate->certificate_data)
                     ? $certificate->certificate_data
                     : (json_decode($certificate->certificate_data ?? '[]', true) ?? []);
@@ -592,6 +598,9 @@ class CertificateController extends Controller
                 return [
                     'id' => $certificate->id,
                     'type' => 'diploma',
+                    'source' => 'diploma',
+                    'status' => $certificate->status,
+                    'user_name' => $user->name,
                     'diploma_name' => optional($certificate->diploma)->name,
                     'course_title' => optional($certificate->diploma)->name,
                     'issued_at' => optional($certificate->issued_at)->format('F d, Y'),

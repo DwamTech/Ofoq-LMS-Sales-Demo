@@ -64,9 +64,9 @@ class QuestionResource extends JsonResource
         return [
             'id' => $this->id,
             'question' => $this->question,
-            'options' => $options,
-            'correct_answer' => $correctIndex,
-            'explanation' => $this->explanation,
+            'options' => $request->user()?->role === 'admin' ? $options : array_map(fn ($option) => is_array($option) ? (string) ($option['text'] ?? $option['label'] ?? '') : $option, $options),
+            'correct_answer' => $this->when($request->user()?->role === 'admin', $correctIndex),
+            'explanation' => $this->when($request->user()?->role === 'admin', $this->explanation),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

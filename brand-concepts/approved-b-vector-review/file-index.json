@@ -1,0 +1,384 @@
+{
+  "root": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review",
+  "scope": "Review assets only; not installed in application",
+  "files": [
+    {
+      "filename": "artifact-validation.json",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/artifact-validation.json",
+      "bytes": 8402,
+      "sha256": "5b9240f2358c70143569c5803aa748af0aff66975d41b42ed26007cb07a11ab5"
+    },
+    {
+      "filename": "browser-validation.json",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/browser-validation.json",
+      "bytes": 10015,
+      "sha256": "dc18052ad76e2b837b92f496dd4e8309361398354feb87fe24c10b86f7239c00"
+    },
+    {
+      "filename": "build-vectors.py",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/build-vectors.py",
+      "bytes": 10559,
+      "sha256": "506b399f2dcabd7b5b6a2ec322ebed88e7f00535ff2a58e2797d34554a3fe0bb"
+    },
+    {
+      "filename": "comparison-board.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/comparison-board.png",
+      "bytes": 277230,
+      "sha256": "7743237acd8f6241c2ee8a59d32492e35a371c13958dfa69c8ba418f3d7286dd"
+    },
+    {
+      "filename": "comparison-board.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/comparison-board.svg",
+      "bytes": 199300,
+      "sha256": "74560e22443cb36b611e60b0da3b1b1547b90648bd8c7697a2b87b325a28e5ec"
+    },
+    {
+      "filename": "comparison-board@2x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/comparison-board@2x.png",
+      "bytes": 723803,
+      "sha256": "ccca9d6ca942678e05fd0c99b6bdf48bf4e376bc515e87309099385a3efb39c1"
+    },
+    {
+      "filename": "editable-symbol-source.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/editable-symbol-source.svg",
+      "bytes": 1836,
+      "sha256": "9436d05e3cb096513ee4c7e85405f5bcaf5f5eb947d6322a25e1814e38a2febd"
+    },
+    {
+      "filename": "favicon-16.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-16.png",
+      "bytes": 656,
+      "sha256": "6ad99314145a87eaccee72649acb51a2f7051610b5983ff48d16c05188156d59"
+    },
+    {
+      "filename": "favicon-16.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-16.svg",
+      "bytes": 1932,
+      "sha256": "bafe8c74b8b2adf7f63bb69212d60a0c9ea3476a7b8af130012b557314490b47"
+    },
+    {
+      "filename": "favicon-180.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-180.png",
+      "bytes": 11770,
+      "sha256": "54a1d4adcbc055baa9dec80d8046a4974df6b00e29bfd05bb9d4f23424a954b0"
+    },
+    {
+      "filename": "favicon-180.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-180.svg",
+      "bytes": 1950,
+      "sha256": "b307602c38274e588dfe289fd8f716df2ec3d4ec9b169e17ec612cef8b2efe28"
+    },
+    {
+      "filename": "favicon-192.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-192.png",
+      "bytes": 13066,
+      "sha256": "05d2d82059159ccd9290ea9ca05d83ff047225790c0b3bb4af677f26e5158a9c"
+    },
+    {
+      "filename": "favicon-192.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-192.svg",
+      "bytes": 1950,
+      "sha256": "9fa418a36025ef267a398ce9255df18fde6ae45c55c1ed0b4ba237462845b928"
+    },
+    {
+      "filename": "favicon-24.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-24.png",
+      "bytes": 1054,
+      "sha256": "1f1fba19f9ae0e7ca39362c07a87c7cf72d7a4ae5a8360e91179943d5f8453f9"
+    },
+    {
+      "filename": "favicon-24.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-24.svg",
+      "bytes": 1932,
+      "sha256": "96a5266fca6c0391d0e098f8844c1d4d2ccc6db4449316a3f593658588f11c21"
+    },
+    {
+      "filename": "favicon-256.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-256.png",
+      "bytes": 20085,
+      "sha256": "11e7e19cd2558a72b2256e2b40174a95f5e0147051a04b7343054432ae8cf82d"
+    },
+    {
+      "filename": "favicon-256.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-256.svg",
+      "bytes": 1950,
+      "sha256": "d7d8cf2d3cb62e13d199158ed2d7fb2959d70a1a7411b0364f5aee6e88563ab7"
+    },
+    {
+      "filename": "favicon-32.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-32.png",
+      "bytes": 1453,
+      "sha256": "4d5d3aca7f03b2151d287a2c98d51b53f79f74d49a55ef5e0649a675cb105fc1"
+    },
+    {
+      "filename": "favicon-32.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-32.svg",
+      "bytes": 1932,
+      "sha256": "01069c7598aaa94bed921f34ca5900dded8588b9ed8579869b181fdf4216d8fc"
+    },
+    {
+      "filename": "favicon-48.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-48.png",
+      "bytes": 2204,
+      "sha256": "7bdac655d3459c2f52052a3edab000aa9c1875dbe352f9e0e49f388046174743"
+    },
+    {
+      "filename": "favicon-48.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-48.svg",
+      "bytes": 1932,
+      "sha256": "06acea265e505027e505418e4bac629a4d68599657c594db0e2ab0e201613345"
+    },
+    {
+      "filename": "favicon-512.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-512.png",
+      "bytes": 61985,
+      "sha256": "c404e385795e032f8f4551e4ca2b092c53d59534e3c2774aed5f318123e29dfa"
+    },
+    {
+      "filename": "favicon-512.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-512.svg",
+      "bytes": 1950,
+      "sha256": "5d2c9100248f69b4fe576eee1922f1d07d1064c4d2c2ffca6babcea676dde770"
+    },
+    {
+      "filename": "favicon-64.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-64.png",
+      "bytes": 3136,
+      "sha256": "a4a8cb85e015ffd42552981a5cb0357a0ed842885d1ecc03ed05cefc9b19fa4b"
+    },
+    {
+      "filename": "favicon-64.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-64.svg",
+      "bytes": 1932,
+      "sha256": "9cf720f59bde29f89c060f97608099ebc03bfa71a82eeeeb9d75f9269be29347"
+    },
+    {
+      "filename": "favicon-review.ico",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/favicon-review.ico",
+      "bytes": 28690,
+      "sha256": "38e097ef0f3d7ce969473c630b07531e1aa8d3a91caa339c9586e0ce75b581bf"
+    },
+    {
+      "filename": "finish-and-check.py",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/finish-and-check.py",
+      "bytes": 3049,
+      "sha256": "0ac1cf1bdf32c0b4092b2d99eef1e871dec1f4fa489584d03968425b450bdd55"
+    },
+    {
+      "filename": "FONT-LICENSE.txt",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/FONT-LICENSE.txt",
+      "bytes": 4901,
+      "sha256": "30ea9a65267609c0f6f4c0a9d3744967d306c989f30de744f69cde202408bd57"
+    },
+    {
+      "filename": "mansatak-approved-b-review.zip",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-approved-b-review.zip",
+      "bytes": 3207051,
+      "sha256": "5b04c49e7fd76d8fc7e25a8da518a9ee820689c0d192bc57c667c1587ee92b9f"
+    },
+    {
+      "filename": "mansatak-horizontal-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-horizontal-dark.svg",
+      "bytes": 10326,
+      "sha256": "a65dbfb71b27f016a33c5d02d72f30b71a769dbce66f523e9f8efaccf57845c0"
+    },
+    {
+      "filename": "mansatak-horizontal-dark@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-horizontal-dark@4x.png",
+      "bytes": 266812,
+      "sha256": "7b94f19b111eeb1cae4c4a693c074a6bd25a6d08ae2e332995d0d6ca171829c9"
+    },
+    {
+      "filename": "mansatak-horizontal-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-horizontal-light.svg",
+      "bytes": 10345,
+      "sha256": "14d443864f691b9f76b52cda70ab9e5ac61d2d57ea4f3fb4cf637afe65960e41"
+    },
+    {
+      "filename": "mansatak-horizontal-light@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-horizontal-light@4x.png",
+      "bytes": 273363,
+      "sha256": "141f363d045bce84fb0b25419b55302d14c22d48bd8daf788d5d1f983811fcca"
+    },
+    {
+      "filename": "mansatak-horizontal-mono-white.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-horizontal-mono-white.svg",
+      "bytes": 9461,
+      "sha256": "90376267f8e1b8d3a317691148050100f48c197e8df298eb2c7eac5e3c3e6d52"
+    },
+    {
+      "filename": "mansatak-horizontal-mono-white@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-horizontal-mono-white@4x.png",
+      "bytes": 73629,
+      "sha256": "2dc946df1b1274d7ead2c09c1648f4f798f87edf39d592274c15d7a0c9bf0396"
+    },
+    {
+      "filename": "mansatak-horizontal-mono.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-horizontal-mono.svg",
+      "bytes": 9407,
+      "sha256": "e70566f944186fb7461c5b4377ebaede758b05aa72ebfd96212fbd0e608b82ff"
+    },
+    {
+      "filename": "mansatak-horizontal-mono@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-horizontal-mono@4x.png",
+      "bytes": 65367,
+      "sha256": "2f0e4951c7118406fe14bb6c206b4014254469d48a8a2bef16af685548ea8f87"
+    },
+    {
+      "filename": "mansatak-icon-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-icon-dark.svg",
+      "bytes": 1852,
+      "sha256": "26e4bf26650a800111f13a6b506f274837128c0525814ce5bbbf35667f537182"
+    },
+    {
+      "filename": "mansatak-icon-dark@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-icon-dark@4x.png",
+      "bytes": 195291,
+      "sha256": "16759149ea045983a2fd17ba367ef35945f652896931371afe0002d1817f3d6a"
+    },
+    {
+      "filename": "mansatak-icon-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-icon-light.svg",
+      "bytes": 1868,
+      "sha256": "d30bf07667b6c00a835054b9beaacc9376393b287447d7f07eeee2c7d6c25442"
+    },
+    {
+      "filename": "mansatak-icon-light@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-icon-light@4x.png",
+      "bytes": 191204,
+      "sha256": "e850fad9a8cb96fd43d456089dbce8707463795d3fbd8728fcb0863c4c02137f"
+    },
+    {
+      "filename": "mansatak-icon-mono-white.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-icon-mono-white.svg",
+      "bytes": 1029,
+      "sha256": "a3e97ae1a2de8a39bb83df8e73c3384798742be10fcd4c9d12e35a2b20658a88"
+    },
+    {
+      "filename": "mansatak-icon-mono-white@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-icon-mono-white@4x.png",
+      "bytes": 24919,
+      "sha256": "c8580f076aa052e8420d40e5df863e371aec9d34c9bc119f55059b247925832d"
+    },
+    {
+      "filename": "mansatak-icon-mono.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-icon-mono.svg",
+      "bytes": 993,
+      "sha256": "d08483f0d58bab65e36473c313c648efa19111fda0d0532e4f52eed78cbe0a46"
+    },
+    {
+      "filename": "mansatak-icon-mono@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-icon-mono@4x.png",
+      "bytes": 22780,
+      "sha256": "154df2cdd70eb24a7cbce69c74b4b2a944b0f074e62454dd8c23bc3df6fe88fc"
+    },
+    {
+      "filename": "mansatak-stacked-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-stacked-dark.svg",
+      "bytes": 10269,
+      "sha256": "1b68b5a234457b0c189bca9667ff27573acbde072982462a9a7d27eb855245b7"
+    },
+    {
+      "filename": "mansatak-stacked-dark@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-stacked-dark@4x.png",
+      "bytes": 255058,
+      "sha256": "ec897c1c5f6faf69648afc7e4e265cf21be10dacacbd43e9b414b8e124fc25a0"
+    },
+    {
+      "filename": "mansatak-stacked-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-stacked-light.svg",
+      "bytes": 10288,
+      "sha256": "f74fcbb0ee83cfef65e046d1a80dbc90a18c2de5eba4ae78f05635cc491ff6b6"
+    },
+    {
+      "filename": "mansatak-stacked-light@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-stacked-light@4x.png",
+      "bytes": 264065,
+      "sha256": "5037e83a9d1a25d569f92d907d104135680130ce7ba8a997abdc6116a61876ff"
+    },
+    {
+      "filename": "mansatak-stacked-mono-white.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-stacked-mono-white.svg",
+      "bytes": 9434,
+      "sha256": "10b31d299f59036b01e65c3eaaba601dffcbdffb3eeea9dcf059475a20379a76"
+    },
+    {
+      "filename": "mansatak-stacked-mono-white@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-stacked-mono-white@4x.png",
+      "bytes": 76832,
+      "sha256": "2f339d41855c63c1c2292c9dfe647dcf5033c01a3145c2acb1b3c8bc0e063acc"
+    },
+    {
+      "filename": "mansatak-stacked-mono.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-stacked-mono.svg",
+      "bytes": 9380,
+      "sha256": "d19b3ab80c85da9b54caf947be9fd907536013f6eb6a5f08ccb89f3f34dd4ff7"
+    },
+    {
+      "filename": "mansatak-stacked-mono@4x.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/mansatak-stacked-mono@4x.png",
+      "bytes": 70007,
+      "sha256": "52d1d72412df91748c821a9d6951c444672b87f383c7033f889726c0cee66374"
+    },
+    {
+      "filename": "preview-dark.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/preview-dark.png",
+      "bytes": 147738,
+      "sha256": "bfe76a9c61dba9ec665d7168e257b9a57a878fb25f07f252bf4e322f7b1c3d3d"
+    },
+    {
+      "filename": "preview-dark.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/preview-dark.svg",
+      "bytes": 10403,
+      "sha256": "aba7708f04f0ea13a7950d7a486e1231658e2e5ca395e22dfb7103f73a453102"
+    },
+    {
+      "filename": "preview-light.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/preview-light.png",
+      "bytes": 145037,
+      "sha256": "3a9812aebe46c828c36d7f10202d62df1c0d0ee578da69a9db88850bd61def9a"
+    },
+    {
+      "filename": "preview-light.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/preview-light.svg",
+      "bytes": 10422,
+      "sha256": "ef7976dc8a5f670ffa880753755e3a74fd9e69c9d8b6fac07a2af4606b987ac4"
+    },
+    {
+      "filename": "README.md",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/README.md",
+      "bytes": 11399,
+      "sha256": "d43e7d4a53b44854a569a8bc8ea6b3d960b0e39e8f8c31021f44e457f67510b7"
+    },
+    {
+      "filename": "render.mjs",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/render.mjs",
+      "bytes": 1101,
+      "sha256": "b7e2b260595a533241765c22893acea21ea9b2a07db8ae1e9927bf0bccf0fc4a"
+    },
+    {
+      "filename": "shaping-evidence.json",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/shaping-evidence.json",
+      "bytes": 11794,
+      "sha256": "3aacb5a25bc2fd17e5493ff4d3640580aebfbb21fad20a2205427d336da966ba"
+    },
+    {
+      "filename": "type-study.png",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/type-study.png",
+      "bytes": 41049,
+      "sha256": "1c48ad89212528c9bfa1782bdee9a17eaee65453ff6128cf87ded2c500fbda25"
+    },
+    {
+      "filename": "type-study.svg",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/type-study.svg",
+      "bytes": 30532,
+      "sha256": "b24d9e0389421cfab57ccf53c14a4f7669eeb8d575656aa1fb9ebca2a93103a0"
+    },
+    {
+      "filename": "verify-browser.mjs",
+      "path": "C:/Users/Copy/Desktop/Ofoq/brand-concepts/approved-b-vector-review/verify-browser.mjs",
+      "bytes": 2490,
+      "sha256": "aad7e0d0fd7f87ccbff021c7d81d26d536459ea9c78fe58b19ddd1d0f5969a40"
+    }
+  ]
+}

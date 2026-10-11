@@ -1,0 +1,363 @@
+[
+  {
+    "test": "marketing navigation CTA",
+    "status": "PASS"
+  },
+  {
+    "test": "captured intro initial phase",
+    "phase": "initial",
+    "status": "PASS"
+  },
+  {
+    "test": "intro completes without blocking choices",
+    "status": "PASS"
+  },
+  {
+    "test": "real Chrome frame recording captured",
+    "status": "PASS",
+    "frames": 43,
+    "durationMs": 1958,
+    "format": "HTML player of actual CDP frames; not MP4"
+  },
+  {
+    "test": "experience responsive 1920",
+    "status": "PASS",
+    "width": 1920,
+    "scrollWidth": 1905,
+    "height": 1129
+  },
+  {
+    "test": "persona buttons touch target 1920",
+    "status": "PASS"
+  },
+  {
+    "test": "experience responsive 1440",
+    "status": "PASS",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 1108
+  },
+  {
+    "test": "gateway fonts and RTL actually rendered",
+    "status": "PASS",
+    "metrics": {
+      "layoutShift": 0,
+      "lcpMs": 96
+    },
+    "heading": "__ofoqDisplayFont_fbc8bf, __ofoqDisplayFont_Fallback_fbc8bf, Tahoma, Arial, sans-serif, Alexandria, \"IBM Plex Sans Arabic\", \"Segoe UI\", Tahoma, sans-serif",
+    "body": "__ofoqUiFont_e6d8bc, __ofoqUiFont_Fallback_e6d8bc, Tahoma, Arial, sans-serif, \"IBM Plex Sans Arabic\", \"Segoe UI\", Tahoma, Arial, sans-serif",
+    "rtl": "rtl",
+    "fontEvidence": [
+      {
+        "selector": "h1",
+        "fonts": [
+          {
+            "familyName": "Alexandria",
+            "postScriptName": "Alexandria-Medium",
+            "isCustomFont": true,
+            "glyphCount": 11
+          },
+          {
+            "familyName": "Arial",
+            "postScriptName": "ArialMT",
+            "isCustomFont": false,
+            "glyphCount": 1
+          },
+          {
+            "familyName": "IBM Plex Sans Arabic",
+            "postScriptName": "IBMPlexSansArabic-Regular",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ]
+      },
+      {
+        "selector": "main p",
+        "fonts": [
+          {
+            "familyName": "IBM Plex Sans Arabic",
+            "postScriptName": "IBMPlexSansArabic-Regular",
+            "isCustomFont": true,
+            "glyphCount": 51
+          },
+          {
+            "familyName": "Arial",
+            "postScriptName": "ArialMT",
+            "isCustomFont": false,
+            "glyphCount": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "test": "gateway measured layout shift",
+    "status": "PASS",
+    "layoutShift": 0,
+    "lcpMs": 96
+  },
+  {
+    "test": "persona buttons touch target 1440",
+    "status": "PASS"
+  },
+  {
+    "test": "experience responsive 1280",
+    "status": "PASS",
+    "width": 1280,
+    "scrollWidth": 1265,
+    "height": 1092
+  },
+  {
+    "test": "persona buttons touch target 1280",
+    "status": "PASS"
+  },
+  {
+    "test": "experience responsive 768",
+    "status": "PASS",
+    "width": 768,
+    "scrollWidth": 753,
+    "height": 1601
+  },
+  {
+    "test": "persona buttons touch target 768",
+    "status": "PASS"
+  },
+  {
+    "test": "experience responsive 390",
+    "status": "PASS",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 1679
+  },
+  {
+    "test": "persona buttons touch target 390",
+    "status": "PASS"
+  },
+  {
+    "test": "experience responsive 360",
+    "status": "PASS",
+    "width": 360,
+    "scrollWidth": 360,
+    "height": 1722
+  },
+  {
+    "test": "persona buttons touch target 360",
+    "status": "PASS"
+  },
+  {
+    "test": "session intro replay is intentional",
+    "status": "PASS"
+  },
+  {
+    "test": "reduced motion ready",
+    "status": "PASS"
+  },
+  {
+    "test": "legacy route /login_old",
+    "status": "PASS"
+  },
+  {
+    "test": "legacy login fields retained",
+    "status": "PASS"
+  },
+  {
+    "test": "legacy route /register_old",
+    "status": "PASS"
+  },
+  {
+    "test": "legacy signup fields retained",
+    "status": "PASS"
+  },
+  {
+    "test": "direct admin URL requires authentication",
+    "status": "PASS"
+  },
+  {
+    "test": "direct student URL requires authentication",
+    "status": "PASS"
+  },
+  {
+    "test": "cross-origin proxy denied",
+    "status": "PASS",
+    "statusCode": 403
+  },
+  {
+    "test": "unknown persona proxy denied",
+    "status": "PASS",
+    "statusCode": 422
+  },
+  {
+    "test": "unsigned Laravel request denied",
+    "status": "PASS",
+    "statusCode": 403
+  },
+  {
+    "test": "student reaches protected destination",
+    "status": "PASS"
+  },
+  {
+    "test": "real authenticated student identity",
+    "status": "PASS",
+    "identity": {
+      "name": "ليان أحمد الكيلاني",
+      "role": "student",
+      "id": 6
+    }
+  },
+  {
+    "test": "student cannot read admin API",
+    "status": "PASS",
+    "statusCode": 403
+  },
+  {
+    "test": "authenticated student enrollment GET",
+    "status": "PASS",
+    "statusCode": 200
+  },
+  {
+    "test": "student refresh preserves valid session",
+    "status": "PASS"
+  },
+  {
+    "test": "browser back restores verified student destination",
+    "status": "PASS"
+  },
+  {
+    "test": "persona change requires confirmation",
+    "status": "PASS"
+  },
+  {
+    "test": "admin reaches protected destination",
+    "status": "PASS"
+  },
+  {
+    "test": "real authenticated admin identity",
+    "status": "PASS",
+    "identity": {
+      "name": "Ofoq Demo Admin",
+      "role": "admin",
+      "id": 801
+    }
+  },
+  {
+    "test": "switch revoked previous student token",
+    "status": "PASS",
+    "statusCode": 401
+  },
+  {
+    "test": "authorized admin GET /admin/courses",
+    "status": "PASS",
+    "statusCode": 200
+  },
+  {
+    "test": "authorized admin GET /admin/categories",
+    "status": "PASS",
+    "statusCode": 200
+  },
+  {
+    "test": "authorized admin GET /admin/stats/students",
+    "status": "PASS",
+    "statusCode": 200
+  },
+  {
+    "test": "sensitive demo API blocked /admin/backups",
+    "status": "PASS",
+    "statusCode": 403
+  },
+  {
+    "test": "sensitive demo API blocked /admin/backups/private.sql/download",
+    "status": "PASS",
+    "statusCode": 403
+  },
+  {
+    "test": "sensitive demo API blocked /admin/bunny/sync-logs",
+    "status": "PASS",
+    "statusCode": 403
+  },
+  {
+    "test": "sensitive demo API blocked /external/certificates/pending",
+    "status": "PASS",
+    "statusCode": 403
+  },
+  {
+    "test": "actual demo mutation blocked POST /courses/2147483647/enroll",
+    "status": "PASS",
+    "statusCode": 403,
+    "code": "DEMO_READ_ONLY"
+  },
+  {
+    "test": "actual demo mutation blocked POST /lessons/2147483647/complete",
+    "status": "PASS",
+    "statusCode": 403,
+    "code": "DEMO_READ_ONLY"
+  },
+  {
+    "test": "actual demo mutation blocked POST /quiz/2147483647/submit",
+    "status": "PASS",
+    "statusCode": 403,
+    "code": "DEMO_READ_ONLY"
+  },
+  {
+    "test": "actual demo mutation blocked PUT /admin/courses/2147483647",
+    "status": "PASS",
+    "statusCode": 403,
+    "code": "DEMO_READ_ONLY"
+  },
+  {
+    "test": "actual demo mutation blocked DELETE /admin/courses/2147483647",
+    "status": "PASS",
+    "statusCode": 403,
+    "code": "DEMO_READ_ONLY"
+  },
+  {
+    "test": "admin refresh preserves valid session",
+    "status": "PASS"
+  },
+  {
+    "test": "existing admin logout clears browser auth",
+    "status": "PASS"
+  },
+  {
+    "test": "logout revoked Sanctum token",
+    "status": "PASS",
+    "statusCode": 401
+  },
+  {
+    "test": "mobile touch reaches real student dashboard",
+    "status": "PASS"
+  },
+  {
+    "test": "mobile touch authenticated identity",
+    "status": "PASS"
+  },
+  {
+    "test": "existing student logout clears browser auth",
+    "status": "PASS"
+  },
+  {
+    "test": "student logout revoked Sanctum token",
+    "status": "PASS",
+    "statusCode": 401
+  },
+  {
+    "test": "forged localStorage cannot authorize admin",
+    "status": "PASS"
+  },
+  {
+    "test": "network failure has honest legacy fallback",
+    "status": "PASS"
+  },
+  {
+    "test": "failed auth never navigates or stores token",
+    "status": "PASS"
+  },
+  {
+    "test": "intro skip stays complete",
+    "status": "PASS"
+  },
+  {
+    "test": "runtime exceptions",
+    "status": "PASS",
+    "errors": []
+  }
+]

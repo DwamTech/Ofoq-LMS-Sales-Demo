@@ -1,0 +1,28 @@
+{
+  "reports": [
+    {
+      "test": "Header logo link has exact brand accessible name 1440",
+      "status": "PASS"
+    },
+    {
+      "test": "Header logo link has exact brand accessible name 390",
+      "status": "PASS"
+    },
+    {
+      "test": "Header logo link has exact brand accessible name 360",
+      "status": "PASS"
+    },
+    {
+      "test": "Brand link is keyboard focusable",
+      "status": "PASS"
+    },
+    {
+      "test": "Adaptive vector favicon uses light mark in dark mode",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "pass": 5,
+    "fail": 0
+  }
+}

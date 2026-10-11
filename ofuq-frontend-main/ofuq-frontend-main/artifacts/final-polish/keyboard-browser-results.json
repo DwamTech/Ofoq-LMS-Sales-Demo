@@ -1,0 +1,47 @@
+[
+  {
+    "test": "native keyboard collapse 1440",
+    "expanded": "false",
+    "focus": "dropdown-header ",
+    "status": "PASS"
+  },
+  {
+    "test": "native keyboard expand 1440",
+    "status": "PASS"
+  },
+  {
+    "test": "native keyboard collapse 768",
+    "expanded": "false",
+    "focus": "dropdown-header ",
+    "status": "PASS"
+  },
+  {
+    "test": "native keyboard expand 768",
+    "status": "PASS"
+  },
+  {
+    "test": "native keyboard collapse 390",
+    "expanded": "false",
+    "focus": "dropdown-header ",
+    "status": "PASS"
+  },
+  {
+    "test": "native keyboard expand 390",
+    "status": "PASS"
+  },
+  {
+    "test": "native keyboard collapse 360",
+    "expanded": "false",
+    "focus": "dropdown-header ",
+    "status": "PASS"
+  },
+  {
+    "test": "native keyboard expand 360",
+    "status": "PASS"
+  },
+  {
+    "test": "runtime exceptions",
+    "errors": [],
+    "status": "PASS"
+  }
+]

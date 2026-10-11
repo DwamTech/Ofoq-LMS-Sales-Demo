@@ -1,0 +1,26 @@
+[
+  {
+    "test": "course detail mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 3407,
+    "status": "PASS"
+  },
+  {
+    "test": "existing search browser redirect",
+    "status": "PASS"
+  },
+  {
+    "test": "Next client navigation about",
+    "status": "PASS"
+  },
+  {
+    "test": "sticky after client navigation",
+    "status": "PASS"
+  },
+  {
+    "test": "runtime exceptions",
+    "errors": [],
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,880 @@
+{
+  "reports": [
+    {
+      "test": "Homepage desktop visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 28.7999267578125,
+          "height": 28.800048828125
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 150,
+          "height": 51.609375
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "Homepage desktop no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Homepage 768 visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 150,
+          "height": 51.609375
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 150,
+          "height": 51.609375
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "Homepage 768 no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Homepage 390 visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 162,
+          "height": 28.421875
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 133,
+          "height": 45.75
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 133,
+          "height": 45.75
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 162,
+          "height": 28.421875
+        }
+      ]
+    },
+    {
+      "test": "Homepage 390 no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Homepage 360 visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 162,
+          "height": 28.421875
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 133,
+          "height": 45.75
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 133,
+          "height": 45.75
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 162,
+          "height": 28.421875
+        }
+      ]
+    },
+    {
+      "test": "Homepage 360 no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Mobile public navigation opens",
+      "status": "PASS"
+    },
+    {
+      "test": "Mobile navigation visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 162,
+          "height": 28.421875
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 133,
+          "height": 45.75
+        },
+        {
+          "name": null,
+          "paths": 1,
+          "textNodes": 0,
+          "width": 30,
+          "height": 30
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 133,
+          "height": 45.75
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 162,
+          "height": 28.421875
+        }
+      ]
+    },
+    {
+      "test": "Mobile navigation no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Mobile public navigation Escape",
+      "status": "PASS"
+    },
+    {
+      "test": "/about visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "/about no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/diploms visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "/diploms no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/courses visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "/courses no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/community visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "/community no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/privacy visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "/privacy no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/terms visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "/terms no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/verify-certificate visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "/verify-certificate no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/auth visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "/auth no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/auth?tab=signup visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "/auth?tab=signup no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Login mobile visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 162,
+          "height": 28.421875
+        }
+      ]
+    },
+    {
+      "test": "Login mobile no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Experience gateway visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية | اختر تجربتك",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 220,
+          "height": 38.609375
+        }
+      ]
+    },
+    {
+      "test": "Experience gateway no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Student dashboard desktop visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 150,
+          "height": 51.609375
+        }
+      ]
+    },
+    {
+      "test": "Student dashboard desktop no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Student dashboard mobile visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": []
+    },
+    {
+      "test": "Student dashboard mobile no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Student certificates visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 162,
+          "height": 28.421875
+        },
+        {
+          "name": "منصتك التعليمية",
+          "paths": 2,
+          "textNodes": 0,
+          "width": 162,
+          "height": 28.421875
+        }
+      ]
+    },
+    {
+      "test": "Student certificates no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Historical diploma PDF unchanged and downloadable",
+      "status": "PASS",
+      "bytes": 42979
+    },
+    {
+      "test": "Historical diploma verification still resolves",
+      "status": "PASS"
+    },
+    {
+      "test": "Historical course PDF unchanged and downloadable",
+      "status": "PASS",
+      "bytes": 42520
+    },
+    {
+      "test": "Historical course verification still resolves",
+      "status": "PASS"
+    },
+    {
+      "test": "Secure gateway role switch reaches real admin",
+      "status": "PASS"
+    },
+    {
+      "test": "Admin dashboard mobile visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": []
+    },
+    {
+      "test": "Admin dashboard mobile no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Admin dashboard desktop visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 118,
+          "height": 40.59375
+        }
+      ]
+    },
+    {
+      "test": "Admin dashboard desktop no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/admin/diplomas visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 118,
+          "height": 40.59375
+        }
+      ]
+    },
+    {
+      "test": "/admin/diplomas no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/admin/course-management visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 118,
+          "height": 40.59375
+        }
+      ]
+    },
+    {
+      "test": "/admin/course-management no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/admin/students visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 118,
+          "height": 40.59375
+        }
+      ]
+    },
+    {
+      "test": "/admin/students no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/admin/exams visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 118,
+          "height": 40.59375
+        }
+      ]
+    },
+    {
+      "test": "/admin/exams no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/admin/certificates visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 118,
+          "height": 40.59375
+        }
+      ]
+    },
+    {
+      "test": "/admin/certificates no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "/admin/reports visible brand and alternatives",
+      "status": "PASS",
+      "old": [],
+      "title": "منصتك التعليمية",
+      "brand": true,
+      "overflow": false,
+      "logos": [
+        {
+          "name": "منصتك التعليمية",
+          "paths": 3,
+          "textNodes": 0,
+          "width": 118,
+          "height": 40.59375
+        }
+      ]
+    },
+    {
+      "test": "/admin/reports no page overflow",
+      "status": "PASS"
+    },
+    {
+      "test": "Actual admin logout clears authentication",
+      "status": "PASS"
+    },
+    {
+      "test": "Logo variants and favicon assets decode",
+      "status": "PASS"
+    },
+    {
+      "test": "No runtime or hydration exceptions",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "test": "38 domain tables unchanged since branding baseline",
+      "status": "PASS"
+    }
+  ],
+  "screens": [
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\homepage-desktop.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\header-logo-closeup.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\footer.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\homepage-768.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\homepage-390.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\homepage-360.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\mobile-navigation.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\certificate-verification.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\login.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\registration.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\login-mobile.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\experience-gateway.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\student-desktop.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\student-mobile.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\student-certificates.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\admin-mobile.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\admin-desktop.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\admin-diplomas.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\admin-course-management.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\admin-students.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\admin-exams.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\admin-certificates.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\admin-reports.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\logo-family.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\logo-light.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\logo-dark.png",
+    "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\artifacts\\mansatak\\favicon-preview.png"
+  ],
+  "summary": {
+    "pass": 65,
+    "fail": 0
+  }
+}

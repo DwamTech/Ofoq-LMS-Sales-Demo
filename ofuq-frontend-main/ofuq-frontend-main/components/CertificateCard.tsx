@@ -1,4 +1,5 @@
 'use client';
+import { brand } from '@/lib/brand'
 
 import React, { useState } from 'react';
 import '../styles/certificate-card.css';
@@ -123,7 +124,7 @@ const CertificateCard: React.FC<CertificateCardProps> = ({
       try {
         await navigator.share({
           title: `شهادة إتمام ${courseName}`,
-          text: `حصلت على شهادة إتمام دورة ${courseName} من منصة الأفق`,
+          text: `حصلت على شهادة إتمام دورة ${courseName} من ${brand.name}`,
           url: shareUrl
         });
         return;

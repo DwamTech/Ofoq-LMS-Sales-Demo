@@ -1,4 +1,5 @@
 'use client';
+import { BrandLogo } from '@/components/brand/BrandLogo'
 
 import React, { useState } from 'react';
 import '../styles/auth.css';
@@ -89,7 +90,7 @@ const NewPasswordForm: React.FC<NewPasswordFormProps> = ({
     <div className="auth-form-container">
       {/* Logo */}
       <div className="auth-form-logo">
-        <img src="/mahad_alofk2.png" alt="منصة أفق للتعليم عن بعد" />
+        <BrandLogo/>
       </div>
 
       {/* Form Content Container */}

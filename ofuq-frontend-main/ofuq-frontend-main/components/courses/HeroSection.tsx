@@ -1,4 +1,5 @@
 'use client';
+import { brand } from '@/lib/brand'
 // ⛔️ تم حذف 'useAuth' وأضفنا 'useState' و 'useEffect' وأدواتنا الصحيحة
 import React, { useState, useEffect } from 'react';
 import { Course } from '@/types/course';
@@ -51,7 +52,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <h1 className="hero-title">
               📚 إدارة الدورات التعليمية
             </h1>
-            <p className="hero-subtitle">منصة شاملة لإدارة وتنظيم دورات المنصة التعليمية بطريقة احترافية ومبتكرة - منصة أفق للتعليم عن بعد</p>
+            <p className="hero-subtitle">منصة شاملة لإدارة وتنظيم دورات المنصة التعليمية بطريقة احترافية ومبتكرة - {brand.name}</p>
             <div className="hero-stats">
               <div 
                 className={`hero-stat ${courseFilter === 'all' ? 'active' : ''}`}

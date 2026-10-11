@@ -1,9 +1,13 @@
 'use client';
+import { BrandLogo } from '@/components/brand/BrandLogo'
+import { brand } from '@/lib/brand'
 
 import React, { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { isBrandedPublicRoute } from './brand/publicRoutes';
+import { PublicNavigation } from './brand/PublicShell';
 import { isAuthenticated, getCurrentUser, signout, User } from '../utils/authService';
 import { getBackendAssetUrl } from '../utils/url';
 import styles from './HomeHeader.module.css';
@@ -141,7 +145,7 @@ const mobileMenuData = [
     ]
   },
   {
-    label: 'مجتمع أفق',
+    label: `مجتمع ${brand.name}`,
     href: '/community',
     icon: <PiUsers />,
     children: [
@@ -278,7 +282,7 @@ const mobileMenuData = [
     ]
   },
   {
-    label: 'فضاء أفق',
+    label: `فضاء ${brand.name}`,
     href: '#',
     icon: <PiRocket />,
     comingSoon: true,
@@ -300,8 +304,8 @@ const mobileMenuData = [
         icon: <PiBuilding />,
         comingSoon: true,
         children: [
-          { label: 'أكاديمية أفق لتأهيل الدعاة', href: '#', icon: <PiMosque />, comingSoon: true },
-          { label: 'أكاديمية أفق للتقنية والعلوم', href: '#', icon: <PiCode />, comingSoon: true },
+          { label: `أكاديمية ${brand.name} لتأهيل الدعاة`, href: '#', icon: <PiMosque />, comingSoon: true },
+          { label: `أكاديمية ${brand.name} للتقنية والعلوم`, href: '#', icon: <PiCode />, comingSoon: true },
           { label: 'أكاديمية بارع الإعلامية', href: '#', icon: <PiMegaphone />, comingSoon: true },
           { label: 'أكاديمية تمكين', href: '#', icon: <PiLightning />, comingSoon: true },
         ]
@@ -500,13 +504,7 @@ const HomeHeader = () => {
             {/* Logo */}
             <div className={styles['header-logo']}>
               <Link href="/" prefetch={false}>
-                <Image
-                  src="/mahad_alofk2.png"
-                  alt="منصة أفق"
-                  width={120}
-                  height={50}
-                  className={styles['logo-image']}
-                />
+                <BrandLogo className={styles['logo-image']}/>
               </Link>
             </div>
 
@@ -739,4 +737,7 @@ const HomeHeader = () => {
   );
 };
 
-export default HomeHeader;
+export default function ScopedHomeHeader() {
+  const path = usePathname();
+  return isBrandedPublicRoute(path) ? <PublicNavigation /> : <HomeHeader />;
+}

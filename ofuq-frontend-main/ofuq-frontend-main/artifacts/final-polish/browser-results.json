@@ -1,0 +1,720 @@
+[
+  {
+    "test": "responsive",
+    "width": 1920,
+    "scrollWidth": 1905,
+    "height": 8235,
+    "status": "PASS"
+  },
+  {
+    "test": "responsive",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 8209,
+    "status": "PASS"
+  },
+  {
+    "test": "observed browser performance (local, cached, not Lighthouse)",
+    "width": 1440,
+    "layoutShift": 0.0002962802742724257,
+    "lcpMs": 128
+  },
+  {
+    "test": "responsive",
+    "width": 1280,
+    "scrollWidth": 1265,
+    "height": 8135,
+    "status": "PASS"
+  },
+  {
+    "test": "responsive",
+    "width": 768,
+    "scrollWidth": 753,
+    "height": 7674,
+    "status": "PASS"
+  },
+  {
+    "test": "observed browser performance (local, cached, not Lighthouse)",
+    "width": 768,
+    "layoutShift": 0,
+    "lcpMs": 100
+  },
+  {
+    "test": "mobile story fallback",
+    "width": 768,
+    "status": "PASS"
+  },
+  {
+    "test": "responsive",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 8932,
+    "status": "PASS"
+  },
+  {
+    "test": "observed browser performance (local, cached, not Lighthouse)",
+    "width": 390,
+    "layoutShift": 0,
+    "lcpMs": 76
+  },
+  {
+    "test": "mobile navigation",
+    "status": "PASS"
+  },
+  {
+    "test": "mobile Escape",
+    "status": "PASS"
+  },
+  {
+    "test": "mobile story fallback",
+    "width": 390,
+    "status": "PASS"
+  },
+  {
+    "test": "responsive",
+    "width": 360,
+    "scrollWidth": 360,
+    "height": 9052,
+    "status": "PASS"
+  },
+  {
+    "test": "mobile story fallback",
+    "width": 360,
+    "status": "PASS"
+  },
+  {
+    "test": "actual rendered font",
+    "selector": "#hero-title",
+    "fonts": [
+      {
+        "familyName": "Arial",
+        "postScriptName": "ArialMT",
+        "isCustomFont": false,
+        "glyphCount": 3
+      },
+      {
+        "familyName": "Alexandria",
+        "postScriptName": "Alexandria-SemiBold",
+        "isCustomFont": true,
+        "glyphCount": 34
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "test": "actual rendered font",
+    "selector": "[class*=heroCopy] > p",
+    "fonts": [
+      {
+        "familyName": "IBM Plex Sans Arabic",
+        "postScriptName": "IBMPlexSansArabic-Regular",
+        "isCustomFont": true,
+        "glyphCount": 92
+      },
+      {
+        "familyName": "Arial",
+        "postScriptName": "ArialMT",
+        "isCustomFont": false,
+        "glyphCount": 2
+      }
+    ],
+    "status": "PASS"
+  },
+  {
+    "test": "resource observations (local browser, not benchmark)",
+    "resources": [
+      {
+        "name": "f6cce60052c50a3b-s.p.woff2",
+        "transferSize": 0,
+        "durationMs": 0
+      },
+      {
+        "name": "38ca8bfd780ae6be-s.p.woff2",
+        "transferSize": 0,
+        "durationMs": 0
+      },
+      {
+        "name": "5cb8243e7203141c-s.p.woff2",
+        "transferSize": 0,
+        "durationMs": 0
+      },
+      {
+        "name": "3de711fd864e0bd8-s.p.woff2",
+        "transferSize": 0,
+        "durationMs": 0
+      }
+    ]
+  },
+  {
+    "test": "scroll start",
+    "actual": 0,
+    "expected": 0,
+    "canvasTop": 0,
+    "status": "PASS"
+  },
+  {
+    "test": "scroll middle",
+    "actual": 2,
+    "expected": 2,
+    "canvasTop": 0,
+    "status": "PASS"
+  },
+  {
+    "test": "scroll final",
+    "actual": 4,
+    "expected": 4,
+    "canvasTop": 0,
+    "status": "PASS"
+  },
+  {
+    "test": "scroll reverse",
+    "actual": 1,
+    "expected": 1,
+    "canvasTop": 0,
+    "status": "PASS"
+  },
+  {
+    "test": "scroll fast-end",
+    "actual": 4,
+    "expected": 4,
+    "canvasTop": 0,
+    "status": "PASS"
+  },
+  {
+    "test": "scroll fast-start",
+    "actual": 0,
+    "expected": 0,
+    "canvasTop": 0,
+    "status": "PASS"
+  },
+  {
+    "test": "student tab",
+    "status": "PASS"
+  },
+  {
+    "test": "product tabs keyboard",
+    "status": "PASS"
+  },
+  {
+    "test": "capability disclosure",
+    "status": "PASS"
+  },
+  {
+    "test": "reduced motion",
+    "reduced": true,
+    "position": "static",
+    "status": "PASS"
+  },
+  {
+    "test": "reduced story selector",
+    "status": "PASS"
+  },
+  {
+    "test": "public page /about",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 2401,
+    "title": "منصة أفق للتعليم والتدريب"
+  },
+  {
+    "test": "supporting page mobile /about",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 2716,
+    "status": "PASS"
+  },
+  {
+    "test": "public page /courses",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 4584,
+    "title": "منصة أفق للتعليم والتدريب"
+  },
+  {
+    "test": "supporting page mobile /courses",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 10417,
+    "status": "PASS"
+  },
+  {
+    "test": "public page /diploms",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 2062,
+    "title": "منصة أفق للتعليم والتدريب"
+  },
+  {
+    "test": "supporting page mobile /diploms",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 3077,
+    "status": "PASS"
+  },
+  {
+    "test": "public page /community",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 1334,
+    "title": "منصة أفق للتعليم والتدريب"
+  },
+  {
+    "test": "supporting page mobile /community",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 1177,
+    "status": "PASS"
+  },
+  {
+    "test": "public page /verify-certificate",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 1337,
+    "title": "منصة أفق للتعليم والتدريب"
+  },
+  {
+    "test": "supporting page mobile /verify-certificate",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 1333,
+    "status": "PASS"
+  },
+  {
+    "test": "catalog live search",
+    "matchedCount": 1,
+    "status": "PASS"
+  },
+  {
+    "test": "genuine catalog detail link",
+    "detail": "/diplomas/دبلومة-تطوير-الويب-الشامل",
+    "status": "PASS"
+  },
+  {
+    "test": "diploma detail mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 3250,
+    "status": "PASS"
+  },
+  {
+    "test": "story navigation lifecycle",
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 1440 overflow",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 2286,
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 1440 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 1440 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "course 1440 honest media",
+    "status": "PASS"
+  },
+  {
+    "test": "course 1440 anonymous CTA",
+    "label": "سجّل الدخول للمتابعة",
+    "status": "PASS"
+  },
+  {
+    "test": "course 1440 accordion collapse",
+    "status": "PASS"
+  },
+  {
+    "test": "course 1440 accordion keyboard",
+    "status": "FAIL"
+  },
+  {
+    "test": "polish diploma 1440 overflow",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 2094,
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploma 1440 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploma 1440 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 1440 overflow",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 4584,
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 1440 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 1440 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 1440 overflow",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 2062,
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 1440 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 1440 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 1440 overflow",
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 1334,
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 1440 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 1440 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "community 1440 unavailable",
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 768 overflow",
+    "width": 768,
+    "scrollWidth": 753,
+    "height": 3000,
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 768 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 768 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "course 768 honest media",
+    "status": "PASS"
+  },
+  {
+    "test": "course 768 anonymous CTA",
+    "label": "سجّل الدخول للمتابعة",
+    "status": "PASS"
+  },
+  {
+    "test": "course 768 accordion collapse",
+    "status": "PASS"
+  },
+  {
+    "test": "course 768 accordion keyboard",
+    "status": "FAIL"
+  },
+  {
+    "test": "polish diploma 768 overflow",
+    "width": 768,
+    "scrollWidth": 753,
+    "height": 2461,
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploma 768 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploma 768 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 768 overflow",
+    "width": 768,
+    "scrollWidth": 753,
+    "height": 11345,
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 768 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 768 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 768 overflow",
+    "width": 768,
+    "scrollWidth": 753,
+    "height": 3375,
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 768 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 768 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 768 overflow",
+    "width": 768,
+    "scrollWidth": 753,
+    "height": 1273,
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 768 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 768 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "community 768 unavailable",
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 390 overflow",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 3236,
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 390 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 390 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "course 390 honest media",
+    "status": "PASS"
+  },
+  {
+    "test": "course 390 anonymous CTA",
+    "label": "سجّل الدخول للمتابعة",
+    "status": "PASS"
+  },
+  {
+    "test": "course 390 accordion collapse",
+    "status": "PASS"
+  },
+  {
+    "test": "course 390 accordion keyboard",
+    "status": "FAIL"
+  },
+  {
+    "test": "polish diploma 390 overflow",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 3250,
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploma 390 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploma 390 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 390 overflow",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 10417,
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 390 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 390 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 390 overflow",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 3077,
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 390 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 390 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 390 overflow",
+    "width": 390,
+    "scrollWidth": 390,
+    "height": 1177,
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 390 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 390 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "community 390 unavailable",
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 360 overflow",
+    "width": 360,
+    "scrollWidth": 360,
+    "height": 3242,
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 360 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish course 360 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "course 360 honest media",
+    "status": "PASS"
+  },
+  {
+    "test": "course 360 anonymous CTA",
+    "label": "سجّل الدخول للمتابعة",
+    "status": "PASS"
+  },
+  {
+    "test": "course 360 accordion collapse",
+    "status": "PASS"
+  },
+  {
+    "test": "course 360 accordion keyboard",
+    "status": "FAIL"
+  },
+  {
+    "test": "polish diploma 360 overflow",
+    "width": 360,
+    "scrollWidth": 360,
+    "height": 3299,
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploma 360 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploma 360 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 360 overflow",
+    "width": 360,
+    "scrollWidth": 360,
+    "height": 10462,
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 360 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish courses 360 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 360 overflow",
+    "width": 360,
+    "scrollWidth": 360,
+    "height": 3195,
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 360 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish diploms 360 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 360 overflow",
+    "width": 360,
+    "scrollWidth": 360,
+    "height": 1226,
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 360 claims",
+    "status": "PASS"
+  },
+  {
+    "test": "polish community 360 contact",
+    "status": "PASS"
+  },
+  {
+    "test": "community 360 unavailable",
+    "status": "PASS"
+  },
+  {
+    "test": "actual anonymous course CTA destination",
+    "status": "PASS"
+  },
+  {
+    "test": "actual anonymous diploma CTA destination",
+    "status": "PASS"
+  },
+  {
+    "test": "free course truthful price and refund",
+    "status": "PASS"
+  },
+  {
+    "test": "paid course truthful price and refund",
+    "status": "PASS"
+  },
+  {
+    "test": "slow scroll story final",
+    "status": "PASS"
+  },
+  {
+    "test": "story re-entry",
+    "status": "PASS"
+  },
+  {
+    "test": "story resize visibility",
+    "status": "PASS"
+  },
+  {
+    "test": "runtime exceptions",
+    "errors": [],
+    "status": "PASS"
+  }
+]

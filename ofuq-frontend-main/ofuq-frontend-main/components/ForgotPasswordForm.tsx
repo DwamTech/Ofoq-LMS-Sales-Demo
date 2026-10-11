@@ -1,4 +1,5 @@
 'use client';
+import { BrandLogo } from '@/components/brand/BrandLogo'
 
 import React, { useState } from 'react';
 import styles from './ForgotPasswordForm.module.css';
@@ -39,7 +40,7 @@ const ForgotPasswordForm: React.FC<ForgotPasswordFormProps> = ({ onBackToLogin }
     <div className={styles.authFormContainer}>
       {/* Logo */}
       <div className={styles.authFormLogo}>
-        <img src="/logo.png" alt="منصة أفق للتعليم عن بعد" />
+        <BrandLogo/>
       </div>
 
       {/* Form Content Container */}

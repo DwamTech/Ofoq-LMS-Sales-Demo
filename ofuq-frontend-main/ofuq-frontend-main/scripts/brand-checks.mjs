@@ -1,0 +1,20 @@
+import {spawnSync} from 'node:child_process';
+import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const out=resolve('artifacts/mansatak');await mkdir(out,{recursive:true});
+const run=args=>spawnSync(process.execPath,args,{encoding:'utf8',windowsHide:true,maxBuffer:35_000_000});
+const baseline=JSON.parse(await readFile(resolve(out,'baseline.json'),'utf8'));
+const ts=run(['node_modules/typescript/bin/tsc','--noEmit','--pretty','false']);
+const diagnostics=ts.stdout.split(/\r?\n/).filter(l=>l.includes('error TS')),normalize=l=>l.replace(/\(\d+,\d+\)/,'');
+// Union member ordering in TS diagnostics can change after a line-only edit.
+const equivalent=l=>normalize(l).replace('PaginatedReportTable<ReportLessonRow> | ReportLessonRow[]','ReportLessonRow[] | PaginatedReportTable<ReportLessonRow>');
+const old=new Set(baseline.typescript.map(equivalent));
+const lint=run(['node_modules/eslint/bin/eslint.js','app','components','utils','lib','-f','json']);const records=JSON.parse(lint.stdout);
+const focus=['components/brand/BrandLogo.tsx','components/brand/BrandLogo.test.tsx','components/brand/BrandMark.tsx','components/brand/logoVectors.ts','components/brand/BrandPrimitives.tsx','components/brand/publicContent.ts','components/brand/PublicShell.tsx','components/brand/ProductPanel.tsx','components/experience/ExperienceGateway.tsx','components/experience/HorizonIntro.tsx','components/student/StudentWorkspace.tsx','components/student/StudentHome.tsx','components/student/StudentProvider.tsx','components/admin/showcase/AdminOverview.tsx','components/admin/showcase/AdminWorkspace.tsx','components/admin/showcase/AdminPrimitives.tsx','lib/brand.ts','app/manifest.ts','app/layout.tsx','app/page.tsx','app/about/page.tsx','app/experience/page.tsx'];
+const fl=run(['node_modules/eslint/bin/eslint.js',...focus,'-f','json']);const fs=JSON.parse(fl.stdout);
+const jest=run(['node_modules/jest/bin/jest.js','--runInBand']);
+const fj=run(['node_modules/jest/bin/jest.js','--runInBand','components/brand/BrandLogo.test.tsx','utils/demoGateway.test.ts','app/api/demo-entry/route.test.ts','utils/studentJourney.test.ts','utils/adminShowcase.test.ts','__tests__/preservation/admin-routes.preservation.test.ts','components/brand/publicContent.test.ts']);
+const bfiles=new Map(baseline.lint.files.map(r=>[r.file,r]));
+const regressions=records.filter(r=>r.errorCount>(bfiles.get(r.filePath)?.errors??0)||r.warningCount>(bfiles.get(r.filePath)?.warnings??0)).map(r=>({file:r.filePath,errors:r.errorCount,warnings:r.warningCount,messages:r.messages}));
+const result={typescript:{status:ts.status===0?'PASS':'FAIL',baseline:baseline.typescript.length,final:diagnostics.length,newDiagnostics:diagnostics.filter(l=>!old.has(equivalent(l)))},focusedLint:{status:fl.status===0?'PASS':'FAIL',errors:fs.reduce((n,r)=>n+r.errorCount,0),warnings:fs.reduce((n,r)=>n+r.warningCount,0),files:fs.map(r=>({file:r.filePath,errors:r.errorCount,warnings:r.warningCount,messages:r.messages}))},fullLint:{status:lint.status===0?'PASS':'FAIL',baseline:{errors:baseline.lint.errors,warnings:baseline.lint.warnings},final:{errors:records.reduce((n,r)=>n+r.errorCount,0),warnings:records.reduce((n,r)=>n+r.warningCount,0)},regressions},focusedJest:{status:fj.status===0?'PASS':'FAIL',output:fj.stdout+fj.stderr},fullJest:{status:jest.status===0?'PASS':'FAIL',output:jest.stdout+jest.stderr},buildConfigurationUnchanged:baseline.config===await readFile('next.config.js','utf8')};
+await writeFile(resolve(out,'technical-results.json'),JSON.stringify(result,null,2));console.log(JSON.stringify({...result,focusedLint:{...result.focusedLint,files:undefined},focusedJest:result.focusedJest.output.split(/\r?\n/).filter(l=>/^Tests:|^Test Suites:/.test(l)),fullJest:result.fullJest.output.split(/\r?\n/).filter(l=>/^Tests:|^Test Suites:/.test(l))},null,2));

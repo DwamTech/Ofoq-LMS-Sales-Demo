@@ -1,0 +1,438 @@
+{
+  "pass": 24,
+  "fail": 0,
+  "scope": "Offline SVG review only; no application endpoint/authentication requests",
+  "checks": [
+    {
+      "name": "comparison-board.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1800,
+          "height": 1800
+        },
+        "viewBox": {
+          "width": 1800,
+          "height": 1800
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "favicon-16.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "viewBox": {
+          "width": 256,
+          "height": 256
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "favicon-180.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "viewBox": {
+          "width": 256,
+          "height": 256
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "favicon-192.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "viewBox": {
+          "width": 256,
+          "height": 256
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "favicon-24.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "viewBox": {
+          "width": 256,
+          "height": 256
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "favicon-256.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "viewBox": {
+          "width": 256,
+          "height": 256
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "favicon-32.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "viewBox": {
+          "width": 256,
+          "height": 256
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "favicon-48.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "viewBox": {
+          "width": 256,
+          "height": 256
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "favicon-512.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "viewBox": {
+          "width": 256,
+          "height": 256
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "favicon-64.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 256,
+          "height": 256
+        },
+        "viewBox": {
+          "width": 256,
+          "height": 256
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-horizontal-dark.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 24.31999969482422,
+          "y": 16,
+          "width": 544.6799926757812,
+          "height": 208.16000366210938
+        },
+        "viewBox": {
+          "width": 600,
+          "height": 232
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-horizontal-light.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 24.31999969482422,
+          "y": 16,
+          "width": 544.6799926757812,
+          "height": 208.16000366210938
+        },
+        "viewBox": {
+          "width": 600,
+          "height": 232
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-horizontal-mono-white.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 24.31999969482422,
+          "y": 16,
+          "width": 544.6799926757812,
+          "height": 208.16000366210938
+        },
+        "viewBox": {
+          "width": 600,
+          "height": 232
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-horizontal-mono.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 24.31999969482422,
+          "y": 16,
+          "width": 544.6799926757812,
+          "height": 208.16000366210938
+        },
+        "viewBox": {
+          "width": 600,
+          "height": 232
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-icon-dark.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 12,
+          "y": 12,
+          "width": 199,
+          "height": 199.25
+        },
+        "viewBox": {
+          "width": 224,
+          "height": 224
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-icon-light.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 12,
+          "y": 12,
+          "width": 199,
+          "height": 199.25
+        },
+        "viewBox": {
+          "width": 224,
+          "height": 224
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-icon-mono-white.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 12,
+          "y": 12,
+          "width": 199,
+          "height": 199.25
+        },
+        "viewBox": {
+          "width": 224,
+          "height": 224
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-icon-mono.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 12,
+          "y": 12,
+          "width": 199,
+          "height": 199.25
+        },
+        "viewBox": {
+          "width": 224,
+          "height": 224
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-stacked-dark.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 24.31999969482422,
+          "y": 12,
+          "width": 323.1399841308594,
+          "height": 409.1600036621094
+        },
+        "viewBox": {
+          "width": 372,
+          "height": 436
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-stacked-light.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 24.31999969482422,
+          "y": 12,
+          "width": 323.1399841308594,
+          "height": 409.1600036621094
+        },
+        "viewBox": {
+          "width": 372,
+          "height": 436
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-stacked-mono-white.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 24.31999969482422,
+          "y": 12,
+          "width": 323.1399841308594,
+          "height": 409.1600036621094
+        },
+        "viewBox": {
+          "width": 372,
+          "height": 436
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "mansatak-stacked-mono.svg: browser render and contained geometry",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 24.31999969482422,
+          "y": 12,
+          "width": 323.1399841308594,
+          "height": 409.1600036621094
+        },
+        "viewBox": {
+          "width": 372,
+          "height": 436
+        },
+        "missingGradients": [],
+        "duplicateIds": 0,
+        "images": 0
+      }
+    },
+    {
+      "name": "Arabic supporting font shaping and exact words",
+      "status": "PASS",
+      "details": {
+        "samples": 22,
+        "manualRefinement": "initial meem only; licensed outlines for other letters"
+      }
+    },
+    {
+      "name": "No browser exceptions",
+      "status": "PASS",
+      "details": []
+    }
+  ]
+}

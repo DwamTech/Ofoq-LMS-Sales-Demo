@@ -1,0 +1,34 @@
+{
+  "database": "ofoq_demo",
+  "student": "ليان أحمد الكيلاني",
+  "learning_records": {
+    "user_courses": {
+      "count": 8,
+      "sha256": "4df39d00383ad0f9cff159d56de6448ba01e36b628b580cbc486f91edfd0ff96"
+    },
+    "user_category_enrollments": {
+      "count": 2,
+      "sha256": "35a8dba934eb8931380e7aace3fa1191079a437d2b8bb21ba146223e5c8c9aff"
+    },
+    "user_lesson_progress": {
+      "count": 78,
+      "sha256": "01c3a0c612ad68de172fb43e3d7cc244615d5838048d6c4c85ce241d1d0cc145"
+    },
+    "user_quizzes_attempts": {
+      "count": 6,
+      "sha256": "f3d499336f88871fa3901b1040d12be4983eda14db1c40a1bac0426c4c2cf182"
+    },
+    "course_certificates": {
+      "count": 1,
+      "sha256": "896afafd441ec16bf25d368e70df0eca72e18000396b1bc48acddc39bfe6505a"
+    },
+    "diploma_certificates": {
+      "count": 1,
+      "sha256": "c582cc7eb9859d4c76a4bdd10d3f5b0fb4aa44828d12a533ce3ecc822e87e450"
+    },
+    "certificates": {
+      "count": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  }
+}

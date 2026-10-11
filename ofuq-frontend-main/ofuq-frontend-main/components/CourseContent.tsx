@@ -8,8 +8,10 @@ import { LessonWatchStatus } from '@/utils/lessonService';
 import { getCourseProgressDetails, type CourseStats } from '@/utils/courseService';
 import { FaCheckCircle } from 'react-icons/fa';
 import { BookOpen, Clock3, Users } from 'lucide-react';
+import { publicDescription } from './brand/publicContent';
 
 interface CourseContentProps {
+  publicView?: boolean;
   courseTitle: string;
   lecturesCount: number;
   studentsCount: number;
@@ -44,6 +46,7 @@ interface CourseContentProps {
 }
 
 const CourseContent: React.FC<CourseContentProps> = ({
+  publicView = false,
   courseTitle,
   lecturesCount,
   studentsCount,
@@ -75,8 +78,8 @@ const CourseContent: React.FC<CourseContentProps> = ({
     // فتح جميع الأقسام افتراضياً عند التحميل الأول
     const initial: Record<string, boolean> = {};
     if (Array.isArray(chapters) && chapters.length > 0) {
-      chapters.forEach((ch) => {
-        initial[`chapter-${ch.id}`] = true;
+      chapters.forEach((ch, index) => {
+        initial[`chapter-${ch.id}`] = !publicView || index === 0;
       });
     }
     return initial;
@@ -157,7 +160,7 @@ const CourseContent: React.FC<CourseContentProps> = ({
           video_url: l.video_url ?? null,
         })),
       }))
-      : [
+      : publicView ? [] : [
         {
           id: 'sample-1',
           title: 'محتوى تجريبي',
@@ -173,8 +176,8 @@ const CourseContent: React.FC<CourseContentProps> = ({
   React.useEffect(() => {
     if (Object.keys(expandedSections).length > 0) return;
     const openMap: Record<string, boolean> = {};
-    contentSections.forEach((s) => {
-      openMap[s.id] = true;
+    contentSections.forEach((s, index) => {
+      openMap[s.id] = !publicView || index === 0;
     });
     if (Object.keys(openMap).length > 0) {
       setExpandedSections(openMap);
@@ -269,25 +272,28 @@ const CourseContent: React.FC<CourseContentProps> = ({
               <>
                 <h2>وصف الكورس :</h2>
                 {courseDescription ? (
-                  <p className="course-overview">{courseDescription}</p>
+                  <p className="course-overview">{publicView ? publicDescription(courseDescription) : courseDescription}</p>
                 ) : null}
               </>
             )}
             {/* إزالة النص التجريبي واستبداله بالوصف الحقيقي فقط */}
 
             <h2>محتوى الكورس :</h2>
-            <p className="course-content-subtitle">نحن هنا لمساعدتك والإجابة على أسئلتك</p>
+            <p className="course-content-subtitle">{publicView ? 'استكشف الفصول والدروس. عرض المحتوى الكامل يخضع لصلاحيات التسجيل.' : 'نحن هنا لمساعدتك والإجابة على أسئلتك'}</p>
+            {publicView && contentSections.length === 0 && <p role="status">لا توجد فصول منشورة لهذا المقرر حاليًا.</p>}
 
-            <div className="course-content-dropdowns">
+            <div id={publicView ? 'course-curriculum' : undefined} className="course-content-dropdowns">
               {contentSections.map((section, index) => (
                 <div key={section.id} className="dropdown-section">
                   <button
                     className={`dropdown-header ${expandedSections[section.id] ? 'expanded' : ''}`}
                     aria-expanded={!!expandedSections[section.id]}
+                    aria-controls={`content-${section.id}`}
                     onClick={() => toggleSection(section.id)}
                   >
                     <div className="dropdown-title-container">
-                      <span className="dropdown-title">{section.title}</span>
+                      <span className="dropdown-title">{publicView ? section.title.replace(` في ${courseTitle}`, '') : section.title}</span>
+                      {publicView && <small>{section.lessons.length} دروس</small>}
                     </div>
                     <svg
                       className={`dropdown-arrow ${expandedSections[section.id] ? 'rotated' : ''}`}
@@ -298,7 +304,7 @@ const CourseContent: React.FC<CourseContentProps> = ({
                   </button>
 
                   {expandedSections[section.id] && (
-                    <div className="dropdown-content">
+                    <div id={`content-${section.id}`} className="dropdown-content">
                       {section.lessons.map((lesson, lessonIndex) => (
                         <div
                           key={`lesson-${lesson.id}-${lessonIndex}`}
@@ -316,7 +322,7 @@ const CourseContent: React.FC<CourseContentProps> = ({
                                 <FaCheckCircle className="completed-icon" size={18} />
                               </span>
                             )}
-                            <span className="lesson-title">{lesson.title}</span>
+                            <span className="lesson-title">{publicView ? lesson.title.replace(` — ${courseTitle}`, '') : lesson.title}</span>
                           </div>
                           <button
                             className="play-lesson-btn"
@@ -337,7 +343,7 @@ const CourseContent: React.FC<CourseContentProps> = ({
                               hasRealContent
                                 ? (isEnrolled
                                   ? 'مشاهدة'
-                                  : (lesson.video_url ? 'معاينة' : 'اشترِ الآن'))
+                                  : (lesson.video_url ? 'معاينة' : publicView ? 'يتطلب التسجيل' : 'اشترِ الآن'))
                                 : 'قريباً'
                             }</span>
                           </button>
@@ -370,7 +376,7 @@ const CourseContent: React.FC<CourseContentProps> = ({
   return (
     <div className="left-content">
       {/* Course Title */}
-      <h1 className="course-title">{courseTitle}</h1>
+      {!publicView && <h1 className="course-title">{courseTitle}</h1>}
 
       {/* Course Stats */}
       {!hideStats && (
@@ -393,7 +399,7 @@ const CourseContent: React.FC<CourseContentProps> = ({
             <Users className="stat-icon" />
             <div className="stat-copy">
               <strong>{formatNumber(stats.students)} طالب</strong>
-              <span>مسجل فعليًا</span>
+              <span>{publicView ? 'تسجيلات ضمن العرض' : 'مسجل فعليًا'}</span>
             </div>
           </div>
         </div>

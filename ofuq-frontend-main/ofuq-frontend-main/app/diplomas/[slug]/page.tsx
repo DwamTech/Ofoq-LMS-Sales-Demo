@@ -9,6 +9,9 @@ import HomeHeader from '../../../components/HomeHeader';
 import Footer from '../../../components/Footer';
 import ScrollToTop from '../../../components/ScrollToTop';
 import { SkeletonImage, SkeletonTitle, SkeletonText, SkeletonButton, SkeletonCourseCard } from '../../../components/Skeleton';
+import { ProgramArtwork } from '../../../components/brand/ProgramArtwork';
+import { publicDescription, publicPrice } from '@/components/brand/publicContent';
+import education from '@/components/brand/PublicEducation.module.css';
 import SocialMediaFloat from '../../../components/SocialMediaFloat';
 import EnrollmentInfoModal from '../../../components/EnrollmentInfoModal';
 import Toast from '../../../components/Toast';
@@ -31,6 +34,8 @@ export default function DiplomaDetailsPage() {
   const coursesRef = useRef<HTMLElement>(null);
 
   const [diploma, setDiploma] = useState<DiplomaDetails | null>(null);
+  const [authenticated, setAuthenticated] = useState(false);
+  useEffect(() => { setAuthenticated(isAuthenticated()) }, []);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [enrollStatus, setEnrollStatus] = useState<{ type: 'idle' | 'loading' | 'success' | 'error'; message?: string }>({ type: 'idle' });
@@ -152,7 +157,7 @@ export default function DiplomaDetailsPage() {
     const coverRaw = (course as any).cover_image_url || (course as any).coverImage || (course as any).image || course.cover_image || '';
     const image = getBackendAssetUrl(coverRaw) || '/banner.jpg';
     const instructorName = (course?.instructor as any)?.name || 'مدرب';
-    const desc = (course?.description || '').trim();
+    const desc = publicDescription(course?.description);
     const description = desc.length > 120 ? desc.slice(0, 120) + '…' : desc;
     return {
       id: String(course.id),
@@ -160,7 +165,7 @@ export default function DiplomaDetailsPage() {
       image,
       description,
       instructorName,
-      priceText: course.is_free ? 'مجاني' : `${course.price} جنيه`,
+      priceText: publicPrice(course.price, course.is_free),
     };
   };
 
@@ -168,7 +173,7 @@ export default function DiplomaDetailsPage() {
     if (checkingEnrollment) return 'جاري التحقق...';
     if (enrollStatus.type === 'loading') return 'جارِ التسجيل…';
     if (isEnrolled) return 'شاهد المقررات';
-    return 'التسجيل بالدبلومة';
+    return authenticated ? 'التسجيل بالدبلومة' : 'سجّل الدخول للتسجيل';
   };
 
   const getButtonClass = () => {
@@ -181,7 +186,7 @@ export default function DiplomaDetailsPage() {
       <HomeHeader />
 
       {loading && (
-        <main className={styles.page} dir="rtl">
+        <main className={`${styles.page} ${education.diplomaPage}`} dir="rtl">
           <section className={styles.detailsSection}>
             <div className={styles.detailsGrid}>
               <div className={styles.coverWrapper}>
@@ -217,7 +222,7 @@ export default function DiplomaDetailsPage() {
       )}
 
       {!loading && !error && diploma && (
-        <main className={styles.page} dir="rtl">
+        <main className={`${styles.page} ${education.diplomaPage}`} dir="rtl">
           {/* Enhanced Hero Section */}
           {/* <section className={styles.hero}>
             <div className={styles.heroBackground}>
@@ -278,11 +283,7 @@ export default function DiplomaDetailsPage() {
           <section className={styles.detailsSection}>
             <div className={styles.detailsGrid}>
               <div className={styles.coverWrapper}>
-                <img
-                  className={styles.coverImage}
-                  src={getBackendAssetUrl(diploma?.cover_image_url || '') || '/banner.jpg'}
-                  alt={diploma?.name || 'غلاف الدبلومة'}
-                />
+                <ProgramArtwork title={diploma.name} identity={diploma.slug} image={getBackendAssetUrl(diploma?.cover_image_url || '') || '/banner.jpg'} />
                 <div className={styles.coverOverlay}>
                   <button
                     className={styles.playButton}
@@ -294,8 +295,10 @@ export default function DiplomaDetailsPage() {
                 </div>
               </div>
               <div className={styles.detailsContent}>
+                <h1 className={styles.heroTitle}>{diploma.name}</h1>
                 <h2 className={styles.detailsTitle}>نبذة عن الدبلومة</h2>
-                <p className={styles.detailsDescription}>{diploma?.description}</p>
+                <p className={styles.detailsDescription}>{publicDescription(diploma?.description)}</p>
+                <p className={education.priceNote}>برنامج من كتالوج تجربة المنصة. الأسعار قيم للعرض؛ العملة غير محددة لهذا العرض.</p>
                 <div className={styles.detailsMeta}>
                   {/* <div className={styles.metaItem}>
                     <strong>الحالة:</strong> 
@@ -306,7 +309,7 @@ export default function DiplomaDetailsPage() {
                   <div className={styles.metaItem}>
                     <strong>السعر:</strong>
                     <span className={styles.priceTag}>
-                      {diploma?.is_free ? 'مجاني' : `${diploma?.price} جنيه`}
+                      {publicPrice(diploma.price, diploma.is_free)}
                     </span>
                   </div>
                   {typeof diploma?.courses_count !== 'undefined' && (
@@ -321,7 +324,7 @@ export default function DiplomaDetailsPage() {
                     className={`${styles.enrollButtonSecondary} ${isEnrolled ? styles.viewCoursesButtonSecondary : ''}`}
                     onClick={handleEnroll}
                     disabled={enrollStatus.type === 'loading' || checkingEnrollment}
-                    aria-label={isEnrolled ? 'مشاهدة المقررات' : 'التسجيل بالدبلومة'}
+                    aria-label={getButtonText()}
                   >
                     <span className={styles.buttonText}>{getButtonText()}</span>
                     <span className={styles.buttonIconSmall} aria-hidden="true">
@@ -353,7 +356,7 @@ export default function DiplomaDetailsPage() {
                 return (
                   <Link href={`/course-details/${c.id}`} key={c.id} className={styles.courseCard}>
                     <div className={styles.courseImageWrapper}>
-                      <img src={c.image} alt={c.title} className={styles.courseImage} />
+                      <ProgramArtwork title={c.title} image={c.image} identity={String(c.id)} />
                       <ExamBadge hasFinalExam={course.has_final_exam} variant="default" />
                       <div className={styles.courseOverlay}>
                         <div className={styles.coursePlayButton}><FiPlay /></div>
@@ -372,7 +375,7 @@ export default function DiplomaDetailsPage() {
                         </div>
                       </div>
                       <div className={styles.courseFooter}>
-                        <span className={styles.courseAction}>ابدأ التعلم</span>
+                        <span className={styles.courseAction}>تفاصيل المقرر</span>
                         <i className={styles.arrowIcon}>←</i>
                       </div>
                     </div>

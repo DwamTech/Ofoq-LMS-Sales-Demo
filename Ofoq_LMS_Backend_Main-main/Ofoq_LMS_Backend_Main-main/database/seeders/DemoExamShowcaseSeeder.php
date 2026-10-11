@@ -12,6 +12,7 @@ use App\Models\UserQuizAttempt;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use RuntimeException;
+use App\Support\DemoEnvironmentGuard;
 
 /**
  * Prepares one additional, eligible final-exam course for the Demo Student.
@@ -26,15 +27,19 @@ class DemoExamShowcaseSeeder extends Seeder
     private const STUDENT_EMAIL = 'student.demo@demo.ofoq.local';
 
     // Existing DemoSalesSeeder course: "قواعد البيانات باستخدام Python".
-    private const SHOWCASE_COURSE_ID = 7;
+    private const SHOWCASE_COURSE_TITLE = 'قواعد البيانات باستخدام Python';
 
     public function run(): void
     {
+        DemoEnvironmentGuard::assertLocalDemo();
         $student = User::query()
             ->where('email', self::STUDENT_EMAIL)
             ->firstOrFail();
 
-        $course = Course::withoutGlobalScopes()->findOrFail(self::SHOWCASE_COURSE_ID);
+        $course = Course::withoutGlobalScopes()
+            ->where('title', self::SHOWCASE_COURSE_TITLE)
+            ->whereHas('category', fn ($query) => $query->where('name', 'دبلومة البرمجة بلغة Python'))
+            ->firstOrFail();
 
         if (CourseCertificate::query()
             ->where('user_id', $student->id)

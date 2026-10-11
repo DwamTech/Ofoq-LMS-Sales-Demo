@@ -1,0 +1,1584 @@
+{
+  "typescript": [
+    "app/admin/diplomas/[id]/courses/[courseId]/chapters/[chapterId]/lessons/page.tsx(162,44): error TS2345: Argument of type '{ title: string; content: string; video_url: string | null; video_guid: string | null; order: number; chapter_id: number; is_visible: boolean; }' is not assignable to parameter of type '{ title?: string | undefined; content?: string | undefined; order?: number | undefined; video_url?: string | undefined; video_guid?: string | undefined; is_visible?: boolean | undefined; }'.",
+    "app/admin/diplomas/[id]/courses/[courseId]/chapters/[chapterId]/lessons/page.tsx(164,37): error TS2345: Argument of type '{ title: string; content: string; video_url: string | null; video_guid: string | null; order: number; chapter_id: number; is_visible: boolean; }' is not assignable to parameter of type '{ title: string; content?: string | undefined; order: number; video_url?: string | undefined; video_guid?: string | undefined; is_visible?: boolean | undefined; }'.",
+    "app/admin/diplomas/[id]/courses/[courseId]/chapters/[chapterId]/lessons/page.tsx(242,16): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "app/admin/diplomas/[id]/courses/[courseId]/chapters/[chapterId]/lessons/page.tsx(242,31): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "app/admin/diplomas/[id]/courses/[courseId]/chapters/[chapterId]/lessons/page.tsx(242,56): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "app/admin/diplomas/[id]/courses/[courseId]/chapters/[chapterId]/lessons/page.tsx(243,36): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "app/admin/reports/courses/[id]/page.tsx(103,47): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/courses/[id]/page.tsx(112,47): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/courses/[id]/page.tsx(135,9): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; action: Element; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/diplomas/[id]/page.tsx(103,49): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/diplomas/[id]/page.tsx(112,49): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/diplomas/[id]/page.tsx(134,9): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; action: Element; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/lessons/[id]/page.tsx(107,46): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/lessons/[id]/page.tsx(116,46): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/lessons/[id]/page.tsx(152,9): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; action: Element; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/page.tsx(332,43): error TS2322: Type '{ hidden: { opacity: number; y: number; }; show: { opacity: number; y: number; transition: { type: string; stiffness: number; damping: number; }; }; }' is not assignable to type 'Variants'.",
+    "app/admin/reports/students/[id]/page.tsx(102,47): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/students/[id]/page.tsx(111,47): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/students/[id]/page.tsx(121,47): error TS2339: Property 'data' does not exist on type 'ReportLessonRow[] | PaginatedReportTable<ReportLessonRow>'.",
+    "app/admin/reports/students/[id]/page.tsx(121,68): error TS2339: Property 'data' does not exist on type 'ReportLessonRow[] | PaginatedReportTable<ReportLessonRow>'.",
+    "app/admin/reports/students/[id]/page.tsx(192,9): error TS2322: Type '{ title: string; breadcrumbs: { label: string; href: string; }[]; action: Element; }' is not assignable to type 'IntrinsicAttributes & AdminPageHeaderProps'.",
+    "app/admin/reports/students/page.tsx(119,22): error TS2802: Type 'Set<number>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.",
+    "app/admin/reports/students/page.tsx(128,22): error TS2802: Type 'Set<number>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.",
+    "components/BackupManager.tsx(436,45): error TS17001: JSX elements cannot have multiple attributes with the same name.",
+    "components/CourseContent.tsx(7,10): error TS2305: Module '\"@/utils/lessonService\"' has no exported member 'LessonWatchStatus'.",
+    "components/courses/ContentManagementStep.tsx(9,52): error TS2724: '\"@/utils/lessonService\"' has no exported member named 'CreateLessonData'. Did you mean 'createLesson'?",
+    "components/courses/ContentManagementStep.tsx(423,106): error TS2339: Property 'description' does not exist on type 'Lesson'.",
+    "components/courses/ContentManagementStep.tsx(429,92): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "components/courses/ContentManagementStep.tsx(431,89): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "components/courses/ContentManagementStep.tsx(432,92): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "components/courses/ContentManagementStep.tsx(433,92): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "components/courses/ContentManagementStep.tsx(434,94): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "components/courses/ContentManagementStep.tsx(435,91): error TS2339: Property 'quiz' does not exist on type 'Lesson'.",
+    "components/courses/ContentManagementStep.tsx(570,39): error TS2552: Cannot find name 'updateLessonAdmin'. Did you mean 'updateLesson'?",
+    "components/courses/ContentManagementStep.tsx(609,39): error TS2552: Cannot find name 'updateLessonAdmin'. Did you mean 'updateLesson'?",
+    "components/courses/LessonQuestionManager.tsx(4,10): error TS2724: '\"../../utils/lessonService\"' has no exported member named 'updateLessonAdmin'. Did you mean 'updateLesson'?",
+    "components/ExamCard.test.tsx(40,58): error TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'.",
+    "components/ExamCard.test.tsx(41,60): error TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'.",
+    "components/ExamCard.test.tsx(42,65): error TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'.",
+    "components/ExamCard.test.tsx(43,53): error TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'.",
+    "components/ExamCard.test.tsx(44,64): error TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'.",
+    "components/ExamCard.test.tsx(45,87): error TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'.",
+    "components/ExamCard.test.tsx(46,90): error TS2339: Property 'toBeInTheDocument' does not exist on type 'Matchers<void, HTMLElement | null>'.",
+    "components/ExamCard.test.tsx(52,76): error TS2339: Property 'toBeInTheDocument' does not exist on type 'Matchers<void, HTMLElement | null>'.",
+    "components/ExamCard.test.tsx(54,50): error TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'.",
+    "components/ExamCard.test.tsx(69,41): error TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'.",
+    "components/ExamCard.test.tsx(70,79): error TS2339: Property 'toBeDisabled' does not exist on type 'JestMatchers<HTMLElement>'.",
+    "components/ExamCard.test.tsx(71,84): error TS2339: Property 'toBeInTheDocument' does not exist on type 'Matchers<void, HTMLElement | null>'.",
+    "components/Sidebar.tsx(42,45): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(43,66): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(44,58): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(45,68): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(46,50): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(47,72): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(48,67): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(49,55): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(50,55): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(51,60): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(52,67): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/Sidebar.tsx(53,71): error TS2322: Type 'LucideIcon' is not assignable to type 'ComponentType<{ size?: number | undefined; strokeWidth?: number | undefined; }>'.",
+    "components/students managment/StudentsManagement.tsx(396,27): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.",
+    "components/students managment/StudentsManagement.tsx(396,53): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.",
+    "contexts/UploadContext.tsx(208,40): error TS2554: Expected 0-1 arguments, but got 2.",
+    "contexts/UploadContext.tsx(208,41): error TS7006: Parameter 'err' implicitly has an 'any' type.",
+    "utils/instructorService.ts(42,40): error TS2339: Property 'success' does not exist on type 'InstructorsIndexResponse'.",
+    "utils/instructorService.ts(43,25): error TS2339: Property 'data' does not exist on type 'InstructorsIndexResponse'.",
+    "utils/instructorService.ts(44,27): error TS2339: Property 'data' does not exist on type 'InstructorsIndexResponse'.",
+    "utils/instructorService.ts(44,68): error TS2339: Property 'data' does not exist on type 'InstructorsIndexResponse'.",
+    "utils/instructorService.ts(45,62): error TS2339: Property 'data' does not exist on type 'InstructorsIndexResponse'.",
+    "utils/instructorService.ts(46,32): error TS2339: Property 'data' does not exist on type 'InstructorsIndexResponse'.",
+    "utils/instructorService.ts(48,46): error TS2339: Property 'data' does not exist on type 'InstructorsIndexResponse'.",
+    "utils/instructorService.ts(49,68): error TS2339: Property 'data' does not exist on type 'InstructorsIndexResponse'.",
+    "utils/instructorService.ts(50,32): error TS2339: Property 'data' does not exist on type 'InstructorsIndexResponse'.",
+    "utils/lessonService.test.ts(70,27): error TS2322: Type '{ id: number; title: string; content: string | null; order: number; video_url: string | null; is_visible: boolean; chapter_id: number; }' is not assignable to type 'Lesson'.",
+    "utils/lessonService.test.ts(289,27): error TS2322: Type '{ title: string; content: string | null; order: number; video_url: string | null; is_visible: boolean; id: number; chapter_id: number; }' is not assignable to type 'Lesson'.",
+    "utils/lessonService.test.ts(307,66): error TS2345: Argument of type '{ title: string; content: string | null; order: number; video_url: string | null; is_visible: boolean; }' is not assignable to parameter of type '{ title: string; content?: string | undefined; order: number; video_url?: string | undefined; video_guid?: string | undefined; is_visible?: boolean | undefined; }'.",
+    "utils/lessonService.test.ts(344,25): error TS2322: Type 'boolean | null' is not assignable to type 'boolean'.",
+    "utils/lessonService.test.ts(346,25): error TS2322: Type 'string | null' is not assignable to type 'string | undefined'.",
+    "utils/lessonService.test.ts(347,25): error TS2322: Type 'string | null' is not assignable to type 'string | undefined'.",
+    "utils/lessonService.test.ts(362,65): error TS2345: Argument of type '{ title: string | null; content: string | null; order: number | null; video_url: string | null; is_visible: boolean | null; }' is not assignable to parameter of type '{ title?: string | undefined; content?: string | undefined; order?: number | undefined; video_url?: string | undefined; video_guid?: string | undefined; is_visible?: boolean | undefined; }'."
+  ],
+  "lint": {
+    "errors": 467,
+    "warnings": 63,
+    "files": [
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\about\\head.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\about\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\certificates\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\course-management\\new\\page.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\course-management\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\courses\\[id]\\chapters\\[chapterId]\\lessons\\page.tsx",
+        "errors": 6,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\courses\\[id]\\chapters\\page.tsx",
+        "errors": 3,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\courses\\[id]\\page.tsx",
+        "errors": 2,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\courses\\[id]\\question-bank\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\courses\\new\\page.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\database-backups\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\diplomas\\[id]\\courses\\[courseId]\\chapters\\[chapterId]\\lessons\\page.tsx",
+        "errors": 5,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\diplomas\\[id]\\courses\\[courseId]\\chapters\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\diplomas\\[id]\\page.tsx",
+        "errors": 3,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\diplomas\\[id]\\question-bank\\page.tsx",
+        "errors": 4,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\diplomas\\[id]\\students\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\diplomas\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\diplomas\\question-bank\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\exams\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\instructors\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\layout.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\page.tsx",
+        "errors": 4,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\policies\\privacy\\page.tsx",
+        "errors": 2,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\policies\\terms\\page.tsx",
+        "errors": 2,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\profile-management\\page.tsx",
+        "errors": 3,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\beneficiaries\\page.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\bunny\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\bunny\\sync-logs\\page.tsx",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\bunny\\videos\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\courses\\[id]\\page.tsx",
+        "errors": 6,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\courses\\page.tsx",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\diplomas\\[id]\\page.tsx",
+        "errors": 6,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\diplomas\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\financial\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\lessons\\[id]\\page.tsx",
+        "errors": 8,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\lessons\\page.tsx",
+        "errors": 8,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\page.tsx",
+        "errors": 9,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\students\\[id]\\page.tsx",
+        "errors": 6,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\students\\page.tsx",
+        "errors": 4,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\reports\\visits\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\students\\[id]\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\students\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\admin\\supervisors\\page.tsx",
+        "errors": 5,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\api\\demo-entry\\route.test.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\api\\demo-entry\\route.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\auth\\layout.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\auth\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\brand-lab\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\checkout\\[id]\\page.tsx",
+        "errors": 5,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\checkout\\page.tsx",
+        "errors": 1,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\community\\head.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\community\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\course-details\\[id]\\page.tsx",
+        "errors": 52,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\course-details\\layout.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\courses\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\dashboard\\layout.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\dashboard\\my-diplomas\\page.tsx",
+        "errors": 1,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\diplomas\\[slug]\\layout.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\diplomas\\[slug]\\page.tsx",
+        "errors": 9,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\diploms\\[slug]\\page.tsx",
+        "errors": 8,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\diploms\\head.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\diploms\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\experience\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\head.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\layout.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\login_old\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\privacy\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\profile-header\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\register_old\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\robots.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\search\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\sitemap.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\terms\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\courses\\[courseId]\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\diplomas\\[slug]\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\fav\\page.tsx",
+        "errors": 11,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\final-exam\\[courseId]\\LegacyFinalExam.tsx",
+        "errors": 2,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\final-exam\\[courseId]\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\layout.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\my-certificates\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\my_courses\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\my_exams\\LegacyMyExams.tsx",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\my_exams\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\page.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\user\\settings\\page.tsx",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\verify-certificate\\page.tsx",
+        "errors": 3,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\watch\\layout.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\watch\\page.tsx",
+        "errors": 25,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\AboutOfuqSection.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\AdminAuthGuard.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\AuthGuard.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\AuthPageContent.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\BackupManager.tsx",
+        "errors": 8,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\Card.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\Certificate.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\CertificateCard.tsx",
+        "errors": 1,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\CertificateViewer.tsx",
+        "errors": 2,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\CourseCard.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\CourseContent.tsx",
+        "errors": 7,
+        "warnings": 2
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\CourseContentCopy.tsx",
+        "errors": 5,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\CourseDetailsPopup.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\CourseGrid.tsx",
+        "errors": 0,
+        "warnings": 2
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\CourseSidebar.tsx",
+        "errors": 6,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\DashboardHeader.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\DashboardSidebar.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\DemoBanner.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\DemoReadOnlyControls.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\DemoReadOnlyNotice.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\DiplomaCard.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\DiplomaStyleCard.tsx",
+        "errors": 2,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\EnrollmentInfoModal.tsx",
+        "errors": 3,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\ExamBadge.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\ExamCard.test.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\ExamCard.tsx",
+        "errors": 9,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\ExamDetails.tsx",
+        "errors": 3,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\FileUpload.tsx",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\FilterBar.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\FinalExam.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\FinancialReportsTable.tsx",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\Footer.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\ForgotPasswordForm.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\Header.tsx",
+        "errors": 0,
+        "warnings": 6
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\HeroSearchSection.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\HeroSection.tsx",
+        "errors": 0,
+        "warnings": 2
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\HomeHeader.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\InstructorProfile.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\InstructorsManagement.tsx",
+        "errors": 0,
+        "warnings": 2
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\LessonAttachments.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\LessonResources.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\LoginForm.tsx",
+        "errors": 8,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\MegaMenu.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\NewPasswordForm.tsx",
+        "errors": 1,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\ProfileHeader.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\Quiz.tsx",
+        "errors": 2,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\ScrollToTop.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\SectionsManager.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\SessionGuard.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\Sidebar.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\SimulationQuiz.tsx",
+        "errors": 3,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\Skeleton.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\SocialMediaFloat.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\StatCard.tsx",
+        "errors": 2,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\StudentReviews.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\TestimonialsSlider.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\Toast.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\UploadManager.tsx",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\UserStats.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\UserWelcome.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\ValuesSection.tsx",
+        "errors": 0,
+        "warnings": 2
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\VerificationCodeForm.tsx",
+        "errors": 0,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\VideoPopup.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\VideoSection.tsx",
+        "errors": 5,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\VisitsReportsTable.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\WatchProgress.tsx",
+        "errors": 2,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\WorldUsersMap.tsx",
+        "errors": 2,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminButton.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminCard.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminFormField.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminInput.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminPage.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminPageHeader.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminPagination.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminSection.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminSelect.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminState.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminTable.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminTableToolbar.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\AdminTextarea.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\ConfirmDialog.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\FormActions.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminCatalog.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminOverview.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminPrimitives.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminProvider.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminReports.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminStudents.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminView.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminWorkspace.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\BrandMark.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\BrandPrimitives.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\CommunityMedia.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\ProductPanel.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\ProgramArtwork.tsx",
+        "errors": 0,
+        "warnings": 2
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\ProgramGraphic.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\PublicShell.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\ShowcaseMotion.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\brandFonts.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\communityMediaSources.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\publicContent.test.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\publicContent.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\publicRoutes.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\courses\\BasicInfoStep.tsx",
+        "errors": 1,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\courses\\CategoriesPopup.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\courses\\ContentManagementStep.tsx",
+        "errors": 16,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\courses\\CourseCreationNav.tsx",
+        "errors": 2,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\courses\\CourseDetails.tsx",
+        "errors": 0,
+        "warnings": 2
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\courses\\CoursesList.tsx",
+        "errors": 1,
+        "warnings": 4
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\courses\\HeroSection.tsx",
+        "errors": 2,
+        "warnings": 1
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\courses\\LessonQuestionManager.tsx",
+        "errors": 9,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\courses\\ReviewStep.tsx",
+        "errors": 10,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\experience\\ExperienceGateway.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\experience\\HorizonIntro.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\experience\\PersonaWorlds.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\Badges.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\BunnyReportsNav.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\BunnySyncRunPanel.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\ReportCards.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\ReportChart.tsx",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\ReportDetailPage.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\ReportFilters.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\ReportPagination.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\ReportState.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\reports\\ReportTable.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\settings\\PasswordTab.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\settings\\PreferencesTab.tsx",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\settings\\ProfileTab.tsx",
+        "errors": 1,
+        "warnings": 2
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\LearningPrimitives.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentCatalog.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentCertificates.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentCourse.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentDiploma.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentExam.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentHome.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentLesson.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentProvider.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentWorkspace.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\students managment\\FinalGradesList.tsx",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\students managment\\StudentsManagement.tsx",
+        "errors": 7,
+        "warnings": 2
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\lib\\brand.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\lib\\experienceRoutes.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\lib\\http.ts",
+        "errors": 1,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\adminDiplomaCertificatesService.ts",
+        "errors": 6,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\adminError.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\adminShowcase.test.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\adminShowcase.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\apiClient.ts",
+        "errors": 9,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\authService.ts",
+        "errors": 10,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\bunnyReportsService.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\bunnyUploadService.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\categoryService.ts",
+        "errors": 12,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\certificateService.ts",
+        "errors": 8,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\chapterService.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\courseService.ts",
+        "errors": 33,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\debounce.ts",
+        "errors": 2,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\demoGateway.test.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\demoGateway.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\demoMode.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\exportUtils.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\fileManager.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\helpers.ts",
+        "errors": 5,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\instructorService.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\lessonService.test.ts",
+        "errors": 13,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\lessonService.ts",
+        "errors": 6,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\questionService.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\quizService.ts",
+        "errors": 27,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\reportsService.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\sectionService.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\statsService.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\studentJourney.test.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\studentJourney.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\studentsService.ts",
+        "errors": 3,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\url.ts",
+        "errors": 0,
+        "warnings": 0
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\utils\\userService.ts",
+        "errors": 0,
+        "warnings": 0
+      }
+    ]
+  },
+  "jest": {
+    "exitCode": 1,
+    "output": "FAIL utils/lessonService.test.ts\n  ● Preservation Property Tests: Admin and Other Endpoints Unchanged › Property 2.6: completeLesson should work correctly\n\n    Property failed after 1 tests\n    { seed: 2108979725, path: \"0:0\", endOnFailure: true }\n    Counterexample: [1]\n    Shrunk 1 time(s)\n\n    Hint: Enable verbose mode in order to have the list of all failing values encountered during the run\n\n      at buildError (node_modules/fast-check/lib/cjs/check/runner/utils/RunDetailsFormatter.js:162:19)\n      at asyncThrowIfFailed (node_modules/fast-check/lib/cjs/check/runner/utils/RunDetailsFormatter.js:176:11)\n\n    Cause:\n    expect(jest.fn()).toHaveBeenCalledWith(...expected)\n\n    Expected: \"/lessons/1/complete\"\n    Received\n           1: \"/lessons/867/complete\", undefined\n           2: \"/lessons/1/complete\", undefined\n\n    Number of calls: 2\n\n      473 |\n      474 |                     // Verify the complete endpoint was called with correct lesson ID\n    > 475 |                     expect(mockedApiClient.post).toHaveBeenCalledWith(`/lessons/${lessonId}/complete`);\n          |                                                  ^\n      476 |                 }\n      477 |             ),\n      478 |             { numRuns: 30 }\n\n      at toHaveBeenCalledWith (utils/lessonService.test.ts:475:50)\n      at AsyncProperty.run (node_modules/fast-check/lib/cjs/check/property/AsyncProperty.generic.js:46:28)\n      at asyncRunIt (node_modules/fast-check/lib/cjs/check/runner/Runner.js:28:21)\n      at Object.<anonymous> (utils/lessonService.test.ts:455:9)\n\n  ● Preservation Property Tests: Admin and Other Endpoints Unchanged › should preserve lesson completion functionality (concrete example)\n\n    expect(jest.fn()).toHaveBeenCalledWith(...expected)\n\n    Expected: \"/lessons/5/complete\"\n    Received: \"/lessons/5/complete\", undefined\n\n    Number of calls: 1\n\n      587 |\n      588 |         await expect(completeLesson(lessonId)).resolves.not.toThrow();\n    > 589 |         expect(mockedApiClient.post).toHaveBeenCalledWith(`/lessons/${lessonId}/complete`);\n          |                                      ^\n      590 |     });\n      591 |\n      592 |     /**\n\n      at Object.toHaveBeenCalledWith (utils/lessonService.test.ts:589:38)\n\nPASS components/ExamCard.test.tsx\nPASS __tests__/preservation/admin-routes.preservation.test.ts\nPASS app/api/demo-entry/route.test.ts\nPASS components/brand/publicContent.test.ts\nPASS utils/adminShowcase.test.ts\nPASS utils/studentJourney.test.ts\nPASS utils/demoGateway.test.ts\n\nTest Suites: 1 failed, 7 passed, 8 total\nTests:       2 failed, 92 passed, 94 total\nSnapshots:   0 total\nTime:        2.017 s\nRan all test suites.\n"
+  },
+  "domain": {
+    "database": "ofoq_demo",
+    "synthetic_identities_verified": true,
+    "excluded": [
+      "cache",
+      "cache_locks",
+      "sessions",
+      "personal_access_tokens",
+      "password_reset_tokens",
+      "jobs",
+      "failed_jobs",
+      "job_batches",
+      "migrations"
+    ],
+    "domain_tables": {
+      "backup_histories": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "blocked_users": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "bunny_cost_settings": {
+        "count": 8,
+        "sha256": "12775ec75ce0948978ce747451fc97eb8c0d8e987dc9d4888c9c26d5904d0579"
+      },
+      "bunny_cost_snapshots": {
+        "count": 8,
+        "sha256": "e5169af8a303d2d8476366cef7223987a8317b145e9aa0f1a3bb8ae6e2be27da"
+      },
+      "bunny_sync_logs": {
+        "count": 8,
+        "sha256": "deff495eba13d7369789b0998e5adf7835e1b0e31b548588a8b4b727be18f27f"
+      },
+      "bunny_usage_snapshots": {
+        "count": 9,
+        "sha256": "612d7f84bf50b1934c1e815b380aa538b06514d94b297e72f351fde6b0e4be4c"
+      },
+      "bunny_video_stats": {
+        "count": 240,
+        "sha256": "1c9ff0139db54f4ce21a2f815d64bcbecd3fa489f3640002dcb3aeed13e70041"
+      },
+      "bunny_video_usage_snapshots": {
+        "count": 96,
+        "sha256": "6cde8472c75705bb19b8d0fc894626f7d851973d8fbf40ded79611aa6466e0b4"
+      },
+      "category_of_course": {
+        "count": 10,
+        "sha256": "9ee15d171071765ad69cbf3e43510fe8743c4ba7c4d55eb1cea6eced52b9d64d"
+      },
+      "certificates": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "chapters": {
+        "count": 60,
+        "sha256": "9441e9775665c5e099be9a73a91a178342192bafcf93747a66b1e366de4f3e09"
+      },
+      "course_certificates": {
+        "count": 160,
+        "sha256": "a2dc3abd0d9ffef43bdc0165ebc00decb4d653c686606b05d9d01a27d49637f3"
+      },
+      "course_section": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "courses": {
+        "count": 20,
+        "sha256": "055bb2464da595b30c7fc73d13e12a805a87c66bd3c83d06857a766e154411e6"
+      },
+      "diploma_certificates": {
+        "count": 27,
+        "sha256": "ed325c137a4ab725c316e34b39b79f9d799da9d489cb32053784b844738a3a99"
+      },
+      "featured_courses": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "instructors": {
+        "count": 9,
+        "sha256": "3a246c071853c337cadc5214239893d714dc403eae65ed4f0b568de1ee32bf75"
+      },
+      "lesson_notes": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "lessons": {
+        "count": 240,
+        "sha256": "e83da4214fdfa123931993020da1d5a1596b761fd6ebec7ba20773a5111ef2af"
+      },
+      "model_has_permissions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "model_has_roles": {
+        "count": 2,
+        "sha256": "fbf56384dabdc4d89ed5db341a1b4a65cd8e39393029590f6186b31d7f596861"
+      },
+      "permissions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "questions": {
+        "count": 360,
+        "sha256": "2ef10e413067cea358adddaa6b33dc694ea4c571bae661a4242564f73acf02ee"
+      },
+      "quizzes": {
+        "count": 80,
+        "sha256": "a3434b1054e1aadf587438684a4254b0d6d84952167d1f40621b0cbf89aba4db"
+      },
+      "reviews": {
+        "count": 40,
+        "sha256": "a0dbed6f8f0ae2298191fe7816bfe92845dafce65d34bd267f79845c15d9cae6"
+      },
+      "role_has_permissions": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "roles": {
+        "count": 2,
+        "sha256": "d7639e67d9cdee8340496ecf7bb58356ee53655d4ae5a894a8a9b74d65e1dce3"
+      },
+      "sections": {
+        "count": 8,
+        "sha256": "c5784d50c68497261af07b668c3d180a4aa7ab3882f131a360154158448a1c41"
+      },
+      "user_category_enrollments": {
+        "count": 1066,
+        "sha256": "62468fbf667b4f5b49117a646588b6d7f1fd76fa8bb2334c134b267c1b8229ca"
+      },
+      "user_courses": {
+        "count": 807,
+        "sha256": "8fc54c925a57d805bf1b747d250d1580f323c187bf4ec7615c67156058eba75a"
+      },
+      "user_favorite_courses": {
+        "count": 267,
+        "sha256": "9d4c321a4442f6449e4ffe6e5db00983bccb6838108563ed6874d52b2a4493f6"
+      },
+      "user_lesson_progress": {
+        "count": 5376,
+        "sha256": "2018e9454dd0b401fd3ce85416346495d80e2ca1ab350df908c64a992d21768c"
+      },
+      "user_quiz_attempt_questions": {
+        "count": 990,
+        "sha256": "9c9a370d41a0663cef4e6e5a9a6035daee955862df98741da80bbbcd94351524"
+      },
+      "user_quizzes": {
+        "count": 0,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "user_quizzes_attempts": {
+        "count": 165,
+        "sha256": "ee2f62874c9b74f660f151e610e75778d4d8d2607f464a679db5690c84b37a15"
+      },
+      "users": {
+        "count": 801,
+        "sha256": "81a6205877b4466c02c52451a013d0e60641eaa85121042771c68c5b9b80a8cc"
+      },
+      "video_watch_events": {
+        "count": 2673,
+        "sha256": "3cc3d24fdf977a995991146f99eb4b66615fc5160780f4e5a2fabb04aa3cb517"
+      },
+      "video_watch_sessions": {
+        "count": 2673,
+        "sha256": "29af90353e7c6d52f580243690591ef77b3d13ff8a844fce534c31f5700c6468"
+      }
+    }
+  },
+  "config": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  eslint: {\n    // Warning: This allows production builds to successfully complete even if\n    // your project has ESLint errors.\n    ignoreDuringBuilds: true,\n  },\n  typescript: {\n    // Warning: This allows production builds to successfully complete even if\n    // your project has type errors.\n    ignoreBuildErrors: true,\n  },\n  images: {\n    domains: ['localhost'],\n  },\n  webpack(config) {\n    config.module.rules.push({\n      test: /\\.svg$/i,\n      issuer: { and: [/\\.(js|ts|md)x?$/] },\n      use: [\n        {\n          loader: '@svgr/webpack',\n          options: {\n            prettier: false,\n            svgo: true,\n            svgoConfig: { plugins: [{ removeViewBox: false }] },\n            titleProp: true,\n          },\n        },\n      ],\n    });\n\n    return config;\n  },\n}\n\nmodule.exports = nextConfig;\n"
+}

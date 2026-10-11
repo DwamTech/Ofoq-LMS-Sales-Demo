@@ -1,0 +1,4904 @@
+{
+  "/profile": {
+    "status": 200,
+    "data": {
+      "user": {
+        "id": 6,
+        "name": "ليان أحمد الكيلاني",
+        "email": "student.demo@demo.ofoq.local",
+        "role": "student",
+        "profile_picture": null,
+        "qualification": "بكالوريوس علوم الحاسب",
+        "media_work_sector": "التعليم والتقنية",
+        "date_of_birth": null,
+        "previous_field": null,
+        "created_at": "2026-06-12T12:37:10.000000Z",
+        "updated_at": "2026-10-10T11:28:34.000000Z"
+      }
+    }
+  },
+  "/my-diplomas": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "message": "تم جلب دبلوماتي بنجاح.",
+      "data": [
+        {
+          "id": 4,
+          "status": "active",
+          "enrolled_at": "2026-08-03T12:37:10.000000Z",
+          "category": {
+            "id": 1,
+            "name": "دبلومة تطوير الويب الشامل",
+            "slug": "دبلومة-تطوير-الويب-الشامل",
+            "description": "مسار احترافي لبناء تطبيقات ويب حديثة من الواجهة إلى الخادم. OFOQ Sales Demo dataset",
+            "is_published": true,
+            "is_free": false,
+            "price": "1499.00",
+            "cover_image": null,
+            "cover_image_url": null,
+            "display_order": 1,
+            "section_id": 1,
+            "courses_count": 4
+          },
+          "certificate": {
+            "id": 4,
+            "status": "completed",
+            "serial_number": "OFOQ-D-0006",
+            "file_url": "http://127.0.0.1:8000/storage/certificates/demo/diplomas/OFOQ-D-0006.pdf"
+          },
+          "progress": 100,
+          "can_download_certificate": true,
+          "is_eligible_for_certificate": false
+        },
+        {
+          "id": 1068,
+          "status": "active",
+          "enrolled_at": "2026-10-10T11:26:13.000000Z",
+          "category": {
+            "id": 2,
+            "name": "دبلومة البرمجة بلغة Python",
+            "slug": "دبلومة-البرمجة-بلغة-Python",
+            "description": "برنامج عملي يبدأ بالأساسيات وينتهي بمشاريع قابلة للتطبيق. OFOQ Sales Demo dataset",
+            "is_published": true,
+            "is_free": false,
+            "price": "1699.00",
+            "cover_image": null,
+            "cover_image_url": null,
+            "display_order": 2,
+            "section_id": 1,
+            "courses_count": 4
+          },
+          "certificate": null,
+          "progress": 25,
+          "can_download_certificate": false,
+          "is_eligible_for_certificate": false
+        }
+      ]
+    }
+  },
+  "/my-enrollments?per_page=100": {
+    "status": 200,
+    "data": {
+      "data": [
+        {
+          "id": 5,
+          "title": "أساسيات البرمجة بلغة Python",
+          "description": "مقرر عملي ضمن دبلومة البرمجة بلغة Python. OFOQ Sales Demo dataset",
+          "rank": null,
+          "duration": 34,
+          "instructor_id": 5,
+          "category_id": 2,
+          "section_id": 1,
+          "price": "299.00",
+          "discount_price": null,
+          "discount_ends_at": null,
+          "is_free": false,
+          "rating": "4.7",
+          "average_rating": 5,
+          "cover_image": null,
+          "cover_image_url": null,
+          "is_published": null,
+          "status": null,
+          "instructor": {
+            "id": 5,
+            "name": null,
+            "title": null,
+            "bio": null,
+            "image": null,
+            "rating": null
+          },
+          "category": {
+            "id": 2,
+            "name": {
+              "id": 2,
+              "name": "دبلومة البرمجة بلغة Python",
+              "slug": "دبلومة-البرمجة-بلغة-Python",
+              "is_published": true,
+              "is_free": false,
+              "price": "1699.00",
+              "cover_image": null,
+              "display_order": 2,
+              "total_views": 1380,
+              "description": "برنامج عملي يبدأ بالأساسيات وينتهي بمشاريع قابلة للتطبيق. OFOQ Sales Demo dataset",
+              "created_at": "2026-10-07T12:37:09.000000Z",
+              "updated_at": "2026-10-07T12:37:09.000000Z",
+              "section_id": 1,
+              "cover_image_url": null
+            }
+          },
+          "sections": [],
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "reviews_count": 2,
+          "students_count": 132,
+          "total_views": 700,
+          "stats": {
+            "chapters_count": 3,
+            "lessons_count": 12,
+            "students_count": 132,
+            "duration_seconds": 122400,
+            "duration_hours": 34,
+            "views_count": 700,
+            "reviews_count": 2,
+            "average_rating": 5,
+            "attachments_count": 0,
+            "resources_count": 0,
+            "quizzes_count": 1,
+            "questions_count": 0,
+            "level_key": "advanced",
+            "level_label": "متقدم",
+            "language": "ar",
+            "language_label": "العربية",
+            "source": "summary"
+          },
+          "has_final_exam": true,
+          "progress_percentage": 50,
+          "enrollment_status": "in_progress",
+          "enrolled_at": "2026-10-10T11:26:13.000000Z",
+          "completed_at": null
+        },
+        {
+          "id": 8,
+          "title": "مشاريع Python تطبيقية",
+          "description": "مقرر عملي ضمن دبلومة البرمجة بلغة Python. OFOQ Sales Demo dataset",
+          "rank": null,
+          "duration": 26,
+          "instructor_id": 8,
+          "category_id": 2,
+          "section_id": 1,
+          "price": "524.00",
+          "discount_price": null,
+          "discount_ends_at": null,
+          "is_free": false,
+          "rating": "4.5",
+          "average_rating": 5,
+          "cover_image": null,
+          "cover_image_url": null,
+          "is_published": null,
+          "status": null,
+          "instructor": {
+            "id": 8,
+            "name": null,
+            "title": null,
+            "bio": null,
+            "image": null,
+            "rating": null
+          },
+          "category": {
+            "id": 2,
+            "name": {
+              "id": 2,
+              "name": "دبلومة البرمجة بلغة Python",
+              "slug": "دبلومة-البرمجة-بلغة-Python",
+              "is_published": true,
+              "is_free": false,
+              "price": "1699.00",
+              "cover_image": null,
+              "display_order": 2,
+              "total_views": 1380,
+              "description": "برنامج عملي يبدأ بالأساسيات وينتهي بمشاريع قابلة للتطبيق. OFOQ Sales Demo dataset",
+              "created_at": "2026-10-07T12:37:09.000000Z",
+              "updated_at": "2026-10-07T12:37:09.000000Z",
+              "section_id": 1,
+              "cover_image_url": null
+            }
+          },
+          "sections": [],
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "reviews_count": 2,
+          "students_count": 171,
+          "total_views": 925,
+          "stats": {
+            "chapters_count": 3,
+            "lessons_count": 12,
+            "students_count": 171,
+            "duration_seconds": 93600,
+            "duration_hours": 26,
+            "views_count": 925,
+            "reviews_count": 2,
+            "average_rating": 5,
+            "attachments_count": 0,
+            "resources_count": 0,
+            "quizzes_count": 1,
+            "questions_count": 0,
+            "level_key": "advanced",
+            "level_label": "متقدم",
+            "language": "ar",
+            "language_label": "العربية",
+            "source": "summary"
+          },
+          "has_final_exam": true,
+          "progress_percentage": 0,
+          "enrollment_status": "in_progress",
+          "enrolled_at": "2026-10-10T11:26:13.000000Z",
+          "completed_at": null
+        },
+        {
+          "id": 1,
+          "title": "HTML وCSS لبناء صفحات احترافية",
+          "description": "مقرر عملي ضمن دبلومة تطوير الويب الشامل. OFOQ Sales Demo dataset",
+          "rank": null,
+          "duration": 18,
+          "instructor_id": 1,
+          "category_id": 1,
+          "section_id": 1,
+          "price": "0.00",
+          "discount_price": null,
+          "discount_ends_at": null,
+          "is_free": true,
+          "rating": "4.3",
+          "average_rating": 4.7,
+          "cover_image": null,
+          "cover_image_url": null,
+          "is_published": null,
+          "status": null,
+          "instructor": {
+            "id": 1,
+            "name": null,
+            "title": null,
+            "bio": null,
+            "image": null,
+            "rating": null
+          },
+          "category": {
+            "id": 1,
+            "name": {
+              "id": 1,
+              "name": "دبلومة تطوير الويب الشامل",
+              "slug": "دبلومة-تطوير-الويب-الشامل",
+              "is_published": true,
+              "is_free": false,
+              "price": "1499.00",
+              "cover_image": null,
+              "display_order": 1,
+              "total_views": 1200,
+              "description": "مسار احترافي لبناء تطبيقات ويب حديثة من الواجهة إلى الخادم. OFOQ Sales Demo dataset",
+              "created_at": "2026-10-07T12:37:09.000000Z",
+              "updated_at": "2026-10-07T12:37:09.000000Z",
+              "section_id": 1,
+              "cover_image_url": null
+            }
+          },
+          "sections": [],
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "reviews_count": 3,
+          "students_count": 80,
+          "total_views": 400,
+          "stats": {
+            "chapters_count": 3,
+            "lessons_count": 12,
+            "students_count": 80,
+            "duration_seconds": 64800,
+            "duration_hours": 18,
+            "views_count": 400,
+            "reviews_count": 3,
+            "average_rating": 4.7,
+            "attachments_count": 0,
+            "resources_count": 0,
+            "quizzes_count": 1,
+            "questions_count": 0,
+            "level_key": "advanced",
+            "level_label": "متقدم",
+            "language": "ar",
+            "language_label": "العربية",
+            "source": "summary"
+          },
+          "has_final_exam": true,
+          "progress_percentage": 100,
+          "enrollment_status": "completed",
+          "enrolled_at": "2026-10-10T11:26:13.000000Z",
+          "completed_at": "2026-10-10 17:39:08"
+        },
+        {
+          "id": 2,
+          "title": "JavaScript وتطبيقات الويب التفاعلية",
+          "description": "مقرر عملي ضمن دبلومة تطوير الويب الشامل. OFOQ Sales Demo dataset",
+          "rank": null,
+          "duration": 22,
+          "instructor_id": 2,
+          "category_id": 1,
+          "section_id": 1,
+          "price": "374.00",
+          "discount_price": null,
+          "discount_ends_at": null,
+          "is_free": false,
+          "rating": "4.4",
+          "average_rating": 5,
+          "cover_image": null,
+          "cover_image_url": null,
+          "is_published": null,
+          "status": null,
+          "instructor": {
+            "id": 2,
+            "name": null,
+            "title": null,
+            "bio": null,
+            "image": null,
+            "rating": null
+          },
+          "category": {
+            "id": 1,
+            "name": {
+              "id": 1,
+              "name": "دبلومة تطوير الويب الشامل",
+              "slug": "دبلومة-تطوير-الويب-الشامل",
+              "is_published": true,
+              "is_free": false,
+              "price": "1499.00",
+              "cover_image": null,
+              "display_order": 1,
+              "total_views": 1200,
+              "description": "مسار احترافي لبناء تطبيقات ويب حديثة من الواجهة إلى الخادم. OFOQ Sales Demo dataset",
+              "created_at": "2026-10-07T12:37:09.000000Z",
+              "updated_at": "2026-10-07T12:37:09.000000Z",
+              "section_id": 1,
+              "cover_image_url": null
+            }
+          },
+          "sections": [],
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "reviews_count": 3,
+          "students_count": 93,
+          "total_views": 475,
+          "stats": {
+            "chapters_count": 3,
+            "lessons_count": 12,
+            "students_count": 93,
+            "duration_seconds": 79200,
+            "duration_hours": 22,
+            "views_count": 475,
+            "reviews_count": 3,
+            "average_rating": 5,
+            "attachments_count": 0,
+            "resources_count": 0,
+            "quizzes_count": 1,
+            "questions_count": 0,
+            "level_key": "advanced",
+            "level_label": "متقدم",
+            "language": "ar",
+            "language_label": "العربية",
+            "source": "summary"
+          },
+          "has_final_exam": true,
+          "progress_percentage": 100,
+          "enrollment_status": "completed",
+          "enrolled_at": "2026-10-10T11:26:13.000000Z",
+          "completed_at": "2026-10-10 17:39:09"
+        },
+        {
+          "id": 3,
+          "title": "React لتطوير الواجهات الحديثة",
+          "description": "مقرر عملي ضمن دبلومة تطوير الويب الشامل. OFOQ Sales Demo dataset",
+          "rank": null,
+          "duration": 26,
+          "instructor_id": 3,
+          "category_id": 1,
+          "section_id": 1,
+          "price": "449.00",
+          "discount_price": null,
+          "discount_ends_at": null,
+          "is_free": false,
+          "rating": "4.5",
+          "average_rating": 4.5,
+          "cover_image": null,
+          "cover_image_url": null,
+          "is_published": null,
+          "status": null,
+          "instructor": {
+            "id": 3,
+            "name": null,
+            "title": null,
+            "bio": null,
+            "image": null,
+            "rating": null
+          },
+          "category": {
+            "id": 1,
+            "name": {
+              "id": 1,
+              "name": "دبلومة تطوير الويب الشامل",
+              "slug": "دبلومة-تطوير-الويب-الشامل",
+              "is_published": true,
+              "is_free": false,
+              "price": "1499.00",
+              "cover_image": null,
+              "display_order": 1,
+              "total_views": 1200,
+              "description": "مسار احترافي لبناء تطبيقات ويب حديثة من الواجهة إلى الخادم. OFOQ Sales Demo dataset",
+              "created_at": "2026-10-07T12:37:09.000000Z",
+              "updated_at": "2026-10-07T12:37:09.000000Z",
+              "section_id": 1,
+              "cover_image_url": null
+            }
+          },
+          "sections": [],
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "reviews_count": 2,
+          "students_count": 106,
+          "total_views": 550,
+          "stats": {
+            "chapters_count": 3,
+            "lessons_count": 12,
+            "students_count": 106,
+            "duration_seconds": 93600,
+            "duration_hours": 26,
+            "views_count": 550,
+            "reviews_count": 2,
+            "average_rating": 4.5,
+            "attachments_count": 0,
+            "resources_count": 0,
+            "quizzes_count": 1,
+            "questions_count": 0,
+            "level_key": "advanced",
+            "level_label": "متقدم",
+            "language": "ar",
+            "language_label": "العربية",
+            "source": "summary"
+          },
+          "has_final_exam": true,
+          "progress_percentage": 100,
+          "enrollment_status": "completed",
+          "enrolled_at": "2026-10-10T11:26:13.000000Z",
+          "completed_at": "2026-10-10 17:39:10"
+        },
+        {
+          "id": 4,
+          "title": "Laravel وبناء واجهات API",
+          "description": "مقرر عملي ضمن دبلومة تطوير الويب الشامل. OFOQ Sales Demo dataset",
+          "rank": null,
+          "duration": 30,
+          "instructor_id": 4,
+          "category_id": 1,
+          "section_id": 1,
+          "price": "524.00",
+          "discount_price": null,
+          "discount_ends_at": null,
+          "is_free": false,
+          "rating": "4.6",
+          "average_rating": 5,
+          "cover_image": null,
+          "cover_image_url": null,
+          "is_published": null,
+          "status": null,
+          "instructor": {
+            "id": 4,
+            "name": null,
+            "title": null,
+            "bio": null,
+            "image": null,
+            "rating": null
+          },
+          "category": {
+            "id": 1,
+            "name": {
+              "id": 1,
+              "name": "دبلومة تطوير الويب الشامل",
+              "slug": "دبلومة-تطوير-الويب-الشامل",
+              "is_published": true,
+              "is_free": false,
+              "price": "1499.00",
+              "cover_image": null,
+              "display_order": 1,
+              "total_views": 1200,
+              "description": "مسار احترافي لبناء تطبيقات ويب حديثة من الواجهة إلى الخادم. OFOQ Sales Demo dataset",
+              "created_at": "2026-10-07T12:37:09.000000Z",
+              "updated_at": "2026-10-07T12:37:09.000000Z",
+              "section_id": 1,
+              "cover_image_url": null
+            }
+          },
+          "sections": [],
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "reviews_count": 2,
+          "students_count": 119,
+          "total_views": 625,
+          "stats": {
+            "chapters_count": 3,
+            "lessons_count": 12,
+            "students_count": 119,
+            "duration_seconds": 108000,
+            "duration_hours": 30,
+            "views_count": 625,
+            "reviews_count": 2,
+            "average_rating": 5,
+            "attachments_count": 0,
+            "resources_count": 0,
+            "quizzes_count": 1,
+            "questions_count": 0,
+            "level_key": "advanced",
+            "level_label": "متقدم",
+            "language": "ar",
+            "language_label": "العربية",
+            "source": "summary"
+          },
+          "has_final_exam": true,
+          "progress_percentage": 100,
+          "enrollment_status": "completed",
+          "enrolled_at": "2026-10-10T11:26:13.000000Z",
+          "completed_at": "2026-10-10 17:39:11"
+        },
+        {
+          "id": 7,
+          "title": "قواعد البيانات باستخدام Python",
+          "description": "مقرر عملي ضمن دبلومة البرمجة بلغة Python. OFOQ Sales Demo dataset",
+          "rank": null,
+          "duration": 22,
+          "instructor_id": 7,
+          "category_id": 2,
+          "section_id": 1,
+          "price": "449.00",
+          "discount_price": null,
+          "discount_ends_at": null,
+          "is_free": false,
+          "rating": "4.4",
+          "average_rating": 5,
+          "cover_image": null,
+          "cover_image_url": null,
+          "is_published": null,
+          "status": null,
+          "instructor": {
+            "id": 7,
+            "name": null,
+            "title": null,
+            "bio": null,
+            "image": null,
+            "rating": null
+          },
+          "category": {
+            "id": 2,
+            "name": {
+              "id": 2,
+              "name": "دبلومة البرمجة بلغة Python",
+              "slug": "دبلومة-البرمجة-بلغة-Python",
+              "is_published": true,
+              "is_free": false,
+              "price": "1699.00",
+              "cover_image": null,
+              "display_order": 2,
+              "total_views": 1380,
+              "description": "برنامج عملي يبدأ بالأساسيات وينتهي بمشاريع قابلة للتطبيق. OFOQ Sales Demo dataset",
+              "created_at": "2026-10-07T12:37:09.000000Z",
+              "updated_at": "2026-10-07T12:37:09.000000Z",
+              "section_id": 1,
+              "cover_image_url": null
+            }
+          },
+          "sections": [],
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "reviews_count": 2,
+          "students_count": 158,
+          "total_views": 850,
+          "stats": {
+            "chapters_count": 3,
+            "lessons_count": 12,
+            "students_count": 158,
+            "duration_seconds": 79200,
+            "duration_hours": 22,
+            "views_count": 850,
+            "reviews_count": 2,
+            "average_rating": 5,
+            "attachments_count": 0,
+            "resources_count": 0,
+            "quizzes_count": 1,
+            "questions_count": 0,
+            "level_key": "advanced",
+            "level_label": "متقدم",
+            "language": "ar",
+            "language_label": "العربية",
+            "source": "summary"
+          },
+          "has_final_exam": true,
+          "progress_percentage": 100,
+          "enrollment_status": "completed",
+          "enrolled_at": "2026-10-07T14:13:26.000000Z",
+          "completed_at": "2026-10-10 17:39:11"
+        },
+        {
+          "id": 6,
+          "title": "البرمجة الكائنية في Python",
+          "description": "مقرر عملي ضمن دبلومة البرمجة بلغة Python. OFOQ Sales Demo dataset",
+          "rank": null,
+          "duration": 18,
+          "instructor_id": 6,
+          "category_id": 2,
+          "section_id": 1,
+          "price": "0.00",
+          "discount_price": null,
+          "discount_ends_at": null,
+          "is_free": true,
+          "rating": "4.3",
+          "average_rating": 5,
+          "cover_image": null,
+          "cover_image_url": null,
+          "is_published": null,
+          "status": null,
+          "instructor": {
+            "id": 6,
+            "name": null,
+            "title": null,
+            "bio": null,
+            "image": null,
+            "rating": null
+          },
+          "category": {
+            "id": 2,
+            "name": {
+              "id": 2,
+              "name": "دبلومة البرمجة بلغة Python",
+              "slug": "دبلومة-البرمجة-بلغة-Python",
+              "is_published": true,
+              "is_free": false,
+              "price": "1699.00",
+              "cover_image": null,
+              "display_order": 2,
+              "total_views": 1380,
+              "description": "برنامج عملي يبدأ بالأساسيات وينتهي بمشاريع قابلة للتطبيق. OFOQ Sales Demo dataset",
+              "created_at": "2026-10-07T12:37:09.000000Z",
+              "updated_at": "2026-10-07T12:37:09.000000Z",
+              "section_id": 1,
+              "cover_image_url": null
+            }
+          },
+          "sections": [],
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "reviews_count": 2,
+          "students_count": 145,
+          "total_views": 775,
+          "stats": {
+            "chapters_count": 3,
+            "lessons_count": 12,
+            "students_count": 145,
+            "duration_seconds": 64800,
+            "duration_hours": 18,
+            "views_count": 775,
+            "reviews_count": 2,
+            "average_rating": 5,
+            "attachments_count": 0,
+            "resources_count": 0,
+            "quizzes_count": 1,
+            "questions_count": 0,
+            "level_key": "advanced",
+            "level_label": "متقدم",
+            "language": "ar",
+            "language_label": "العربية",
+            "source": "summary"
+          },
+          "has_final_exam": true,
+          "progress_percentage": 100,
+          "enrollment_status": "completed",
+          "enrolled_at": "2026-08-03T12:37:10.000000Z",
+          "completed_at": "2026-10-10 17:39:12"
+        }
+      ],
+      "pagination": {
+        "total": 8,
+        "per_page": 100,
+        "current_page": 1,
+        "last_page": 1,
+        "from": 1,
+        "to": 8
+      },
+      "message": "Courses fetched successfully."
+    }
+  },
+  "/my-certificates": {
+    "status": 200,
+    "data": {
+      "certificates": [
+        {
+          "id": 4,
+          "type": "diploma",
+          "source": "diploma",
+          "status": "completed",
+          "user_name": "ليان أحمد الكيلاني",
+          "diploma_name": "دبلومة تطوير الويب الشامل",
+          "course_title": "دبلومة تطوير الويب الشامل",
+          "issued_at": "September 26, 2026",
+          "completion_date": "2026-09-26",
+          "verification_token": "609eb0d2-2876-4973-905f-2c3833423611",
+          "serial_number": "OFOQ-D-0006",
+          "verification_url": "http://127.0.0.1:8000/api/diploma-certificate/verify/609eb0d2-2876-4973-905f-2c3833423611",
+          "file_path": "/storage/certificates/demo/diplomas/OFOQ-D-0006.pdf",
+          "download_url": "http://127.0.0.1:8000/api/categories/1/certificate",
+          "uuid": "609eb0d2-2876-4973-905f-2c3833423611",
+          "category_id": 1
+        },
+        {
+          "id": 6,
+          "type": "course",
+          "source": "course",
+          "status": "completed",
+          "user_name": "ليان أحمد الكيلاني",
+          "course_title": "البرمجة الكائنية في Python",
+          "diploma_name": "دبلومة البرمجة بلغة Python",
+          "issued_at": "August 25, 2026",
+          "completion_date": "2026-09-24",
+          "verification_token": "8ce36730-77ba-44ba-a97f-0efa5416c8c6",
+          "serial_number": "OFOQ-C-0006",
+          "verification_url": "http://127.0.0.1:8000/api/course-certificate/verify/8ce36730-77ba-44ba-a97f-0efa5416c8c6",
+          "file_path": "/storage/certificates/demo/courses/OFOQ-C-0006.pdf",
+          "download_url": "http://127.0.0.1:8000/api/courses/6/certificate",
+          "uuid": "8ce36730-77ba-44ba-a97f-0efa5416c8c6",
+          "course_id": 6
+        }
+      ]
+    }
+  },
+  "/my-tests": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": [
+        {
+          "course_id": 4,
+          "course_title": "Laravel وبناء واجهات API",
+          "status": "completed",
+          "enrollment_status": "completed",
+          "course_status": "completed",
+          "progress_percentage": 100,
+          "has_final_exam": true,
+          "final_exam_id": 4,
+          "active_attempt_status": null,
+          "eligible_to_start": true,
+          "attempts_count": 1,
+          "last_score": "100.00",
+          "exam_status": "passed"
+        },
+        {
+          "course_id": 3,
+          "course_title": "React لتطوير الواجهات الحديثة",
+          "status": "completed",
+          "enrollment_status": "completed",
+          "course_status": "completed",
+          "progress_percentage": 100,
+          "has_final_exam": true,
+          "final_exam_id": 3,
+          "active_attempt_status": null,
+          "eligible_to_start": true,
+          "attempts_count": 1,
+          "last_score": "66.67",
+          "exam_status": "passed"
+        },
+        {
+          "course_id": 2,
+          "course_title": "JavaScript وتطبيقات الويب التفاعلية",
+          "status": "completed",
+          "enrollment_status": "completed",
+          "course_status": "completed",
+          "progress_percentage": 100,
+          "has_final_exam": true,
+          "final_exam_id": 2,
+          "active_attempt_status": null,
+          "eligible_to_start": true,
+          "attempts_count": 1,
+          "last_score": "83.33",
+          "exam_status": "passed"
+        },
+        {
+          "course_id": 1,
+          "course_title": "HTML وCSS لبناء صفحات احترافية",
+          "status": "completed",
+          "enrollment_status": "completed",
+          "course_status": "completed",
+          "progress_percentage": 100,
+          "has_final_exam": true,
+          "final_exam_id": 1,
+          "active_attempt_status": null,
+          "eligible_to_start": true,
+          "attempts_count": 1,
+          "last_score": "100.00",
+          "exam_status": "passed"
+        },
+        {
+          "course_id": 8,
+          "course_title": "مشاريع Python تطبيقية",
+          "status": "in_progress",
+          "enrollment_status": "in_progress",
+          "course_status": "in_progress",
+          "progress_percentage": 0,
+          "has_final_exam": true,
+          "final_exam_id": 8,
+          "active_attempt_status": null,
+          "eligible_to_start": false,
+          "attempts_count": 0,
+          "last_score": null,
+          "exam_status": "not_taken"
+        },
+        {
+          "course_id": 5,
+          "course_title": "أساسيات البرمجة بلغة Python",
+          "status": "in_progress",
+          "enrollment_status": "in_progress",
+          "course_status": "in_progress",
+          "progress_percentage": 50,
+          "has_final_exam": true,
+          "final_exam_id": 5,
+          "active_attempt_status": null,
+          "eligible_to_start": false,
+          "attempts_count": 0,
+          "last_score": null,
+          "exam_status": "not_taken"
+        },
+        {
+          "course_id": 7,
+          "course_title": "قواعد البيانات باستخدام Python",
+          "status": "in_progress",
+          "enrollment_status": "completed",
+          "course_status": "in_progress",
+          "progress_percentage": 100,
+          "has_final_exam": true,
+          "final_exam_id": 7,
+          "active_attempt_status": "in_progress",
+          "eligible_to_start": true,
+          "attempts_count": 0,
+          "last_score": null,
+          "exam_status": "in_progress"
+        },
+        {
+          "course_id": 6,
+          "course_title": "البرمجة الكائنية في Python",
+          "status": "completed",
+          "enrollment_status": "completed",
+          "course_status": "completed",
+          "progress_percentage": 100,
+          "has_final_exam": true,
+          "final_exam_id": 6,
+          "active_attempt_status": null,
+          "eligible_to_start": true,
+          "attempts_count": 1,
+          "last_score": "83.33",
+          "exam_status": "passed"
+        }
+      ]
+    }
+  },
+  "/courseEnroll/5": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "message": "Course retrieved successfully.",
+      "data": {
+        "id": 5,
+        "title": "أساسيات البرمجة بلغة Python",
+        "description": "مقرر عملي ضمن دبلومة البرمجة بلغة Python. OFOQ Sales Demo dataset",
+        "rank": null,
+        "duration": 34,
+        "instructor_id": 5,
+        "category_id": 2,
+        "section_id": 1,
+        "price": "299.00",
+        "discount_price": null,
+        "discount_ends_at": null,
+        "is_free": false,
+        "rating": "4.7",
+        "average_rating": 5,
+        "cover_image": null,
+        "cover_image_url": null,
+        "is_published": null,
+        "status": null,
+        "instructor": {
+          "id": 5,
+          "name": "م. ندى عادل",
+          "title": "UI/UX",
+          "bio": "مدرب متخصص في UI/UX بخبرة عملية في التعليم الرقمي.",
+          "image": null,
+          "rating": 4.7
+        },
+        "category": {
+          "id": 2,
+          "name": "دبلومة البرمجة بلغة Python"
+        },
+        "section": {
+          "id": 1,
+          "name": "البرمجة والتقنية",
+          "slug": "البرمجة-والتقنية",
+          "icon": "code"
+        },
+        "sections": [],
+        "chapters_count": 3,
+        "lessons_count": 12,
+        "reviews_count": 2,
+        "students_count": 46,
+        "total_views": 700,
+        "stats": {
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "students_count": 46,
+          "duration_seconds": 15120,
+          "duration_hours": 4.2,
+          "views_count": 700,
+          "reviews_count": 2,
+          "average_rating": 5,
+          "attachments_count": 0,
+          "resources_count": 0,
+          "quizzes_count": 4,
+          "questions_count": 18,
+          "level_key": "intermediate",
+          "level_label": "متوسط",
+          "language": "ar",
+          "language_label": "العربية",
+          "source": "calculated"
+        },
+        "has_final_exam": true,
+        "chapters": [
+          {
+            "id": 13,
+            "title": "المفاهيم الأساسية في أساسيات البرمجة بلغة Python",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 1,
+            "course_id": 5,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 49,
+                "title": "مدخل إلى الموضوع — أساسيات البرمجة بلغة Python",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 156
+              },
+              {
+                "id": 50,
+                "title": "المفاهيم والأدوات — أساسيات البرمجة بلغة Python",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 169
+              },
+              {
+                "id": 51,
+                "title": "تطبيق عملي — أساسيات البرمجة بلغة Python",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 33,
+                  "title": "تقييم تطبيق عملي — أساسيات البرمجة بلغة Python"
+                },
+                "views": 182
+              },
+              {
+                "id": 52,
+                "title": "مراجعة ومهام — أساسيات البرمجة بلغة Python",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 195
+              }
+            ]
+          },
+          {
+            "id": 14,
+            "title": "التطبيق العملي في أساسيات البرمجة بلغة Python",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 2,
+            "course_id": 5,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 53,
+                "title": "مدخل إلى الموضوع — أساسيات البرمجة بلغة Python",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 156
+              },
+              {
+                "id": 54,
+                "title": "المفاهيم والأدوات — أساسيات البرمجة بلغة Python",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 169
+              },
+              {
+                "id": 55,
+                "title": "تطبيق عملي — أساسيات البرمجة بلغة Python",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 34,
+                  "title": "تقييم تطبيق عملي — أساسيات البرمجة بلغة Python"
+                },
+                "views": 182
+              },
+              {
+                "id": 56,
+                "title": "مراجعة ومهام — أساسيات البرمجة بلغة Python",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 195
+              }
+            ]
+          },
+          {
+            "id": 15,
+            "title": "مشروع ومهارات متقدمة في أساسيات البرمجة بلغة Python",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 3,
+            "course_id": 5,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 57,
+                "title": "مدخل إلى الموضوع — أساسيات البرمجة بلغة Python",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 156
+              },
+              {
+                "id": 58,
+                "title": "المفاهيم والأدوات — أساسيات البرمجة بلغة Python",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 169
+              },
+              {
+                "id": 59,
+                "title": "تطبيق عملي — أساسيات البرمجة بلغة Python",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 35,
+                  "title": "تقييم تطبيق عملي — أساسيات البرمجة بلغة Python"
+                },
+                "views": 182
+              },
+              {
+                "id": 60,
+                "title": "مراجعة ومهام — أساسيات البرمجة بلغة Python",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 195
+              }
+            ]
+          }
+        ],
+        "reviews": [
+          {
+            "id": 5,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 5,
+              "name": "عمر طارق السيد 5"
+            },
+            "created_at": "1 month ago"
+          },
+          {
+            "id": 33,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 113,
+              "name": "عمر طارق السيد 2"
+            },
+            "created_at": "2 months ago"
+          }
+        ]
+      }
+    }
+  },
+  "/courses/5/progress": {
+    "status": 200,
+    "data": {
+      "course_progress": {
+        "overall_progress": 50,
+        "status": "in_progress",
+        "completed_at": null,
+        "lessons": [
+          {
+            "lesson_id": 49,
+            "lesson_title": "مدخل إلى الموضوع — أساسيات البرمجة بلغة Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-19T11:28:34.000000Z",
+            "completed_at": "2026-09-20T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-19T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 50,
+            "lesson_title": "المفاهيم والأدوات — أساسيات البرمجة بلغة Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-20T11:28:34.000000Z",
+            "completed_at": "2026-09-21T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-20T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 51,
+            "lesson_title": "تطبيق عملي — أساسيات البرمجة بلغة Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-21T11:28:34.000000Z",
+            "completed_at": "2026-09-22T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-21T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 52,
+            "lesson_title": "مراجعة ومهام — أساسيات البرمجة بلغة Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-22T11:28:34.000000Z",
+            "completed_at": "2026-09-23T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-22T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 53,
+            "lesson_title": "مدخل إلى الموضوع — أساسيات البرمجة بلغة Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-23T11:28:34.000000Z",
+            "completed_at": "2026-09-24T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-23T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 54,
+            "lesson_title": "المفاهيم والأدوات — أساسيات البرمجة بلغة Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-24T11:28:34.000000Z",
+            "completed_at": "2026-09-25T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-24T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          }
+        ],
+        "watch_duration_seconds": 7080,
+        "last_watched_lesson": {
+          "lesson_id": 54,
+          "lesson_title": "المفاهيم والأدوات — أساسيات البرمجة بلغة Python",
+          "last_watched_at": "2026-09-24T11:28:34.000000Z",
+          "last_position_seconds": 1140
+        }
+      }
+    }
+  },
+  "/courses/5/final-exam/meta": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": {
+        "quiz_id": 5,
+        "questions_pool_count": 6,
+        "has_sufficient_question_bank": true,
+        "attempts_total": 0,
+        "attempts_today": 0,
+        "eligible_to_start": false,
+        "next_lesson_id": 55,
+        "last_attempt_at": null,
+        "next_allowed_at": null,
+        "remaining_cooldown_seconds": 0,
+        "retake_cooldown_seconds": 900,
+        "max_attempts_per_day": 2,
+        "max_attempts_total": 5,
+        "is_allowed_now": false
+      }
+    }
+  },
+  "/courses/5/final-exam/attempt/active": {
+    "status": 200,
+    "data": {
+      "success": false,
+      "message": "No active attempt found.",
+      "error_type": "no_active_attempt",
+      "data": null
+    }
+  },
+  "/courseEnroll/8": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "message": "Course retrieved successfully.",
+      "data": {
+        "id": 8,
+        "title": "مشاريع Python تطبيقية",
+        "description": "مقرر عملي ضمن دبلومة البرمجة بلغة Python. OFOQ Sales Demo dataset",
+        "rank": null,
+        "duration": 26,
+        "instructor_id": 8,
+        "category_id": 2,
+        "section_id": 1,
+        "price": "524.00",
+        "discount_price": null,
+        "discount_ends_at": null,
+        "is_free": false,
+        "rating": "4.5",
+        "average_rating": 5,
+        "cover_image": null,
+        "cover_image_url": null,
+        "is_published": null,
+        "status": null,
+        "instructor": {
+          "id": 8,
+          "name": "م. أحمد السالمي",
+          "title": "الأمن السيبراني",
+          "bio": "مدرب متخصص في الأمن السيبراني بخبرة عملية في التعليم الرقمي.",
+          "image": null,
+          "rating": 4.5
+        },
+        "category": {
+          "id": 2,
+          "name": "دبلومة البرمجة بلغة Python"
+        },
+        "section": {
+          "id": 1,
+          "name": "البرمجة والتقنية",
+          "slug": "البرمجة-والتقنية",
+          "icon": "code"
+        },
+        "sections": [],
+        "chapters_count": 3,
+        "lessons_count": 12,
+        "reviews_count": 2,
+        "students_count": 46,
+        "total_views": 925,
+        "stats": {
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "students_count": 46,
+          "duration_seconds": 15120,
+          "duration_hours": 4.2,
+          "views_count": 925,
+          "reviews_count": 2,
+          "average_rating": 5,
+          "attachments_count": 0,
+          "resources_count": 0,
+          "quizzes_count": 4,
+          "questions_count": 18,
+          "level_key": "intermediate",
+          "level_label": "متوسط",
+          "language": "ar",
+          "language_label": "العربية",
+          "source": "calculated"
+        },
+        "has_final_exam": true,
+        "chapters": [
+          {
+            "id": 22,
+            "title": "المفاهيم الأساسية في مشاريع Python تطبيقية",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 1,
+            "course_id": 8,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 85,
+                "title": "مدخل إلى الموضوع — مشاريع Python تطبيقية",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 183
+              },
+              {
+                "id": 86,
+                "title": "المفاهيم والأدوات — مشاريع Python تطبيقية",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 196
+              },
+              {
+                "id": 87,
+                "title": "تطبيق عملي — مشاريع Python تطبيقية",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 42,
+                  "title": "تقييم تطبيق عملي — مشاريع Python تطبيقية"
+                },
+                "views": 209
+              },
+              {
+                "id": 88,
+                "title": "مراجعة ومهام — مشاريع Python تطبيقية",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 222
+              }
+            ]
+          },
+          {
+            "id": 23,
+            "title": "التطبيق العملي في مشاريع Python تطبيقية",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 2,
+            "course_id": 8,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 89,
+                "title": "مدخل إلى الموضوع — مشاريع Python تطبيقية",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 183
+              },
+              {
+                "id": 90,
+                "title": "المفاهيم والأدوات — مشاريع Python تطبيقية",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 196
+              },
+              {
+                "id": 91,
+                "title": "تطبيق عملي — مشاريع Python تطبيقية",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 43,
+                  "title": "تقييم تطبيق عملي — مشاريع Python تطبيقية"
+                },
+                "views": 209
+              },
+              {
+                "id": 92,
+                "title": "مراجعة ومهام — مشاريع Python تطبيقية",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 222
+              }
+            ]
+          },
+          {
+            "id": 24,
+            "title": "مشروع ومهارات متقدمة في مشاريع Python تطبيقية",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 3,
+            "course_id": 8,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 93,
+                "title": "مدخل إلى الموضوع — مشاريع Python تطبيقية",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 183
+              },
+              {
+                "id": 94,
+                "title": "المفاهيم والأدوات — مشاريع Python تطبيقية",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 196
+              },
+              {
+                "id": 95,
+                "title": "تطبيق عملي — مشاريع Python تطبيقية",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 44,
+                  "title": "تقييم تطبيق عملي — مشاريع Python تطبيقية"
+                },
+                "views": 209
+              },
+              {
+                "id": 96,
+                "title": "مراجعة ومهام — مشاريع Python تطبيقية",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 222
+              }
+            ]
+          }
+        ],
+        "reviews": [
+          {
+            "id": 8,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 8,
+              "name": "سلمى أحمد عمر 8"
+            },
+            "created_at": "2 months ago"
+          },
+          {
+            "id": 36,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 116,
+              "name": "سلمى أحمد عمر 5"
+            },
+            "created_at": "3 months ago"
+          }
+        ]
+      }
+    }
+  },
+  "/courses/8/progress": {
+    "status": 200,
+    "data": {
+      "course_progress": {
+        "overall_progress": 0,
+        "status": "in_progress",
+        "completed_at": null,
+        "lessons": [],
+        "watch_duration_seconds": 0,
+        "last_watched_lesson": null
+      }
+    }
+  },
+  "/courses/8/final-exam/meta": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": {
+        "quiz_id": 8,
+        "questions_pool_count": 6,
+        "has_sufficient_question_bank": true,
+        "attempts_total": 0,
+        "attempts_today": 0,
+        "eligible_to_start": false,
+        "next_lesson_id": 85,
+        "last_attempt_at": null,
+        "next_allowed_at": null,
+        "remaining_cooldown_seconds": 0,
+        "retake_cooldown_seconds": 900,
+        "max_attempts_per_day": 2,
+        "max_attempts_total": 5,
+        "is_allowed_now": false
+      }
+    }
+  },
+  "/courses/8/final-exam/attempt/active": {
+    "status": 200,
+    "data": {
+      "success": false,
+      "message": "No active attempt found.",
+      "error_type": "no_active_attempt",
+      "data": null
+    }
+  },
+  "/courseEnroll/1": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "message": "Course retrieved successfully.",
+      "data": {
+        "id": 1,
+        "title": "HTML وCSS لبناء صفحات احترافية",
+        "description": "مقرر عملي ضمن دبلومة تطوير الويب الشامل. OFOQ Sales Demo dataset",
+        "rank": null,
+        "duration": 18,
+        "instructor_id": 1,
+        "category_id": 1,
+        "section_id": 1,
+        "price": "0.00",
+        "discount_price": null,
+        "discount_ends_at": null,
+        "is_free": true,
+        "rating": "4.3",
+        "average_rating": 4.7,
+        "cover_image": null,
+        "cover_image_url": null,
+        "is_published": null,
+        "status": null,
+        "instructor": {
+          "id": 1,
+          "name": "د. خالد عبد الله",
+          "title": "تطوير الويب",
+          "bio": "مدرب متخصص في تطوير الويب بخبرة عملية في التعليم الرقمي.",
+          "image": null,
+          "rating": 4.5
+        },
+        "category": {
+          "id": 1,
+          "name": "دبلومة تطوير الويب الشامل"
+        },
+        "section": {
+          "id": 1,
+          "name": "البرمجة والتقنية",
+          "slug": "البرمجة-والتقنية",
+          "icon": "code"
+        },
+        "sections": [],
+        "chapters_count": 3,
+        "lessons_count": 12,
+        "reviews_count": 3,
+        "students_count": 46,
+        "total_views": 400,
+        "stats": {
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "students_count": 46,
+          "duration_seconds": 15120,
+          "duration_hours": 4.2,
+          "views_count": 400,
+          "reviews_count": 3,
+          "average_rating": 4.7,
+          "attachments_count": 0,
+          "resources_count": 0,
+          "quizzes_count": 4,
+          "questions_count": 18,
+          "level_key": "intermediate",
+          "level_label": "متوسط",
+          "language": "ar",
+          "language_label": "العربية",
+          "source": "calculated"
+        },
+        "has_final_exam": true,
+        "chapters": [
+          {
+            "id": 1,
+            "title": "المفاهيم الأساسية في HTML وCSS لبناء صفحات احترافية",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 1,
+            "course_id": 1,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 1,
+                "title": "مدخل إلى الموضوع — HTML وCSS لبناء صفحات احترافية",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 120
+              },
+              {
+                "id": 2,
+                "title": "المفاهيم والأدوات — HTML وCSS لبناء صفحات احترافية",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 133
+              },
+              {
+                "id": 3,
+                "title": "تطبيق عملي — HTML وCSS لبناء صفحات احترافية",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 21,
+                  "title": "تقييم تطبيق عملي — HTML وCSS لبناء صفحات احترافية"
+                },
+                "views": 146
+              },
+              {
+                "id": 4,
+                "title": "مراجعة ومهام — HTML وCSS لبناء صفحات احترافية",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 159
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "title": "التطبيق العملي في HTML وCSS لبناء صفحات احترافية",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 2,
+            "course_id": 1,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 5,
+                "title": "مدخل إلى الموضوع — HTML وCSS لبناء صفحات احترافية",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 120
+              },
+              {
+                "id": 6,
+                "title": "المفاهيم والأدوات — HTML وCSS لبناء صفحات احترافية",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 133
+              },
+              {
+                "id": 7,
+                "title": "تطبيق عملي — HTML وCSS لبناء صفحات احترافية",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 22,
+                  "title": "تقييم تطبيق عملي — HTML وCSS لبناء صفحات احترافية"
+                },
+                "views": 146
+              },
+              {
+                "id": 8,
+                "title": "مراجعة ومهام — HTML وCSS لبناء صفحات احترافية",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 159
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "title": "مشروع ومهارات متقدمة في HTML وCSS لبناء صفحات احترافية",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 3,
+            "course_id": 1,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 9,
+                "title": "مدخل إلى الموضوع — HTML وCSS لبناء صفحات احترافية",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 120
+              },
+              {
+                "id": 10,
+                "title": "المفاهيم والأدوات — HTML وCSS لبناء صفحات احترافية",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 133
+              },
+              {
+                "id": 11,
+                "title": "تطبيق عملي — HTML وCSS لبناء صفحات احترافية",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 23,
+                  "title": "تقييم تطبيق عملي — HTML وCSS لبناء صفحات احترافية"
+                },
+                "views": 146
+              },
+              {
+                "id": 12,
+                "title": "مراجعة ومهام — HTML وCSS لبناء صفحات احترافية",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 159
+              }
+            ]
+          }
+        ],
+        "reviews": [
+          {
+            "id": 1,
+            "rating": 4,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 1,
+              "name": "أحمد محمد علي 1"
+            },
+            "created_at": "4 days from now"
+          },
+          {
+            "id": 19,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 19,
+              "name": "عبد الرحمن سامح 19"
+            },
+            "created_at": "6 months ago"
+          },
+          {
+            "id": 29,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 109,
+              "name": "أحمد محمد علي 35"
+            },
+            "created_at": "1 month ago"
+          }
+        ]
+      }
+    }
+  },
+  "/courses/1/progress": {
+    "status": 200,
+    "data": {
+      "course_progress": {
+        "overall_progress": 100,
+        "status": "completed",
+        "completed_at": "2026-10-10 17:39:08",
+        "lessons": [
+          {
+            "lesson_id": 1,
+            "lesson_title": "مدخل إلى الموضوع — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-19T11:28:34.000000Z",
+            "completed_at": "2026-09-20T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-19T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 2,
+            "lesson_title": "المفاهيم والأدوات — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-20T11:28:34.000000Z",
+            "completed_at": "2026-09-21T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-20T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 3,
+            "lesson_title": "تطبيق عملي — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-21T11:28:34.000000Z",
+            "completed_at": "2026-09-22T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-21T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 4,
+            "lesson_title": "مراجعة ومهام — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-22T11:28:34.000000Z",
+            "completed_at": "2026-09-23T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-22T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 5,
+            "lesson_title": "مدخل إلى الموضوع — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-23T11:28:34.000000Z",
+            "completed_at": "2026-09-24T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-23T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 6,
+            "lesson_title": "المفاهيم والأدوات — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-24T11:28:34.000000Z",
+            "completed_at": "2026-09-25T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-24T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 7,
+            "lesson_title": "تطبيق عملي — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-25T11:28:34.000000Z",
+            "completed_at": "2026-09-26T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-25T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 8,
+            "lesson_title": "مراجعة ومهام — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-26T11:28:34.000000Z",
+            "completed_at": "2026-09-27T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-26T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 9,
+            "lesson_title": "مدخل إلى الموضوع — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-27T11:28:34.000000Z",
+            "completed_at": "2026-09-28T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-27T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 10,
+            "lesson_title": "المفاهيم والأدوات — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-28T11:28:34.000000Z",
+            "completed_at": "2026-09-29T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-28T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 11,
+            "lesson_title": "تطبيق عملي — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-29T11:28:34.000000Z",
+            "completed_at": "2026-09-30T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-29T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 12,
+            "lesson_title": "مراجعة ومهام — HTML وCSS لبناء صفحات احترافية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-30T11:28:34.000000Z",
+            "completed_at": "2026-10-01T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-30T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          }
+        ],
+        "watch_duration_seconds": 15120,
+        "last_watched_lesson": {
+          "lesson_id": 12,
+          "lesson_title": "مراجعة ومهام — HTML وCSS لبناء صفحات احترافية",
+          "last_watched_at": "2026-09-30T11:28:34.000000Z",
+          "last_position_seconds": 1620
+        }
+      }
+    }
+  },
+  "/courses/1/final-exam/meta": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": {
+        "quiz_id": 1,
+        "questions_pool_count": 6,
+        "has_sufficient_question_bank": true,
+        "attempts_total": 1,
+        "attempts_today": 1,
+        "eligible_to_start": true,
+        "next_lesson_id": null,
+        "last_attempt_at": "2026-10-10T11:28:34+00:00",
+        "next_allowed_at": null,
+        "remaining_cooldown_seconds": 0,
+        "retake_cooldown_seconds": 900,
+        "max_attempts_per_day": 2,
+        "max_attempts_total": 5,
+        "is_allowed_now": true
+      }
+    }
+  },
+  "/courses/1/final-exam/attempt/active": {
+    "status": 200,
+    "data": {
+      "success": false,
+      "message": "No active attempt found.",
+      "error_type": "no_active_attempt",
+      "data": null
+    }
+  },
+  "/courseEnroll/2": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "message": "Course retrieved successfully.",
+      "data": {
+        "id": 2,
+        "title": "JavaScript وتطبيقات الويب التفاعلية",
+        "description": "مقرر عملي ضمن دبلومة تطوير الويب الشامل. OFOQ Sales Demo dataset",
+        "rank": null,
+        "duration": 22,
+        "instructor_id": 2,
+        "category_id": 1,
+        "section_id": 1,
+        "price": "374.00",
+        "discount_price": null,
+        "discount_ends_at": null,
+        "is_free": false,
+        "rating": "4.4",
+        "average_rating": 5,
+        "cover_image": null,
+        "cover_image_url": null,
+        "is_published": null,
+        "status": null,
+        "instructor": {
+          "id": 2,
+          "name": "م. سارة إبراهيم",
+          "title": "البرمجة بلغة Python",
+          "bio": "مدرب متخصص في البرمجة بلغة Python بخبرة عملية في التعليم الرقمي.",
+          "image": null,
+          "rating": 4.4
+        },
+        "category": {
+          "id": 1,
+          "name": "دبلومة تطوير الويب الشامل"
+        },
+        "section": {
+          "id": 1,
+          "name": "البرمجة والتقنية",
+          "slug": "البرمجة-والتقنية",
+          "icon": "code"
+        },
+        "sections": [],
+        "chapters_count": 3,
+        "lessons_count": 12,
+        "reviews_count": 3,
+        "students_count": 46,
+        "total_views": 475,
+        "stats": {
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "students_count": 46,
+          "duration_seconds": 15120,
+          "duration_hours": 4.2,
+          "views_count": 475,
+          "reviews_count": 3,
+          "average_rating": 5,
+          "attachments_count": 0,
+          "resources_count": 0,
+          "quizzes_count": 4,
+          "questions_count": 18,
+          "level_key": "intermediate",
+          "level_label": "متوسط",
+          "language": "ar",
+          "language_label": "العربية",
+          "source": "calculated"
+        },
+        "has_final_exam": true,
+        "chapters": [
+          {
+            "id": 4,
+            "title": "المفاهيم الأساسية في JavaScript وتطبيقات الويب التفاعلية",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 1,
+            "course_id": 2,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 13,
+                "title": "مدخل إلى الموضوع — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 129
+              },
+              {
+                "id": 14,
+                "title": "المفاهيم والأدوات — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 142
+              },
+              {
+                "id": 15,
+                "title": "تطبيق عملي — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 24,
+                  "title": "تقييم تطبيق عملي — JavaScript وتطبيقات الويب التفاعلية"
+                },
+                "views": 155
+              },
+              {
+                "id": 16,
+                "title": "مراجعة ومهام — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 168
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "title": "التطبيق العملي في JavaScript وتطبيقات الويب التفاعلية",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 2,
+            "course_id": 2,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 17,
+                "title": "مدخل إلى الموضوع — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 129
+              },
+              {
+                "id": 18,
+                "title": "المفاهيم والأدوات — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 142
+              },
+              {
+                "id": 19,
+                "title": "تطبيق عملي — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 25,
+                  "title": "تقييم تطبيق عملي — JavaScript وتطبيقات الويب التفاعلية"
+                },
+                "views": 155
+              },
+              {
+                "id": 20,
+                "title": "مراجعة ومهام — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 168
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "title": "مشروع ومهارات متقدمة في JavaScript وتطبيقات الويب التفاعلية",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 3,
+            "course_id": 2,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 21,
+                "title": "مدخل إلى الموضوع — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 129
+              },
+              {
+                "id": 22,
+                "title": "المفاهيم والأدوات — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 142
+              },
+              {
+                "id": 23,
+                "title": "تطبيق عملي — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 26,
+                  "title": "تقييم تطبيق عملي — JavaScript وتطبيقات الويب التفاعلية"
+                },
+                "views": 155
+              },
+              {
+                "id": 24,
+                "title": "مراجعة ومهام — JavaScript وتطبيقات الويب التفاعلية",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 168
+              }
+            ]
+          }
+        ],
+        "reviews": [
+          {
+            "id": 2,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 2,
+              "name": "سارة محمود حسن 2"
+            },
+            "created_at": "6 days ago"
+          },
+          {
+            "id": 20,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 20,
+              "name": "سلمى أحمد عمر 20"
+            },
+            "created_at": "6 months ago"
+          },
+          {
+            "id": 30,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 110,
+              "name": "سارة محمود حسن 36"
+            },
+            "created_at": "1 month ago"
+          }
+        ]
+      }
+    }
+  },
+  "/courses/2/progress": {
+    "status": 200,
+    "data": {
+      "course_progress": {
+        "overall_progress": 100,
+        "status": "completed",
+        "completed_at": "2026-10-10 17:39:09",
+        "lessons": [
+          {
+            "lesson_id": 13,
+            "lesson_title": "مدخل إلى الموضوع — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-19T11:28:34.000000Z",
+            "completed_at": "2026-09-20T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-19T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 14,
+            "lesson_title": "المفاهيم والأدوات — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-20T11:28:34.000000Z",
+            "completed_at": "2026-09-21T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-20T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 15,
+            "lesson_title": "تطبيق عملي — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-21T11:28:34.000000Z",
+            "completed_at": "2026-09-22T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-21T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 16,
+            "lesson_title": "مراجعة ومهام — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-22T11:28:34.000000Z",
+            "completed_at": "2026-09-23T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-22T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 17,
+            "lesson_title": "مدخل إلى الموضوع — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-23T11:28:34.000000Z",
+            "completed_at": "2026-09-24T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-23T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 18,
+            "lesson_title": "المفاهيم والأدوات — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-24T11:28:34.000000Z",
+            "completed_at": "2026-09-25T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-24T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 19,
+            "lesson_title": "تطبيق عملي — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-25T11:28:34.000000Z",
+            "completed_at": "2026-09-26T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-25T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 20,
+            "lesson_title": "مراجعة ومهام — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-26T11:28:34.000000Z",
+            "completed_at": "2026-09-27T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-26T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 21,
+            "lesson_title": "مدخل إلى الموضوع — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-27T11:28:34.000000Z",
+            "completed_at": "2026-09-28T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-27T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 22,
+            "lesson_title": "المفاهيم والأدوات — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-28T11:28:34.000000Z",
+            "completed_at": "2026-09-29T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-28T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 23,
+            "lesson_title": "تطبيق عملي — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-29T11:28:34.000000Z",
+            "completed_at": "2026-09-30T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-29T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 24,
+            "lesson_title": "مراجعة ومهام — JavaScript وتطبيقات الويب التفاعلية",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-30T11:28:34.000000Z",
+            "completed_at": "2026-10-01T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-30T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          }
+        ],
+        "watch_duration_seconds": 15120,
+        "last_watched_lesson": {
+          "lesson_id": 24,
+          "lesson_title": "مراجعة ومهام — JavaScript وتطبيقات الويب التفاعلية",
+          "last_watched_at": "2026-09-30T11:28:34.000000Z",
+          "last_position_seconds": 1620
+        }
+      }
+    }
+  },
+  "/courses/2/final-exam/meta": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": {
+        "quiz_id": 2,
+        "questions_pool_count": 6,
+        "has_sufficient_question_bank": true,
+        "attempts_total": 1,
+        "attempts_today": 1,
+        "eligible_to_start": true,
+        "next_lesson_id": null,
+        "last_attempt_at": "2026-10-10T11:28:34+00:00",
+        "next_allowed_at": null,
+        "remaining_cooldown_seconds": 0,
+        "retake_cooldown_seconds": 900,
+        "max_attempts_per_day": 2,
+        "max_attempts_total": 5,
+        "is_allowed_now": true
+      }
+    }
+  },
+  "/courses/2/final-exam/attempt/active": {
+    "status": 200,
+    "data": {
+      "success": false,
+      "message": "No active attempt found.",
+      "error_type": "no_active_attempt",
+      "data": null
+    }
+  },
+  "/courseEnroll/3": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "message": "Course retrieved successfully.",
+      "data": {
+        "id": 3,
+        "title": "React لتطوير الواجهات الحديثة",
+        "description": "مقرر عملي ضمن دبلومة تطوير الويب الشامل. OFOQ Sales Demo dataset",
+        "rank": null,
+        "duration": 26,
+        "instructor_id": 3,
+        "category_id": 1,
+        "section_id": 1,
+        "price": "449.00",
+        "discount_price": null,
+        "discount_ends_at": null,
+        "is_free": false,
+        "rating": "4.5",
+        "average_rating": 4.5,
+        "cover_image": null,
+        "cover_image_url": null,
+        "is_published": null,
+        "status": null,
+        "instructor": {
+          "id": 3,
+          "name": "م. ياسر محمود",
+          "title": "Front-End Development",
+          "bio": "مدرب متخصص في Front-End Development بخبرة عملية في التعليم الرقمي.",
+          "image": null,
+          "rating": 4.5
+        },
+        "category": {
+          "id": 1,
+          "name": "دبلومة تطوير الويب الشامل"
+        },
+        "section": {
+          "id": 1,
+          "name": "البرمجة والتقنية",
+          "slug": "البرمجة-والتقنية",
+          "icon": "code"
+        },
+        "sections": [],
+        "chapters_count": 3,
+        "lessons_count": 12,
+        "reviews_count": 2,
+        "students_count": 46,
+        "total_views": 550,
+        "stats": {
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "students_count": 46,
+          "duration_seconds": 15120,
+          "duration_hours": 4.2,
+          "views_count": 550,
+          "reviews_count": 2,
+          "average_rating": 4.5,
+          "attachments_count": 0,
+          "resources_count": 0,
+          "quizzes_count": 4,
+          "questions_count": 18,
+          "level_key": "intermediate",
+          "level_label": "متوسط",
+          "language": "ar",
+          "language_label": "العربية",
+          "source": "calculated"
+        },
+        "has_final_exam": true,
+        "chapters": [
+          {
+            "id": 7,
+            "title": "المفاهيم الأساسية في React لتطوير الواجهات الحديثة",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 1,
+            "course_id": 3,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 25,
+                "title": "مدخل إلى الموضوع — React لتطوير الواجهات الحديثة",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 138
+              },
+              {
+                "id": 26,
+                "title": "المفاهيم والأدوات — React لتطوير الواجهات الحديثة",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 151
+              },
+              {
+                "id": 27,
+                "title": "تطبيق عملي — React لتطوير الواجهات الحديثة",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 27,
+                  "title": "تقييم تطبيق عملي — React لتطوير الواجهات الحديثة"
+                },
+                "views": 164
+              },
+              {
+                "id": 28,
+                "title": "مراجعة ومهام — React لتطوير الواجهات الحديثة",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 177
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "title": "التطبيق العملي في React لتطوير الواجهات الحديثة",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 2,
+            "course_id": 3,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 29,
+                "title": "مدخل إلى الموضوع — React لتطوير الواجهات الحديثة",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 138
+              },
+              {
+                "id": 30,
+                "title": "المفاهيم والأدوات — React لتطوير الواجهات الحديثة",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 151
+              },
+              {
+                "id": 31,
+                "title": "تطبيق عملي — React لتطوير الواجهات الحديثة",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 28,
+                  "title": "تقييم تطبيق عملي — React لتطوير الواجهات الحديثة"
+                },
+                "views": 164
+              },
+              {
+                "id": 32,
+                "title": "مراجعة ومهام — React لتطوير الواجهات الحديثة",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 177
+              }
+            ]
+          },
+          {
+            "id": 9,
+            "title": "مشروع ومهارات متقدمة في React لتطوير الواجهات الحديثة",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 3,
+            "course_id": 3,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 33,
+                "title": "مدخل إلى الموضوع — React لتطوير الواجهات الحديثة",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 138
+              },
+              {
+                "id": 34,
+                "title": "المفاهيم والأدوات — React لتطوير الواجهات الحديثة",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 151
+              },
+              {
+                "id": 35,
+                "title": "تطبيق عملي — React لتطوير الواجهات الحديثة",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 29,
+                  "title": "تقييم تطبيق عملي — React لتطوير الواجهات الحديثة"
+                },
+                "views": 164
+              },
+              {
+                "id": 36,
+                "title": "مراجعة ومهام — React لتطوير الواجهات الحديثة",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 177
+              }
+            ]
+          }
+        ],
+        "reviews": [
+          {
+            "id": 3,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 3,
+              "name": "يوسف خالد إبراهيم 3"
+            },
+            "created_at": "2 weeks ago"
+          },
+          {
+            "id": 31,
+            "rating": 4,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 111,
+              "name": "يوسف خالد إبراهيم 37"
+            },
+            "created_at": "1 month ago"
+          }
+        ]
+      }
+    }
+  },
+  "/courses/3/progress": {
+    "status": 200,
+    "data": {
+      "course_progress": {
+        "overall_progress": 100,
+        "status": "completed",
+        "completed_at": "2026-10-10 17:39:10",
+        "lessons": [
+          {
+            "lesson_id": 25,
+            "lesson_title": "مدخل إلى الموضوع — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-19T11:28:34.000000Z",
+            "completed_at": "2026-09-20T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-19T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 26,
+            "lesson_title": "المفاهيم والأدوات — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-20T11:28:34.000000Z",
+            "completed_at": "2026-09-21T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-20T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 27,
+            "lesson_title": "تطبيق عملي — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-21T11:28:34.000000Z",
+            "completed_at": "2026-09-22T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-21T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 28,
+            "lesson_title": "مراجعة ومهام — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-22T11:28:34.000000Z",
+            "completed_at": "2026-09-23T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-22T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 29,
+            "lesson_title": "مدخل إلى الموضوع — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-23T11:28:34.000000Z",
+            "completed_at": "2026-09-24T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-23T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 30,
+            "lesson_title": "المفاهيم والأدوات — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-24T11:28:34.000000Z",
+            "completed_at": "2026-09-25T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-24T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 31,
+            "lesson_title": "تطبيق عملي — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-25T11:28:34.000000Z",
+            "completed_at": "2026-09-26T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-25T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 32,
+            "lesson_title": "مراجعة ومهام — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-26T11:28:34.000000Z",
+            "completed_at": "2026-09-27T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-26T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 33,
+            "lesson_title": "مدخل إلى الموضوع — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-27T11:28:34.000000Z",
+            "completed_at": "2026-09-28T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-27T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 34,
+            "lesson_title": "المفاهيم والأدوات — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-28T11:28:34.000000Z",
+            "completed_at": "2026-09-29T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-28T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 35,
+            "lesson_title": "تطبيق عملي — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-29T11:28:34.000000Z",
+            "completed_at": "2026-09-30T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-29T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 36,
+            "lesson_title": "مراجعة ومهام — React لتطوير الواجهات الحديثة",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-30T11:28:34.000000Z",
+            "completed_at": "2026-10-01T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-30T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          }
+        ],
+        "watch_duration_seconds": 15120,
+        "last_watched_lesson": {
+          "lesson_id": 36,
+          "lesson_title": "مراجعة ومهام — React لتطوير الواجهات الحديثة",
+          "last_watched_at": "2026-09-30T11:28:34.000000Z",
+          "last_position_seconds": 1620
+        }
+      }
+    }
+  },
+  "/courses/3/final-exam/meta": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": {
+        "quiz_id": 3,
+        "questions_pool_count": 6,
+        "has_sufficient_question_bank": true,
+        "attempts_total": 1,
+        "attempts_today": 1,
+        "eligible_to_start": true,
+        "next_lesson_id": null,
+        "last_attempt_at": "2026-10-10T11:28:34+00:00",
+        "next_allowed_at": null,
+        "remaining_cooldown_seconds": 0,
+        "retake_cooldown_seconds": 900,
+        "max_attempts_per_day": 2,
+        "max_attempts_total": 5,
+        "is_allowed_now": true
+      }
+    }
+  },
+  "/courses/3/final-exam/attempt/active": {
+    "status": 200,
+    "data": {
+      "success": false,
+      "message": "No active attempt found.",
+      "error_type": "no_active_attempt",
+      "data": null
+    }
+  },
+  "/courseEnroll/4": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "message": "Course retrieved successfully.",
+      "data": {
+        "id": 4,
+        "title": "Laravel وبناء واجهات API",
+        "description": "مقرر عملي ضمن دبلومة تطوير الويب الشامل. OFOQ Sales Demo dataset",
+        "rank": null,
+        "duration": 30,
+        "instructor_id": 4,
+        "category_id": 1,
+        "section_id": 1,
+        "price": "524.00",
+        "discount_price": null,
+        "discount_ends_at": null,
+        "is_free": false,
+        "rating": "4.6",
+        "average_rating": 5,
+        "cover_image": null,
+        "cover_image_url": null,
+        "is_published": null,
+        "status": null,
+        "instructor": {
+          "id": 4,
+          "name": "د. هبة السيد",
+          "title": "قواعد البيانات",
+          "bio": "مدرب متخصص في قواعد البيانات بخبرة عملية في التعليم الرقمي.",
+          "image": null,
+          "rating": 4.6
+        },
+        "category": {
+          "id": 1,
+          "name": "دبلومة تطوير الويب الشامل"
+        },
+        "section": {
+          "id": 1,
+          "name": "البرمجة والتقنية",
+          "slug": "البرمجة-والتقنية",
+          "icon": "code"
+        },
+        "sections": [],
+        "chapters_count": 3,
+        "lessons_count": 12,
+        "reviews_count": 2,
+        "students_count": 46,
+        "total_views": 625,
+        "stats": {
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "students_count": 46,
+          "duration_seconds": 15120,
+          "duration_hours": 4.2,
+          "views_count": 625,
+          "reviews_count": 2,
+          "average_rating": 5,
+          "attachments_count": 0,
+          "resources_count": 0,
+          "quizzes_count": 4,
+          "questions_count": 18,
+          "level_key": "intermediate",
+          "level_label": "متوسط",
+          "language": "ar",
+          "language_label": "العربية",
+          "source": "calculated"
+        },
+        "has_final_exam": true,
+        "chapters": [
+          {
+            "id": 10,
+            "title": "المفاهيم الأساسية في Laravel وبناء واجهات API",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 1,
+            "course_id": 4,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 37,
+                "title": "مدخل إلى الموضوع — Laravel وبناء واجهات API",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 147
+              },
+              {
+                "id": 38,
+                "title": "المفاهيم والأدوات — Laravel وبناء واجهات API",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 160
+              },
+              {
+                "id": 39,
+                "title": "تطبيق عملي — Laravel وبناء واجهات API",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 30,
+                  "title": "تقييم تطبيق عملي — Laravel وبناء واجهات API"
+                },
+                "views": 173
+              },
+              {
+                "id": 40,
+                "title": "مراجعة ومهام — Laravel وبناء واجهات API",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 186
+              }
+            ]
+          },
+          {
+            "id": 11,
+            "title": "التطبيق العملي في Laravel وبناء واجهات API",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 2,
+            "course_id": 4,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 41,
+                "title": "مدخل إلى الموضوع — Laravel وبناء واجهات API",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 147
+              },
+              {
+                "id": 42,
+                "title": "المفاهيم والأدوات — Laravel وبناء واجهات API",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 160
+              },
+              {
+                "id": 43,
+                "title": "تطبيق عملي — Laravel وبناء واجهات API",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 31,
+                  "title": "تقييم تطبيق عملي — Laravel وبناء واجهات API"
+                },
+                "views": 173
+              },
+              {
+                "id": 44,
+                "title": "مراجعة ومهام — Laravel وبناء واجهات API",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 186
+              }
+            ]
+          },
+          {
+            "id": 12,
+            "title": "مشروع ومهارات متقدمة في Laravel وبناء واجهات API",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 3,
+            "course_id": 4,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 45,
+                "title": "مدخل إلى الموضوع — Laravel وبناء واجهات API",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 147
+              },
+              {
+                "id": 46,
+                "title": "المفاهيم والأدوات — Laravel وبناء واجهات API",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 160
+              },
+              {
+                "id": 47,
+                "title": "تطبيق عملي — Laravel وبناء واجهات API",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 32,
+                  "title": "تقييم تطبيق عملي — Laravel وبناء واجهات API"
+                },
+                "views": 173
+              },
+              {
+                "id": 48,
+                "title": "مراجعة ومهام — Laravel وبناء واجهات API",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 186
+              }
+            ]
+          }
+        ],
+        "reviews": [
+          {
+            "id": 4,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 4,
+              "name": "مريم أحمد مصطفى 4"
+            },
+            "created_at": "4 weeks ago"
+          },
+          {
+            "id": 32,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 112,
+              "name": "مريم أحمد مصطفى 1"
+            },
+            "created_at": "2 months ago"
+          }
+        ]
+      }
+    }
+  },
+  "/courses/4/progress": {
+    "status": 200,
+    "data": {
+      "course_progress": {
+        "overall_progress": 100,
+        "status": "completed",
+        "completed_at": "2026-10-10 17:39:11",
+        "lessons": [
+          {
+            "lesson_id": 37,
+            "lesson_title": "مدخل إلى الموضوع — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-19T11:28:34.000000Z",
+            "completed_at": "2026-09-20T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-19T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 38,
+            "lesson_title": "المفاهيم والأدوات — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-20T11:28:34.000000Z",
+            "completed_at": "2026-09-21T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-20T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 39,
+            "lesson_title": "تطبيق عملي — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-21T11:28:34.000000Z",
+            "completed_at": "2026-09-22T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-21T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 40,
+            "lesson_title": "مراجعة ومهام — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-22T11:28:34.000000Z",
+            "completed_at": "2026-09-23T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-22T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 41,
+            "lesson_title": "مدخل إلى الموضوع — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-23T11:28:34.000000Z",
+            "completed_at": "2026-09-24T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-23T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 42,
+            "lesson_title": "المفاهيم والأدوات — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-24T11:28:34.000000Z",
+            "completed_at": "2026-09-25T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-24T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 43,
+            "lesson_title": "تطبيق عملي — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-25T11:28:34.000000Z",
+            "completed_at": "2026-09-26T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-25T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 44,
+            "lesson_title": "مراجعة ومهام — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-26T11:28:34.000000Z",
+            "completed_at": "2026-09-27T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-26T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 45,
+            "lesson_title": "مدخل إلى الموضوع — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-27T11:28:34.000000Z",
+            "completed_at": "2026-09-28T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-27T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 46,
+            "lesson_title": "المفاهيم والأدوات — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-28T11:28:34.000000Z",
+            "completed_at": "2026-09-29T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-28T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 47,
+            "lesson_title": "تطبيق عملي — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-29T11:28:34.000000Z",
+            "completed_at": "2026-09-30T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-29T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 48,
+            "lesson_title": "مراجعة ومهام — Laravel وبناء واجهات API",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-30T11:28:34.000000Z",
+            "completed_at": "2026-10-01T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-30T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          }
+        ],
+        "watch_duration_seconds": 15120,
+        "last_watched_lesson": {
+          "lesson_id": 48,
+          "lesson_title": "مراجعة ومهام — Laravel وبناء واجهات API",
+          "last_watched_at": "2026-09-30T11:28:34.000000Z",
+          "last_position_seconds": 1620
+        }
+      }
+    }
+  },
+  "/courses/4/final-exam/meta": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": {
+        "quiz_id": 4,
+        "questions_pool_count": 6,
+        "has_sufficient_question_bank": true,
+        "attempts_total": 1,
+        "attempts_today": 1,
+        "eligible_to_start": true,
+        "next_lesson_id": null,
+        "last_attempt_at": "2026-10-10T11:28:34+00:00",
+        "next_allowed_at": null,
+        "remaining_cooldown_seconds": 0,
+        "retake_cooldown_seconds": 900,
+        "max_attempts_per_day": 2,
+        "max_attempts_total": 5,
+        "is_allowed_now": true
+      }
+    }
+  },
+  "/courses/4/final-exam/attempt/active": {
+    "status": 200,
+    "data": {
+      "success": false,
+      "message": "No active attempt found.",
+      "error_type": "no_active_attempt",
+      "data": null
+    }
+  },
+  "/courseEnroll/7": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "message": "Course retrieved successfully.",
+      "data": {
+        "id": 7,
+        "title": "قواعد البيانات باستخدام Python",
+        "description": "مقرر عملي ضمن دبلومة البرمجة بلغة Python. OFOQ Sales Demo dataset",
+        "rank": null,
+        "duration": 22,
+        "instructor_id": 7,
+        "category_id": 2,
+        "section_id": 1,
+        "price": "449.00",
+        "discount_price": null,
+        "discount_ends_at": null,
+        "is_free": false,
+        "rating": "4.4",
+        "average_rating": 5,
+        "cover_image": null,
+        "cover_image_url": null,
+        "is_published": null,
+        "status": null,
+        "instructor": {
+          "id": 7,
+          "name": "د. ريم مصطفى",
+          "title": "الذكاء الاصطناعي",
+          "bio": "مدرب متخصص في الذكاء الاصطناعي بخبرة عملية في التعليم الرقمي.",
+          "image": null,
+          "rating": 4.4
+        },
+        "category": {
+          "id": 2,
+          "name": "دبلومة البرمجة بلغة Python"
+        },
+        "section": {
+          "id": 1,
+          "name": "البرمجة والتقنية",
+          "slug": "البرمجة-والتقنية",
+          "icon": "code"
+        },
+        "sections": [],
+        "chapters_count": 3,
+        "lessons_count": 12,
+        "reviews_count": 2,
+        "students_count": 46,
+        "total_views": 850,
+        "stats": {
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "students_count": 46,
+          "duration_seconds": 15120,
+          "duration_hours": 4.2,
+          "views_count": 850,
+          "reviews_count": 2,
+          "average_rating": 5,
+          "attachments_count": 0,
+          "resources_count": 0,
+          "quizzes_count": 4,
+          "questions_count": 18,
+          "level_key": "intermediate",
+          "level_label": "متوسط",
+          "language": "ar",
+          "language_label": "العربية",
+          "source": "calculated"
+        },
+        "has_final_exam": true,
+        "chapters": [
+          {
+            "id": 19,
+            "title": "المفاهيم الأساسية في قواعد البيانات باستخدام Python",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 1,
+            "course_id": 7,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 73,
+                "title": "مدخل إلى الموضوع — قواعد البيانات باستخدام Python",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 174
+              },
+              {
+                "id": 74,
+                "title": "المفاهيم والأدوات — قواعد البيانات باستخدام Python",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 187
+              },
+              {
+                "id": 75,
+                "title": "تطبيق عملي — قواعد البيانات باستخدام Python",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 39,
+                  "title": "تقييم تطبيق عملي — قواعد البيانات باستخدام Python"
+                },
+                "views": 200
+              },
+              {
+                "id": 76,
+                "title": "مراجعة ومهام — قواعد البيانات باستخدام Python",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 213
+              }
+            ]
+          },
+          {
+            "id": 20,
+            "title": "التطبيق العملي في قواعد البيانات باستخدام Python",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 2,
+            "course_id": 7,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 77,
+                "title": "مدخل إلى الموضوع — قواعد البيانات باستخدام Python",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 174
+              },
+              {
+                "id": 78,
+                "title": "المفاهيم والأدوات — قواعد البيانات باستخدام Python",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 187
+              },
+              {
+                "id": 79,
+                "title": "تطبيق عملي — قواعد البيانات باستخدام Python",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 40,
+                  "title": "تقييم تطبيق عملي — قواعد البيانات باستخدام Python"
+                },
+                "views": 200
+              },
+              {
+                "id": 80,
+                "title": "مراجعة ومهام — قواعد البيانات باستخدام Python",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 213
+              }
+            ]
+          },
+          {
+            "id": 21,
+            "title": "مشروع ومهارات متقدمة في قواعد البيانات باستخدام Python",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 3,
+            "course_id": 7,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 81,
+                "title": "مدخل إلى الموضوع — قواعد البيانات باستخدام Python",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 174
+              },
+              {
+                "id": 82,
+                "title": "المفاهيم والأدوات — قواعد البيانات باستخدام Python",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 187
+              },
+              {
+                "id": 83,
+                "title": "تطبيق عملي — قواعد البيانات باستخدام Python",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 41,
+                  "title": "تقييم تطبيق عملي — قواعد البيانات باستخدام Python"
+                },
+                "views": 200
+              },
+              {
+                "id": 84,
+                "title": "مراجعة ومهام — قواعد البيانات باستخدام Python",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 213
+              }
+            ]
+          }
+        ],
+        "reviews": [
+          {
+            "id": 7,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 7,
+              "name": "عبد الرحمن سامح 7"
+            },
+            "created_at": "2 months ago"
+          },
+          {
+            "id": 35,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 115,
+              "name": "عبد الرحمن سامح 4"
+            },
+            "created_at": "3 months ago"
+          }
+        ]
+      }
+    }
+  },
+  "/courses/7/progress": {
+    "status": 200,
+    "data": {
+      "course_progress": {
+        "overall_progress": 100,
+        "status": "completed",
+        "completed_at": "2026-10-10 17:39:11",
+        "lessons": [
+          {
+            "lesson_id": 73,
+            "lesson_title": "مدخل إلى الموضوع — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-19T11:28:34.000000Z",
+            "completed_at": "2026-09-20T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-19T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 74,
+            "lesson_title": "المفاهيم والأدوات — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-20T11:28:34.000000Z",
+            "completed_at": "2026-09-21T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-20T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 75,
+            "lesson_title": "تطبيق عملي — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-21T11:28:34.000000Z",
+            "completed_at": "2026-09-22T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-21T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 76,
+            "lesson_title": "مراجعة ومهام — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-22T11:28:34.000000Z",
+            "completed_at": "2026-09-23T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-22T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 77,
+            "lesson_title": "مدخل إلى الموضوع — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-23T11:28:34.000000Z",
+            "completed_at": "2026-09-24T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-23T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 78,
+            "lesson_title": "المفاهيم والأدوات — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-24T11:28:34.000000Z",
+            "completed_at": "2026-09-25T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-24T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 79,
+            "lesson_title": "تطبيق عملي — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-25T11:28:34.000000Z",
+            "completed_at": "2026-09-26T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-25T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 80,
+            "lesson_title": "مراجعة ومهام — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-26T11:28:34.000000Z",
+            "completed_at": "2026-09-27T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-26T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 81,
+            "lesson_title": "مدخل إلى الموضوع — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-27T11:28:34.000000Z",
+            "completed_at": "2026-09-28T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-27T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 82,
+            "lesson_title": "المفاهيم والأدوات — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-28T11:28:34.000000Z",
+            "completed_at": "2026-09-29T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-28T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 83,
+            "lesson_title": "تطبيق عملي — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-29T11:28:34.000000Z",
+            "completed_at": "2026-09-30T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-29T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 84,
+            "lesson_title": "مراجعة ومهام — قواعد البيانات باستخدام Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-30T11:28:34.000000Z",
+            "completed_at": "2026-10-01T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-30T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          }
+        ],
+        "watch_duration_seconds": 15120,
+        "last_watched_lesson": {
+          "lesson_id": 84,
+          "lesson_title": "مراجعة ومهام — قواعد البيانات باستخدام Python",
+          "last_watched_at": "2026-09-30T11:28:34.000000Z",
+          "last_position_seconds": 1620
+        }
+      }
+    }
+  },
+  "/courses/7/final-exam/meta": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": {
+        "quiz_id": 7,
+        "questions_pool_count": 6,
+        "has_sufficient_question_bank": true,
+        "attempts_total": 0,
+        "attempts_today": 0,
+        "eligible_to_start": true,
+        "next_lesson_id": null,
+        "last_attempt_at": null,
+        "next_allowed_at": null,
+        "remaining_cooldown_seconds": 0,
+        "retake_cooldown_seconds": 900,
+        "max_attempts_per_day": 2,
+        "max_attempts_total": 5,
+        "is_allowed_now": false
+      }
+    }
+  },
+  "/courses/7/final-exam/attempt/active": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": {
+        "attempt_id": 161,
+        "quiz_id": 7,
+        "questions": [
+          {
+            "id": 121,
+            "question": "سؤال تطبيقي 1 في قواعد البيانات باستخدام Python",
+            "options": [
+              "المفهوم الصحيح",
+              "خيار غير دقيق",
+              "تطبيق غير مناسب",
+              "معلومة غير مرتبطة"
+            ]
+          },
+          {
+            "id": 122,
+            "question": "سؤال تطبيقي 2 في قواعد البيانات باستخدام Python",
+            "options": [
+              "المفهوم الصحيح",
+              "خيار غير دقيق",
+              "تطبيق غير مناسب",
+              "معلومة غير مرتبطة"
+            ]
+          },
+          {
+            "id": 123,
+            "question": "سؤال تطبيقي 3 في قواعد البيانات باستخدام Python",
+            "options": [
+              "المفهوم الصحيح",
+              "خيار غير دقيق",
+              "تطبيق غير مناسب",
+              "معلومة غير مرتبطة"
+            ]
+          },
+          {
+            "id": 124,
+            "question": "سؤال تطبيقي 4 في قواعد البيانات باستخدام Python",
+            "options": [
+              "المفهوم الصحيح",
+              "خيار غير دقيق",
+              "تطبيق غير مناسب",
+              "معلومة غير مرتبطة"
+            ]
+          },
+          {
+            "id": 125,
+            "question": "سؤال تطبيقي 5 في قواعد البيانات باستخدام Python",
+            "options": [
+              "المفهوم الصحيح",
+              "خيار غير دقيق",
+              "تطبيق غير مناسب",
+              "معلومة غير مرتبطة"
+            ]
+          },
+          {
+            "id": 126,
+            "question": "سؤال تطبيقي 6 في قواعد البيانات باستخدام Python",
+            "options": [
+              "المفهوم الصحيح",
+              "خيار غير دقيق",
+              "تطبيق غير مناسب",
+              "معلومة غير مرتبطة"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "/courseEnroll/6": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "message": "Course retrieved successfully.",
+      "data": {
+        "id": 6,
+        "title": "البرمجة الكائنية في Python",
+        "description": "مقرر عملي ضمن دبلومة البرمجة بلغة Python. OFOQ Sales Demo dataset",
+        "rank": null,
+        "duration": 18,
+        "instructor_id": 6,
+        "category_id": 2,
+        "section_id": 1,
+        "price": "0.00",
+        "discount_price": null,
+        "discount_ends_at": null,
+        "is_free": true,
+        "rating": "4.3",
+        "average_rating": 5,
+        "cover_image": null,
+        "cover_image_url": null,
+        "is_published": null,
+        "status": null,
+        "instructor": {
+          "id": 6,
+          "name": "م. عمر حمدي",
+          "title": "تحليل البيانات",
+          "bio": "مدرب متخصص في تحليل البيانات بخبرة عملية في التعليم الرقمي.",
+          "image": null,
+          "rating": 4.5
+        },
+        "category": {
+          "id": 2,
+          "name": "دبلومة البرمجة بلغة Python"
+        },
+        "section": {
+          "id": 1,
+          "name": "البرمجة والتقنية",
+          "slug": "البرمجة-والتقنية",
+          "icon": "code"
+        },
+        "sections": [],
+        "chapters_count": 3,
+        "lessons_count": 12,
+        "reviews_count": 2,
+        "students_count": 45,
+        "total_views": 775,
+        "stats": {
+          "chapters_count": 3,
+          "lessons_count": 12,
+          "students_count": 45,
+          "duration_seconds": 15120,
+          "duration_hours": 4.2,
+          "views_count": 775,
+          "reviews_count": 2,
+          "average_rating": 5,
+          "attachments_count": 0,
+          "resources_count": 0,
+          "quizzes_count": 4,
+          "questions_count": 18,
+          "level_key": "intermediate",
+          "level_label": "متوسط",
+          "language": "ar",
+          "language_label": "العربية",
+          "source": "calculated"
+        },
+        "has_final_exam": true,
+        "chapters": [
+          {
+            "id": 16,
+            "title": "المفاهيم الأساسية في البرمجة الكائنية في Python",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 1,
+            "course_id": 6,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 61,
+                "title": "مدخل إلى الموضوع — البرمجة الكائنية في Python",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 165
+              },
+              {
+                "id": 62,
+                "title": "المفاهيم والأدوات — البرمجة الكائنية في Python",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 178
+              },
+              {
+                "id": 63,
+                "title": "تطبيق عملي — البرمجة الكائنية في Python",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 36,
+                  "title": "تقييم تطبيق عملي — البرمجة الكائنية في Python"
+                },
+                "views": 191
+              },
+              {
+                "id": 64,
+                "title": "مراجعة ومهام — البرمجة الكائنية في Python",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 204
+              }
+            ]
+          },
+          {
+            "id": 17,
+            "title": "التطبيق العملي في البرمجة الكائنية في Python",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 2,
+            "course_id": 6,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 65,
+                "title": "مدخل إلى الموضوع — البرمجة الكائنية في Python",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 165
+              },
+              {
+                "id": 66,
+                "title": "المفاهيم والأدوات — البرمجة الكائنية في Python",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 178
+              },
+              {
+                "id": 67,
+                "title": "تطبيق عملي — البرمجة الكائنية في Python",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 37,
+                  "title": "تقييم تطبيق عملي — البرمجة الكائنية في Python"
+                },
+                "views": 191
+              },
+              {
+                "id": 68,
+                "title": "مراجعة ومهام — البرمجة الكائنية في Python",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 204
+              }
+            ]
+          },
+          {
+            "id": 18,
+            "title": "مشروع ومهارات متقدمة في البرمجة الكائنية في Python",
+            "description": "محتوى تدريبي منظم يجمع الشرح والتطبيق.",
+            "order": 3,
+            "course_id": 6,
+            "lessons_count": 4,
+            "lessons": [
+              {
+                "id": 69,
+                "title": "مدخل إلى الموضوع — البرمجة الكائنية في Python",
+                "order": 1,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 900,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 165
+              },
+              {
+                "id": 70,
+                "title": "المفاهيم والأدوات — البرمجة الكائنية في Python",
+                "order": 2,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1140,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 178
+              },
+              {
+                "id": 71,
+                "title": "تطبيق عملي — البرمجة الكائنية في Python",
+                "order": 3,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1380,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": {
+                  "id": 38,
+                  "title": "تقييم تطبيق عملي — البرمجة الكائنية في Python"
+                },
+                "views": 191
+              },
+              {
+                "id": 72,
+                "title": "مراجعة ومهام — البرمجة الكائنية في Python",
+                "order": 4,
+                "content": "شرح تدريبي عملي مع أمثلة ومهام قابلة للتنفيذ.",
+                "video_url": null,
+                "video_guid": null,
+                "video_status": "ready",
+                "duration_seconds": 1620,
+                "duration_source": null,
+                "is_visible": true,
+                "attachments": null,
+                "resources": null,
+                "quiz": null,
+                "views": 204
+              }
+            ]
+          }
+        ],
+        "reviews": [
+          {
+            "id": 6,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 6,
+              "name": "ليان أحمد الكيلاني"
+            },
+            "created_at": "1 month ago"
+          },
+          {
+            "id": 34,
+            "rating": 5,
+            "comment": "محتوى منظم وتطبيقات عملية ساعدتني على التقدم بثقة.",
+            "user": {
+              "id": 114,
+              "name": "نورهان محمد علي 3"
+            },
+            "created_at": "2 months ago"
+          }
+        ]
+      }
+    }
+  },
+  "/courses/6/progress": {
+    "status": 200,
+    "data": {
+      "course_progress": {
+        "overall_progress": 100,
+        "status": "completed",
+        "completed_at": "2026-10-10 17:39:12",
+        "lessons": [
+          {
+            "lesson_id": 61,
+            "lesson_title": "مدخل إلى الموضوع — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-19T11:28:34.000000Z",
+            "completed_at": "2026-09-20T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-19T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 62,
+            "lesson_title": "المفاهيم والأدوات — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-20T11:28:34.000000Z",
+            "completed_at": "2026-09-21T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-20T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 63,
+            "lesson_title": "تطبيق عملي — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-21T11:28:34.000000Z",
+            "completed_at": "2026-09-22T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-21T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 64,
+            "lesson_title": "مراجعة ومهام — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-22T11:28:34.000000Z",
+            "completed_at": "2026-09-23T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-22T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 65,
+            "lesson_title": "مدخل إلى الموضوع — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-23T11:28:34.000000Z",
+            "completed_at": "2026-09-24T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-23T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 66,
+            "lesson_title": "المفاهيم والأدوات — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-24T11:28:34.000000Z",
+            "completed_at": "2026-09-25T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-24T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 67,
+            "lesson_title": "تطبيق عملي — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-25T11:28:34.000000Z",
+            "completed_at": "2026-09-26T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-25T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 68,
+            "lesson_title": "مراجعة ومهام — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-26T11:28:34.000000Z",
+            "completed_at": "2026-09-27T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-26T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          },
+          {
+            "lesson_id": 69,
+            "lesson_title": "مدخل إلى الموضوع — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-27T11:28:34.000000Z",
+            "completed_at": "2026-09-28T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 900,
+            "last_watched_at": "2026-09-27T11:28:34.000000Z",
+            "last_position_seconds": 900
+          },
+          {
+            "lesson_id": 70,
+            "lesson_title": "المفاهيم والأدوات — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-28T11:28:34.000000Z",
+            "completed_at": "2026-09-29T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1140,
+            "last_watched_at": "2026-09-28T11:28:34.000000Z",
+            "last_position_seconds": 1140
+          },
+          {
+            "lesson_id": 71,
+            "lesson_title": "تطبيق عملي — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-29T11:28:34.000000Z",
+            "completed_at": "2026-09-30T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1380,
+            "last_watched_at": "2026-09-29T11:28:34.000000Z",
+            "last_position_seconds": 1380
+          },
+          {
+            "lesson_id": 72,
+            "lesson_title": "مراجعة ومهام — البرمجة الكائنية في Python",
+            "status": "completed",
+            "quiz_passed": true,
+            "started_at": "2026-09-30T11:28:34.000000Z",
+            "completed_at": "2026-10-01T11:28:34.000000Z",
+            "progress_percentage": 100,
+            "watch_duration_seconds": 1620,
+            "last_watched_at": "2026-09-30T11:28:34.000000Z",
+            "last_position_seconds": 1620
+          }
+        ],
+        "watch_duration_seconds": 15120,
+        "last_watched_lesson": {
+          "lesson_id": 72,
+          "lesson_title": "مراجعة ومهام — البرمجة الكائنية في Python",
+          "last_watched_at": "2026-09-30T11:28:34.000000Z",
+          "last_position_seconds": 1620
+        }
+      }
+    }
+  },
+  "/courses/6/final-exam/meta": {
+    "status": 200,
+    "data": {
+      "success": true,
+      "data": {
+        "quiz_id": 6,
+        "questions_pool_count": 6,
+        "has_sufficient_question_bank": true,
+        "attempts_total": 1,
+        "attempts_today": 1,
+        "eligible_to_start": true,
+        "next_lesson_id": null,
+        "last_attempt_at": "2026-10-10T11:28:34+00:00",
+        "next_allowed_at": null,
+        "remaining_cooldown_seconds": 0,
+        "retake_cooldown_seconds": 900,
+        "max_attempts_per_day": 2,
+        "max_attempts_total": 5,
+        "is_allowed_now": true
+      }
+    }
+  },
+  "/courses/6/final-exam/attempt/active": {
+    "status": 200,
+    "data": {
+      "success": false,
+      "message": "No active attempt found.",
+      "error_type": "no_active_attempt",
+      "data": null
+    }
+  }
+}

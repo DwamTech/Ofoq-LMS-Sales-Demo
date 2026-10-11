@@ -45,6 +45,8 @@ class LessonResource extends JsonResource
             'duration_seconds' => $this->duration_seconds,
             'duration_source' => $isAdmin ? $this->duration_source : null,
             'is_visible' => $this->is_visible,
+            // Expose the existing authorization decision, not the preview flag.
+            'can_access' => $canView,
             'attachments' => $canView ? $this->attachments : null,
             'resources' => $canView ? $this->resources : null,
             'quiz' => new QuizResource($this->whenLoaded('quiz')),

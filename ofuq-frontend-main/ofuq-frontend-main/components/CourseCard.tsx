@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { ProgramArtwork } from './brand/ProgramArtwork';
+import { publicPrice } from './brand/publicContent';
 import styles from './CourseCard.module.css';
 
 interface CourseCardProps {
@@ -31,7 +33,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
     <Link href={`/course-details/${id}`} prefetch={false} className={styles['course-card-link']}>
       <div className={styles['course-card']}>
         <div className={styles['course-image']}>
-          <img src={image} alt={title} />
+          <ProgramArtwork title={title} image={image} identity={id} />
           <div className={styles['course-category']}>{typeof category === 'string' ? category : category?.name ?? 'عام'}</div>
         </div>
 
@@ -71,18 +73,11 @@ const CourseCard: React.FC<CourseCardProps> = ({
 
           <div className={styles['course-footer']}>
             <div className={styles['course-price']}>
-              {price === 0 ? (
-                <span>مجاني</span>
-              ) : (
-                <>
-                  <span className={styles['currency']}>ج.م</span>
-                  {price}
-                </>
-              )}
+              <span>{publicPrice(price)}</span>
             </div>
 
             <div className={styles['enroll-section']}>
-              <span className={styles['enroll-text']}>سجل الآن</span>
+              <span className={styles['enroll-text']}>تفاصيل المقرر</span>
               <div className={styles['enroll-arrow']}>
                 <svg viewBox="0 0 24 24">
                   <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41 -1.41z" />

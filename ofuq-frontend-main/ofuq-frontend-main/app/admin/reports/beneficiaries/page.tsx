@@ -1,4 +1,6 @@
 'use client';
+import { BrandLogo } from '@/components/brand/BrandLogo'
+import { brand } from '@/lib/brand'
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
@@ -129,9 +131,9 @@ export default function BeneficiaryReportPage() {
   return (
     <AdminPage size="full" className={styles.printDocument}>
       <div className={styles.printHeader}>
-        <img src="/logo.png" alt="منصة أفق" />
+        <BrandLogo/>
         <div>
-          <span>منصة أفق للتعليم عن بعد</span>
+          <span>{brand.name}</span>
           <h1>تقرير المستفيدين والإنجاز</h1>
           <p>{periodLabel}</p>
         </div>
@@ -268,7 +270,7 @@ export default function BeneficiaryReportPage() {
           </section>
 
           <footer className={styles.reportFooter}>
-            <span>منصة أفق للتعليم عن بعد</span>
+            <span>{brand.name}</span>
             <span>تقرير داخلي — تم إنشاؤه آليًا من بيانات المنصة</span>
           </footer>
         </>

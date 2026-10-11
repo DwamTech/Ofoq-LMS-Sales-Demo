@@ -1,4 +1,5 @@
 'use client';
+import { brand } from '@/lib/brand'
 
 import { useParams, useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
@@ -166,7 +167,7 @@ export default function StudentReportPage() {
 
   const handleSendEmail = () => {
     if (student.email) {
-      window.open(`mailto:${student.email}?subject=رسالة من إدارة منصة أفق`, '_blank');
+      window.open(`mailto:${student.email}?subject=رسالة من إدارة ${brand.name}`, '_blank');
     }
   };
 

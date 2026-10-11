@@ -1,0 +1,14 @@
+import ts from 'typescript';
+import {readFile,readdir,writeFile,mkdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const files=[],results=[];
+async function walk(dir){for(const e of await readdir(dir,{withFileTypes:true})){const p=dir+'/'+e.name;if(e.isDirectory())await walk(p);else if(/\.(tsx?|css|svg|json|webmanifest|txt)$/.test(p)&&!p.endsWith('.test.ts')&&!p.endsWith('.test.tsx'))files.push(p);}}
+for(const dir of ['app','components','utils','lib','public','styles'])await walk(dir);
+const legacy=/\b(?:OFOQ|OFUQ)\b|Beyond the Horizon|YOUR LEARNING HORIZON|A NEW HORIZON FOR EDUCATION|(?<![\u0600-\u06ff])(?:أُفُق|أفق|الأفق|افق)(?![\u0600-\u06ff])/i;
+const protectedPattern=/ofoq_demo|ofuq_active|ofoq_experience|@demo\.ofoq|ofuq\.academy|\/images\/ofuq-logo|OFOQ-|Ofoq Demo Admin|\.replace\(|aria-labelledby|about-ofuq|import.*Ofuq|function AboutOfuq|ofuq-loader|brandFonts|ofoqDisplayFont|ofoqUiFont/i;
+for(const file of files){const source=await readFile(file,'utf8');for(const [index,line]of source.split(/\r?\n/).entries()){if(!legacy.test(line))continue;const category=protectedPattern.test(line)||/^[\s]*(\/\*|\*|\/\/)/.test(line)?'PROTECTED_INTERNAL_OR_PROVENANCE':'REVIEW';results.push({file,line:index+1,category,text:line.trim().slice(0,400)});}}
+const visible=[];for(const file of files.filter(f=>/\.tsx?$/.test(f)&&!f.includes('/api/'))){const text=await readFile(file,'utf8'),tree=ts.createSourceFile(file,text,ts.ScriptTarget.Latest,true,file.endsWith('.tsx')?ts.ScriptKind.TSX:ts.ScriptKind.TS);const visit=n=>{if(ts.isJsxText(n)||ts.isStringLiteral(n)||ts.isNoSubstitutionTemplateLiteral(n)){const value=ts.isJsxText(n)?n.getFullText(tree):n.text;if(legacy.test(value)&&!protectedPattern.test(value)&&!/^\/|https?:|@demo|^__|^ofoq_|^ofuq_/.test(value)&&!file.endsWith('brand.ts'))visible.push({file,line:tree.getLineAndCharacterOfPosition(n.pos).line+1,value});}ts.forEachChild(n,visit);};visit(tree);}
+const affected=files.filter(f=>/\.tsx?$/.test(f)).filter(f=>!f.endsWith('brandFonts.ts'));
+const connected=[];for(const file of affected){if(/@\/lib\/brand|BrandLogo|logoVectors/.test(await readFile(file,'utf8')))connected.push(file);}
+await mkdir('artifacts/mansatak',{recursive:true});await writeFile('artifacts/mansatak/source-audit.json',JSON.stringify({searchScope:['app','components','utils','lib','public','styles'],references:results,userVisibleLegacyLiterals:visible,centralizedConsumers:connected,protectedHistorical:['Previously issued OFOQ-C/OFOQ-D identifiers and PDF bytes; audited with authenticated HTTP','docs/retired-brand/certifecate_cover.jpg: unreferenced original template, archived outside runtime'],status:visible.length?'FAIL':'PASS'},null,2));
+console.log(JSON.stringify({status:visible.length?'FAIL':'PASS',visibleLegacyLiterals:visible,protectedReferenceCount:results.length,consumers:connected.length},null,2));

@@ -1,0 +1,9 @@
+{
+    "isolated": true,
+    "environment": "production",
+    "connection": "mysql",
+    "database": "ofoq_demo",
+    "users": 801,
+    "non_synthetic_users": 0,
+    "entry_enabled": true
+}

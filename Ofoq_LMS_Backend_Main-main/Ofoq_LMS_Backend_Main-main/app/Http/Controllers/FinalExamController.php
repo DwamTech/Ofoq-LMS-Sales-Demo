@@ -94,7 +94,7 @@ class FinalExamController extends Controller
                 'data' => [
                     'attempt_id' => $activeAttempt->id,
                     'quiz_id' => $finalExam->id,
-                    'questions' => $questions,
+                    'questions' => \App\Http\Resources\ExamQuestionResource::collection($questions),
                 ]
             ]);
         }
@@ -204,7 +204,7 @@ class FinalExamController extends Controller
             'data' => [
                 'attempt_id' => $attempt->id,
                 'quiz_id' => $finalExam->id,
-                'questions' => $questions, // options remain ordered; indices map to correct_answer
+                'questions' => \App\Http\Resources\ExamQuestionResource::collection($questions),
             ]
         ]);
     }
@@ -625,7 +625,7 @@ class FinalExamController extends Controller
                 'data' => [
                     'attempt_id' => $attempt->id,
                     'quiz_id' => $attempt->quiz_id,
-                    'questions' => $questions,
+                    'questions' => \App\Http\Resources\ExamQuestionResource::collection($questions),
                 ]
             ]);
         }

@@ -1,4 +1,5 @@
 'use client';
+import { BrandLogo } from '@/components/brand/BrandLogo'
 
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -168,7 +169,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onTabChange, initialTab }) => {
           nationality: nationality.value,
         } as any);
 
-        console.log('Signup successful:', result);
         // Redirect based on role
         if (result.user.role === 'admin' || result.user.role === 'supervisor') {
           console.log('[Signup] Routing to /admin');
@@ -205,7 +205,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onTabChange, initialTab }) => {
           password,
         } as any);
 
-        console.log('Signin successful:', result);
         // Redirect based on role
         if (result.user.role === 'admin' || result.user.role === 'supervisor') {
           console.log('[Signin] Routing to /admin');
@@ -259,7 +258,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onTabChange, initialTab }) => {
       {/* Logo */}
       <div className={styles.authFormLogo}>
         <Link href={{ pathname: '/' }} >
-          <img src="/logo.png" alt="منصة أفق للتعليم عن بعد" />
+          <BrandLogo/>
         </Link>
       </div>
 

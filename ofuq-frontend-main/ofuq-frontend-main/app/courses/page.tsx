@@ -1,4 +1,5 @@
 "use client";
+import { brand } from '@/lib/brand'
 
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -79,7 +80,7 @@ function CoursesContent() {
     return result;
   }, [courses, searchQuery, selectedFilter]);
 
-  const pageTitle = activeSection ? `كورسات ${activeSection.name}` : "كورسات منصة أفق";
+  const pageTitle = activeSection ? `كورسات ${activeSection.name}` : `كورسات ${brand.name}`;
 
   return (
     <main>
@@ -125,7 +126,7 @@ function CoursesContent() {
                   studentsCount={Number(course.students_count ?? 0)}
                   duration={`${Number(course.duration ?? 0)} ساعة`}
                   lessonsCount={Number(course.lessons_count ?? course.chapters_count ?? 0)}
-                  instructorName={course.instructor?.name || "محاضر أفق"}
+                  instructorName={course.instructor?.name || `محاضر ${brand.name}`}
                   instructorAvatar={course.instructor?.image || "/logo.png"}
                   price={Number(course.price ?? 0)}
                 />

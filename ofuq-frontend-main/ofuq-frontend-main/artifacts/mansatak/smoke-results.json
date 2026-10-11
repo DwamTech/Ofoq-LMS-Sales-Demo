@@ -1,0 +1,98 @@
+{
+  "reports": [
+    {
+      "test": "Production route /",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Browser title and OG use Arabic brand",
+      "status": "PASS"
+    },
+    {
+      "test": "Production route /about",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /courses",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /diploms",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /community",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /privacy",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /terms",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /verify-certificate",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /auth",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /auth?tab=signup",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /experience",
+      "status": "PASS",
+      "httpStatus": 200
+    },
+    {
+      "test": "Production route /login_old",
+      "status": "PASS",
+      "httpStatus": 307
+    },
+    {
+      "test": "Production route /register_old",
+      "status": "PASS",
+      "httpStatus": 307
+    },
+    {
+      "test": "Production route /brand-lab",
+      "status": "PASS",
+      "httpStatus": 404
+    },
+    {
+      "test": "Arabic application manifest",
+      "status": "PASS"
+    },
+    {
+      "test": "Vector favicon serves new mark",
+      "status": "PASS"
+    },
+    {
+      "test": "Actual multiframe ICO served",
+      "status": "PASS"
+    },
+    {
+      "test": "Correct 1200x630 OG PNG served",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "pass": 19,
+    "fail": 0
+  }
+}

@@ -1,4 +1,5 @@
 'use client';
+import { brand } from '@/lib/brand'
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './HeroSection.module.css';
@@ -135,7 +136,7 @@ const HeroSection = () => {
                 <span className={styles['course-count']}>
                   {loading ? '...' : `${stats?.total_courses || 0}+`}
                 </span>
-                <span className={styles['course-label']}>دبلومات أفق</span>
+                <span className={styles['course-label']}>دبلومات {brand.name}</span>
               </div>
             </div>
           </div>

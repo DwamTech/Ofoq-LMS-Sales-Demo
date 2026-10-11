@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { ProgramArtwork } from './brand/ProgramArtwork';
+import { publicPrice } from './brand/publicContent';
 import { useRouter } from 'next/navigation';
 import { isAuthenticated } from '../utils/authService';
 import { addCourseToFavorites, removeCourseFromFavorites, getMyFavoriteCourseIds, type CourseStats } from '../utils/courseService';
@@ -8,6 +10,7 @@ import { addCourseToFavorites, removeCourseFromFavorites, getMyFavoriteCourseIds
 interface CourseSidebarProps {
   courseId?: number | string;
   courseImage: string;
+  courseTitle?: string;
   currentPrice: number | string;
   originalPrice: number | string;
   discount: string;
@@ -18,11 +21,14 @@ interface CourseSidebarProps {
   actionLabel?: string;
   onActionClick?: () => void;
   courseStats?: CourseStats;
+  certificateAvailable?: boolean;
+  actionContext?: string;
 }
 
 const CourseSidebar: React.FC<CourseSidebarProps> = ({
   courseId,
   courseImage,
+  courseTitle,
   currentPrice,
   originalPrice,
   discount,
@@ -32,7 +38,9 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
   instructorBio,
   actionLabel,
   onActionClick,
-  courseStats
+  courseStats,
+  certificateAvailable = false,
+  actionContext
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const router = useRouter();
@@ -95,11 +103,7 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
     <div className="right-sidebar">
       {/* Course Image with Favorite Icon */}
       <div className="course-image-container">
-        <img 
-          src={courseImage} 
-          alt="Course Image"
-          className="course-image"
-        />
+        <ProgramArtwork image={courseImage} title={courseTitle || 'مقرر تعليمي'} identity={String(courseId || '')} className="course-image" />
         {/* نقل شارة "مجاني" أعلى الصورة للجانب المقابل لزر Fav */}
         {(() => {
           const parsed = typeof currentPrice === 'string' ? parseFloat(currentPrice) : currentPrice;
@@ -108,14 +112,14 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
             <div className="free-badge">مجاني</div>
           ) : null;
         })()}
-        <div className="favorite-icon" onClick={toggleFavorite}>
+        <button type="button" className="favorite-icon" onClick={toggleFavorite} aria-label={isFavorite ? 'إزالة من المفضلة' : 'إضافة إلى المفضلة'} aria-pressed={isFavorite}>
           <svg className="heart-icon" viewBox="0 0 24 24">
             <path d={isFavorite 
               ? "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
               : "M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"
             } />
           </svg>
-        </div>
+        </button>
       </div>
 
       {/* Price Section */}
@@ -127,7 +131,7 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
             return isFree ? (
               <span className="current-price">مجاني</span>
             ) : (
-              <span className="current-price">ج.م {isNaN(parsed) ? currentPrice : parsed}</span>
+              <span className="current-price">{publicPrice(currentPrice)}</span>
             );
           })()}
         </div>
@@ -140,6 +144,7 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
             <div className="arrow-icon"></div>
           </div>
         </button>
+        {actionContext && <p className="enrollment-context">{actionContext}</p>}
       </div>
 
       {/* Course Features */}
@@ -149,31 +154,31 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
           <svg className="feature-icon" viewBox="0 0 24 24">
             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span>ضمان استرداد المال</span>
+          <span>منهج من فصول ودروس مرتبطة بالمقرر</span>
         </div>
         <div className="feature-item">
           <svg className="feature-icon" viewBox="0 0 24 24">
             <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
           </svg>
-          <span>إمكانية الوصول من جميع الأجهزة</span>
+          <span>واجهة متجاوبة للجوال والكمبيوتر</span>
         </div>
-        <div className="feature-item">
+        {certificateAvailable && <div className="feature-item">
           <svg className="feature-icon" viewBox="0 0 24 24">
             <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
           </svg>
-          <span>شهادة معتمدة</span>
-        </div>
+          <span>شهادة إتمام قابلة للتحقق بعد الإكمال واجتياز الاختبار النهائي</span>
+        </div>}
         <div className="feature-item">
           <svg className="feature-icon" viewBox="0 0 24 24">
             <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
           </svg>
-          <span>{materialsCount > 0 ? `${materialsCount} ملف` : 'ملفات مرفقة حسب المحتوى'}</span>
+          <span>{materialsCount > 0 ? `${materialsCount} ملف مرفق` : 'لا توجد ملفات مرفقة منشورة حاليًا'}</span>
         </div>
         <div className="feature-item">
           <svg className="feature-icon" viewBox="0 0 24 24">
             <path d="M9 11.5l2 2 4-4M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2zm2 4h6" />
           </svg>
-          <span>{quizzesCount > 0 ? `${quizzesCount} اختبار` : 'اختبارات حسب خطة الكورس'}</span>
+          <span>{quizzesCount > 0 ? `${quizzesCount} اختبار ضمن المحتوى` : 'لا توجد اختبارات ضمن الدروس حاليًا'}</span>
         </div>
       </div>
 

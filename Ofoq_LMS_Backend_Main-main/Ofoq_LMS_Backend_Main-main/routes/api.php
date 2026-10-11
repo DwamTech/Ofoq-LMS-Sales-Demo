@@ -53,6 +53,8 @@ Route::get('/categories', [DiplomaController::class, 'index']);
 Route::get('/categories/{slug}', [DiplomaController::class, 'show']);
 
 // Public authentication routes
+Route::post('/demo/session', \App\Http\Controllers\DemoEntryController::class)
+    ->middleware('throttle:12,1')->name('demo.entry');
 Route::post('/signup', [AuthController::class, 'signup']);
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword']);
@@ -97,6 +99,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Admin routes (accessible by admin and supervisor based on their permissions)
     Route::prefix('admin')->middleware('role:admin,supervisor')->group(function () {
+        Route::get('/showcase/students', [\App\Http\Controllers\Admin\ShowcaseReadController::class, 'students']);
+        Route::get('/showcase/students/{student}', [\App\Http\Controllers\Admin\ShowcaseReadController::class, 'student']);
+        Route::get('/showcase/exams/{course}', [\App\Http\Controllers\Admin\ShowcaseReadController::class, 'exam']);
         // Courses
         Route::post('/courses', [AdminCourseController::class, 'store']);
         Route::put('/courses/{course}', [AdminCourseController::class, 'update']);
@@ -256,6 +261,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // Certificate data only (frontend will render PDF)
     Route::get('/courses/{courseId}/certificate/data', [CertificateController::class, 'getCourseCertificateData']);
     Route::get('/my-certificates', [CertificateController::class, 'myCertificates']);
+    Route::get('/student/certificates/{type}/{certificate}/download', \App\Http\Controllers\StudentCertificateDownloadController::class)
+        ->whereIn('type', ['course', 'legacy-course', 'diploma'])->whereNumber('certificate');
     Route::post('/certificates/{certificateId}/regenerate', [CertificateController::class, 'regenerateCertificate']);
     // Update file path after frontend generates PDF
     Route::post('/certificates/{certificateId}/file', [CertificateController::class, 'updateCertificateFilePath']);

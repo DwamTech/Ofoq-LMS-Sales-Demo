@@ -1,4 +1,5 @@
 'use client';
+import { brand } from '@/lib/brand'
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
@@ -15,6 +16,9 @@ import { getCourseDetails, getFeaturedCourses, getMyEnrollments, Course, checkCo
 import { isAuthenticated } from '../../../utils/authService';
 import { getBackendAssetUrl } from '../../../utils/url';
 import { getMyDiplomas, enrollInDiploma, type MyDiploma } from "@/utils/categoryService";
+import { getPublicDiplomas, type Diploma } from '@/utils/categoryService';
+import { courseActionLabel, publicDescription } from '@/components/brand/publicContent';
+import education from '@/components/brand/PublicEducation.module.css';
 import EnrollmentInfoModal from '../../../components/EnrollmentInfoModal';
 import Link from 'next/link';
 import '../../../styles/course-details.css';
@@ -28,6 +32,9 @@ const CourseDetailsPage = () => {
   const courseId = params.id as string;
 
   const [courseData, setCourseData] = useState<Course | null>(null);
+  const [parentDiploma, setParentDiploma] = useState<Diploma | null>(null);
+  const [authenticated, setAuthenticated] = useState(false);
+  useEffect(() => { setAuthenticated(isAuthenticated()) }, []);
   const [popularCourses, setPopularCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -58,12 +65,14 @@ const CourseDetailsPage = () => {
         setLoading(true);
 
         // Load course details and featured courses in parallel
-        const [course, featured] = await Promise.all([
+        const [course, featured, diplomas] = await Promise.all([
           getCourseDetails(courseId),
-          getFeaturedCourses()
+          getFeaturedCourses(),
+          getPublicDiplomas().catch(() => [])
         ]);
 
         setCourseData(course);
+        setParentDiploma(diplomas.find(diploma => diploma.id === Number(course?.category_id)) || null);
         setPopularCourses(featured.slice(0, 3)); // Show only 3 featured courses
       } catch (err) {
         console.error('Error loading course data:', err);
@@ -287,9 +296,14 @@ const CourseDetailsPage = () => {
   }
 
   return (
-    <div className="course-details-page">
+    <div className={`course-details-page ${education.coursePage}`}>
       <HomeHeader />
-
+      <section className={education.courseHero}>
+        <nav aria-label="مسار المقرر"><Link href="/courses">المقررات</Link><span aria-hidden="true"> / </span>{parentDiploma ? <Link href={`/diplomas/${parentDiploma.slug}`}>{parentDiploma.name}</Link> : <span>مقرر تعليمي</span>}</nav>
+        <span className={education.kicker}>كتالوج تجربة {brand.name} · محتوى تعليمي للعرض</span>
+        <h1>{courseData.title}</h1>
+        <p>{publicDescription(courseData.description)}</p>
+      </section>
       <main className="main-content">
         <div className="course-details-container">
           {/* Left Content */}
@@ -304,7 +318,8 @@ const CourseDetailsPage = () => {
               const visibleLessons = lessons
                 .filter((ls) => !!ls && (ls.is_visible === true || ls.is_visible === 1) && !!ls.video_url)
                 .sort((a, b) => Number(a?.order ?? 9999) - Number(b?.order ?? 9999));
-              const previewVideoUrl = visibleLessons[0]?.video_url || "/sample-video.mp4";
+              const previewVideoUrl = visibleLessons[0]?.video_url;
+              if (!previewVideoUrl) return <section className={education.emptyMedia} aria-label="معاينة المقرر"><span>معاينة المقرر</span><h2>استكشف المنهج أولًا.</h2><p>لا توجد معاينة فيديو متاحة لهذا المقرر حاليًا. يمكنك الاطلاع على الفصول والدروس أدناه؛ الوصول إلى المحتوى الكامل يخضع لصلاحيات التسجيل.</p><a href="#course-curriculum">انتقل إلى المنهج ↓</a></section>;
               const thumbnail = getBackendAssetUrl(
                 (courseData as any).cover_image_url ||
                 (courseData as any).coverImage ||
@@ -321,11 +336,11 @@ const CourseDetailsPage = () => {
             })()}
             {(() => {
               if (courseAccess.allowed) return null;
-              const catSlug = String(((courseData as any)?.category?.slug) || '');
+              const catSlug = parentDiploma?.slug || String(((courseData as any)?.category?.slug) || '');
               const catName = String(((courseData as any)?.category?.name) || 'الدبلومة الأم');
               return (
                 <div className="preview-notice">
-                  هذا الفيديو للعرض المسبق. للحصول على الوصول الكامل لجميع محتويات هذا المقرر، يرجى التسجيل في{' '}
+                  الوصول إلى محتوى المقرر يتطلب التسجيل. استكشف{' '}
                   {catSlug ? (
                     <Link href={`/diplomas/${catSlug}`} className="preview-notice-link">{catName}</Link>
                   ) : (
@@ -335,6 +350,7 @@ const CourseDetailsPage = () => {
               );
             })()}
             <CourseContent
+              publicView
               courseTitle={courseData.title}
               lecturesCount={
                 ((courseData.chapters || []).reduce((sum, ch) => sum + ((ch.lessons || []).length), 0)) ||
@@ -368,6 +384,7 @@ const CourseDetailsPage = () => {
           {/* Right Sidebar */}
           <CourseSidebar
             courseId={courseId}
+            courseTitle={courseData.title}
             courseImage={getBackendAssetUrl(
               (courseData as any).cover_image_url ||
               (courseData as any).coverImage ||
@@ -375,8 +392,8 @@ const CourseDetailsPage = () => {
               courseData.cover_image
             )}
             currentPrice={courseData.price} // This will show "مجاني" if price is 0
-            originalPrice={courseData.price * 2} // Assuming 50% discount
-            discount="خصم 50%"
+            originalPrice={courseData.price}
+            discount=""
             instructorName={courseData.instructor?.name || 'مدرب'}
             instructorImage={getBackendAssetUrl(
               (courseData.instructor as any)?.image ||
@@ -385,7 +402,9 @@ const CourseDetailsPage = () => {
             instructorTitle={(courseData.instructor as any)?.title}
             instructorBio={(courseData.instructor as any)?.bio}
             courseStats={courseData.stats}
-            actionLabel={courseAccess.allowed ? 'مشاهدة الآن' : ((courseData as any)?.category_id ? 'اشترك في الدبلومة' : 'سجل الآن')}
+            certificateAvailable={courseData.has_final_exam === true}
+            actionContext={courseAccess.allowed ? 'وصولك إلى المقرر متاح وفق حالة التسجيل.' : parentDiploma ? `هذا المقرر جزء من ${parentDiploma.name}. ${courseData.is_free ? 'المقرر مجاني ضمن الكتالوج؛ ' : ''}التسجيل هنا يتم في الدبلومة الأم، وليس شراء المقرر منفردًا. الأسعار قيم ضمن العرض؛ عملتها غير محددة.` : 'التسجيل في هذا المقرر يتم بعد تسجيل الدخول. الأسعار قيم ضمن العرض؛ عملتها غير محددة.'}
+            actionLabel={courseActionLabel({ allowed: courseAccess.allowed, authenticated, parentId: Number(courseData.category_id), parentEnrolled: myDiplomas.some(d => d.category?.id === Number(courseData.category_id)) })}
             onActionClick={handlePrimaryAction}
           />
         </div>

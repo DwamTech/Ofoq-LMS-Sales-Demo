@@ -1,0 +1,168 @@
+{
+  "typescript": {
+    "status": "FAIL",
+    "baseline": 80,
+    "final": 80,
+    "newDiagnostics": []
+  },
+  "focusedLint": {
+    "status": "PASS",
+    "errors": 0,
+    "warnings": 0,
+    "files": [
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\about\\page.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\experience\\page.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\layout.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\manifest.ts",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\app\\page.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminOverview.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminPrimitives.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\admin\\showcase\\AdminWorkspace.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\BrandLogo.test.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\BrandLogo.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\BrandMark.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\BrandPrimitives.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\ProductPanel.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\PublicShell.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\logoVectors.ts",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\brand\\publicContent.ts",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\experience\\ExperienceGateway.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\experience\\HorizonIntro.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentHome.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentProvider.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\components\\student\\StudentWorkspace.tsx",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      },
+      {
+        "file": "C:\\Users\\Copy\\Desktop\\Ofoq\\ofuq-frontend-main\\ofuq-frontend-main\\lib\\brand.ts",
+        "errors": 0,
+        "warnings": 0,
+        "messages": []
+      }
+    ]
+  },
+  "fullLint": {
+    "status": "FAIL",
+    "baseline": {
+      "errors": 467,
+      "warnings": 63
+    },
+    "final": {
+      "errors": 467,
+      "warnings": 56
+    },
+    "regressions": []
+  },
+  "focusedJest": {
+    "status": "PASS",
+    "output": "PASS components/brand/BrandLogo.test.tsx\nPASS __tests__/preservation/admin-routes.preservation.test.ts\nPASS app/api/demo-entry/route.test.ts\nPASS components/brand/publicContent.test.ts\nPASS utils/studentJourney.test.ts\nPASS utils/adminShowcase.test.ts\nPASS utils/demoGateway.test.ts\n\nTest Suites: 7 passed, 7 total\nTests:       85 passed, 85 total\nSnapshots:   0 total\nTime:        1.403 s\nRan all test suites matching components/brand/BrandLogo.test.tsx|utils/demoGateway.test.ts|app/api/demo-entry/route.test.ts|utils/studentJourney.test.ts|utils/adminShowcase.test.ts|__tests__/preservation/admin-routes.preservation.test.ts|components/brand/publicContent.test.ts.\n"
+  },
+  "fullJest": {
+    "status": "FAIL",
+    "output": "FAIL utils/lessonService.test.ts\n  ● Preservation Property Tests: Admin and Other Endpoints Unchanged › Property 2.6: completeLesson should work correctly\n\n    Property failed after 1 tests\n    { seed: -584669383, path: \"0:0\", endOnFailure: true }\n    Counterexample: [1]\n    Shrunk 1 time(s)\n\n    Hint: Enable verbose mode in order to have the list of all failing values encountered during the run\n\n      at buildError (node_modules/fast-check/lib/cjs/check/runner/utils/RunDetailsFormatter.js:162:19)\n      at asyncThrowIfFailed (node_modules/fast-check/lib/cjs/check/runner/utils/RunDetailsFormatter.js:176:11)\n\n    Cause:\n    expect(jest.fn()).toHaveBeenCalledWith(...expected)\n\n    Expected: \"/lessons/1/complete\"\n    Received\n           1: \"/lessons/493/complete\", undefined\n           2: \"/lessons/1/complete\", undefined\n\n    Number of calls: 2\n\n      473 |\n      474 |                     // Verify the complete endpoint was called with correct lesson ID\n    > 475 |                     expect(mockedApiClient.post).toHaveBeenCalledWith(`/lessons/${lessonId}/complete`);\n          |                                                  ^\n      476 |                 }\n      477 |             ),\n      478 |             { numRuns: 30 }\n\n      at toHaveBeenCalledWith (utils/lessonService.test.ts:475:50)\n      at AsyncProperty.run (node_modules/fast-check/lib/cjs/check/property/AsyncProperty.generic.js:46:28)\n      at asyncRunIt (node_modules/fast-check/lib/cjs/check/runner/Runner.js:28:21)\n      at Object.<anonymous> (utils/lessonService.test.ts:455:9)\n\n  ● Preservation Property Tests: Admin and Other Endpoints Unchanged › should preserve lesson completion functionality (concrete example)\n\n    expect(jest.fn()).toHaveBeenCalledWith(...expected)\n\n    Expected: \"/lessons/5/complete\"\n    Received: \"/lessons/5/complete\", undefined\n\n    Number of calls: 1\n\n      587 |\n      588 |         await expect(completeLesson(lessonId)).resolves.not.toThrow();\n    > 589 |         expect(mockedApiClient.post).toHaveBeenCalledWith(`/lessons/${lessonId}/complete`);\n          |                                      ^\n      590 |     });\n      591 |\n      592 |     /**\n\n      at Object.toHaveBeenCalledWith (utils/lessonService.test.ts:589:38)\n\nPASS components/brand/BrandLogo.test.tsx\nPASS __tests__/preservation/admin-routes.preservation.test.ts\nPASS components/ExamCard.test.tsx\nPASS app/api/demo-entry/route.test.ts\nPASS components/brand/publicContent.test.ts\nPASS utils/demoGateway.test.ts\nPASS utils/studentJourney.test.ts\nPASS utils/adminShowcase.test.ts\n\nTest Suites: 1 failed, 8 passed, 9 total\nTests:       2 failed, 98 passed, 100 total\nSnapshots:   0 total\nTime:        2.117 s\nRan all test suites.\n"
+  },
+  "buildConfigurationUnchanged": true
+}

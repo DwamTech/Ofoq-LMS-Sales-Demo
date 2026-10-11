@@ -1,0 +1,195 @@
+{
+  "searchScope": [
+    "app",
+    "components",
+    "utils",
+    "lib",
+    "public",
+    "styles"
+  ],
+  "references": [
+    {
+      "file": "app/api/demo-entry/route.ts",
+      "line": 55,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "|| session.user?.email !== `${persona}.demo@demo.ofoq.local` || !Number.isInteger(session.user?.id)"
+    },
+    {
+      "file": "app/verify-certificate/page.tsx",
+      "line": 37,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "* - Full URL: \"https://www.ofuq.academy/verify-certificate?s=...\" -> extracts 's' param"
+    },
+    {
+      "file": "app/verify-certificate/page.tsx",
+      "line": 179,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "<div className=\"ofuq-loader-overlay\">"
+    },
+    {
+      "file": "app/verify-certificate/page.tsx",
+      "line": 180,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "<div className=\"ofuq-loader\">"
+    },
+    {
+      "file": "app/verify-certificate/page.tsx",
+      "line": 242,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "{result.serial_number?.startsWith('OFOQ-') && <p>شهادة تاريخية صُدرت بالهوية السابقة. لم يتغير ملفها أو رقمها أو مرجع التحقق.</p>}"
+    },
+    {
+      "file": "app/verify-certificate/verify-certificate.css",
+      "line": 181,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": ".ofuq-loader-overlay {"
+    },
+    {
+      "file": "app/verify-certificate/verify-certificate.css",
+      "line": 196,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": ".ofuq-loader {"
+    },
+    {
+      "file": "components/AboutOfuqSection.tsx",
+      "line": 11,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "<section className={styles.section} aria-labelledby=\"about-ofuq-title\" dir=\"rtl\">"
+    },
+    {
+      "file": "components/AboutOfuqSection.tsx",
+      "line": 14,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "<h2 id=\"about-ofuq-title\" className={styles.title}>"
+    },
+    {
+      "file": "components/ExamCard.tsx",
+      "line": 204,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "src={exam.cover_image || '/images/ofuq-logo.png'}"
+    },
+    {
+      "file": "components/ExamCard.tsx",
+      "line": 209,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "target.src = '/images/ofuq-logo.png';"
+    },
+    {
+      "file": "components/Footer.tsx",
+      "line": 20,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "const emailAddress = 'info@ofuq.academy';"
+    },
+    {
+      "file": "components/Sidebar.module.css",
+      "line": 1,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "/* Sidebar Styles - منصة أفق للتعليم عن بعد */"
+    },
+    {
+      "file": "components/student/StudentCertificates.tsx",
+      "line": 131,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "{certificate.serial_number?.startsWith('OFOQ-') && <p>ملف تاريخي صُدر بالهوية السابقة؛ رقم الشهادة ومرجع التحقق محفوظان.</p>}"
+    },
+    {
+      "file": "utils/adminShowcase.ts",
+      "line": 232,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": ".replace(/OFOQ Sales Demo dataset/g, \"\")"
+    },
+    {
+      "file": "utils/demoGateway.ts",
+      "line": 36,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "|| session.user?.email !== `${persona}.demo@demo.ofoq.local`) throw new Error('لم تُعتمد هوية العرض المطلوبة.');"
+    },
+    {
+      "file": "lib/brand.ts",
+      "line": 24,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "if (/^Ofoq Demo Admin$/i.test(value)) return 'حساب عرض الإدارة'"
+    },
+    {
+      "file": "lib/brand.ts",
+      "line": 25,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "return value.replace(/\\b(?:OFOQ|OFUQ)\\b(?!-[A-Z]-\\d)|(?<![\\u0600-\\u06ff])(?:أُفُق|أفق|الأفق|افق)(?![\\u0600-\\u06ff])/gi, brand.name)"
+    },
+    {
+      "file": "styles/courses.css",
+      "line": 1,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "/* تصميم صفحة الدورات - منصة أفق للتعليم عن بعد */"
+    },
+    {
+      "file": "styles/sidebar.css",
+      "line": 1,
+      "category": "PROTECTED_INTERNAL_OR_PROVENANCE",
+      "text": "/* Sidebar Styles - منصة أفق للتعليم عن بعد */"
+    }
+  ],
+  "userVisibleLegacyLiterals": [],
+  "centralizedConsumers": [
+    "app/about/head.tsx",
+    "app/about/page.tsx",
+    "app/admin/reports/beneficiaries/page.tsx",
+    "app/admin/reports/students/[id]/page.tsx",
+    "app/auth/layout.tsx",
+    "app/brand-lab/page.tsx",
+    "app/community/page.tsx",
+    "app/course-details/[id]/page.tsx",
+    "app/courses/page.tsx",
+    "app/diplomas/[slug]/layout.tsx",
+    "app/diploms/head.tsx",
+    "app/diploms/page.tsx",
+    "app/experience/page.tsx",
+    "app/head.tsx",
+    "app/layout.tsx",
+    "app/manifest.ts",
+    "app/page.tsx",
+    "app/verify-certificate/page.tsx",
+    "app/watch/page.tsx",
+    "components/AboutOfuqSection.tsx",
+    "components/admin/showcase/AdminOverview.tsx",
+    "components/admin/showcase/AdminPrimitives.tsx",
+    "components/admin/showcase/AdminWorkspace.tsx",
+    "components/brand/BrandLogo.tsx",
+    "components/brand/BrandMark.tsx",
+    "components/brand/BrandPrimitives.tsx",
+    "components/brand/CommunityMedia.tsx",
+    "components/brand/logoVectors.ts",
+    "components/brand/ProductPanel.tsx",
+    "components/brand/ProgramArtwork.tsx",
+    "components/brand/publicContent.ts",
+    "components/brand/PublicShell.tsx",
+    "components/CertificateCard.tsx",
+    "components/courses/HeroSection.tsx",
+    "components/DashboardSidebar.tsx",
+    "components/experience/ExperienceGateway.tsx",
+    "components/experience/HorizonIntro.tsx",
+    "components/experience/PersonaWorlds.tsx",
+    "components/FinalExam.tsx",
+    "components/Footer.tsx",
+    "components/ForgotPasswordForm.tsx",
+    "components/HeroSearchSection.tsx",
+    "components/HeroSection.tsx",
+    "components/HomeHeader.tsx",
+    "components/LoginForm.tsx",
+    "components/MegaMenu.tsx",
+    "components/NewPasswordForm.tsx",
+    "components/ProfileHeader.tsx",
+    "components/Sidebar.tsx",
+    "components/SimulationQuiz.tsx",
+    "components/SocialMediaFloat.tsx",
+    "components/student/StudentHome.tsx",
+    "components/student/StudentProvider.tsx",
+    "components/student/StudentWorkspace.tsx",
+    "components/VerificationCodeForm.tsx"
+  ],
+  "protectedHistorical": [
+    "Previously issued OFOQ-C/OFOQ-D identifiers and PDF bytes; audited with authenticated HTTP",
+    "docs/retired-brand/certifecate_cover.jpg: unreferenced original template, archived outside runtime"
+  ],
+  "status": "PASS"
+}

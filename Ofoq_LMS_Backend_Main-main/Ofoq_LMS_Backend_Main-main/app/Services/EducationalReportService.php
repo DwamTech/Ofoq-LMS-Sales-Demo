@@ -441,18 +441,20 @@ class EducationalReportService
 
     private function studentDiplomas(User $student, array $filters): array
     {
-        return UserCategoryEnrollment::with('category:id,name,slug')
+        $enrollments = UserCategoryEnrollment::with('category:id,name,slug')
             ->where('user_id', $student->id)
             ->when($this->categoryId($filters), fn ($q, $id) => $q->where('category_id', $id))
-            ->get()
-            ->map(fn (UserCategoryEnrollment $enrollment) => [
+            ->get();
+        $completion = $this->diplomaCompletion->forEnrollments($enrollments);
+
+        return $enrollments->map(fn (UserCategoryEnrollment $enrollment) => [
                 'category_id' => $enrollment->category_id,
                 'name' => $enrollment->category?->name,
                 'slug' => $enrollment->category?->slug,
                 'status' => $enrollment->status,
-                'progress_percentage' => $this->diplomaCompletionForUser($student->id, $enrollment->category_id),
+                'progress_percentage' => $completion->get($enrollment->id)['progress_percentage'] ?? 0,
                 'enrolled_at' => $enrollment->created_at,
-                'completed_at' => $enrollment->completed_at,
+                'completed_at' => $completion->get($enrollment->id)['completed_at'] ?? null,
             ])
             ->all();
     }

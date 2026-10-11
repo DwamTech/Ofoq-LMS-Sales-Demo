@@ -1,6 +1,7 @@
+import { brand } from '@/lib/brand'
 export default function Head() {
   const description =
-    'منصة أفق للتعليم والتدريب: مؤسسة تعليمية رائدة تقدّم برامج دبلوم نوعية بمنهج متكامل يجمع العلوم الشرعية والتربوية والتقنية والإعلامية لإعداد كفاءات مؤثرة وفاعلة.';
+    `${brand.name}: مؤسسة تعليمية رائدة تقدّم برامج دبلوم نوعية بمنهج متكامل يجمع العلوم الشرعية والتربوية والتقنية والإعلامية لإعداد كفاءات مؤثرة وفاعلة.`;
   return (
     <>
       <meta name="description" content={description} />
@@ -12,12 +13,12 @@ export default function Head() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'AboutPage',
-            name: 'عن منصة أفق',
+            name: `عن ${brand.name}`,
             description,
             url: '/about',
             mainEntity: {
               '@type': 'Organization',
-              name: 'منصة أفق للتعليم والتدريب',
+              name: brand.name,
               url: '/',
               logo: '/logo.png',
             },

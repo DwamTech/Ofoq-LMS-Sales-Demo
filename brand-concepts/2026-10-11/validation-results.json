@@ -1,0 +1,650 @@
+{
+  "date": "2026-10-11",
+  "scope": "Standalone concept files only; no website routes or authentication tested",
+  "pass": 38,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "concept-A-light.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 18.719999313354492,
+          "y": 26,
+          "width": 499.9459533691406,
+          "height": 85.91999816894531
+        },
+        "viewBox": {
+          "width": 540,
+          "height": 136
+        },
+        "paths": 7
+      }
+    },
+    {
+      "name": "concept-A-light.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 18.719999313354492,
+          "y": 26,
+          "width": 499.9459533691406,
+          "height": 85.91999816894531
+        },
+        "viewBox": {
+          "width": 540,
+          "height": 136
+        }
+      }
+    },
+    {
+      "name": "concept-A-symbol-light.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 12.319993019104004,
+          "y": 16.31999969482422,
+          "width": 44.87297058105469,
+          "height": 29.14999771118164
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        },
+        "paths": 2
+      }
+    },
+    {
+      "name": "concept-A-symbol-light.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 12.319993019104004,
+          "y": 16.31999969482422,
+          "width": 44.87297058105469,
+          "height": 29.14999771118164
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "name": "concept-A-dark.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 18.719999313354492,
+          "y": 26,
+          "width": 499.9459533691406,
+          "height": 85.91999816894531
+        },
+        "viewBox": {
+          "width": 540,
+          "height": 136
+        },
+        "paths": 7
+      }
+    },
+    {
+      "name": "concept-A-dark.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 18.719999313354492,
+          "y": 26,
+          "width": 499.9459533691406,
+          "height": 85.91999816894531
+        },
+        "viewBox": {
+          "width": 540,
+          "height": 136
+        }
+      }
+    },
+    {
+      "name": "concept-A-symbol-dark.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 12.319993019104004,
+          "y": 16.31999969482422,
+          "width": 44.87297058105469,
+          "height": 29.14999771118164
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        },
+        "paths": 2
+      }
+    },
+    {
+      "name": "concept-A-symbol-dark.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 12.319993019104004,
+          "y": 16.31999969482422,
+          "width": 44.87297058105469,
+          "height": 29.14999771118164
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "name": "concept-A-mono.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 18.719999313354492,
+          "y": 26,
+          "width": 499.9459533691406,
+          "height": 85.91999816894531
+        },
+        "viewBox": {
+          "width": 540,
+          "height": 136
+        },
+        "paths": 7
+      }
+    },
+    {
+      "name": "concept-A-mono.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 18.719999313354492,
+          "y": 26,
+          "width": 499.9459533691406,
+          "height": 85.91999816894531
+        },
+        "viewBox": {
+          "width": 540,
+          "height": 136
+        }
+      }
+    },
+    {
+      "name": "concept-A-symbol-mono.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 12.319993019104004,
+          "y": 16.31999969482422,
+          "width": 44.87297058105469,
+          "height": 29.14999771118164
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        },
+        "paths": 2
+      }
+    },
+    {
+      "name": "concept-A-symbol-mono.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 12.319993019104004,
+          "y": 16.31999969482422,
+          "width": 44.87297058105469,
+          "height": 29.14999771118164
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "name": "concept-B-light.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 36.725830078125,
+          "y": 23,
+          "width": 302.6741638183594,
+          "height": 106.25
+        },
+        "viewBox": {
+          "width": 365,
+          "height": 146
+        },
+        "paths": 7
+      }
+    },
+    {
+      "name": "concept-B-light.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 36.725830078125,
+          "y": 23,
+          "width": 302.6741638183594,
+          "height": 106.25
+        },
+        "viewBox": {
+          "width": 365,
+          "height": 146
+        }
+      }
+    },
+    {
+      "name": "concept-B-symbol-light.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 9,
+          "y": 10,
+          "width": 46,
+          "height": 48
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        },
+        "paths": 1
+      }
+    },
+    {
+      "name": "concept-B-symbol-light.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 9,
+          "y": 10,
+          "width": 46,
+          "height": 48
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "name": "concept-B-dark.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 36.725830078125,
+          "y": 23,
+          "width": 302.6741638183594,
+          "height": 106.25
+        },
+        "viewBox": {
+          "width": 365,
+          "height": 146
+        },
+        "paths": 7
+      }
+    },
+    {
+      "name": "concept-B-dark.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 36.725830078125,
+          "y": 23,
+          "width": 302.6741638183594,
+          "height": 106.25
+        },
+        "viewBox": {
+          "width": 365,
+          "height": 146
+        }
+      }
+    },
+    {
+      "name": "concept-B-symbol-dark.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 9,
+          "y": 10,
+          "width": 46,
+          "height": 48
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        },
+        "paths": 1
+      }
+    },
+    {
+      "name": "concept-B-symbol-dark.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 9,
+          "y": 10,
+          "width": 46,
+          "height": 48
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "name": "concept-B-mono.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 36.725830078125,
+          "y": 23,
+          "width": 302.6741638183594,
+          "height": 106.25
+        },
+        "viewBox": {
+          "width": 365,
+          "height": 146
+        },
+        "paths": 7
+      }
+    },
+    {
+      "name": "concept-B-mono.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 36.725830078125,
+          "y": 23,
+          "width": 302.6741638183594,
+          "height": 106.25
+        },
+        "viewBox": {
+          "width": 365,
+          "height": 146
+        }
+      }
+    },
+    {
+      "name": "concept-B-symbol-mono.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 9,
+          "y": 10,
+          "width": 46,
+          "height": 48
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        },
+        "paths": 1
+      }
+    },
+    {
+      "name": "concept-B-symbol-mono.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 9,
+          "y": 10,
+          "width": 46,
+          "height": 48
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "name": "concept-C-light.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 28.107141494750977,
+          "y": 24,
+          "width": 368.49285888671875,
+          "height": 114.25
+        },
+        "viewBox": {
+          "width": 415,
+          "height": 154
+        },
+        "paths": 10
+      }
+    },
+    {
+      "name": "concept-C-light.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 28.107141494750977,
+          "y": 24,
+          "width": 368.49285888671875,
+          "height": 114.25
+        },
+        "viewBox": {
+          "width": 415,
+          "height": 154
+        }
+      }
+    },
+    {
+      "name": "concept-C-symbol-light.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 10,
+          "y": 12,
+          "width": 48,
+          "height": 41
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        },
+        "paths": 3
+      }
+    },
+    {
+      "name": "concept-C-symbol-light.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 10,
+          "y": 12,
+          "width": 48,
+          "height": 41
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "name": "concept-C-dark.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 28.107141494750977,
+          "y": 24,
+          "width": 368.49285888671875,
+          "height": 114.25
+        },
+        "viewBox": {
+          "width": 415,
+          "height": 154
+        },
+        "paths": 10
+      }
+    },
+    {
+      "name": "concept-C-dark.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 28.107141494750977,
+          "y": 24,
+          "width": 368.49285888671875,
+          "height": 114.25
+        },
+        "viewBox": {
+          "width": 415,
+          "height": 154
+        }
+      }
+    },
+    {
+      "name": "concept-C-symbol-dark.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 10,
+          "y": 12,
+          "width": 48,
+          "height": 41
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        },
+        "paths": 3
+      }
+    },
+    {
+      "name": "concept-C-symbol-dark.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 10,
+          "y": 12,
+          "width": 48,
+          "height": 41
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "name": "concept-C-mono.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 28.107141494750977,
+          "y": 24,
+          "width": 368.49285888671875,
+          "height": 114.25
+        },
+        "viewBox": {
+          "width": 415,
+          "height": 154
+        },
+        "paths": 10
+      }
+    },
+    {
+      "name": "concept-C-mono.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 28.107141494750977,
+          "y": 24,
+          "width": 368.49285888671875,
+          "height": 114.25
+        },
+        "viewBox": {
+          "width": 415,
+          "height": 154
+        }
+      }
+    },
+    {
+      "name": "concept-C-symbol-mono.svg: title, real paths, no external font or image",
+      "status": "PASS",
+      "details": {
+        "title": "منصتك التعليمية",
+        "label": "منصتك التعليمية",
+        "bounds": {
+          "x": 10,
+          "y": 12,
+          "width": 48,
+          "height": 41
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        },
+        "paths": 3
+      }
+    },
+    {
+      "name": "concept-C-symbol-mono.svg: geometry inside canvas",
+      "status": "PASS",
+      "details": {
+        "bounds": {
+          "x": 10,
+          "y": 12,
+          "width": 48,
+          "height": 41
+        },
+        "viewBox": {
+          "width": 64,
+          "height": 64
+        }
+      }
+    },
+    {
+      "name": "Supporting Arabic typesetting: no missing glyphs",
+      "status": "PASS",
+      "details": {
+        "shapedSamples": 83
+      }
+    },
+    {
+      "name": "Browser JavaScript errors",
+      "status": "PASS",
+      "details": []
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "buildId": "TZhGWTLdqR9jHg0ApxBsq",
+  "results": [
+    {
+      "test": "production route /",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /about",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /courses",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /diploms",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /community",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /privacy",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /terms",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /verify-certificate",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /auth",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /user",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /admin",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /experience",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "production route /brand-lab",
+      "status": "PASS",
+      "statusCode": 404
+    },
+    {
+      "test": "production route /search",
+      "status": "PASS",
+      "statusCode": 307
+    },
+    {
+      "test": "production route /login_old",
+      "status": "PASS",
+      "statusCode": 307
+    },
+    {
+      "test": "production route /register_old",
+      "status": "PASS",
+      "statusCode": 307
+    },
+    {
+      "test": "public data /categories",
+      "status": "PASS",
+      "statusCode": 200,
+      "count": 5
+    },
+    {
+      "test": "public data /allCourses",
+      "status": "PASS",
+      "statusCode": 200,
+      "count": 12
+    },
+    {
+      "test": "actual production entry disabled without private enablement",
+      "status": "PASS",
+      "statusCode": 503
+    },
+    {
+      "test": "disabled gateway retains honest legacy fallback",
+      "status": "PASS"
+    }
+  ]
+}

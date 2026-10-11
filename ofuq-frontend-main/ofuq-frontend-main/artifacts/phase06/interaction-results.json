@@ -1,0 +1,107 @@
+{
+  "reports": [
+    {
+      "test": "Program search filters actual catalog",
+      "status": "PASS"
+    },
+    {
+      "test": "Unpublished records remain labeled, never republished",
+      "status": "PASS"
+    },
+    {
+      "test": "Student pagination reads next server page",
+      "status": "PASS"
+    },
+    {
+      "test": "Student search finds actual showcase without numeric ID",
+      "status": "PASS"
+    },
+    {
+      "test": "Legacy course/chapter/lessons deep link preserves actual context",
+      "status": "PASS"
+    },
+    {
+      "test": "Content deep link has the correct active sidebar module",
+      "status": "PASS"
+    },
+    {
+      "test": "Exam deep link has the correct active sidebar module",
+      "status": "PASS"
+    },
+    {
+      "test": "Existing course report deep link remains readable",
+      "status": "PASS"
+    },
+    {
+      "test": "Existing lesson report deep link remains readable",
+      "status": "PASS"
+    },
+    {
+      "test": "Admin cannot take student-owned download scope course",
+      "status": "PASS"
+    },
+    {
+      "test": "Admin cannot take student-owned download scope diploma",
+      "status": "PASS"
+    },
+    {
+      "test": "RTL mobile table scrolls using keyboard",
+      "status": "PASS",
+      "before": 0,
+      "after": -40
+    },
+    {
+      "test": "Browser accessibility tree exposes main, open navigation and data table",
+      "status": "PASS"
+    },
+    {
+      "test": "Core text/token contrast pairs meet 4.5:1",
+      "status": "PASS",
+      "pairs": [
+        {
+          "foreground": "29233b",
+          "background": "f6f4ed",
+          "ratio": 13.650772285300732
+        },
+        {
+          "foreground": "746d7c",
+          "background": "fffdf7",
+          "ratio": 4.89094643734949
+        },
+        {
+          "foreground": "746d7c",
+          "background": "f6f4ed",
+          "ratio": 4.520553375158682
+        },
+        {
+          "foreground": "29233b",
+          "background": "d8ef73",
+          "ratio": 11.813824271285107
+        },
+        {
+          "foreground": "c4becd",
+          "background": "29233b",
+          "ratio": 8.294233993347211
+        },
+        {
+          "foreground": "35562d",
+          "background": "e6efdf",
+          "ratio": 7.053186572917314
+        },
+        {
+          "foreground": "76500c",
+          "background": "f6e9d2",
+          "ratio": 5.988456972173205
+        }
+      ]
+    },
+    {
+      "test": "Interaction GETs preserve all domain hashes",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "pass": 15,
+    "fail": 0
+  }
+}

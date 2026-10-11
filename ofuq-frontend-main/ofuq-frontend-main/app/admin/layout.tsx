@@ -9,6 +9,8 @@ import DemoBanner from '@/components/DemoBanner';
 import DemoReadOnlyControls from '@/components/DemoReadOnlyControls';
 import { UploadProvider } from '@/contexts/UploadContext';
 import styles from './Admin.module.css';
+import { isDemoMode } from '@/utils/demoMode';
+import AdminWorkspace from '@/components/admin/showcase/AdminWorkspace';
 
 export default function AdminLayout({
   children,
@@ -24,6 +26,10 @@ export default function AdminLayout({
   const closeMobileSidebar = () => {
     setIsMobileSidebarOpen(false);
   };
+
+  // Existing operational forms/routes remain intact outside the read-only showcase.
+  // Demo children are not mounted: legacy effects cannot issue blocked/sensitive reads.
+  if (isDemoMode) return <AdminWorkspace />;
 
   return (
     <AdminAuthGuard>

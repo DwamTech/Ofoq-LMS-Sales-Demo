@@ -1,4 +1,5 @@
 'use client';
+import { brand } from '@/lib/brand'
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
@@ -163,7 +164,7 @@ const menuData: MenuItem[] = [
         ]
     },
     {
-        label: 'مجتمع أفق',
+        label: `مجتمع ${brand.name}`,
         href: '/community',
         icon: <PiUsers />,
         hasDropdown: true,
@@ -304,7 +305,7 @@ const menuData: MenuItem[] = [
         ]
     },
     {
-        label: 'فضاء أفق',
+        label: `فضاء ${brand.name}`,
         href: '#',
         icon: <PiRocket />,
         hasDropdown: true,
@@ -327,8 +328,8 @@ const menuData: MenuItem[] = [
                 icon: <PiBuilding />,
                 comingSoon: true,
                 children: [
-                    { label: 'أكاديمية أفق لتأهيل الدعاة', href: '#', icon: <PiMosque />, comingSoon: true },
-                    { label: 'أكاديمية أفق للتقنية والعلوم', href: '#', icon: <PiCode />, comingSoon: true },
+                    { label: `أكاديمية ${brand.name} لتأهيل الدعاة`, href: '#', icon: <PiMosque />, comingSoon: true },
+                    { label: `أكاديمية ${brand.name} للتقنية والعلوم`, href: '#', icon: <PiCode />, comingSoon: true },
                     { label: 'أكاديمية بارع الإعلامية', href: '#', icon: <PiMegaphone />, comingSoon: true },
                     { label: 'أكاديمية تمكين', href: '#', icon: <PiLightning />, comingSoon: true },
                 ]

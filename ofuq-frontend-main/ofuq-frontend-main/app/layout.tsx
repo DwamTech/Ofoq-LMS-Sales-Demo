@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+import { brand } from '@/lib/brand'
+import type { Metadata, Viewport } from 'next'
 import '@/styles/globals.css'
 import '@/styles/course-details.css'
 import '@/styles/home-header.css'
@@ -8,16 +9,20 @@ import '@/styles/students-management.css'
 import '@/styles/toast.css'
 import 'react-phone-number-input/style.css'
 import DemoReadOnlyNotice from '@/components/DemoReadOnlyNotice'
+import { PublicBrandBoundary } from '@/components/brand/PublicShell'
 
-const SITE_TITLE = 'منصة أفق للتعليم والتدريب';
-const SITE_DESCRIPTION =
-  'منصة أفق للتعليم والتدريب تقدّم دبلومات احترافية تجمع بين الأصالة والمعاصرة بمنهج متكامل يدمج العلوم الشرعية، التربوية، التقنية والإعلامية لإعداد قيادات مؤثرة في المجتمع.';
+const SITE_TITLE = brand.name;
+const SITE_DESCRIPTION = brand.description;
+
+export const viewport: Viewport = { width: 'device-width', initialScale: 1, maximumScale: 5, themeColor: brand.colors.ink };
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
+  applicationName: brand.name,
+  manifest: '/manifest.webmanifest',
   keywords: [
-    'منصة أفق',
+    brand.name,
     'التعليم والتدريب',
     'دبلومات احترافية',
     'تعليم عن بعد',
@@ -44,22 +49,17 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     siteName: SITE_TITLE,
-    images: [{ url: '/logo.png' }],
+    images: [{ url: brand.assets.openGraph, width: 1200, height: 630, alt: brand.name }],
   },
   twitter: {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ['/logo.png'],
-  },
-  themeColor: '#0e7490',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
+    images: [brand.assets.openGraph],
   },
   icons: {
-    icon: [{ url: '/logo.svg', type: 'image/svg+xml' }],
+    icon: [{ url: '/favicon.png', sizes: '64x64', type: 'image/png' }, { url: '/favicon.ico', sizes: '16x16 32x32 48x48', type: 'image/x-icon' }],
+    apple: [{ url: '/brand/mansatak-apple-touch.png', sizes: '180x180' }],
   },
   alternates: {
     canonical: '/',
@@ -74,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body>
-        {children}
+        <PublicBrandBoundary>{children}</PublicBrandBoundary>
         <DemoReadOnlyNotice />
       </body>
     </html>

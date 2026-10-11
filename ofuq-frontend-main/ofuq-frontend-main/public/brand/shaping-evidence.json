@@ -1,0 +1,58 @@
+[
+  {
+    "text": "منصتك التعليمية",
+    "size": 40,
+    "glyphs": [
+      "uniFE94",
+      "uniFEF4",
+      "uniFEE4",
+      "uniFEF4",
+      "uniFEE0",
+      "uniFECC",
+      "uniFE98",
+      "uniFEDF",
+      "uni0627",
+      "space",
+      "uniFEDA",
+      "uniFE98",
+      "uniFEBC",
+      "uniFEE8",
+      "uniFEE3"
+    ],
+    "width": 338.71999999999997,
+    "direction": "rtl",
+    "missingGlyphs": 0
+  },
+  {
+    "text": "منصتك",
+    "size": 29,
+    "glyphs": [
+      "uniFEDA",
+      "uniFE98",
+      "uniFEBC",
+      "uniFEE8",
+      "uniFEE3"
+    ],
+    "width": 107.242,
+    "direction": "rtl",
+    "missingGlyphs": 0
+  },
+  {
+    "text": "التعليمية",
+    "size": 19,
+    "glyphs": [
+      "uniFE94",
+      "uniFEF4",
+      "uniFEE4",
+      "uniFEF4",
+      "uniFEE0",
+      "uniFECC",
+      "uniFE98",
+      "uniFEDF",
+      "uni0627"
+    ],
+    "width": 85.49999999999999,
+    "direction": "rtl",
+    "missingGlyphs": 0
+  }
+]
