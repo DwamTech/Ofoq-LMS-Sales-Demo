@@ -1,0 +1,115 @@
+{
+  "reports": [
+    {
+      "test": "Production route /",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Metadata advertises the approved PNG favicon",
+      "status": "PASS"
+    },
+    {
+      "test": "Production route /about",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /courses",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /diploms",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /community",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /privacy",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /terms",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /verify-certificate",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /auth",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /auth?tab=signup",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /experience",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Production route /login_old",
+      "status": "PASS",
+      "statusCode": 307
+    },
+    {
+      "test": "Production route /register_old",
+      "status": "PASS",
+      "statusCode": 307
+    },
+    {
+      "test": "Production route /brand-lab",
+      "status": "PASS",
+      "statusCode": 404
+    },
+    {
+      "test": "Arabic manifest uses PNG assets",
+      "status": "PASS"
+    },
+    {
+      "test": "/favicon.png valid PNG dimensions",
+      "status": "PASS",
+      "bytes": 2931
+    },
+    {
+      "test": "/brand/mansatak-app-192.png valid PNG dimensions",
+      "status": "PASS",
+      "bytes": 8495
+    },
+    {
+      "test": "/brand/mansatak-app-512.png valid PNG dimensions",
+      "status": "PASS",
+      "bytes": 28693
+    },
+    {
+      "test": "/brand/mansatak-og.png valid PNG dimensions",
+      "status": "PASS",
+      "bytes": 93029
+    },
+    {
+      "test": "/brand/mansatak-approved-horizontal-light.png valid PNG dimensions",
+      "status": "PASS",
+      "bytes": 362717
+    },
+    {
+      "test": "Actual multiframe 16/32/48 ICO",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "pass": 22,
+    "fail": 0
+  }
+}
