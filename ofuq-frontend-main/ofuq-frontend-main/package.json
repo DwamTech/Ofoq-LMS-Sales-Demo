@@ -6,9 +6,9 @@
   "author": "Educational Platform Team",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev -H 127.0.0.1 -p 3004",
+    "dev": "next dev -H 127.0.0.1 -p 3024",
     "build": "next build",
-    "start": "next start -H 127.0.0.1 -p 3004",
+    "start": "next start -H 127.0.0.1 -p 3024",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\"",
