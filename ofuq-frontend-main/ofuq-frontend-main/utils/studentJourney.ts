@@ -237,8 +237,10 @@ export async function downloadStudentCertificate(
     responseType: "blob",
     timeout: 15000,
   });
+  const contentType = response.headers["content-type"];
   if (
-    !response.headers["content-type"]?.includes("application/pdf") ||
+    typeof contentType !== "string" ||
+    !contentType.toLowerCase().includes("application/pdf") ||
     response.data.size < 5 ||
     (await response.data.slice(0, 5).text()) !== "%PDF-"
   )
