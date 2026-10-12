@@ -1,5 +1,8 @@
 "use client";
 import { brand } from "@/lib/brand";
+import { BookOpen, Clock3, Layers3, ArrowUpLeft } from "lucide-react";
+import { ProgramGraphic } from "@/components/brand/ProgramGraphic";
+import details from "./CourseDetails.module.css";
 
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -327,7 +330,9 @@ const CourseDetailsPage = () => {
   }
 
   return (
-    <div className={`course-details-page ${education.coursePage}`}>
+    <div
+      className={`course-details-page ${education.coursePage} ${details.page}`}
+    >
       <HomeHeader />
       <section className={education.courseHero}>
         <nav aria-label="مسار المقرر">
@@ -346,6 +351,33 @@ const CourseDetailsPage = () => {
         </span>
         <h1>{courseData.title}</h1>
         <p>{publicDescription(courseData.description)}</p>
+        <div className={details.heroMeta}>
+          <span>
+            <Layers3 size={18} />
+            {courseData.chapters?.length ?? 0} فصول
+          </span>
+          <span>
+            <BookOpen size={18} />
+            {courseData.chapters?.reduce(
+              (sum, ch) => sum + (ch.lessons?.length ?? 0),
+              0,
+            ) ?? 0}{" "}
+            دروس
+          </span>
+          <span>
+            <Clock3 size={18} />
+            {courseData.duration ?? 0} ساعات
+          </span>
+        </div>
+        <div className={details.heroArt} aria-hidden="true">
+          <ProgramGraphic
+            title={courseData.title}
+            identity={String(courseData.id)}
+          />
+          <span className={details.artAccent}>
+            <ArrowUpLeft size={30} />
+          </span>
+        </div>
       </section>
       <main className="main-content">
         <div className="course-details-container">

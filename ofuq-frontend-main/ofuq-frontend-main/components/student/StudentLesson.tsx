@@ -1,7 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Play, Check, ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
+import {
+  Play,
+  Check,
+  ArrowLeft,
+  ArrowRight,
+  BookOpen,
+  Volume2,
+  Maximize,
+  MonitorPlay,
+} from "lucide-react";
+import { ProgramGraphic } from "@/components/brand/ProgramGraphic";
 import { http } from "@/lib/http";
 import { isLocalPreview } from "@/lib/localPreview";
 import { useStudent } from "./StudentProvider";
@@ -108,16 +118,62 @@ export default function StudentLessonView({
               aria-label={data.lesson.title}
             />
           ) : (
-            <div className={styles.videoUnavailable}>
-              <Play size={40} />
-              <h2>{data.lesson.title}</h2>
-              <p>
+            <div
+              className={styles.lessonScreen}
+              aria-label="معاينة الدرس التفاعلي"
+            >
+              <div className={styles.screenTop}>
+                <span>
+                  <MonitorPlay size={16} />
+                  معاينة الدرس
+                </span>
+                <span>
+                  درس {index + 1} / {ordered.length}
+                </span>
+              </div>
+              <div className={styles.screenArtwork} aria-hidden="true">
+                <ProgramGraphic
+                  title={enrolled.title}
+                  identity={String(courseId)}
+                />
+              </div>
+              <button
+                className={styles.screenPlay}
+                type="button"
+                aria-label="انتقل إلى محتوى الدرس التفاعلي"
+                onClick={() =>
+                  document
+                    .getElementById("lesson-reading")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                }
+              >
+                <Play size={30} fill="currentColor" />
+              </button>
+              <div className={styles.screenTitle}>
+                <span>{enrolled.title}</span>
+                <h2>{data.lesson.title}</h2>
+              </div>
+              <div className={styles.screenControls} aria-hidden="true">
+                <div className={styles.screenTrack}>
+                  <span />
+                </div>
+                <div>
+                  <Play size={17} fill="currentColor" />
+                  <span>درس تفاعلي</span>
+                  <span className={styles.screenTools}>
+                    <Volume2 size={18} />
+                    <span>HD</span>
+                    <Maximize size={18} />
+                  </span>
+                </div>
+              </div>
+              <p className={styles.screenCaption}>
                 درس تفاعلي: اقرأ المحتوى، وطبّق الفكرة، ثم احفظ تقدمك وانتقل
                 للخطوة التالية.
               </p>
             </div>
           )}
-          <article className={styles.lessonContent}>
+          <article className={styles.lessonContent} id="lesson-reading">
             <span className={styles.kicker}>LESSON NOTES</span>
             <h2>محتوى الدرس</h2>
             <p>

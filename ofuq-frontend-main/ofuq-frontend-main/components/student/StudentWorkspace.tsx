@@ -164,11 +164,11 @@ function Workspace({ children }: { children: ReactNode }) {
             {links}
           </nav>
         )}
-        {isDemoMode && (
+        {/* {isDemoMode && (
           <div className={styles.demoNotice} role="note">
             تجربة محلية كاملة · تقدمك ونتائجك محفوظة في هذا المتصفح
           </div>
-        )}
+        )} */}
         <main id="student-main" className={styles.main}>
           {children}
         </main>
