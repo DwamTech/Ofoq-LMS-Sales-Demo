@@ -1,6 +1,7 @@
+const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: process.env.FRONTEND_VERIFY_OUTPUT || ".next",
   experimental: { cpus: 2 },
   eslint: {
     // Production builds must pass lint validation.
@@ -34,4 +35,10 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = (phase) => ({
+  ...nextConfig,
+  // A production build must never replace chunks used by the running dev server.
+  distDir:
+    process.env.FRONTEND_VERIFY_OUTPUT ||
+    (phase === PHASE_DEVELOPMENT_SERVER ? ".next-dev" : ".next"),
+});

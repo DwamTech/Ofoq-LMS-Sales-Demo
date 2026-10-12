@@ -22,7 +22,6 @@ import { BrandScope } from "@/components/brand/BrandPrimitives";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { StudentProvider, useStudent } from "./StudentProvider";
 import { signout } from "@/utils/authService";
-import { isDemoMode } from "@/utils/demoMode";
 import styles from "./Student.module.css";
 
 const navigation = [

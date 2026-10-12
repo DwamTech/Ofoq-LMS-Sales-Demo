@@ -16,7 +16,7 @@ import {
   type Overview,
 } from "@/utils/adminShowcase";
 import { useAdmin } from "./AdminProvider";
-import { Badge, Horizon, Metric, Panel, Table } from "./AdminPrimitives";
+import { Horizon, Metric, Panel, Table } from "./AdminPrimitives";
 import styles from "./AdminShowcase.module.css";
 export function WatchChart({
   data,
