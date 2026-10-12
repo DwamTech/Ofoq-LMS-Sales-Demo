@@ -1,10 +1,4 @@
-import StudentsManagement from '../../../components/students managment/StudentsManagement';
-import styles from './Students.module.css';
-
-export default function StudentsPage() {
-  return (
-    <div className={styles["studentsPage"]}>
-      <StudentsManagement />
-    </div>
-  );
+// AdminWorkspace selects the local view from the current route.
+export default function AdminPage() {
+  return null;
 }

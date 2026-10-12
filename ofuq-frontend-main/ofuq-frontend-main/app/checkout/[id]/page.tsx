@@ -1,11 +1,16 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import '../../../styles/checkout.css';
-import { getCourseDetails, enrollCourse, getMyEnrollments, Course } from '../../../utils/courseService';
-import { isAuthenticated } from '../../../utils/authService';
-import { getBackendAssetUrl } from '../../../utils/url';
+import React, { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import "../../../styles/checkout.css";
+import {
+  getCourseDetails,
+  enrollCourse,
+  getMyEnrollments,
+  Course,
+} from "../../../utils/courseService";
+import { isAuthenticated } from "../../../utils/authService";
+import { getBackendAssetUrl } from "../../../utils/url";
 
 const DynamicCheckoutPage: React.FC = () => {
   const params = useParams();
@@ -25,7 +30,7 @@ const DynamicCheckoutPage: React.FC = () => {
 
         // If not authenticated, redirect to login first
         if (!isAuthenticated()) {
-          router.push('/auth');
+          router.push("/auth");
           return;
         }
 
@@ -36,10 +41,15 @@ const DynamicCheckoutPage: React.FC = () => {
 
         setCourse(details);
         const idNum = Number(courseId);
-        setIsEnrolled(myEnrollmentsResponse.data.some(course => course.id === idNum));
-      } catch (err: any) {
-        console.error('Checkout init error:', err);
-        setError(err?.message || 'فشل في تحميل بيانات صفحة الدفع');
+        setIsEnrolled(
+          myEnrollmentsResponse.data.some((course) => course.id === idNum),
+        );
+      } catch (err) {
+        console.error("Checkout init error:", err);
+        setError(
+          (err instanceof Error ? err.message : undefined) ||
+            "فشل في تحميل بيانات صفحة الدفع",
+        );
       }
     };
     init();
@@ -57,11 +67,14 @@ const DynamicCheckoutPage: React.FC = () => {
       setTimeout(() => setShowToast(false), 3000);
 
       // Redirect to My Courses after successful enrollment
-      router.push('/user/my_courses');
-    } catch (err: any) {
-      console.error('Enroll error:', err);
+      router.push("/user/my_courses");
+    } catch (err) {
+      console.error("Enroll error:", err);
       setIsProcessing(false);
-      setError(err?.message || 'فشل في الاشتراك بالكورس');
+      setError(
+        (err instanceof Error ? err.message : undefined) ||
+          "فشل في الاشتراك بالكورس",
+      );
     }
   };
 
@@ -91,18 +104,23 @@ const DynamicCheckoutPage: React.FC = () => {
     );
   }
 
-  const priceNum = typeof course.price === 'string' ? parseFloat(course.price) : Number(course.price);
+  const priceNum =
+    typeof course.price === "string"
+      ? parseFloat(course.price)
+      : Number(course.price);
   const isFree = isNaN(priceNum) || priceNum <= 0;
   const originalPrice = isNaN(priceNum) ? 0 : priceNum * 2; // افتراض خصم 50%
   const hasDiscount = originalPrice > 0 && priceNum < originalPrice;
-  const discountPercentage = hasDiscount ? Math.round(((originalPrice - priceNum) / originalPrice) * 100) : 0;
+  const discountPercentage = hasDiscount
+    ? Math.round(((originalPrice - priceNum) / originalPrice) * 100)
+    : 0;
 
   const coverRaw =
-    (course as any).cover_image_url ||
-    (course as any).coverImage ||
-    (course as any).image ||
+    course.cover_image_url ||
+    course.coverImage ||
+    course.image ||
     course.cover_image ||
-    '/banner.jpg';
+    "/banner.jpg";
 
   return (
     <div className="checkout-container">
@@ -110,7 +128,9 @@ const DynamicCheckoutPage: React.FC = () => {
         {/* Header */}
         <div className="checkout-header">
           <h1 className="checkout-title">إتمام عملية الشراء</h1>
-          <p className="checkout-subtitle">تأكيد الاشتراك في الكورس: {course.title}</p>
+          <p className="checkout-subtitle">
+            تأكيد الاشتراك في الكورس: {course.title}
+          </p>
         </div>
 
         {/* Main Content */}
@@ -130,27 +150,35 @@ const DynamicCheckoutPage: React.FC = () => {
 
             <div className="course-details">
               <h2 className="course-title">{course.title}</h2>
-              <p className="course-description">{course.description || 'وصف الكورس غير متوفر'}</p>
+              <p className="course-description">
+                {course.description || "وصف الكورس غير متوفر"}
+              </p>
 
               <div className="course-meta">
                 <div className="meta-item">
                   <svg className="meta-icon" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg>
-                  <span>المدرب: {course.instructor?.name || 'مدرب'}</span>
+                  <span>المدرب: {course.instructor?.name || "مدرب"}</span>
                 </div>
                 <div className="meta-item">
                   <svg className="meta-icon" viewBox="0 0 24 24">
                     <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
                     <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
                   </svg>
-                  <span>{course.duration ? `${course.duration} ساعة` : '30 ساعة'}</span>
+                  <span>
+                    {course.duration ? `${course.duration} ساعة` : "30 ساعة"}
+                  </span>
                 </div>
                 <div className="meta-item">
                   <svg className="meta-icon" viewBox="0 0 24 24">
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
                   </svg>
-                  <span>{course.chapters_count ? `${course.chapters_count} درس` : 'دروس متعددة'}</span>
+                  <span>
+                    {course.chapters_count
+                      ? `${course.chapters_count} درس`
+                      : "دروس متعددة"}
+                  </span>
                 </div>
               </div>
 
@@ -188,26 +216,37 @@ const DynamicCheckoutPage: React.FC = () => {
                 <tbody>
                   <tr>
                     <td className="price-label">السعر الأصلي</td>
-                    <td className="price-value original">{isFree ? 'مجاني' : ('ج.م ' + originalPrice)}</td>
+                    <td className="price-value original">
+                      {isFree ? "مجاني" : "ج.م " + originalPrice}
+                    </td>
                   </tr>
                   <tr>
                     <td className="price-label">نسبة الخصم</td>
-                    <td className="price-value discount">{isFree ? 'مجاني' : (discountPercentage + '%')}</td>
+                    <td className="price-value discount">
+                      {isFree ? "مجاني" : discountPercentage + "%"}
+                    </td>
                   </tr>
                   <tr>
                     <td className="price-label">مبلغ التوفير</td>
-                    <td className="price-value savings">{isFree ? 'مجاني' : ('ج.م ' + (originalPrice - priceNum))}</td>
+                    <td className="price-value savings">
+                      {isFree ? "مجاني" : "ج.م " + (originalPrice - priceNum)}
+                    </td>
                   </tr>
                   <tr className="total-row">
                     <td className="price-label total-label">السعر النهائي</td>
-                    <td className="price-value final">{isFree ? 'مجاني' : ('ج.م ' + priceNum)}</td>
+                    <td className="price-value final">
+                      {isFree ? "مجاني" : "ج.م " + priceNum}
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             {isEnrolled ? (
-              <button className="purchase-button" onClick={() => router.push('/user/my_courses')}>
+              <button
+                className="purchase-button"
+                onClick={() => router.push("/user/my_courses")}
+              >
                 تابع الكورس
                 <svg className="button-icon" viewBox="0 0 24 24">
                   <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1z" />
@@ -215,7 +254,7 @@ const DynamicCheckoutPage: React.FC = () => {
               </button>
             ) : (
               <button
-                className={`purchase-button ${isProcessing ? 'processing' : ''}`}
+                className={`purchase-button ${isProcessing ? "processing" : ""}`}
                 onClick={handleEnroll}
                 disabled={isProcessing}
               >
@@ -254,9 +293,13 @@ const DynamicCheckoutPage: React.FC = () => {
 
         {/* Footer Links */}
         <div className="checkout-footer-links">
-          <a href="/privacy" className="footer-link">سياسة الخصوصية</a>
+          <a href="/privacy" className="footer-link">
+            سياسة الخصوصية
+          </a>
           <span className="link-separator">|</span>
-          <a href="/terms" className="footer-link">الشروط والأحكام</a>
+          <a href="/terms" className="footer-link">
+            الشروط والأحكام
+          </a>
         </div>
       </div>
 
@@ -273,7 +316,9 @@ const DynamicCheckoutPage: React.FC = () => {
               <h4 className="toast-title">تم الاشتراك بنجاح!</h4>
               <p className="toast-message">سيتم تحويلك إلى دوراتك خلال لحظات</p>
             </div>
-            <button className="toast-close" onClick={() => setShowToast(false)}>×</button>
+            <button className="toast-close" onClick={() => setShowToast(false)}>
+              ×
+            </button>
           </div>
         </div>
       )}

@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import AdminOverview from "./AdminOverview";
 import { Catalog, CourseContent, DiplomaDetail } from "./AdminCatalog";
@@ -10,66 +9,52 @@ import {
   Students,
 } from "./AdminStudents";
 import { EntityReport, Instructors, Reports } from "./AdminReports";
-import { Intro, Panel, Restricted } from "./AdminPrimitives";
-import LocalAdminManager from './LocalAdminManager';
+import { Intro } from "./AdminPrimitives";
+import LocalAdminExtras from "./LocalAdminExtras";
+import LocalAdminManager from "./LocalAdminManager";
 const positiveId = (value: string | null | undefined) =>
   value && /^\d+$/.test(value) && Number(value) > 0 ? Number(value) : undefined;
 export default function AdminView() {
-  const path=usePathname();
-  const settings=['/admin/supervisors','/admin/profile-management','/admin/database-backups'].some(route=>path.startsWith(route));
-  return <><LocalAdminManager key={path}/>{!settings&&<AdminViewContent/>}</>;
+  const path = usePathname();
+  const settings = [
+    "/admin/supervisors",
+    "/admin/profile-management",
+    "/admin/database-backups",
+  ].some((route) => path.startsWith(route));
+  return (
+    <>
+      {(settings || path.includes("/new")) && (
+        <Intro
+          title={
+            path.includes("supervisors")
+              ? "المشرفون"
+              : path.includes("/new")
+                ? "إضافة مقرر"
+                : "إعدادات التجربة المحلية"
+          }
+          description="إدارة البيانات وحفظها في المتصفح."
+        />
+      )}
+      <LocalAdminManager key={path} />
+      {!settings && <AdminViewContent />}
+    </>
+  );
 }
 function AdminViewContent() {
   const path = usePathname(),
     query = useSearchParams();
   if (path === "/admin") return <AdminOverview />;
-  if (path.startsWith("/admin/reports/bunny"))
-    return (
-      <Restricted
-        title="تحليلات الفيديو"
-        reason="تكامل Bunny موجود، لكن تحليلاته وسجلات مزامنته ليست ضمن صلاحيات بوابة العرض. اللقطات التجريبية لا تُعرض كاستخدام مزوّد فعلي أو فواتير."
-      />
-    );
-  if (path.startsWith("/admin/database-backups"))
-    return (
-      <Restricted
-        title="النسخ الاحتياطية"
-        reason="ملفات قواعد البيانات وأدوات الاستعادة مقيّدة، ولا يُسمح بتنزيلها عبر حساب العرض."
-      />
-    );
-  if (path.startsWith("/admin/supervisors"))
-    return (
-      <Restricted
-        title="المشرفون والصلاحيات"
-        reason="حساب الاستعراض لا يملك نطاق قراءة قوائم المشرفين أو تعديل الصلاحيات."
-      />
-    );
-  if (path === "/admin/profile-management")
-    return (
-      <>
-        <Restricted
-          title="الإعدادات التشغيلية"
-          reason="الهوية الفعلية معروضة في مساحة الإدارة؛ تعديل الملف وكلمة المرور معطّل، ولا نقرأ إعدادات حساسة."
-          mutation
-        />
-        <Panel
-          title="الأدوات المحمية"
-          description="وجهات حقيقية، مع توضيح حدود العرض قبل أي طلب"
-        >
-          <Link href="/admin/database-backups">النسخ الاحتياطية ←</Link>
-          <br />
-          <Link href="/admin/supervisors">المشرفون والصلاحيات ←</Link>
-        </Panel>
-      </>
-    );
-  if (path.includes("/new") || path.startsWith("/admin/policies"))
-    return (
-      <Restricted
-        title="عملية تشغيلية"
-        reason="أدوات إنشاء المحتوى وتحريره وإعداد السياسات متاحة في التشغيل، ومغلقة خلال الاستعراض."
-        mutation
-      />
-    );
+  if (path.includes("/new")) return null;
+  if (
+    path.startsWith("/admin/policies") ||
+    path.startsWith("/admin/reports/bunny") ||
+    [
+      "/admin/reports/financial",
+      "/admin/reports/visits",
+      "/admin/reports/lessons",
+    ].includes(path)
+  )
+    return <LocalAdminExtras key={path} />;
   if (path === "/admin/students" || path === "/admin/reports/students")
     return <Students />;
   const student = path.match(/^\/admin\/(?:reports\/)?students\/(\d+)$/);
@@ -136,31 +121,6 @@ function AdminViewContent() {
     );
   const diploma = path.match(/^\/admin\/diplomas\/(\d+)(?:\/students)?$/);
   if (diploma) return <DiplomaDetail id={Number(diploma[1])} />;
-  if (path.includes("question-bank"))
-    return (
-      <Restricted
-        title="اختبارات الدبلومات"
-        reason="إدارة بنك أسئلة الدبلومات تعتمد مسارات تشغيلية غير مكتملة في الاستعراض. يمكن فحص اختبارات المقررات من وحدة التقييم."
-      />
-    );
-  if (path === "/admin/reports/financial" || path === "/admin/reports/visits")
-    return (
-      <Restricted
-        title="تقرير غير متاح للاستعراض"
-        reason="لا نعرض أسعار التسجيل كإيراد محصّل، أو جلسات التعليم كزيارات موقع؛ لا توجد بيانات مصرح بها لإثبات ذلك."
-      />
-    );
-  if (path === "/admin/reports/lessons")
-    return (
-      <Intro
-        title="تقارير الدروس"
-        description="افتح المقرر ثم الدرس للوصول إلى تقريره الحقيقي."
-      />
-    );
-  return (
-    <Restricted
-      title="وجهة تشغيلية خارج نطاق العرض"
-      reason="لم تُحذف الوجهة القديمة. لا نطلب بيانات غير مصرح بها أو نستبدلها بمعلومات افتراضية."
-    />
-  );
+  if (path.includes("question-bank")) return null;
+  return <LocalAdminExtras key={path} />;
 }

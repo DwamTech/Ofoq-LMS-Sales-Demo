@@ -1,0 +1,5 @@
+{
+  "ar": {"title":"من الفكرة إلى مشروع تعليمي","description":"دليل عملي قصير لتطبيق ما تتعلمه، ومادة يمكنك تنزيلها والعمل عليها.","steps":["حدّد مهارة واحدة تريد تطويرها هذا الأسبوع.","اختر مشروعًا صغيرًا لتطبيق هذه المهارة في واقعك.","قسّم التنفيذ إلى ثلاث خطوات، ثم راجع النتيجة وسجّل ما تعلمته."],"download":"تنزيل ورقة العمل","action":"استكشف البرامج"},
+  "en": {"title":"Turn an idea into a learning project","description":"A short practical guide you can download and use while learning.","steps":["Choose one skill to develop this week.","Pick a small project to practise that skill.","Break the work into three steps, review the result and record what you learned."],"download":"Download worksheet","action":"Explore programs"},
+  "fr": {"title":"Transformer une idée en projet","description":"Un guide pratique à télécharger pour mettre vos connaissances en application.","steps":["Choisissez une compétence à développer cette semaine.","Imaginez un petit projet pour pratiquer cette compétence.","Divisez le travail en trois étapes, puis évaluez le résultat."],"download":"Télécharger la fiche","action":"Explorer les programmes"}
+}

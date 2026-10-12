@@ -120,7 +120,9 @@ export default function StudentCourseView({ courseId }: { courseId: number }) {
         <div className={styles.lessonTotals}>
           <strong>{lessons.length}</strong>
           <span>دروس متاحة للاستكشاف</span>
-          <small>أكمل الدروس لتحفظ تقدمك، ثم حل الاختبار للحصول على الشهادة.</small>
+          <small>
+            أكمل الدروس لتحفظ تقدمك، ثم حل الاختبار للحصول على الشهادة.
+          </small>
         </div>
       </section>
       <section className={styles.section}>

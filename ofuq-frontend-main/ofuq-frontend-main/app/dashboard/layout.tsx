@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import DashboardSidebar from '@/components/DashboardSidebar';
-import ProfileHeader from '@/components/ProfileHeader';
-import AuthGuard from '@/components/AuthGuard';
-import '@/styles/dashboard.css';
+import React, { useState } from "react";
+import DashboardSidebar from "@/components/DashboardSidebar";
+import ProfileHeader from "@/components/ProfileHeader";
+import AuthGuard from "@/components/AuthGuard";
+import "@/styles/dashboard.css";
 
 export default function DashboardLayout({
   children,
@@ -23,9 +23,7 @@ export default function DashboardLayout({
         <DashboardSidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
         <div className="dashboard-main">
           <ProfileHeader />
-          <main className="dashboard-content">
-            {children}
-          </main>
+          <main className="dashboard-content">{children}</main>
         </div>
       </div>
     </AuthGuard>

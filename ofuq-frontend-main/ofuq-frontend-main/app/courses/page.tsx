@@ -1,5 +1,5 @@
 "use client";
-import { brand } from '@/lib/brand'
+import { brand } from "@/lib/brand";
 
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -14,7 +14,7 @@ import { getAllCourses, type Course } from "@/utils/courseService";
 import { getPublicSectionsSafe, type Section } from "@/utils/sectionService";
 import { getBackendAssetUrl } from "@/utils/url";
 import styles from "../diploms/diploms.module.css";
-import { AlertCircle, BookOpen } from 'lucide-react';
+import { AlertCircle, BookOpen } from "lucide-react";
 
 function CoursesContent() {
   const searchParams = useSearchParams();
@@ -40,7 +40,9 @@ function CoursesContent() {
       try {
         setLoading(true);
         setError(null);
-        const data = await getAllCourses(sectionSlug ? { section: sectionSlug } : undefined);
+        const data = await getAllCourses(
+          sectionSlug ? { section: sectionSlug } : undefined,
+        );
         setCourses(data);
       } catch (err) {
         console.error("Error loading courses:", err);
@@ -54,8 +56,11 @@ function CoursesContent() {
   }, [sectionSlug]);
 
   const activeSection = useMemo(
-    () => (sectionSlug ? sections.find((section) => section.slug === sectionSlug) : undefined),
-    [sectionSlug, sections]
+    () =>
+      sectionSlug
+        ? sections.find((section) => section.slug === sectionSlug)
+        : undefined,
+    [sectionSlug, sections],
   );
 
   const filteredCourses = useMemo(() => {
@@ -63,17 +68,24 @@ function CoursesContent() {
     const query = searchQuery.trim().toLowerCase();
 
     if (query) {
-      result = result.filter((course) =>
-        course.title?.toLowerCase().includes(query) ||
-        course.description?.toLowerCase().includes(query) ||
-        course.instructor?.name?.toLowerCase().includes(query)
+      result = result.filter(
+        (course) =>
+          course.title?.toLowerCase().includes(query) ||
+          course.description?.toLowerCase().includes(query) ||
+          course.instructor?.name?.toLowerCase().includes(query),
       );
     }
 
     if (selectedFilter === "الأحدث") {
-      result.sort((a, b) => new Date(b.created_at || 0).getTime() - new Date(a.created_at || 0).getTime());
+      result.sort(
+        (a, b) =>
+          new Date(b.created_at || 0).getTime() -
+          new Date(a.created_at || 0).getTime(),
+      );
     } else if (selectedFilter === "الأكثر تسجيلاً") {
-      result.sort((a, b) => Number(b.students_count || 0) - Number(a.students_count || 0));
+      result.sort(
+        (a, b) => Number(b.students_count || 0) - Number(a.students_count || 0),
+      );
     } else if (selectedFilter === "السعر (من الأقل)") {
       result.sort((a, b) => Number(a.price || 0) - Number(b.price || 0));
     }
@@ -81,7 +93,9 @@ function CoursesContent() {
     return result;
   }, [courses, searchQuery, selectedFilter]);
 
-  const pageTitle = activeSection ? `كورسات ${activeSection.name}` : `كورسات ${brand.name}`;
+  const pageTitle = activeSection
+    ? `كورسات ${activeSection.name}`
+    : `كورسات ${brand.name}`;
 
   return (
     <main className={styles.page}>
@@ -99,7 +113,11 @@ function CoursesContent() {
             <div className={styles["popular-courses-left"]}>
               <div className={styles["popular-badge"]}>الكورسات</div>
               <h2 className={styles["popular-title"]}>
-                {searchQuery ? `نتائج البحث عن "${searchQuery}"` : activeSection ? `كورسات ${activeSection.name}` : "الكورسات المتاحة"}
+                {searchQuery
+                  ? `نتائج البحث عن "${searchQuery}"`
+                  : activeSection
+                    ? `كورسات ${activeSection.name}`
+                    : "الكورسات المتاحة"}
                 <span className={styles.resultCount}>
                   ({loading ? "..." : filteredCourses.length} كورس)
                 </span>
@@ -115,25 +133,44 @@ function CoursesContent() {
                 ))}
               </>
             ) : error ? (
-              <div className={styles["error-state"]} role="alert"><span className={styles.stateIcon}><AlertCircle size={32} aria-hidden="true"/></span><p>{error}</p></div>
+              <div className={styles["error-state"]} role="alert">
+                <span className={styles.stateIcon}>
+                  <AlertCircle size={32} aria-hidden="true" />
+                </span>
+                <p>{error}</p>
+              </div>
             ) : filteredCourses.length > 0 ? (
               filteredCourses.map((course) => (
                 <CourseCard
                   key={course.id}
                   id={String(course.id)}
                   title={course.title}
-                  image={getBackendAssetUrl(course.cover_image || "") || "/banner.jpg"}
-                  category={course.section?.name || course.category?.name || "عام"}
+                  image={
+                    getBackendAssetUrl(course.cover_image || "") ||
+                    "/banner.jpg"
+                  }
+                  category={
+                    course.section?.name || course.category?.name || "عام"
+                  }
                   studentsCount={Number(course.students_count ?? 0)}
                   duration={`${Number(course.duration ?? 0)} ساعة`}
-                  lessonsCount={Number(course.lessons_count ?? course.chapters_count ?? 0)}
-                  instructorName={course.instructor?.name || `محاضر ${brand.name}`}
+                  lessonsCount={Number(
+                    course.lessons_count ?? course.chapters_count ?? 0,
+                  )}
+                  instructorName={
+                    course.instructor?.name || `محاضر ${brand.name}`
+                  }
                   instructorAvatar={course.instructor?.image || "/logo.png"}
                   price={Number(course.price ?? 0)}
                 />
               ))
             ) : (
-              <div className={styles["empty-state"]} role="status"><span className={styles.stateIcon}><BookOpen size={32} aria-hidden="true"/></span><p>لا توجد كورسات تطابق معايير البحث</p></div>
+              <div className={styles["empty-state"]} role="status">
+                <span className={styles.stateIcon}>
+                  <BookOpen size={32} aria-hidden="true" />
+                </span>
+                <p>لا توجد كورسات تطابق معايير البحث</p>
+              </div>
             )}
           </div>
         </div>
@@ -146,7 +183,11 @@ export default function CoursesPage() {
   return (
     <div dir="rtl">
       <HomeHeader />
-      <Suspense fallback={<div className={styles["loading-state"]}>جاري التحميل...</div>}>
+      <Suspense
+        fallback={
+          <div className={styles["loading-state"]}>جاري التحميل...</div>
+        }
+      >
         <CoursesContent />
       </Suspense>
       <Footer />

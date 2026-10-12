@@ -1598,6 +1598,7 @@
 .toolbar > label { font-size:14px; }
 .toolbar input,.toolbar select,.search { border-radius:12px; border-color:#d5c6e2; }
 .search { background:#f8f5fb; max-width:460px; min-height:48px; }
+.toolbar > label:not(.search) > input { height:48px; }
 .search input { font-size:15px; }
 .badge { border-radius:30px; padding:5px 11px; font-size:12px; }
 .programGrid { gap:18px; }

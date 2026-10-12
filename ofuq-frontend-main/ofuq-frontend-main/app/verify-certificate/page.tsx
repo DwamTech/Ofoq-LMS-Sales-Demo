@@ -1,15 +1,16 @@
-'use client';
-import { brand } from '@/lib/brand'
+"use client";
+import { brand } from "@/lib/brand";
 
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { http } from '@/lib/http';
-import HomeHeader from '@/components/HomeHeader';
-import Footer from '@/components/Footer';
-import './verify-certificate.css';
-import { AlertCircle, ArrowUpLeft, ShieldCheck } from 'lucide-react';
-import styles from './Verify.module.css';
-import { CertificatePreview } from '@/components/brand/CertificatePreview';
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import { isAxiosError } from "axios";
+import { http } from "@/lib/http";
+import HomeHeader from "@/components/HomeHeader";
+import Footer from "@/components/Footer";
+import "./verify-certificate.css";
+import { AlertCircle, ArrowUpLeft, ShieldCheck } from "lucide-react";
+import styles from "./Verify.module.css";
+import { CertificatePreview } from "@/components/brand/CertificatePreview";
 
 interface CertificateData {
   student_name: string;
@@ -19,26 +20,12 @@ interface CertificateData {
   serial_number: string;
 }
 
-interface ApiResponse {
-  success: boolean;
-  data?: CertificateData;
-  message?: string;
-}
-
-const previewCertificate: CertificateData = {
-  student_name: 'سارة أحمد محمد',
-  course_title: 'تطوير واجهات الويب الاحترافية',
-  exam_grade: '96%',
-  exam_date: '2026-10-10',
-  serial_number: 'DEMO-2026-001',
-};
-
 function VerifyCertificateContent() {
   const searchParams = useSearchParams();
-  const [serialNumber, setSerialNumber] = useState('');
+  const [serialNumber, setSerialNumber] = useState("");
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<any>(null);
-  const [error, setError] = useState('');
+  const [result, setResult] = useState<CertificateData | null>(null);
+  const [error, setError] = useState("");
   const [autoVerifyDone, setAutoVerifyDone] = useState(false);
   const [isPreview, setIsPreview] = useState(false);
 
@@ -49,17 +36,21 @@ function VerifyCertificateContent() {
    * - Full URL: "https://www.ofuq.academy/verify-certificate?s=..." -> extracts 's' param
    */
   const parseSerialNumber = (input: string): string => {
-    if (!input) return '';
+    if (!input) return "";
 
     let cleaned = input.trim();
 
     // Check if it's a URL - extract the 's' parameter
-    if (cleaned.includes('verify-certificate') || cleaned.includes('?s=') || cleaned.startsWith('http')) {
+    if (
+      cleaned.includes("verify-certificate") ||
+      cleaned.includes("?s=") ||
+      cleaned.startsWith("http")
+    ) {
       try {
         // Handle full URL
-        if (cleaned.startsWith('http')) {
+        if (cleaned.startsWith("http")) {
           const url = new URL(cleaned);
-          const sParam = url.searchParams.get('s');
+          const sParam = url.searchParams.get("s");
           if (sParam) {
             cleaned = sParam.trim();
           }
@@ -85,7 +76,7 @@ function VerifyCertificateContent() {
 
   // التحقق التلقائي عند تحميل الصفحة مع parameter
   useEffect(() => {
-    const serialFromUrl = searchParams.get('s');
+    const serialFromUrl = searchParams.get("s");
     if (serialFromUrl && !autoVerifyDone) {
       const parsed = parseSerialNumber(serialFromUrl);
       setSerialNumber(serialFromUrl); // Show original in input
@@ -100,28 +91,31 @@ function VerifyCertificateContent() {
     if (!serial.trim()) return;
 
     setLoading(true);
-    setError('');
+    setError("");
     setResult(null);
     setIsPreview(false);
 
-    if (process.env.NODE_ENV !== 'production' && serial.trim().toUpperCase() === previewCertificate.serial_number) {
-      setResult(previewCertificate);
-      setIsPreview(true);
-      setLoading(false);
-      return;
-    }
-
     try {
-      const response = await http.get(`/public/verify-certificate?serial_number=${serial}`);
+      const response = await http.get(
+        `/public/verify-certificate?serial_number=${encodeURIComponent(serial)}`,
+      );
       setResult(response.data.data);
-      setError('');
-    } catch (err: any) {
-      if (err.response?.status === 404) {
-        setError('لم يتم العثور على شهادة بهذا الرقم التسلسلي. يرجى التحقق من الرقم والمحاولة مرة أخرى.');
-      } else if (err.response?.status === 400) {
-        setError('الرقم التسلسلي المدخل غير صحيح. يرجى التأكد من إدخال الرقم كاملاً.');
+      setError("");
+    } catch (err) {
+      if ((isAxiosError(err) ? err.response?.status : undefined) === 404) {
+        setError(
+          "لم يتم العثور على شهادة بهذا الرقم التسلسلي. يرجى التحقق من الرقم والمحاولة مرة أخرى.",
+        );
+      } else if (
+        (isAxiosError(err) ? err.response?.status : undefined) === 400
+      ) {
+        setError(
+          "الرقم التسلسلي المدخل غير صحيح. يرجى التأكد من إدخال الرقم كاملاً.",
+        );
       } else {
-        setError('حدث خطأ أثناء التحقق من الشهادة. يرجى المحاولة مرة أخرى لاحقًا.');
+        setError(
+          "حدث خطأ أثناء التحقق من الشهادة. يرجى المحاولة مرة أخرى لاحقًا.",
+        );
       }
     } finally {
       setLoading(false);
@@ -132,13 +126,13 @@ function VerifyCertificateContent() {
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!serialNumber.trim()) {
-      setError('يرجى إدخال الرقم التسلسلي');
+      setError("يرجى إدخال الرقم التسلسلي");
       return;
     }
     // Parse the input before verification
     const parsed = parseSerialNumber(serialNumber);
     if (!parsed) {
-      setError('لم نتمكن من قراءة الرقم التسلسلي. يرجى التحقق من المدخل.');
+      setError("لم نتمكن من قراءة الرقم التسلسلي. يرجى التحقق من المدخل.");
       return;
     }
     await handleVerifyAuto(parsed);
@@ -149,7 +143,9 @@ function VerifyCertificateContent() {
       {/* Hero Section */}
       <section className="verify-hero">
         <div className="hero-content">
-          <span className={styles.heroSeal} aria-hidden="true"><ShieldCheck size={34}/></span>
+          <span className={styles.heroSeal} aria-hidden="true">
+            <ShieldCheck size={34} />
+          </span>
           <h1 className="hero-title">التحقق من الشهادات</h1>
           <p className="hero-subtitle">
             تحقق من صحة الشهادات الصادرة عن {brand.name}
@@ -163,7 +159,11 @@ function VerifyCertificateContent() {
       {/* Verification Section */}
       <section className="verify-content">
         <div className="verify-form-container">
-          <form onSubmit={handleVerify} className="verify-form" aria-busy={loading}>
+          <form
+            onSubmit={handleVerify}
+            className="verify-form"
+            aria-busy={loading}
+          >
             <div className="form-header">
               <h2 className="form-title">التحقق من الشهادة</h2>
               <p className="form-subtitle">أدخل الرقم التسلسلي للتحقق</p>
@@ -181,7 +181,7 @@ function VerifyCertificateContent() {
                 placeholder="أدخل الرقم التسلسلي الموجود على الشهادة"
                 className="serial-input"
                 disabled={loading}
-                aria-describedby={error ? 'verification-error' : undefined}
+                aria-describedby={error ? "verification-error" : undefined}
                 aria-invalid={Boolean(error)}
               />
             </div>
@@ -193,13 +193,20 @@ function VerifyCertificateContent() {
                   <span>جاري التحقق...</span>
                 </div>
               ) : (
-                <><span>تحقق من الشهادة</span><ArrowUpLeft size={20} aria-hidden="true"/></>
+                <>
+                  <span>تحقق من الشهادة</span>
+                  <ArrowUpLeft size={20} aria-hidden="true" />
+                </>
               )}
             </button>
           </form>
 
           {loading && (
-            <div className="ofuq-loader-overlay" role="status" aria-live="polite">
+            <div
+              className="ofuq-loader-overlay"
+              role="status"
+              aria-live="polite"
+            >
               <div className="ofuq-loader">
                 <div className="loader-circle">
                   <div className="inner-circle"></div>
@@ -213,20 +220,45 @@ function VerifyCertificateContent() {
           )}
 
           {error && (
-            <div className="result-card error-card" role="alert" id="verification-error">
-              <span className={styles.errorIcon} aria-hidden="true"><AlertCircle size={28}/></span>
+            <div
+              className="result-card error-card"
+              role="alert"
+              id="verification-error"
+            >
+              <span className={styles.errorIcon} aria-hidden="true">
+                <AlertCircle size={28} />
+              </span>
               <h3 className="result-title">لم يتم العثور على الشهادة</h3>
               <p className="result-message">{error}</p>
             </div>
           )}
 
           {result && (
-            <div className="result-card success-card" role="status" aria-live="polite">
-              <span className={styles.successIcon} aria-hidden="true"><ShieldCheck size={30}/></span>
+            <div
+              className="result-card success-card"
+              role="status"
+              aria-live="polite"
+            >
+              <span className={styles.successIcon} aria-hidden="true">
+                <ShieldCheck size={30} />
+              </span>
 
-              <h3 className="result-title">{isPreview ? 'معاينة شهادة تجريبية' : 'الشهادة موثقة وصحيحة'}</h3>
-              {isPreview && <p className={styles.previewNotice}>بيانات وهمية لعرض التصميم فقط · ليست شهادة صادرة أو موثقة.</p>}
-              <CertificatePreview studentName={result.student_name} courseTitle={result.course_title} grade={result.exam_grade} date={result.exam_date} serial={result.serial_number} preview={isPreview}/>
+              <h3 className="result-title">
+                {isPreview ? "معاينة شهادة تجريبية" : "الشهادة موثقة وصحيحة"}
+              </h3>
+              {isPreview && (
+                <p className={styles.previewNotice}>
+                  بيانات وهمية لعرض التصميم فقط · ليست شهادة صادرة أو موثقة.
+                </p>
+              )}
+              <CertificatePreview
+                studentName={result.student_name}
+                courseTitle={result.course_title}
+                grade={result.exam_grade}
+                date={result.exam_date}
+                serial={result.serial_number}
+                preview={isPreview}
+              />
 
               <div className="certificate-details">
                 <div className="detail-row">
@@ -241,38 +273,53 @@ function VerifyCertificateContent() {
 
                 <div className="detail-row">
                   <span className="detail-label">النتيجة:</span>
-                  <span className="detail-value grade-value">{result.exam_grade}</span>
+                  <span className="detail-value grade-value">
+                    {result.exam_grade}
+                  </span>
                 </div>
 
                 <div className="detail-row">
                   <span className="detail-label">تاريخ الاختبار:</span>
                   <span className="detail-value">
-                    {result.exam_date ? new Date(result.exam_date).toLocaleDateString('ar-EG', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    }) : '-'}
+                    {result.exam_date
+                      ? new Date(result.exam_date).toLocaleDateString("ar-EG", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })
+                      : "-"}
                   </span>
                 </div>
 
                 <div className="detail-row">
                   <span className="detail-label">الرقم التسلسلي:</span>
-                  <span className="detail-value serial-value">{result.serial_number}</span>
+                  <span className="detail-value serial-value">
+                    {result.serial_number}
+                  </span>
                 </div>
               </div>
 
               <div className="verification-badge">
-                <div className="badge-icon"><ShieldCheck size={20} aria-hidden="true"/></div>
-                <span>{isPreview ? 'معاينة التصميم · بيانات تجريبية' : `تم التحقق من قبل ${brand.name}`}</span>
+                <div className="badge-icon">
+                  <ShieldCheck size={20} aria-hidden="true" />
+                </div>
+                <span>
+                  {isPreview
+                    ? "معاينة التصميم · بيانات تجريبية"
+                    : `تم التحقق من قبل ${brand.name}`}
+                </span>
               </div>
-              {result.serial_number?.startsWith('OFOQ-') && <p>شهادة تاريخية صُدرت بالهوية السابقة. لم يتغير ملفها أو رقمها أو مرجع التحقق.</p>}
+              {result.serial_number?.startsWith("OFOQ-") && (
+                <p>
+                  شهادة تاريخية صُدرت بالهوية السابقة. لم يتغير ملفها أو رقمها
+                  أو مرجع التحقق.
+                </p>
+              )}
             </div>
           )}
 
           <div className="verify-footer">
-            <p className="footer-text">
-              هذه الخدمة مقدمة من {brand.name}
-            </p>
+            <p className="footer-text">هذه الخدمة مقدمة من {brand.name}</p>
             <p className="footer-subtext">
               للاستفسارات أو المساعدة، يرجى التواصل مع فريق الدعم
             </p>
@@ -287,7 +334,17 @@ export default function VerifyCertificate() {
   return (
     <div className={styles.backdrop}>
       <HomeHeader />
-      <Suspense fallback={<div className="verify-certificate-main"><div className="verify-content"><p style={{ textAlign: 'center', padding: '2rem' }}>جاري التحميل...</p></div></div>}>
+      <Suspense
+        fallback={
+          <div className="verify-certificate-main">
+            <div className="verify-content">
+              <p style={{ textAlign: "center", padding: "2rem" }}>
+                جاري التحميل...
+              </p>
+            </div>
+          </div>
+        }
+      >
         <VerifyCertificateContent />
       </Suspense>
       <Footer />

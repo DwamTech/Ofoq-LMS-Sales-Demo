@@ -1,10 +1,23 @@
-'use client';
+"use client";
+import WorkspaceSelect from "@/components/ui/WorkspaceSelect";
 
-import React, { useEffect, useMemo, useState } from 'react';
-import styles from './EnrollmentInfoModal.module.css';
-import { getUserProfile, updateUserProfile, EnrollmentProfile } from '../utils/userService';
-import { isAuthenticated } from '../utils/authService';
-import { FiX, FiUser, FiBriefcase, FiCalendar, FiBook, FiCheck, FiLoader } from 'react-icons/fi';
+import { useEffect, useMemo, useState } from "react";
+import styles from "./EnrollmentInfoModal.module.css";
+import {
+  getUserProfile,
+  updateUserProfile,
+  EnrollmentProfile,
+} from "../utils/userService";
+import { isAuthenticated } from "../utils/authService";
+import {
+  FiX,
+  FiUser,
+  FiBriefcase,
+  FiCalendar,
+  FiBook,
+  FiCheck,
+  FiLoader,
+} from "react-icons/fi";
 
 export interface EnrollmentInfoModalProps {
   isOpen: boolean;
@@ -13,47 +26,51 @@ export interface EnrollmentInfoModalProps {
 }
 
 const qualificationOptions = [
-  'بدون',
-  'دبلوم',
- 'الثانوي',
-  'بكالوريوس',
-  'ماجستير',
-  'دكتوراه',
+  "بدون",
+  "دبلوم",
+  "الثانوي",
+  "بكالوريوس",
+  "ماجستير",
+  "دكتوراه",
 ];
 
 const mediaWorkSectorOptions = [
-  'جهة حكومية',
-  'جهة خاصة',
-  'قطاع غير ربحي',
-  'إعلام مستقل',
-  'أخرى',
+  "جهة حكومية",
+  "جهة خاصة",
+  "قطاع غير ربحي",
+  "إعلام مستقل",
+  "أخرى",
 ];
 
 const previousFieldOptions = [
-  'ادارة مؤسسة',
-  'انتاج',
-  'إخراج',
-  'تصوير',
-  'مونتاج',
-  'أخرى',
+  "ادارة مؤسسة",
+  "انتاج",
+  "إخراج",
+  "تصوير",
+  "مونتاج",
+  "أخرى",
 ];
 
 function normalizeDateInput(d?: string | null): string {
-  if (!d) return '';
+  if (!d) return "";
   // Expecting YYYY-MM-DD
   const m = /^\d{4}-\d{2}-\d{2}$/.test(d);
-  return m ? d : '';
+  return m ? d : "";
 }
 
-export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: EnrollmentInfoModalProps) {
+export default function EnrollmentInfoModal({
+  isOpen,
+  onClose,
+  onSubmit,
+}: EnrollmentInfoModalProps) {
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [qualification, setQualification] = useState('');
-  const [mediaWorkSector, setMediaWorkSector] = useState('');
-  const [dateOfBirth, setDateOfBirth] = useState('');
-  const [previousField, setPreviousField] = useState('');
+  const [qualification, setQualification] = useState("");
+  const [mediaWorkSector, setMediaWorkSector] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [previousField, setPreviousField] = useState("");
 
   // Fetch current profile when opened
   useEffect(() => {
@@ -69,12 +86,16 @@ export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: Enrol
         setLoading(true);
         const user = await getUserProfile();
         if (cancelled) return;
-        setQualification(user.qualification || '');
-        setMediaWorkSector(user.media_work_sector || '');
+        setQualification(user.qualification || "");
+        setMediaWorkSector(user.media_work_sector || "");
         setDateOfBirth(normalizeDateInput(user.date_of_birth));
-        setPreviousField(user.previous_field || '');
-      } catch (e: any) {
-        if (!cancelled) setError(e?.message || 'فشل في جلب بيانات الملف الشخصي');
+        setPreviousField(user.previous_field || "");
+      } catch (e) {
+        if (!cancelled)
+          setError(
+            (e instanceof Error ? e.message : undefined) ||
+              "فشل في جلب بيانات الملف الشخصي",
+          );
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -97,7 +118,7 @@ export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: Enrol
   async function handleSubmit() {
     setError(null);
     if (!canSubmit) {
-      setError('يرجى إكمال جميع الحقول المطلوبة');
+      setError("يرجى إكمال جميع الحقول المطلوبة");
       return;
     }
     try {
@@ -107,11 +128,13 @@ export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: Enrol
         media_work_sector: mediaWorkSector,
         date_of_birth: dateOfBirth,
         previous_field: previousField,
-      } as any);
+      });
       if (onSubmit) onSubmit(updated);
       onClose();
-    } catch (e: any) {
-      setError(e?.message || 'فشل في حفظ البيانات');
+    } catch (e) {
+      setError(
+        (e instanceof Error ? e.message : undefined) || "فشل في حفظ البيانات",
+      );
     } finally {
       setSaving(false);
     }
@@ -120,7 +143,12 @@ export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: Enrol
   if (!isOpen) return null;
 
   return (
-    <div className={styles.overlay} role="dialog" aria-modal="true" aria-labelledby="enrollment-modal-title">
+    <div
+      className={styles.overlay}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="enrollment-modal-title"
+    >
       <div className={styles.modal} dir="rtl">
         <div className={styles.header}>
           <div className={styles.headerContent}>
@@ -128,11 +156,19 @@ export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: Enrol
               <FiUser className={styles.headerIcon} />
             </div>
             <div>
-              <h3 id="enrollment-modal-title" className={styles.title}>إكمال معلومات التسجيل</h3>
-              <p className={styles.subtitle}>يرجى إكمال المعلومات التالية لإتمام التسجيل في الدبلومة</p>
+              <h3 id="enrollment-modal-title" className={styles.title}>
+                إكمال معلومات التسجيل
+              </h3>
+              <p className={styles.subtitle}>
+                يرجى إكمال المعلومات التالية لإتمام التسجيل في الدبلومة
+              </p>
             </div>
           </div>
-          <button className={styles.closeBtn} onClick={onClose} aria-label="إغلاق">
+          <button
+            className={styles.closeBtn}
+            onClick={onClose}
+            aria-label="إغلاق"
+          >
             <FiX />
           </button>
         </div>
@@ -144,7 +180,7 @@ export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: Enrol
               <span>جاري تحميل البيانات...</span>
             </div>
           )}
-          
+
           {error && (
             <div className={styles.errorAlert} role="alert">
               <div className={styles.errorContent}>
@@ -160,18 +196,21 @@ export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: Enrol
                 المؤهل العلمي
                 <span className={styles.required}>*</span>
               </label>
-              <select
+              <WorkspaceSelect
                 id="qualification"
-                className={styles.select}
                 value={qualification}
-                onChange={(e) => setQualification(e.target.value)}
+                onValueChange={(value) => setQualification(value)}
                 required
               >
-                <option value="" disabled>اختر المؤهل العلمي</option>
+                <option value="" disabled>
+                  اختر المؤهل العلمي
+                </option>
                 {qualificationOptions.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
                 ))}
-              </select>
+              </WorkspaceSelect>
             </div>
 
             <div className={styles.formGroup}>
@@ -180,18 +219,21 @@ export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: Enrol
                 قطاع العمل الإعلامي
                 <span className={styles.required}>*</span>
               </label>
-              <select
+              <WorkspaceSelect
                 id="mediaWorkSector"
-                className={styles.select}
                 value={mediaWorkSector}
-                onChange={(e) => setMediaWorkSector(e.target.value)}
+                onValueChange={(value) => setMediaWorkSector(value)}
                 required
               >
-                <option value="" disabled>اختر قطاع العمل</option>
+                <option value="" disabled>
+                  اختر قطاع العمل
+                </option>
                 {mediaWorkSectorOptions.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
                 ))}
-              </select>
+              </WorkspaceSelect>
             </div>
 
             <div className={styles.formGroup}>
@@ -216,27 +258,38 @@ export default function EnrollmentInfoModal({ isOpen, onClose, onSubmit }: Enrol
                 المجال السابق
                 <span className={styles.required}>*</span>
               </label>
-              <select
+              <WorkspaceSelect
                 id="previousField"
-                className={styles.select}
                 value={previousField}
-                onChange={(e) => setPreviousField(e.target.value)}
+                onValueChange={(value) => setPreviousField(value)}
                 required
               >
-                <option value="" disabled>اختر المجال السابق</option>
+                <option value="" disabled>
+                  اختر المجال السابق
+                </option>
                 {previousFieldOptions.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
                 ))}
-              </select>
+              </WorkspaceSelect>
             </div>
           </div>
         </div>
 
         <div className={styles.footer}>
-          <button className={styles.secondaryBtn} onClick={onClose} disabled={saving}>
+          <button
+            className={styles.secondaryBtn}
+            onClick={onClose}
+            disabled={saving}
+          >
             إلغاء
           </button>
-          <button className={styles.primaryBtn} onClick={handleSubmit} disabled={!canSubmit || saving}>
+          <button
+            className={styles.primaryBtn}
+            onClick={handleSubmit}
+            disabled={!canSubmit || saving}
+          >
             {saving ? (
               <>
                 <FiLoader className={styles.buttonIcon} />

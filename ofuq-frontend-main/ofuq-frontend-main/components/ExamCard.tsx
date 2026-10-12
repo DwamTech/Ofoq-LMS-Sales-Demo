@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState, useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import React, { useEffect, useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import {
   getMyEnrolledCourses,
   Course,
@@ -9,10 +9,10 @@ import {
   getMyTestStatuses,
   MyTestStatus,
   getCourseDetails,
-  getCourseProgressDetails
-} from '../utils/courseService';
-import styles from './ExamCard.module.css';
-import FilterBar from './FilterBar';
+  getCourseProgressDetails,
+} from "../utils/courseService";
+import styles from "./ExamCard.module.css";
+import FilterBar from "./FilterBar";
 
 interface ExamCardProps {
   showAll?: boolean;
@@ -20,10 +20,16 @@ interface ExamCardProps {
   onExamSelect?: (exam: Course) => void;
 }
 
-const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelect }) => {
+const ExamCard: React.FC<ExamCardProps> = ({
+  showAll = false,
+  exams,
+  onExamSelect,
+}) => {
   const router = useRouter();
   const [enrolledCourses, setEnrolledCourses] = useState<Course[]>([]);
-  const [testStatuses, setTestStatuses] = useState<Record<number, MyTestStatus>>({});
+  const [testStatuses, setTestStatuses] = useState<
+    Record<number, MyTestStatus>
+  >({});
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -32,8 +38,10 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
   const [totalPages, setTotalPages] = useState<number>(1);
 
   // Filter State
-  const [filters, setFilters] = useState<any[]>([]);
-  const [activeFilter, setActiveFilter] = useState<string | number>('all');
+  const [filters, setFilters] = useState<
+    { id: string | number; label: string; count?: number }[]
+  >([]);
+  const [activeFilter, setActiveFilter] = useState<string | number>("all");
 
   const fetchExams = useCallback(async (page: number) => {
     try {
@@ -45,13 +53,29 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
         getMyTestStatuses(),
         getEnrollmentFilters(),
       ]);
-      const byCourse = Object.fromEntries(statuses.map(item => [item.course_id, item]));
+      const byCourse = Object.fromEntries(
+        statuses.map((item) => [item.course_id, item]),
+      );
       setTestStatuses(byCourse);
       setFilters([
-        { id: 'all', label: 'الكل', count: statuses.length },
-        { id: 'completed', label: 'مكتملة', count: statuses.filter(item => item.course_status === 'completed').length },
-        { id: 'in_progress', label: 'قيد الدراسة', count: statuses.filter(item => item.course_status !== 'completed').length },
-        ...filterData.categories.map(cat => ({ id: cat.id, label: cat.title || cat.name, count: undefined })),
+        { id: "all", label: "الكل", count: statuses.length },
+        {
+          id: "completed",
+          label: "مكتملة",
+          count: statuses.filter((item) => item.course_status === "completed")
+            .length,
+        },
+        {
+          id: "in_progress",
+          label: "قيد الدراسة",
+          count: statuses.filter((item) => item.course_status !== "completed")
+            .length,
+        },
+        ...filterData.categories.map((cat) => ({
+          id: cat.id,
+          label: cat.title || cat.name,
+          count: undefined,
+        })),
       ]);
 
       if (response && response.data) {
@@ -63,7 +87,7 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
         setEnrolledCourses([]);
       }
     } catch (err) {
-      setError('فشل في تحميل المقررات الدراسية');
+      setError("فشل في تحميل المقررات الدراسية");
       console.error(err);
     } finally {
       setLoading(false);
@@ -82,7 +106,7 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
   const handlePageChange = (newPage: number) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -93,7 +117,7 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
 
   const handleCardClick = (courseId: number) => {
     if (onExamSelect) {
-      const course = enrolledCourses.find(c => c.id === courseId);
+      const course = enrolledCourses.find((c) => c.id === courseId);
       if (course) onExamSelect(course);
     } else {
       router.push(`/user/my_exams/${courseId}`);
@@ -101,53 +125,72 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
   };
 
   // متابعة الدراسة: نحدد آخر درس غير مكتمل ونذهب إليه
-  const handleContinueStudyClick = async (exam: Course, e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleContinueStudyClick = async (
+    exam: Course,
+    e: React.MouseEvent<HTMLButtonElement>,
+  ) => {
     e.stopPropagation();
     try {
       const [courseDetails, progressDetails] = await Promise.all([
         getCourseDetails(exam.id),
-        getCourseProgressDetails(exam.id)
+        getCourseProgressDetails(exam.id),
       ]);
 
-      const chapters = (courseDetails?.chapters || []).slice().sort((a: any, b: any) => Number(a?.order ?? 0) - Number(b?.order ?? 0));
+      const chapters = (courseDetails?.chapters || [])
+        .slice()
+        .sort((a, b) => Number(a?.order ?? 0) - Number(b?.order ?? 0));
       const flatLessons: Array<{ id: number; chapterId: number }> = [];
-      chapters.forEach((ch: any) => {
-        const lessons = (ch.lessons || []).slice().sort((a: any, b: any) => Number(a?.order ?? 0) - Number(b?.order ?? 0));
-        lessons.forEach((ls: any) => {
-          if (ls && ls.id != null) flatLessons.push({ id: Number(ls.id), chapterId: Number(ch.id) });
+      chapters.forEach((ch) => {
+        const lessons = (ch.lessons || [])
+          .slice()
+          .sort((a, b) => Number(a?.order ?? 0) - Number(b?.order ?? 0));
+        lessons.forEach((ls) => {
+          if (ls && ls.id != null)
+            flatLessons.push({ id: Number(ls.id), chapterId: Number(ch.id) });
         });
       });
 
       // إذا لم نجد دروسًا، نعود لعرض التفاصيل
       if (!flatLessons.length) {
-        if (onExamSelect) onExamSelect(exam); else router.push(`/user/my_exams/${exam.id}`);
+        if (onExamSelect) onExamSelect(exam);
+        else router.push(`/user/my_exams/${exam.id}`);
         return;
       }
 
       const completedIds = new Set(
         (progressDetails?.lessons || [])
-          .filter((l: any) => String(l.status).toLowerCase() === 'completed')
-          .map((l: any) => Number(l.lesson_id))
+          .filter((l) => String(l.status).toLowerCase() === "completed")
+          .map((l) => Number(l.lesson_id)),
       );
 
-      const nextLesson = flatLessons.find((l) => !completedIds.has(l.id)) || flatLessons[0];
+      const nextLesson =
+        flatLessons.find((l) => !completedIds.has(l.id)) || flatLessons[0];
 
-      router.push(`/watch?lessonId=${nextLesson.id}&chapterId=${nextLesson.chapterId}&courseId=${exam.id}`);
+      router.push(
+        `/watch?lessonId=${nextLesson.id}&chapterId=${nextLesson.chapterId}&courseId=${exam.id}`,
+      );
     } catch (err) {
-      console.error('Failed to navigate to continue study:', err);
+      console.error("Failed to navigate to continue study:", err);
       // في حالة الفشل، نسقط لعرض تفاصيل الامتحان بدلًا من تعطيل التجربة
-      if (onExamSelect) onExamSelect(exam); else router.push(`/user/my_exams/${exam.id}`);
+      if (onExamSelect) onExamSelect(exam);
+      else router.push(`/user/my_exams/${exam.id}`);
     }
   };
 
   // دخول الامتحان النهائي
-  const handleFinalExamClick = (exam: Course, e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleFinalExamClick = (
+    exam: Course,
+    e: React.MouseEvent<HTMLButtonElement>,
+  ) => {
     e.stopPropagation();
     router.push(`/user/final-exam/${exam.id}`);
   };
 
   // عرض النتيجة وطلب الشهادة (يفتح صفحة تفاصيل الاختبار)
-  const handleResultAndCertificateClick = (exam: Course, e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleResultAndCertificateClick = (
+    exam: Course,
+    e: React.MouseEvent<HTMLButtonElement>,
+  ) => {
     e.stopPropagation();
     if (onExamSelect) {
       onExamSelect(exam);
@@ -164,13 +207,18 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
     return <div className={styles.error}>{error}</div>;
   }
 
-  const filteredCourses = enrolledCourses.filter(course => {
-    if (activeFilter === 'completed') return testStatuses[course.id]?.course_status === 'completed';
-    if (activeFilter === 'in_progress') return testStatuses[course.id]?.course_status !== 'completed';
-    if (typeof activeFilter === 'number') return course.category_id === activeFilter;
+  const filteredCourses = enrolledCourses.filter((course) => {
+    if (activeFilter === "completed")
+      return testStatuses[course.id]?.course_status === "completed";
+    if (activeFilter === "in_progress")
+      return testStatuses[course.id]?.course_status !== "completed";
+    if (typeof activeFilter === "number")
+      return course.category_id === activeFilter;
     return true;
   });
-  const displayCourses = showAll ? filteredCourses : filteredCourses.slice(0, 6);
+  const displayCourses = showAll
+    ? filteredCourses
+    : filteredCourses.slice(0, 6);
 
   return (
     <div className={styles.container}>
@@ -197,16 +245,18 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
               <div className={styles.imageWrapper}>
                 {exam.category && (
                   <span className={styles.diplomaBadge}>
-                    {exam.category.title || exam.category.label || exam.category.name}
+                    {exam.category.title ||
+                      exam.category.label ||
+                      exam.category.name}
                   </span>
                 )}
                 <img
-                  src={exam.cover_image || '/images/ofuq-logo.png'}
+                  src={exam.cover_image || "/images/ofuq-logo.png"}
                   alt={exam.title}
                   className={styles.image}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = '/images/ofuq-logo.png';
+                    target.src = "/images/ofuq-logo.png";
                   }}
                 />
                 <div className={styles.overlay}>
@@ -217,13 +267,15 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
               <div className={styles.content}>
                 <h3 className={styles.title}>{exam.title}</h3>
                 <span className={styles.courseStatus}>
-                  {testStatuses[exam.id]?.course_status === 'completed'
-                    ? 'مكتملة'
-                    : testStatuses[exam.id]?.active_attempt_status === 'in_progress'
-                      ? 'الامتحان قيد التنفيذ'
-                      : exam.has_final_exam && Number(exam.progress_percentage) >= 100
-                        ? 'جاهز للامتحان'
-                        : 'قيد الدراسة'}
+                  {testStatuses[exam.id]?.course_status === "completed"
+                    ? "مكتملة"
+                    : testStatuses[exam.id]?.active_attempt_status ===
+                        "in_progress"
+                      ? "الامتحان قيد التنفيذ"
+                      : exam.has_final_exam &&
+                          Number(exam.progress_percentage) >= 100
+                        ? "جاهز للامتحان"
+                        : "قيد الدراسة"}
                 </span>
 
                 {/* Progress Bar */}
@@ -237,7 +289,9 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
                   <div className={styles.progressBarBg}>
                     <div
                       className={styles.progressBarFill}
-                      style={{ width: `${Math.round(Number(exam.progress_percentage || 0))}%` }}
+                      style={{
+                        width: `${Math.round(Number(exam.progress_percentage || 0))}%`,
+                      }}
                     />
                   </div>
                 </div>
@@ -247,7 +301,9 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
                   <button
                     className={styles.actionButton}
                     onClick={(e) => handleContinueStudyClick(exam, e)}
-                    disabled={Math.round(Number(exam.progress_percentage || 0)) >= 100}
+                    disabled={
+                      Math.round(Number(exam.progress_percentage || 0)) >= 100
+                    }
                   >
                     استكمال الدراسة
                   </button>
@@ -257,21 +313,25 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
                     <button
                       className={styles.actionButton}
                       onClick={(e) => handleFinalExamClick(exam, e)}
-                      disabled={Math.round(Number(exam.progress_percentage || 0)) < 100}
+                      disabled={
+                        Math.round(Number(exam.progress_percentage || 0)) < 100
+                      }
                     >
                       دخول الامتحان النهائي
                     </button>
                   )}
 
                   {/* عرض رسالة إذا لم يكن هناك اختبار نهائي */}
-                  {exam.has_final_exam === false && Math.round(Number(exam.progress_percentage || 0)) >= 100 && (
-                    <div className={styles.noExamMessage}>
-                      📚 هذا المقرر لا يحتوي على اختبار نهائي
-                    </div>
-                  )}
+                  {exam.has_final_exam === false &&
+                    Math.round(Number(exam.progress_percentage || 0)) >=
+                      100 && (
+                      <div className={styles.noExamMessage}>
+                        📚 هذا المقرر لا يحتوي على اختبار نهائي
+                      </div>
+                    )}
 
                   {/* طلب النتيجة والشهادة */}
-                  {testStatuses[exam.id]?.course_status === 'completed' && (
+                  {testStatuses[exam.id]?.course_status === "completed" && (
                     <button
                       className={styles.actionButton}
                       onClick={(e) => handleResultAndCertificateClick(exam, e)}
@@ -290,7 +350,10 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
       {!exams && totalPages > 1 && (
         <div className={styles.paginationControls}>
           <button
-            onClick={(e) => { e.stopPropagation(); handlePageChange(currentPage - 1); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePageChange(currentPage - 1);
+            }}
             disabled={currentPage === 1}
             className={styles.pageButton}
           >
@@ -302,7 +365,10 @@ const ExamCard: React.FC<ExamCardProps> = ({ showAll = false, exams, onExamSelec
           </span>
 
           <button
-            onClick={(e) => { e.stopPropagation(); handlePageChange(currentPage + 1); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePageChange(currentPage + 1);
+            }}
             disabled={currentPage === totalPages}
             className={styles.pageButton}
           >

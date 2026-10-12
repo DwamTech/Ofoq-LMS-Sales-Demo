@@ -1,7 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
+import Link from "next/link";
 
 interface PasswordData {
   currentPassword: string;
@@ -15,7 +14,11 @@ interface PasswordTabProps {
   onSave: () => void;
 }
 
-export default function PasswordTab({ passwordData, onPasswordChange, onSave }: PasswordTabProps) {
+export default function PasswordTab({
+  passwordData,
+  onPasswordChange,
+  onSave,
+}: PasswordTabProps) {
   return (
     <div className="password-section">
       <div className="password-notice">
@@ -25,11 +28,13 @@ export default function PasswordTab({ passwordData, onPasswordChange, onSave }: 
       <form className="settings-form">
         <div className="form-group">
           <label className="form-label">كلمة المرور الحالية</label>
-          <input 
-            type="password" 
+          <input
+            type="password"
             className="form-input"
             value={passwordData.currentPassword}
-            onChange={(e) => onPasswordChange('currentPassword', e.target.value)}
+            onChange={(e) =>
+              onPasswordChange("currentPassword", e.target.value)
+            }
             placeholder="أدخل كلمة المرور الحالية"
           />
           <Link href="/auth" className="forgot-password-link">
@@ -38,21 +43,23 @@ export default function PasswordTab({ passwordData, onPasswordChange, onSave }: 
         </div>
         <div className="form-group">
           <label className="form-label">كلمة المرور الجديدة</label>
-          <input 
-            type="password" 
+          <input
+            type="password"
             className="form-input"
             value={passwordData.newPassword}
-            onChange={(e) => onPasswordChange('newPassword', e.target.value)}
+            onChange={(e) => onPasswordChange("newPassword", e.target.value)}
             placeholder="أدخل كلمة المرور الجديدة"
           />
         </div>
         <div className="form-group">
           <label className="form-label">تأكيد كلمة المرور الجديدة</label>
-          <input 
-            type="password" 
+          <input
+            type="password"
             className="form-input"
             value={passwordData.confirmPassword}
-            onChange={(e) => onPasswordChange('confirmPassword', e.target.value)}
+            onChange={(e) =>
+              onPasswordChange("confirmPassword", e.target.value)
+            }
             placeholder="أعد إدخال كلمة المرور الجديدة"
           />
         </div>

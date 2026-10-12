@@ -1,19 +1,146 @@
 {
   "users": [
-    {"id":99001,"name":"سارة أحمد محمد","email":"student@preview.local","role":"student","status":"active"},
-    {"id":99002,"name":"إدارة منصتك التعليمية","email":"admin@preview.local","role":"admin","status":"active"},
-    {"id":99003,"name":"عمر خالد","email":"omar@preview.local","role":"student","status":"active"},
-    {"id":99004,"name":"مريم حسن","email":"maryam@preview.local","role":"student","status":"active"}
+    {
+      "id": 99001,
+      "name": "سارة أحمد محمد",
+      "email": "student@preview.local",
+      "role": "student",
+      "status": "active"
+    },
+    {
+      "id": 99002,
+      "name": "إدارة منصتك التعليمية",
+      "email": "admin@preview.local",
+      "role": "admin",
+      "status": "active"
+    },
+    {
+      "id": 99003,
+      "name": "عمر خالد",
+      "email": "omar@preview.local",
+      "role": "student",
+      "status": "active"
+    },
+    {
+      "id": 99004,
+      "name": "مريم حسن",
+      "email": "maryam@preview.local",
+      "role": "student",
+      "status": "active"
+    }
   ],
   "instructors": [
-    {"id":1,"name":"أحمد محمود","title":"مدرب تطوير الويب","bio":"خبرة في بناء التطبيقات وتصميم واجهات الاستخدام."},
-    {"id":2,"name":"نور أحمد","title":"مدربة تصميم وتجربة المستخدم","bio":"متخصصة في تصميم المنتجات الرقمية وتجربة التعلم."},
-    {"id":3,"name":"محمد علي","title":"مدرب تحليل البيانات","bio":"يساعد المتعلمين على تحويل البيانات إلى قرارات واضحة."}
+    {
+      "id": 301,
+      "name": "أحمد محمود",
+      "title": "مطور واجهات ويب",
+      "image": "/avatar.jpg",
+      "bio": "مطور واجهات ويب",
+      "rating": 4.8,
+      "courses_count": 2,
+      "students_count": 0,
+      "avg_rate": 4.8
+    },
+    {
+      "id": 302,
+      "name": "سارة حسن",
+      "title": "مصممة تجربة المستخدم",
+      "image": "/profile2.jpg",
+      "bio": "مصممة تجربة المستخدم",
+      "rating": 4.8,
+      "courses_count": 2,
+      "students_count": 0,
+      "avg_rate": 4.8
+    },
+    {
+      "id": 303,
+      "name": "محمد علي",
+      "title": "محلل بيانات",
+      "image": "/profile.jpg",
+      "bio": "محلل بيانات",
+      "rating": 4.8,
+      "courses_count": 2,
+      "students_count": 0,
+      "avg_rate": 4.8
+    },
+    {
+      "id": 304,
+      "name": "نور إبراهيم",
+      "title": "مديرة مشاريع",
+      "image": "/profile2.jpg",
+      "bio": "مديرة مشاريع",
+      "rating": 4.8,
+      "courses_count": 2,
+      "students_count": 0,
+      "avg_rate": 4.8
+    },
+    {
+      "id": 305,
+      "name": "مريم خالد",
+      "title": "متخصصة تسويق رقمي",
+      "image": "/profile2.jpg",
+      "bio": "متخصصة تسويق رقمي",
+      "rating": 4.8,
+      "courses_count": 2,
+      "students_count": 0,
+      "avg_rate": 4.8
+    },
+    {
+      "id": 306,
+      "name": "خالد يوسف",
+      "title": "مصمم تعليمي",
+      "image": "/avatar.jpg",
+      "bio": "مصمم تعليمي",
+      "rating": 4.8,
+      "courses_count": 2,
+      "students_count": 0,
+      "avg_rate": 4.8
+    }
   ],
   "questions": [
-    {"id":1,"question":"ما أفضل بداية لتعلم مهارة جديدة؟","options":["تحديد هدف واضح والتطبيق العملي","تجنب التدريب","الاكتفاء بالعناوين","تجاهل التقييم"],"answer":0},
-    {"id":2,"question":"كيف تتأكد من فهمك للدرس؟","options":["تطبيق الفكرة في مثال عملي","حفظ عنوان الدرس فقط","تخطي الأمثلة","عدم طرح الأسئلة"],"answer":0},
-    {"id":3,"question":"ما فائدة تقسيم المشروع إلى خطوات؟","options":["متابعة التقدم وتحسين التنفيذ","زيادة التعقيد فقط","إلغاء التخطيط","تجنب مراجعة النتائج"],"answer":0},
-    {"id":4,"question":"متى تراجع نتيجة عملك؟","options":["بعد كل مرحلة لتحسين الجودة","لا أراجعها","قبل البدء فقط","بعد حذف المشروع"],"answer":0}
+    {
+      "id": 1,
+      "question": "ما أفضل بداية لتعلم مهارة جديدة؟",
+      "options": [
+        "تحديد هدف واضح والتطبيق العملي",
+        "تجنب التدريب",
+        "الاكتفاء بالعناوين",
+        "تجاهل التقييم"
+      ],
+      "answer": 0
+    },
+    {
+      "id": 2,
+      "question": "كيف تتأكد من فهمك للدرس؟",
+      "options": [
+        "تطبيق الفكرة في مثال عملي",
+        "حفظ عنوان الدرس فقط",
+        "تخطي الأمثلة",
+        "عدم طرح الأسئلة"
+      ],
+      "answer": 0
+    },
+    {
+      "id": 3,
+      "question": "ما فائدة تقسيم المشروع إلى خطوات؟",
+      "options": [
+        "متابعة التقدم وتحسين التنفيذ",
+        "زيادة التعقيد فقط",
+        "إلغاء التخطيط",
+        "تجنب مراجعة النتائج"
+      ],
+      "answer": 0
+    },
+    {
+      "id": 4,
+      "question": "متى تراجع نتيجة عملك؟",
+      "options": [
+        "بعد كل مرحلة لتحسين الجودة",
+        "لا أراجعها",
+        "قبل البدء فقط",
+        "بعد حذف المشروع"
+      ],
+      "answer": 0
+    }
   ]
 }

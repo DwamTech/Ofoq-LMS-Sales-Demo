@@ -1,15 +1,20 @@
-'use client';
-import { BrandLogo } from '@/components/brand/BrandLogo'
-import { brand, publicBrandText } from '@/lib/brand'
+"use client";
+import { BrandLogo } from "@/components/brand/BrandLogo";
+import { brand, publicBrandText } from "@/lib/brand";
 
-import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
-import { isAuthenticated, getCurrentUser, signout, User } from '../utils/authService';
-import { getBackendAssetUrl } from '../utils/url';
-import clsx from 'clsx';
-import styles from './HomeHeader.module.css';
-import ph from './ProfileHeader.module.css';
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
+import {
+  isAuthenticated,
+  getCurrentUser,
+  signout,
+  User,
+} from "../utils/authService";
+import { getBackendAssetUrl } from "../utils/url";
+import clsx from "clsx";
+import styles from "./HomeHeader.module.css";
+import ph from "./ProfileHeader.module.css";
 
 const ProfileHeader = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -52,22 +57,25 @@ const ProfileHeader = () => {
       setImageTimestamp(Date.now());
     };
 
-    window.addEventListener('userDataUpdated', handleUserDataUpdate);
+    window.addEventListener("userDataUpdated", handleUserDataUpdate);
 
     return () => {
-      window.removeEventListener('userDataUpdated', handleUserDataUpdate);
+      window.removeEventListener("userDataUpdated", handleUserDataUpdate);
     };
   }, []);
 
   // Close profile menu on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target as Node)) {
+      if (
+        profileMenuRef.current &&
+        !profileMenuRef.current.contains(event.target as Node)
+      ) {
         setIsProfileMenuOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const toggleProfileMenu = () => {
@@ -80,17 +88,17 @@ const ProfileHeader = () => {
     try {
       await signout();
     } catch (error) {
-      console.error('Logout error:', error);
+      console.error("Logout error:", error);
     } finally {
       setIsLoggedIn(false);
       setUser(null);
-      router.push('/auth');
+      router.push("/auth");
     }
   };
 
   const profileImageUrl = user?.profile_picture
-    ? `${getBackendAssetUrl(user.profile_picture)}${getBackendAssetUrl(user.profile_picture).includes('?') ? '&' : '?'}t=${imageTimestamp}`
-    : '/avatar.jpg';
+    ? `${getBackendAssetUrl(user.profile_picture)}${getBackendAssetUrl(user.profile_picture).includes("?") ? "&" : "?"}t=${imageTimestamp}`
+    : "/avatar.jpg";
 
   if (!isMounted) {
     return null;
@@ -98,64 +106,140 @@ const ProfileHeader = () => {
 
   return (
     <>
-      <header className={ph['profile-header']}>
-        <div className={ph['header-container']}>
+      <header className={ph["profile-header"]}>
+        <div className={ph["header-container"]}>
           {/* Logo */}
-          {!(pathname?.startsWith('/dashboard') || pathname?.startsWith('/user') || pathname?.startsWith('/admin')) && (
-            <div className={ph['header-logo']}>
+          {!(
+            pathname?.startsWith("/dashboard") ||
+            pathname?.startsWith("/user") ||
+            pathname?.startsWith("/admin")
+          ) && (
+            <div className={ph["header-logo"]}>
               <Link href="/">
-                <BrandLogo className={ph['logo-image']}/>
+                <BrandLogo className={ph["logo-image"]} />
               </Link>
             </div>
           )}
 
           {/* Desktop Navigation Links - Centered */}
-          <nav className={clsx(ph['header-nav'], ph['desktop-nav'])}>
-            <Link href="/" prefetch={false} className={clsx(ph['nav-link1'], pathname === '/' && ph['active'])}>الرئيسية</Link>
-            <Link href="/diploms" prefetch={false} className={clsx(ph['nav-link1'], (pathname?.startsWith('/diploms') || pathname?.startsWith('/course-details')) && ph['active'])}>دبلومات {brand.name}</Link>
-            <Link href="/community" prefetch={false} className={clsx(ph['nav-link1'], pathname?.startsWith('/community') && ph['active'])}>مجتمع {brand.name}</Link>
-            <Link href="/user/fav" prefetch={false} className={clsx(ph['nav-link1'], pathname?.startsWith('/user/fav') && ph['active'])}>المفضلة</Link>
-            <Link href="/about" prefetch={false} className={clsx(ph['nav-link1'], pathname?.startsWith('/about') && ph['active'])}>من نحن</Link>
+          <nav className={clsx(ph["header-nav"], ph["desktop-nav"])}>
+            <Link
+              href="/"
+              prefetch={false}
+              className={clsx(
+                ph["nav-link1"],
+                pathname === "/" && ph["active"],
+              )}
+            >
+              الرئيسية
+            </Link>
+            <Link
+              href="/diploms"
+              prefetch={false}
+              className={clsx(
+                ph["nav-link1"],
+                (pathname?.startsWith("/diploms") ||
+                  pathname?.startsWith("/course-details")) &&
+                  ph["active"],
+              )}
+            >
+              دبلومات {brand.name}
+            </Link>
+            <Link
+              href="/community"
+              prefetch={false}
+              className={clsx(
+                ph["nav-link1"],
+                pathname?.startsWith("/community") && ph["active"],
+              )}
+            >
+              مجتمع {brand.name}
+            </Link>
+            <Link
+              href="/user/fav"
+              prefetch={false}
+              className={clsx(
+                ph["nav-link1"],
+                pathname?.startsWith("/user/fav") && ph["active"],
+              )}
+            >
+              المفضلة
+            </Link>
+            <Link
+              href="/about"
+              prefetch={false}
+              className={clsx(
+                ph["nav-link1"],
+                pathname?.startsWith("/about") && ph["active"],
+              )}
+            >
+              من نحن
+            </Link>
           </nav>
 
           {/* Mobile Hamburger Button */}
           <button
-            className={clsx(ph['hamburger-btn'], ph['mobile-only'])}
+            className={clsx(ph["hamburger-btn"], ph["mobile-only"])}
             onClick={toggleSidebar}
             aria-label="فتح القائمة"
           >
-            <span className={ph['hamburger-line']}></span>
-            <span className={ph['hamburger-line']}></span>
-            <span className={ph['hamburger-line']}></span>
+            <span className={ph["hamburger-line"]}></span>
+            <span className={ph["hamburger-line"]}></span>
+            <span className={ph["hamburger-line"]}></span>
           </button>
 
           {/* Profile Menu (reused from HomeHeader for consistency) */}
-          <div className={ph['header-profile']} ref={profileMenuRef}>
+          <div className={ph["header-profile"]} ref={profileMenuRef}>
             {isLoggedIn ? (
-              <div className={styles['profile-menu-container']} onClick={toggleProfileMenu}>
-                <div className={styles['profile-info']}>
-                  <div className={clsx(styles['profile-avatar'], avatarClicked && styles['click-effect'])} ref={avatarRef}>
-                    <img src={profileImageUrl} alt="Profile" width={36} height={36} className={styles['profile-image']} style={{ borderRadius: '50%', objectFit: 'cover' }} />
+              <div
+                className={styles["profile-menu-container"]}
+                onClick={toggleProfileMenu}
+              >
+                <div className={styles["profile-info"]}>
+                  <div
+                    className={clsx(
+                      styles["profile-avatar"],
+                      avatarClicked && styles["click-effect"],
+                    )}
+                    ref={avatarRef}
+                  >
+                    <img
+                      src={profileImageUrl}
+                      alt="Profile"
+                      width={36}
+                      height={36}
+                      className={styles["profile-image"]}
+                      style={{ borderRadius: "50%", objectFit: "cover" }}
+                    />
                   </div>
-                  <div className={styles['profile-details']}>
-                    <span className={styles['profile-name']}>مرحباً، {publicBrandText(user?.name ?? "")}</span>
+                  <div className={styles["profile-details"]}>
+                    <span className={styles["profile-name"]}>
+                      مرحباً، {publicBrandText(user?.name ?? "")}
+                    </span>
                   </div>
                 </div>
 
                 {isProfileMenuOpen && (
-                  <div className={styles['profile-dropdown']} onClick={(e) => e.stopPropagation()}>
+                  <div
+                    className={styles["profile-dropdown"]}
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <Link
-                      href={user?.role === 'admin' ? '/admin' : '/user'}
+                      href={user?.role === "admin" ? "/admin" : "/user"}
                       prefetch={false}
-                      className={styles['dropdown-item']}
+                      className={styles["dropdown-item"]}
                       onClick={() => setIsProfileMenuOpen(false)}
                     >
                       لوحة التحكم
                     </Link>
                     <Link
-                      href={user?.role === 'admin' ? '/admin/profile-management' : '/user/settings'}
+                      href={
+                        user?.role === "admin"
+                          ? "/admin/profile-management"
+                          : "/user/settings"
+                      }
                       prefetch={false}
-                      className={styles['dropdown-item']}
+                      className={styles["dropdown-item"]}
                       onClick={() => setIsProfileMenuOpen(false)}
                     >
                       إدارة الحساب الشخصي
@@ -163,13 +247,19 @@ const ProfileHeader = () => {
                     <Link
                       href="/user/fav"
                       prefetch={false}
-                      className={styles['dropdown-item']}
+                      className={styles["dropdown-item"]}
                       onClick={() => setIsProfileMenuOpen(false)}
                     >
                       المفضلة
                     </Link>
-                    <div className={styles['dropdown-separator']}></div>
-                    <button className={clsx(styles['dropdown-item'], styles['logout'])} onClick={handleLogout}>
+                    <div className={styles["dropdown-separator"]}></div>
+                    <button
+                      className={clsx(
+                        styles["dropdown-item"],
+                        styles["logout"],
+                      )}
+                      onClick={handleLogout}
+                    >
                       تسجيل الخروج
                     </button>
                   </div>
@@ -177,8 +267,20 @@ const ProfileHeader = () => {
               </div>
             ) : (
               <>
-                <Link href="/auth?tab=login" prefetch={false} className={clsx(styles['auth-btn'], styles['login-btn1'])}>تسجيل دخول</Link>
-                <Link href="/auth?tab=signup" prefetch={false} className={clsx(styles['auth-btn'], styles['signup-btn'])}>إنشاء حساب</Link>
+                <Link
+                  href="/auth?tab=login"
+                  prefetch={false}
+                  className={clsx(styles["auth-btn"], styles["login-btn1"])}
+                >
+                  تسجيل دخول
+                </Link>
+                <Link
+                  href="/auth?tab=signup"
+                  prefetch={false}
+                  className={clsx(styles["auth-btn"], styles["signup-btn"])}
+                >
+                  إنشاء حساب
+                </Link>
               </>
             )}
           </div>
@@ -186,20 +288,72 @@ const ProfileHeader = () => {
       </header>
 
       {/* Mobile Sidebar */}
-      <div className={clsx(ph['mobile-sidebar'], isSidebarOpen && ph['open'])}>
-        <div className={ph['sidebar-overlay']} onClick={closeSidebar}></div>
-        <div className={ph['sidebar-content']}>
-          <div className={ph['sidebar-header']}>
-            <button className={ph['close-btn']} onClick={closeSidebar}>
+      <div className={clsx(ph["mobile-sidebar"], isSidebarOpen && ph["open"])}>
+        <div className={ph["sidebar-overlay"]} onClick={closeSidebar}></div>
+        <div className={ph["sidebar-content"]}>
+          <div className={ph["sidebar-header"]}>
+            <button className={ph["close-btn"]} onClick={closeSidebar}>
               <span>&times;</span>
             </button>
           </div>
-          <nav className={ph['sidebar-nav']}>
-            <Link href="/" prefetch={false} className={clsx(ph['sidebar-link'], pathname === '/' && ph['sidebar-active'])} onClick={closeSidebar}>الرئيسية</Link>
-            <Link href="/diploms" prefetch={false} className={clsx(ph['sidebar-link'], (pathname?.startsWith('/diploms') || pathname?.startsWith('/course-details')) && ph['sidebar-active'])} onClick={closeSidebar}>دبلومات {brand.name}</Link>
-            <Link href="/community" prefetch={false} className={clsx(ph['sidebar-link'], pathname?.startsWith('/community') && ph['sidebar-active'])} onClick={closeSidebar}>مجتمع {brand.name}</Link>
-            <Link href="/favorites" prefetch={false} className={clsx(ph['sidebar-link'], pathname?.startsWith('/favorites') && ph['sidebar-active'])} onClick={closeSidebar}>المفضلة</Link>
-            <Link href="/about" prefetch={false} className={clsx(ph['sidebar-link'], pathname?.startsWith('/about') && ph['sidebar-active'])} onClick={closeSidebar}>من نحن</Link>
+          <nav className={ph["sidebar-nav"]}>
+            <Link
+              href="/"
+              prefetch={false}
+              className={clsx(
+                ph["sidebar-link"],
+                pathname === "/" && ph["sidebar-active"],
+              )}
+              onClick={closeSidebar}
+            >
+              الرئيسية
+            </Link>
+            <Link
+              href="/diploms"
+              prefetch={false}
+              className={clsx(
+                ph["sidebar-link"],
+                (pathname?.startsWith("/diploms") ||
+                  pathname?.startsWith("/course-details")) &&
+                  ph["sidebar-active"],
+              )}
+              onClick={closeSidebar}
+            >
+              دبلومات {brand.name}
+            </Link>
+            <Link
+              href="/community"
+              prefetch={false}
+              className={clsx(
+                ph["sidebar-link"],
+                pathname?.startsWith("/community") && ph["sidebar-active"],
+              )}
+              onClick={closeSidebar}
+            >
+              مجتمع {brand.name}
+            </Link>
+            <Link
+              href="/favorites"
+              prefetch={false}
+              className={clsx(
+                ph["sidebar-link"],
+                pathname?.startsWith("/favorites") && ph["sidebar-active"],
+              )}
+              onClick={closeSidebar}
+            >
+              المفضلة
+            </Link>
+            <Link
+              href="/about"
+              prefetch={false}
+              className={clsx(
+                ph["sidebar-link"],
+                pathname?.startsWith("/about") && ph["sidebar-active"],
+              )}
+              onClick={closeSidebar}
+            >
+              من نحن
+            </Link>
           </nav>
         </div>
       </div>

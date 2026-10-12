@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { useStudent } from "./StudentProvider";
 import { PageIntro } from "./LearningPrimitives";
-import { CertificatePreview } from '@/components/brand/CertificatePreview';
+import { CertificatePreview } from "@/components/brand/CertificatePreview";
 import {
   issuedCertificate,
   downloadStudentCertificate,
@@ -21,6 +21,7 @@ import {
 } from "@/utils/studentJourney";
 import { BrandMark } from "@/components/brand/BrandMark";
 import styles from "./Student.module.css";
+import WorkspaceSelect from "@/components/ui/WorkspaceSelect";
 
 export default function StudentCertificates() {
   const { certificates, user } = useStudent();
@@ -66,7 +67,8 @@ export default function StudentCertificates() {
         eyebrow="ACHIEVEMENT / SOMETHING TO KEEP"
         title="للإنجاز، أثر يبقى."
       >
-        شهاداتك الصادرة باسمك. يمكنك معاينتها، وتنزيل نسخة PDF، والتحقق من رقمها.
+        شهاداتك الصادرة باسمك. يمكنك معاينتها، وتنزيل نسخة PDF، والتحقق من
+        رقمها.
       </PageIntro>
       <div className={styles.certificateIntro}>
         <Award size={42} />
@@ -78,21 +80,22 @@ export default function StudentCertificates() {
           عرض كل الإنجازات <ArrowUpLeft size={18} />
         </Link>
       </div>
-      <div className={styles.filters} aria-label="أنواع الشهادات">
-        {[
-          ["all", "كل الشهادات"],
-          ["diploma", "الدبلومات"],
-          ["course", "المقررات"],
-        ].map(([key, label]) => (
-          <button
-            key={key}
-            type="button"
-            aria-pressed={filter === key}
-            onClick={() => setFilter(key)}
-          >
-            {label}
-          </button>
-        ))}
+      <div className={styles.selectFilter}>
+        <WorkspaceSelect
+          value={filter}
+          onValueChange={setFilter}
+          ariaLabel="أنواع الشهادات"
+        >
+          {[
+            ["all", "كل الشهادات"],
+            ["diploma", "الدبلومات"],
+            ["course", "المقررات"],
+          ].map(([key, label]) => (
+            <option key={key} value={key}>
+              {label}
+            </option>
+          ))}
+        </WorkspaceSelect>
       </div>
       {error && (
         <p role="alert" className={styles.examNotice}>
@@ -128,7 +131,12 @@ export default function StudentCertificates() {
               </span>
             </div>
             <div className={styles.certificateBody}>
-              {certificate.serial_number?.startsWith('OFOQ-') && <p>ملف تاريخي صُدر بالهوية السابقة؛ رقم الشهادة ومرجع التحقق محفوظان.</p>}
+              {certificate.serial_number?.startsWith("OFOQ-") && (
+                <p>
+                  ملف تاريخي صُدر بالهوية السابقة؛ رقم الشهادة ومرجع التحقق
+                  محفوظان.
+                </p>
+              )}
               <span className={styles.badge} data-complete="true">
                 <ShieldCheck size={15} />
                 شهادة صادرة ·{" "}
@@ -199,10 +207,14 @@ export default function StudentCertificates() {
               <X />
             </button>
           </div>
-          <p>
-            معاينة الشهادة وبيانات الإنجاز المحفوظة في تجربتك المحلية.
-          </p>
-          <CertificatePreview studentName={preview.user_name} courseTitle={preview.course_title} grade="ناجح" date={preview.issued_at} serial={preview.serial_number}/>
+          <p>معاينة الشهادة وبيانات الإنجاز المحفوظة في تجربتك المحلية.</p>
+          <CertificatePreview
+            studentName={preview.user_name}
+            courseTitle={preview.course_title}
+            grade="ناجح"
+            date={preview.issued_at}
+            serial={preview.serial_number}
+          />
           <dl>
             <dt>الطالب</dt>
             <dd>{preview.user_name || user.name}</dd>

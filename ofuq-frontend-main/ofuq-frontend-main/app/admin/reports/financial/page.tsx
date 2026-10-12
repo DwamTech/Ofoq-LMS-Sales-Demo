@@ -1,15 +1,4 @@
-'use client';
-
-import React from 'react';
-import FinancialReportsTable from '../../../../components/FinancialReportsTable';
-import styles from './FinancialReports.module.css';
-
-const FinancialReportsPage = () => {
-  return (
-    <div className={styles["financialPage"]}>
-      <FinancialReportsTable />
-    </div>
-  );
-};
-
-export default FinancialReportsPage;
+// AdminWorkspace selects the local view from the current route.
+export default function AdminPage() {
+  return null;
+}

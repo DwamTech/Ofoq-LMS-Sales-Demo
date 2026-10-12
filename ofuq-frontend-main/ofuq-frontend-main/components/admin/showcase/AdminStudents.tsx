@@ -16,7 +16,6 @@ import {
   Badge,
   Intro,
   Metric,
-  MutationNote,
   Pagination,
   Panel,
   Progress,
@@ -89,7 +88,7 @@ export function Students() {
       ) : (
         <Panel
           title="دليل الطلاب"
-          description="بحث وترقيم صفحات على الخادم؛ لا نجلب جميع الطلاب إلى المتصفح"
+          description="بحث في سجلات الطلاب المحفوظة محليًا"
         >
           <Table
             caption="الطلاب وتسجيلاتهم التعليمية"
@@ -122,7 +121,6 @@ export function Students() {
           <Pagination meta={read.data.pagination} onPage={setPage} />
         </Panel>
       )}
-      <MutationNote label="إدارة حسابات الطلاب وحظرها" />
     </>
   );
 }
@@ -352,7 +350,6 @@ export function StudentRecord({
           )}
         </>
       )}
-      <MutationNote label="تعديل حساب الطالب أو إصدار شهادة" />
     </>
   );
 }
@@ -379,7 +376,6 @@ export function CertificateOverview() {
           <Award size={18} /> افتح دليل الطلاب <ArrowUpLeft size={17} />
         </Link>
       </Panel>
-      <MutationNote label="إصدار شهادات الدبلومات" />
     </>
   );
 }
@@ -456,7 +452,7 @@ export function Exams({
   return (
     <>
       <Intro
-        eyebrow="اختبارات / عرض للقراءة فقط"
+        eyebrow="اختبارات / أسئلة ونتائج محلية"
         title={exam?.exam.title ?? "تقييم الدرس"}
         description={
           exam?.course.title ??
@@ -544,7 +540,6 @@ export function Exams({
         </div>
         {!questions.length && <p>لا توجد أسئلة محفوظة لهذا الاختبار.</p>}
       </Panel>
-      <MutationNote label="إضافة وتعديل أسئلة الاختبار" />
     </>
   );
 }

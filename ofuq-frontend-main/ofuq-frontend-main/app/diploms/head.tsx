@@ -1,7 +1,6 @@
-import { brand } from '@/lib/brand'
+import { brand } from "@/lib/brand";
 export default function Head() {
-  const description =
-    `استكشف دبلومات ${brand.name}: برامج احترافية تجمع الأصالة والمعاصرة في الإعلام والعلوم الشرعية والتقنية، بتعلم بالممارسة ومشروعات تطبيقية ومرونة في التحديث.`;
+  const description = `استكشف دبلومات ${brand.name}: برامج احترافية تجمع الأصالة والمعاصرة في الإعلام والعلوم الشرعية والتقنية، بتعلم بالممارسة ومشروعات تطبيقية ومرونة في التحديث.`;
   return (
     <>
       <meta name="description" content={description} />
@@ -11,11 +10,11 @@ export default function Head() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
             name: `دبلومات ${brand.name}`,
             description,
-            url: '/diploms',
+            url: "/diploms",
           }),
         }}
       />

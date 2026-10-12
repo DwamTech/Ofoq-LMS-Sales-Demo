@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./MyDiplomas.module.css";
 import { getMyDiplomas, type MyDiploma } from "@/utils/categoryService";
@@ -20,8 +20,11 @@ export default function MyDiplomasPage() {
       try {
         const data = await getMyDiplomas();
         if (mounted) setDiplomas(data);
-      } catch (e: any) {
-        if (mounted) setError(e?.message || "حدث خطأ غير متوقع");
+      } catch (e) {
+        if (mounted)
+          setError(
+            (e instanceof Error ? e.message : undefined) || "حدث خطأ غير متوقع",
+          );
       } finally {
         if (mounted) setLoading(false);
       }
@@ -48,22 +51,20 @@ export default function MyDiplomasPage() {
       {!loading && !error && diplomas.length > 0 && (
         <div className={styles.grid}>
           {diplomas.map((item) => {
-            const coverUrl = getBackendAssetUrl(
-              item.category?.cover_image_url
-            );
+            const coverUrl = getBackendAssetUrl(item.category?.cover_image_url);
             const slug = item.category?.slug || String(item.category?.id || "");
             const statusLabel =
               item.status === "active"
                 ? "فعال"
                 : item.status === "pending_payment"
-                ? "بانتظار الدفع"
-                : item.status;
+                  ? "بانتظار الدفع"
+                  : item.status;
             const badgeClass =
               item.status === "active"
                 ? styles.badgeActive
                 : item.status === "pending_payment"
-                ? styles.badgePending
-                : styles.badgeDefault;
+                  ? styles.badgePending
+                  : styles.badgeDefault;
             return (
               <div key={`my-diploma-${slug}`} className={styles.card}>
                 {coverUrl && (
@@ -78,15 +79,23 @@ export default function MyDiplomasPage() {
                     <h2 className={styles.cardTitle}>
                       {item.category?.name || "اسم الدبلومة"}
                     </h2>
-                    <span className={`${styles.badge} ${badgeClass}`}>{statusLabel}</span>
+                    <span className={`${styles.badge} ${badgeClass}`}>
+                      {statusLabel}
+                    </span>
                   </div>
                   {/* Progress Bar */}
                   {(() => {
-                    const p = Math.max(0, Math.min(100, Math.round(item.progress || 0)));
+                    const p = Math.max(
+                      0,
+                      Math.min(100, Math.round(item.progress || 0)),
+                    );
                     return (
                       <div className={styles.progress}>
                         <div className={styles.progressTrack}>
-                          <div className={styles.progressFill} style={{ width: `${p}%` }} />
+                          <div
+                            className={styles.progressFill}
+                            style={{ width: `${p}%` }}
+                          />
                         </div>
                         <div className={styles.progressInfo}>
                           {p === 100 ? (
@@ -102,17 +111,20 @@ export default function MyDiplomasPage() {
                     <Link href={`/diplomas/${slug}`} className={styles.btn}>
                       بدء التعلم
                     </Link>
-                    {item.can_download_certificate && item.certificate?.file_url && (
-                      <button
-                        className={styles.btn}
-                        onClick={() => {
-                          const url = getDownloadUrl(item.certificate!.file_url!);
-                          if (url) window.open(url, "_blank");
-                        }}
-                      >
-                        تحميل الشهادة
-                      </button>
-                    )}
+                    {item.can_download_certificate &&
+                      item.certificate?.file_url && (
+                        <button
+                          className={styles.btn}
+                          onClick={() => {
+                            const url = getDownloadUrl(
+                              item.certificate!.file_url!,
+                            );
+                            if (url) window.open(url, "_blank");
+                          }}
+                        >
+                          تحميل الشهادة
+                        </button>
+                      )}
                   </div>
                 </div>
               </div>

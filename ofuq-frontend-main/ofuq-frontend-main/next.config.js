@@ -1,17 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  distDir: process.env.FRONTEND_VERIFY_OUTPUT || ".next",
+  experimental: { cpus: 2 },
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
+    // Production builds must pass lint validation.
+    ignoreDuringBuilds: false,
   },
   typescript: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has type errors.
-    ignoreBuildErrors: true,
+    // Production builds must pass TypeScript validation.
+    ignoreBuildErrors: false,
   },
   images: {
-    domains: ['localhost'],
+    domains: ["localhost"],
   },
   webpack(config) {
     config.module.rules.push({
@@ -19,7 +19,7 @@ const nextConfig = {
       issuer: { and: [/\.(js|ts|md)x?$/] },
       use: [
         {
-          loader: '@svgr/webpack',
+          loader: "@svgr/webpack",
           options: {
             prettier: false,
             svgo: true,
@@ -32,6 +32,6 @@ const nextConfig = {
 
     return config;
   },
-}
+};
 
 module.exports = nextConfig;

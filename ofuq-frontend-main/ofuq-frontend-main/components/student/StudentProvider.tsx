@@ -1,5 +1,5 @@
 "use client";
-import { brand } from '@/lib/brand'
+import { brand } from "@/lib/brand";
 import {
   createContext,
   useContext,
@@ -13,8 +13,8 @@ import {
   type StudentJourney,
 } from "@/utils/studentJourney";
 import styles from "./Student.module.css";
-import { FRONTEND_CHANGE } from '@/lib/frontendStore';
-import { localStudentJourney } from '@/lib/localWorkspaceData';
+import { FRONTEND_CHANGE } from "@/lib/frontendStore";
+import { localStudentJourney } from "@/lib/localWorkspaceData";
 
 const Context = createContext<StudentJourney | null>(null);
 export function useStudent() {
@@ -27,7 +27,15 @@ export function StudentProvider({ children }: { children: ReactNode }) {
   const [data, setData] = useState<StudentJourney | null>(null);
   const [error, setError] = useState(false);
   const [retry, setRetry] = useState(0);
-  useEffect(()=>{const refresh=()=>setData(localStudentJourney());window.addEventListener(FRONTEND_CHANGE,refresh);window.addEventListener('storage',refresh);return()=>{window.removeEventListener(FRONTEND_CHANGE,refresh);window.removeEventListener('storage',refresh);};},[]);
+  useEffect(() => {
+    const refresh = () => setData(localStudentJourney());
+    window.addEventListener(FRONTEND_CHANGE, refresh);
+    window.addEventListener("storage", refresh);
+    return () => {
+      window.removeEventListener(FRONTEND_CHANGE, refresh);
+      window.removeEventListener("storage", refresh);
+    };
+  }, []);
   useEffect(() => {
     const controller = new AbortController();
     let active = true;

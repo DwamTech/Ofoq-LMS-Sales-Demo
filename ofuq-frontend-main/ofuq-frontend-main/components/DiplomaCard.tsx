@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { ProgramArtwork } from './brand/ProgramArtwork';
-import { publicDescription, publicPrice } from './brand/publicContent';
-import styles from './DiplomaCard.module.css';
+import Link from "next/link";
+import { ProgramArtwork } from "./brand/ProgramArtwork";
+import { publicDescription, publicPrice } from "./brand/publicContent";
+import styles from "./DiplomaCard.module.css";
 
 export interface DiplomaCardProps {
   id: string;
@@ -17,10 +17,10 @@ export interface DiplomaCardProps {
 }
 
 const truncate = (text: string, max: number = 140): string => {
-  if (!text) return '';
+  if (!text) return "";
   const clean = String(text).trim();
   if (clean.length <= max) return clean;
-  return clean.slice(0, Math.max(0, max - 1)) + '…';
+  return clean.slice(0, Math.max(0, max - 1)) + "…";
 };
 
 export default function DiplomaCard({
@@ -34,27 +34,41 @@ export default function DiplomaCard({
   coursesCount,
 }: DiplomaCardProps) {
   const href = `/diplomas/${slug}`; // رابط صفحة تفاصيل الدبلومة
-  const imgSrc = image || '/logo.png'; // صورة افتراضية عند غياب الصورة
+  const imgSrc = image || "/logo.png"; // صورة افتراضية عند غياب الصورة
   const displayPrice = publicPrice(price, isFree);
 
   return (
-    <Link href={href} prefetch={false} className={styles['diploma-card']} data-id={id}>
-      <div className={styles['diploma-card-image-wrapper']}>
-        <ProgramArtwork title={name} image={imgSrc} identity={slug} className={styles['diploma-card-image']} />
+    <Link
+      href={href}
+      prefetch={false}
+      className={styles["diploma-card"]}
+      data-id={id}
+    >
+      <div className={styles["diploma-card-image-wrapper"]}>
+        <ProgramArtwork
+          title={name}
+          image={imgSrc}
+          identity={slug}
+          className={styles["diploma-card-image"]}
+        />
       </div>
 
-      <div className={styles['diploma-card-content']}>
-        <h3 className={styles['diploma-card-title']}>{name}</h3>
-        <p className={styles['diploma-card-description']}>{truncate(publicDescription(description))}</p>
+      <div className={styles["diploma-card-content"]}>
+        <h3 className={styles["diploma-card-title"]}>{name}</h3>
+        <p className={styles["diploma-card-description"]}>
+          {truncate(publicDescription(description))}
+        </p>
 
-        <div className={styles['diploma-card-meta']}>
-          <span className={styles['diploma-card-price']}>{displayPrice}</span>
-          {typeof coursesCount === 'number' && (
-            <span className={styles['diploma-card-courses']}>عدد المقررات: {coursesCount}</span>
+        <div className={styles["diploma-card-meta"]}>
+          <span className={styles["diploma-card-price"]}>{displayPrice}</span>
+          {typeof coursesCount === "number" && (
+            <span className={styles["diploma-card-courses"]}>
+              عدد المقررات: {coursesCount}
+            </span>
           )}
         </div>
 
-        <span className={styles['diploma-card-button']}>عرض التفاصيل</span>
+        <span className={styles["diploma-card-button"]}>عرض التفاصيل</span>
       </div>
     </Link>
   );

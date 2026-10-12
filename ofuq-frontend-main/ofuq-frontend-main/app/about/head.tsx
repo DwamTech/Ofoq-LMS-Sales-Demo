@@ -1,7 +1,6 @@
-import { brand } from '@/lib/brand'
+import { brand } from "@/lib/brand";
 export default function Head() {
-  const description =
-    `${brand.name}: مؤسسة تعليمية رائدة تقدّم برامج دبلوم نوعية بمنهج متكامل يجمع العلوم الشرعية والتربوية والتقنية والإعلامية لإعداد كفاءات مؤثرة وفاعلة.`;
+  const description = `${brand.name}: مؤسسة تعليمية رائدة تقدّم برامج دبلوم نوعية بمنهج متكامل يجمع العلوم الشرعية والتربوية والتقنية والإعلامية لإعداد كفاءات مؤثرة وفاعلة.`;
   return (
     <>
       <meta name="description" content={description} />
@@ -11,16 +10,16 @@ export default function Head() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'AboutPage',
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
             name: `عن ${brand.name}`,
             description,
-            url: '/about',
+            url: "/about",
             mainEntity: {
-              '@type': 'Organization',
+              "@type": "Organization",
               name: brand.name,
-              url: '/',
-              logo: '/logo.png',
+              url: "/",
+              logo: "/logo.png",
             },
           }),
         }}

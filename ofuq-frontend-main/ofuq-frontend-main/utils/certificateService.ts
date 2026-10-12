@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import apiClient from './apiClient';
-import { getBackendAssetUrl } from './url';
-import { http } from '@/lib/http';
+import apiClient from "./apiClient";
+import { getBackendAssetUrl } from "./url";
+import { http } from "@/lib/http";
 
 /**
  * واجهة شهادة الدبلومة (الجديدة)
@@ -10,16 +10,16 @@ import { http } from '@/lib/http';
  */
 export interface DiplomaCertificate {
   id: number;
-  uuid: string;         // معرف التحقق الفريد
+  uuid: string; // معرف التحقق الفريد
   diploma_name: string; // اسم الدبلومة (سيأتي من الباك إند)
   course_title?: string; // اسم المقرر (إن وجد)
-  user_name: string;    // اسم الطالب (سيأتي من الباك إند)
-  issued_at: string;    // تاريخ الإصدار
-  file_path: string;    // المسار الكامل لملف PDF (إن توفر)
-  qr_path: string;      // المسار الكامل لصورة QR Code (إن توفر)
+  user_name: string; // اسم الطالب (سيأتي من الباك إند)
+  issued_at: string; // تاريخ الإصدار
+  file_path: string; // المسار الكامل لملف PDF (إن توفر)
+  qr_path: string; // المسار الكامل لصورة QR Code (إن توفر)
   category_id?: number; // معرف القسم/الدبلومة لاستخدامه في تنزيل الشهادة
-  course_id?: number;   // إن كانت شهادة كورس (لدعم التوافق)
-  type?: 'diploma' | 'course'; // نوع الشهادة عند الحاجة
+  course_id?: number; // إن كانت شهادة كورس (لدعم التوافق)
+  type?: "diploma" | "course"; // نوع الشهادة عند الحاجة
 }
 
 /**
@@ -46,7 +46,7 @@ export interface VerifiedCertificateData {
   user_name: string;
   diploma_name: string;
   issued_at: string;
-  status: 'Valid' | 'Invalid'; // حالة الشهادة
+  status: "Valid" | "Invalid"; // حالة الشهادة
 }
 
 /**
@@ -55,7 +55,7 @@ export interface VerifiedCertificateData {
  */
 export async function getMyCertificates(): Promise<DiplomaCertificate[]> {
   try {
-    const res = await apiClient.get('/my-certificates');
+    const res = await apiClient.get("/my-certificates");
     const data = res.data;
     const list = Array.isArray(data?.certificates)
       ? data.certificates
@@ -66,21 +66,31 @@ export async function getMyCertificates(): Promise<DiplomaCertificate[]> {
     // تحويل البيانات (إذا لزم الأمر) أو الاعتماد على الباك اند لإرسال الشكل الجديد
     return list.map((cert: any) => ({
       id: Number(cert.id),
-      uuid: String(cert.uuid || cert.verification_token || ''), // الحقل الجديد
-      diploma_name: String(cert.diploma_name || ''),
-      course_title: String(cert.course_title || ''),
-      user_name: String(cert.user_name || cert.student_name || ''),
-      issued_at: String(cert.issued_at || cert.completion_date || ''),
+      uuid: String(cert.uuid || cert.verification_token || ""), // الحقل الجديد
+      diploma_name: String(cert.diploma_name || ""),
+      course_title: String(cert.course_title || ""),
+      user_name: String(cert.user_name || cert.student_name || ""),
+      issued_at: String(cert.issued_at || cert.completion_date || ""),
       // لا نستخدم download_url القديم لتفادي الدوران نحو الـ API القديم
-      file_path: cert.file_path || '',
-      qr_path: cert.qr_path || '',
-      category_id: cert.category_id ?? cert.category?.id ?? cert.diploma_category_id ?? undefined,
+      file_path: cert.file_path || "",
+      qr_path: cert.qr_path || "",
+      category_id:
+        cert.category_id ??
+        cert.category?.id ??
+        cert.diploma_category_id ??
+        undefined,
       course_id: cert.course_id ?? cert.course?.id ?? undefined,
-      type: cert.type || (cert.category_id || cert.category ? 'diploma' : (cert.course_id || cert.course ? 'course' : undefined)),
+      type:
+        cert.type ||
+        (cert.category_id || cert.category
+          ? "diploma"
+          : cert.course_id || cert.course
+            ? "course"
+            : undefined),
     }));
   } catch (error: any) {
-    console.error('Error fetching my certificates:', error);
-    throw new Error(error.response?.data?.message || 'فشل في جلب الشهادات');
+    console.error("Error fetching my certificates:", error);
+    throw new Error(error.response?.data?.message || "فشل في جلب الشهادات");
   }
 }
 
@@ -89,7 +99,7 @@ export async function getMyCertificates(): Promise<DiplomaCertificate[]> {
  */
 export async function getMyCourseCertificates(): Promise<CourseCertificate[]> {
   try {
-    const res = await apiClient.get('/my-certificates');
+    const res = await apiClient.get("/my-certificates");
     const data = res.data;
     const list = Array.isArray(data?.certificates)
       ? data.certificates
@@ -99,18 +109,26 @@ export async function getMyCourseCertificates(): Promise<CourseCertificate[]> {
 
     return list.map((c: any) => ({
       id: Number(c.id),
-      course_title: String(c.course_title || ''),
+      course_title: String(c.course_title || ""),
       issued_at: c.issued_at ? String(c.issued_at) : undefined,
-      completion_date: c.completion_date ? String(c.completion_date) : undefined,
+      completion_date: c.completion_date
+        ? String(c.completion_date)
+        : undefined,
       serial_number: c.serial_number ? String(c.serial_number) : undefined,
-      verification_token: c.verification_token ? String(c.verification_token) : undefined,
-      verification_url: c.verification_url ? String(c.verification_url) : undefined,
+      verification_token: c.verification_token
+        ? String(c.verification_token)
+        : undefined,
+      verification_url: c.verification_url
+        ? String(c.verification_url)
+        : undefined,
       file_path: c.file_path ? String(c.file_path) : undefined,
       download_url: c.download_url ? String(c.download_url) : undefined,
     }));
   } catch (error: any) {
-    console.error('Error fetching my course certificates:', error);
-    throw new Error(error.response?.data?.message || 'فشل في جلب شهادات الكورسات');
+    console.error("Error fetching my course certificates:", error);
+    throw new Error(
+      error.response?.data?.message || "فشل في جلب شهادات الكورسات",
+    );
   }
 }
 
@@ -118,14 +136,16 @@ export async function getMyCourseCertificates(): Promise<CourseCertificate[]> {
  * [Public] التحقق من شهادة عبر الـ UUID
  * (Endpoint جديد بناءً على ملفات التصميم)
  */
-export async function verifyCertificate(uuid: string): Promise<VerifiedCertificateData> {
+export async function verifyCertificate(
+  uuid: string,
+): Promise<VerifiedCertificateData> {
   try {
     // هذا endpoint عام ولا يتطلب مصادقة
     const res = await apiClient.get(`/diploma-certificate/verify/${uuid}`);
     const data = res.data?.data ?? res.data;
 
     if (!data || !data.user_name) {
-      throw new Error('بيانات التحقق غير صالحة');
+      throw new Error("بيانات التحقق غير صالحة");
     }
 
     // إرجاع البيانات لعرضها في صفحة التحقق
@@ -133,16 +153,16 @@ export async function verifyCertificate(uuid: string): Promise<VerifiedCertifica
       user_name: data.user_name,
       diploma_name: data.diploma_name,
       issued_at: data.issued_at,
-      status: 'Valid',
+      status: "Valid",
     };
   } catch (error: any) {
-    console.error('Error verifying certificate:', error);
+    console.error("Error verifying certificate:", error);
     // إرجاع حالة "غير صالح" ليتم التعامل معها في الواجهة
     return {
-      user_name: '',
-      diploma_name: '',
-      issued_at: '',
-      status: 'Invalid',
+      user_name: "",
+      diploma_name: "",
+      issued_at: "",
+      status: "Invalid",
     };
   }
 }
@@ -151,8 +171,8 @@ export async function verifyCertificate(uuid: string): Promise<VerifiedCertifica
  * [Helper] بناء رابط صفحة التحقق (للاستخدام في الفرونت إند)
  */
 export function getVerificationUrl(uuid: string): string {
-  if (!uuid) return '';
-  const base = http.defaults.baseURL || '';
+  if (!uuid) return "";
+  const base = http.defaults.baseURL || "";
   // رابط تحقق شهادة الدبلومة (عام)
   return `${base}/diploma-certificate/verify/${uuid}`;
 }
@@ -162,17 +182,22 @@ export function getVerificationUrl(uuid: string): string {
  */
 export function getDownloadUrl(filePath: string): string {
   // نُهمل الروابط القديمة التي تُشير لمسارات توليد الشهادة في الباك إند
-  if (!filePath) return '';
+  if (!filePath) return "";
   const url = String(filePath);
   // Legacy URLs were like /api/courses/123/certificate or /api/categories/123/certificate
   // New storage paths are like /storage/certificates/courses/123.pdf
 
   // Strict check for legacy endpoints (must not be a storage path)
-  const isStoragePath = url.includes('/storage/') || url.includes('/certificates/');
-  const isLegacyCourse = !isStoragePath && url.includes('/courses/') && url.includes('/certificate');
-  const isLegacyDiploma = !isStoragePath && url.includes('/categories/') && url.includes('/certificate');
+  const isStoragePath =
+    url.includes("/storage/") || url.includes("/certificates/");
+  const isLegacyCourse =
+    !isStoragePath && url.includes("/courses/") && url.includes("/certificate");
+  const isLegacyDiploma =
+    !isStoragePath &&
+    url.includes("/categories/") &&
+    url.includes("/certificate");
 
-  if (isLegacyCourse || isLegacyDiploma) return '';
+  if (isLegacyCourse || isLegacyDiploma) return "";
 
   // إن كان الرابط كاملاً http(s) نعيده كما هو
   if (/^https?:\/\//i.test(url)) return url;
@@ -180,7 +205,7 @@ export function getDownloadUrl(filePath: string): string {
   // معالجة المسارات النسبية مثل storage/... إلى رابط كامل على مضيف الباك إند
   const normalized = getBackendAssetUrl(url);
   // حماية إضافية: لو رجعنا Placeholder غير مناسب للشهادات، اعتبره غير صالح
-  return normalized && !normalized.endsWith('/banner.jpg') ? normalized : '';
+  return normalized && !normalized.endsWith("/banner.jpg") ? normalized : "";
 }
 
 /**
@@ -189,43 +214,46 @@ export function getDownloadUrl(filePath: string): string {
 function isLegacyBackendCertificateUrl(url?: string | null): boolean {
   if (!url) return false;
   const u = String(url);
-  const isLegacyCourse = u.includes('/courses/') && u.includes('/certificate');
-  const isLegacyDiploma = u.includes('/categories/') && u.includes('/certificate');
+  const isLegacyCourse = u.includes("/courses/") && u.includes("/certificate");
+  const isLegacyDiploma =
+    u.includes("/categories/") && u.includes("/certificate");
   return isLegacyCourse || isLegacyDiploma;
 }
 
 /**
  * [Helper] بناء رابط تنزيل شهادة الدبلومة للطالب
  */
-export function getDiplomaCertificateDownloadUrl(categoryId: number | string): string {
-  if (!categoryId && categoryId !== 0) return '';
-  const base = http.defaults.baseURL || '';
+export function getDiplomaCertificateDownloadUrl(
+  categoryId: number | string,
+): string {
+  if (!categoryId && categoryId !== 0) return "";
+  const base = http.defaults.baseURL || "";
   return `${base}/categories/${categoryId}/certificate`;
 }
 
 /**
  * [Helper] بناء رابط تنزيل شهادة المقرر للطالب (توافق قديم)
  */
-export function getCourseCertificateDownloadUrl(courseId: number | string): string {
-  if (!courseId && courseId !== 0) return '';
-  const base = http.defaults.baseURL || '';
+export function getCourseCertificateDownloadUrl(
+  courseId: number | string,
+): string {
+  if (!courseId && courseId !== 0) return "";
+  const base = http.defaults.baseURL || "";
   return `${base}/courses/${courseId}/certificate`;
 }
-
-
 
 /**
  * [Helper] بناء روابط تحقق (عامة) لكل من الدبلومة والمقرر
  */
 export function getDiplomaVerificationUrl(token: string): string {
-  if (!token) return '';
-  const base = http.defaults.baseURL || '';
+  if (!token) return "";
+  const base = http.defaults.baseURL || "";
   return `${base}/diploma-certificate/verify/${token}`;
 }
 
 export function getCourseVerificationUrl(token: string): string {
-  if (!token) return '';
-  const base = http.defaults.baseURL || '';
+  if (!token) return "";
+  const base = http.defaults.baseURL || "";
   return `${base}/certificate/verify/${token}`;
 }
 
@@ -256,7 +284,9 @@ type RawCertificate = {
 /**
  * استرجاع بيانات شهادة مقرر (بدون توليد PDF)
  */
-export async function fetchCourseCertificateData(courseId: number | string): Promise<RawCertificate> {
+export async function fetchCourseCertificateData(
+  courseId: number | string,
+): Promise<RawCertificate> {
   const res = await apiClient.get(`/courses/${courseId}/certificate/data`);
   const payload = res.data?.certificate ?? res.data;
   return payload as RawCertificate;
@@ -265,7 +295,9 @@ export async function fetchCourseCertificateData(courseId: number | string): Pro
 /**
  * استرجاع بيانات شهادة دبلومة (بدون توليد PDF)
  */
-export async function fetchDiplomaCertificateData(categoryId: number | string): Promise<RawCertificate> {
+export async function fetchDiplomaCertificateData(
+  categoryId: number | string,
+): Promise<RawCertificate> {
   const res = await apiClient.get(`/categories/${categoryId}/certificate/data`);
   const payload = res.data?.certificate ?? res.data;
   return payload as RawCertificate;
@@ -274,28 +306,78 @@ export async function fetchDiplomaCertificateData(categoryId: number | string): 
 /**
  * تحديث مسار الملف لشهادة مقرر
  */
-export async function updateCourseCertificateFile(certificateId: number | string, filePath: string): Promise<void> {
-  await apiClient.post(`/certificates/${certificateId}/file`, { file_path: filePath });
+export async function updateCourseCertificateFile(
+  certificateId: number | string,
+  filePath: string,
+): Promise<void> {
+  await apiClient.post(`/certificates/${certificateId}/file`, {
+    file_path: filePath,
+  });
 }
 
 /**
  * تحديث مسار الملف لشهادة دبلومة
  */
-export async function updateDiplomaCertificateFile(certificateId: number | string, filePath: string): Promise<void> {
-  await apiClient.post(`/diploma-certificates/${certificateId}/file`, { file_path: filePath });
+export async function updateDiplomaCertificateFile(
+  certificateId: number | string,
+  filePath: string,
+): Promise<void> {
+  await apiClient.post(`/diploma-certificates/${certificateId}/file`, {
+    file_path: filePath,
+  });
 }
 
 /**
  * استدعاء مسار الفرونت لتوليد PDF وحفظه في public/certificates
  */
-export async function generateCertificatePdf(type: 'course' | 'diploma', certificate: RawCertificate): Promise<string> {
-  const {localCertificatePdf}=await import('@/lib/localCertificatePdf');
-  const blob=await localCertificatePdf({
-    id:certificate.id,type,source:type==='course'?'course':'diploma',status:'issued',
-    user_name:certificate.user?.name??certificate.data?.user_name??'',
-    course_title:certificate.course?.title??certificate.category?.title??certificate.data?.course_title??'',
-    serial_number:certificate.verification_token||String(certificate.id),
-    verification_token:certificate.verification_token||String(certificate.id),
-    issued_at:certificate.issued_at??certificate.completion_date??new Date().toISOString(),file_path:null,
+export async function generateCertificatePdf(
+  type: "course" | "diploma",
+  certificate: RawCertificate,
+): Promise<string> {
+  const { localCertificatePdf } = await import("@/lib/localCertificatePdf");
+  const blob = await localCertificatePdf({
+    id: certificate.id,
+    type,
+    source: type === "course" ? "course" : "diploma",
+    status: "issued",
+    user_name: certificate.user?.name ?? certificate.data?.user_name ?? "",
+    course_title:
+      certificate.course?.title ??
+      certificate.category?.title ??
+      certificate.data?.course_title ??
+      "",
+    serial_number: certificate.verification_token || String(certificate.id),
+    verification_token:
+      certificate.verification_token || String(certificate.id),
+    issued_at:
+      certificate.issued_at ??
+      certificate.completion_date ??
+      new Date().toISOString(),
+    file_path: null,
   });
   return URL.createObjectURL(blob);
+}
+
+export async function getCertificateStatus(courseId: number | string) {
+  const { readFrontend } = await import("@/lib/frontendStore");
+  const certificate = readFrontend().certificates.find(
+    (c) => c.course_id === Number(courseId),
+  );
+  if (!certificate)
+    return { status: "not_issued", file_url: null, file_path: null };
+  const { localCertificatePdf } = await import("@/lib/localCertificatePdf");
+  return {
+    status: "completed",
+    file_url: URL.createObjectURL(await localCertificatePdf(certificate)),
+    file_path: null,
+  };
+}
+export async function requestCertificate(courseId: number | string) {
+  const { readFrontend, issueLocalCertificate } = await import(
+    "@/lib/frontendStore"
+  );
+  if (!readFrontend().results[Number(courseId)]?.passed)
+    throw Error("اجتز الاختبار أولًا");
+  issueLocalCertificate(Number(courseId));
+  return { certificate_status: "completed" };
+}

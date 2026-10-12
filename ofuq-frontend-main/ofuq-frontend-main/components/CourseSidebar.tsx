@@ -1,11 +1,16 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { ProgramArtwork } from './brand/ProgramArtwork';
-import { publicPrice } from './brand/publicContent';
-import { useRouter } from 'next/navigation';
-import { isAuthenticated } from '../utils/authService';
-import { addCourseToFavorites, removeCourseFromFavorites, getMyFavoriteCourseIds, type CourseStats } from '../utils/courseService';
+import React, { useEffect, useState } from "react";
+import { ProgramArtwork } from "./brand/ProgramArtwork";
+import { publicPrice } from "./brand/publicContent";
+import { useRouter } from "next/navigation";
+import { isAuthenticated } from "../utils/authService";
+import {
+  addCourseToFavorites,
+  removeCourseFromFavorites,
+  getMyFavoriteCourseIds,
+  type CourseStats,
+} from "../utils/courseService";
 
 interface CourseSidebarProps {
   courseId?: number | string;
@@ -30,21 +35,19 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
   courseImage,
   courseTitle,
   currentPrice,
-  originalPrice,
-  discount,
   instructorName,
   instructorImage,
-  instructorTitle,
-  instructorBio,
   actionLabel,
   onActionClick,
   courseStats,
   certificateAvailable = false,
-  actionContext
+  actionContext,
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const router = useRouter();
-  const materialsCount = Number(courseStats?.attachments_count ?? 0) + Number(courseStats?.resources_count ?? 0);
+  const materialsCount =
+    Number(courseStats?.attachments_count ?? 0) +
+    Number(courseStats?.resources_count ?? 0);
   const quizzesCount = Number(courseStats?.quizzes_count ?? 0);
 
   useEffect(() => {
@@ -54,26 +57,30 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
       if (isAuthenticated() && courseId) {
         try {
           const favIds = await getMyFavoriteCourseIds();
-          const idNum = typeof courseId === 'string' ? parseInt(courseId, 10) : courseId;
+          const idNum =
+            typeof courseId === "string" ? parseInt(courseId, 10) : courseId;
           if (mounted && idNum) {
             setIsFavorite(favIds.includes(Number(idNum)));
           }
-        } catch (e) {
+        } catch {
           // تجاهل الخطأ هنا للحفاظ على تجربة هادئة
         }
       }
     })();
-    return () => { mounted = false; };
+    return () => {
+      mounted = false;
+    };
   }, [courseId]);
 
   const toggleFavorite = async () => {
     if (!courseId) return;
     // إن لم يكن مسجلًا، الانتقال لصفحة التسجيل
     if (!isAuthenticated()) {
-      router.push('/auth');
+      router.push("/auth");
       return;
     }
-    const idNum = typeof courseId === 'string' ? parseInt(courseId, 10) : courseId;
+    const idNum =
+      typeof courseId === "string" ? parseInt(courseId, 10) : courseId;
     if (!idNum) return;
     // إضافة/إزالة من المفضلة عبر الـ API
     if (!isFavorite) {
@@ -90,34 +97,44 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
       onActionClick();
     } else {
       // Fallback to legacy behavior
-      router.push('/checkout');
+      router.push("/checkout");
     }
-  };
-
-  const handleSocialShare = (platform: string) => {
-    // Handle social sharing logic here
-    console.log(`Share on ${platform}`);
   };
 
   return (
     <div className="right-sidebar">
       {/* Course Image with Favorite Icon */}
       <div className="course-image-container">
-        <ProgramArtwork image={courseImage} title={courseTitle || 'مقرر تعليمي'} identity={String(courseId || '')} className="course-image" />
+        <ProgramArtwork
+          image={courseImage}
+          title={courseTitle || "مقرر تعليمي"}
+          identity={String(courseId || "")}
+          className="course-image"
+        />
         {/* نقل شارة "مجاني" أعلى الصورة للجانب المقابل لزر Fav */}
         {(() => {
-          const parsed = typeof currentPrice === 'string' ? parseFloat(currentPrice) : currentPrice;
+          const parsed =
+            typeof currentPrice === "string"
+              ? parseFloat(currentPrice)
+              : currentPrice;
           const isFree = !isNaN(parsed) ? parsed === 0 : false;
-          return isFree ? (
-            <div className="free-badge">مجاني</div>
-          ) : null;
+          return isFree ? <div className="free-badge">مجاني</div> : null;
         })()}
-        <button type="button" className="favorite-icon" onClick={toggleFavorite} aria-label={isFavorite ? 'إزالة من المفضلة' : 'إضافة إلى المفضلة'} aria-pressed={isFavorite}>
+        <button
+          type="button"
+          className="favorite-icon"
+          onClick={toggleFavorite}
+          aria-label={isFavorite ? "إزالة من المفضلة" : "إضافة إلى المفضلة"}
+          aria-pressed={isFavorite}
+        >
           <svg className="heart-icon" viewBox="0 0 24 24">
-            <path d={isFavorite 
-              ? "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-              : "M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"
-            } />
+            <path
+              d={
+                isFavorite
+                  ? "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  : "M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"
+              }
+            />
           </svg>
         </button>
       </div>
@@ -126,7 +143,10 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
       <div className="price-section">
         <div className="price-container">
           {(() => {
-            const parsed = typeof currentPrice === 'string' ? parseFloat(currentPrice) : currentPrice;
+            const parsed =
+              typeof currentPrice === "string"
+                ? parseFloat(currentPrice)
+                : currentPrice;
             const isFree = !isNaN(parsed) ? parsed === 0 : false;
             return isFree ? (
               <span className="current-price">مجاني</span>
@@ -139,7 +159,7 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
           سينتهي هذا العرض في خلال 20 دقيقة
         </div> */}
         <button className="register-button" onClick={handleRegister}>
-          {actionLabel ?? 'سجل الآن'}
+          {actionLabel ?? "سجل الآن"}
           <div className="arrow-circle">
             <div className="arrow-icon"></div>
           </div>
@@ -162,23 +182,35 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
           </svg>
           <span>واجهة متجاوبة للجوال والكمبيوتر</span>
         </div>
-        {certificateAvailable && <div className="feature-item">
-          <svg className="feature-icon" viewBox="0 0 24 24">
-            <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-          </svg>
-          <span>شهادة إتمام قابلة للتحقق بعد الإكمال واجتياز الاختبار النهائي</span>
-        </div>}
+        {certificateAvailable && (
+          <div className="feature-item">
+            <svg className="feature-icon" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+            <span>
+              شهادة إتمام قابلة للتحقق بعد الإكمال واجتياز الاختبار النهائي
+            </span>
+          </div>
+        )}
         <div className="feature-item">
           <svg className="feature-icon" viewBox="0 0 24 24">
             <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
           </svg>
-          <span>{materialsCount > 0 ? `${materialsCount} ملف مرفق` : 'لا توجد ملفات مرفقة منشورة حاليًا'}</span>
+          <span>
+            {materialsCount > 0
+              ? `${materialsCount} ملف مرفق`
+              : "لا توجد ملفات مرفقة منشورة حاليًا"}
+          </span>
         </div>
         <div className="feature-item">
           <svg className="feature-icon" viewBox="0 0 24 24">
             <path d="M9 11.5l2 2 4-4M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2zm2 4h6" />
           </svg>
-          <span>{quizzesCount > 0 ? `${quizzesCount} اختبار ضمن المحتوى` : 'لا توجد اختبارات ضمن الدروس حاليًا'}</span>
+          <span>
+            {quizzesCount > 0
+              ? `${quizzesCount} اختبار ضمن المحتوى`
+              : "لا توجد اختبارات ضمن الدروس حاليًا"}
+          </span>
         </div>
       </div>
 
@@ -186,8 +218,8 @@ const CourseSidebar: React.FC<CourseSidebarProps> = ({
       <div className="instructor-section">
         <h3 className="instructor-title">المحاضر:</h3>
         <div className="instructor-info">
-          <img 
-            src={instructorImage} 
+          <img
+            src={instructorImage}
             alt={instructorName}
             className="instructor-avatar"
           />

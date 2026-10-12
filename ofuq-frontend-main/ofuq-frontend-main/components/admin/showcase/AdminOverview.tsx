@@ -1,5 +1,5 @@
 "use client";
-import { brand, publicBrandText } from '@/lib/brand'
+import { brand, publicBrandText } from "@/lib/brand";
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -94,17 +94,17 @@ export default function AdminOverview() {
             <em>تحت إدارتك.</em>
           </h1>
           <p>
-            مرحبًا، {publicBrandText(data.user.name)}. من البرامج إلى إنجاز الطلاب، رؤية واحدة
-            لما يحدث داخل منصتك.
+            مرحبًا، {publicBrandText(data.user.name)}. من البرامج إلى إنجاز
+            الطلاب، رؤية واحدة لما يحدث داخل منصتك.
           </p>
           <Link className={styles.limeLink} href="/admin/reports">
             اقرأ المشهد التعليمي <ArrowUpLeft size={18} />
           </Link>
         </div>
         <div className={styles.executiveArt}>
-          <Badge>بيانات محفوظة · عرض اصطناعي</Badge>
+          {/* <Badge>بيانات محفوظة · عرض اصطناعي</Badge> */}
           <Horizon />
-          <span>معرفة منظّمة. أثر يمكن متابعته.</span>
+          {/* <span>معرفة منظّمة. أثر يمكن متابعته.</span> */}
         </div>
       </section>
       <section

@@ -1,5 +1,5 @@
 "use client";
-import { brand } from '@/lib/brand'
+import { brand } from "@/lib/brand";
 import { Suspense, useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -87,11 +87,19 @@ function Workspace({ children }: { children: ReactNode }) {
         );
       })}
       <div className={styles.navSecondary}>
-        <Link href="/user/settings" aria-current={path === "/user/settings" ? "page" : undefined} onClick={() => setOpen(false)}>
+        <Link
+          href="/user/settings"
+          aria-current={path === "/user/settings" ? "page" : undefined}
+          onClick={() => setOpen(false)}
+        >
           <UserRound size={18} />
           الملف والإعدادات
         </Link>
-        <Link href="/user/fav" aria-current={path === "/user/fav" ? "page" : undefined} onClick={() => setOpen(false)}>
+        <Link
+          href="/user/fav"
+          aria-current={path === "/user/fav" ? "page" : undefined}
+          onClick={() => setOpen(false)}
+        >
           <Heart size={18} />
           المفضلة
         </Link>
@@ -165,8 +173,7 @@ function Workspace({ children }: { children: ReactNode }) {
           {children}
         </main>
         <footer className={styles.workspaceFooter}>
-          {brand.name}{" "}
-          <Link href="/verify-certificate">التحقق من شهادة ←</Link>
+          {brand.name} <Link href="/verify-certificate">التحقق من شهادة ←</Link>
         </footer>
       </div>
     </div>

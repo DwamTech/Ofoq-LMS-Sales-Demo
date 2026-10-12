@@ -1,5 +1,5 @@
 "use client";
-import { brand, publicBrandText } from '@/lib/brand'
+import { brand, publicBrandText } from "@/lib/brand";
 import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -137,7 +137,9 @@ function Workspace() {
         <p className={styles.signature}>EDUCATIONAL COMMAND CENTER</p>
         <nav aria-label="تنقل الإدارة">{links}</nav>
         <div className={styles.account}>
-          <span className={styles.avatar}>{publicBrandText(user.name).slice(0, 1)}</span>
+          <span className={styles.avatar}>
+            {publicBrandText(user.name).slice(0, 1)}
+          </span>
           <div>
             <strong>{publicBrandText(user.name)}</strong>
             <small>إدارة المنصة · حساب عرض</small>

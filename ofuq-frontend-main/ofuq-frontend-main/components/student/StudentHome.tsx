@@ -1,5 +1,5 @@
 "use client";
-import { brand } from '@/lib/brand'
+import { brand } from "@/lib/brand";
 import Link from "next/link";
 import { ArrowUpLeft, Award, BookOpen, Check, ArrowLeft } from "lucide-react";
 import { useStudent } from "./StudentProvider";
@@ -53,7 +53,9 @@ export default function StudentHome() {
       <div className={styles.homeHero}>
         <section className={styles.journeyHero} aria-label="رحلتك الحالية">
           <div>
-            <span className={styles.kicker}>رحلتك التعليمية / المسار الحالي</span>
+            <span className={styles.kicker}>
+              رحلتك التعليمية / المسار الحالي
+            </span>
             <h2>{primary?.category.name || "رحلتك التعليمية"}</h2>
             <p>
               تقدم البرنامج يحتسب اجتياز متطلبات المقررات، وليس مشاهدة الدروس

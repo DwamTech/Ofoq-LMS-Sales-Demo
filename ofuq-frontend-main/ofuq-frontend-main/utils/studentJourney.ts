@@ -1,8 +1,8 @@
 import { http } from "@/lib/http";
 import type { User } from "./authService";
-import { isLocalPreview } from '@/lib/localPreview';
-import { localStudentJourney } from '@/lib/localWorkspaceData';
-import { courseProgress } from '@/lib/frontendStore';
+import { isLocalPreview } from "@/lib/localPreview";
+import { localStudentJourney } from "@/lib/localWorkspaceData";
+import { courseProgress } from "@/lib/frontendStore";
 
 export interface StudentLesson {
   id: number;
@@ -57,6 +57,7 @@ export interface StudentExam {
   status: string;
 }
 export interface StudentCertificate {
+  exam_grade?: number;
   id: number;
   type: "course" | "diploma";
   source: "course" | "legacy-course" | "diploma";
@@ -203,9 +204,9 @@ export const certificateVerificationHref = (certificate: StudentCertificate) =>
   `/verify-certificate?s=${encodeURIComponent(certificate.serial_number)}`;
 export async function loadCourseContext(id: number, signal: AbortSignal) {
   if (isLocalPreview) {
-    const course = localStudentJourney().courses.find(item => item.id === id);
-    if (!course) throw new Error('المقرر غير موجود');
-    return { course, progress:courseProgress(id) };
+    const course = localStudentJourney().courses.find((item) => item.id === id);
+    if (!course) throw new Error("المقرر غير موجود");
+    return { course, progress: courseProgress(id) };
   }
   const [course, progress] = await Promise.all([
     http.get<{ data: StudentCourse }>(`/courseEnroll/${id}`, { signal }),
@@ -226,7 +227,10 @@ export async function loadActiveExam(id: number, signal: AbortSignal) {
 export async function downloadStudentCertificate(
   certificate: StudentCertificate,
 ): Promise<Blob> {
-  if(isLocalPreview){const {localCertificatePdf}=await import('@/lib/localCertificatePdf');return localCertificatePdf(certificate);}
+  if (isLocalPreview) {
+    const { localCertificatePdf } = await import("@/lib/localCertificatePdf");
+    return localCertificatePdf(certificate);
+  }
   if (!issuedCertificate(certificate) || !certificate.file_path)
     throw new Error("ملف الشهادة غير متاح.");
   const response = await http.get<Blob>(certificateHref(certificate), {

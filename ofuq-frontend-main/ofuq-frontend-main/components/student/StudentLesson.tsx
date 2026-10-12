@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Play, Check, ArrowLeft, ArrowRight, BookOpen } from "lucide-react";
 import { http } from "@/lib/http";
-import { isLocalPreview } from '@/lib/localPreview';
+import { isLocalPreview } from "@/lib/localPreview";
 import { useStudent } from "./StudentProvider";
 import { PageIntro, BackLink, ReadError } from "./LearningPrimitives";
 import {
@@ -16,7 +16,7 @@ import {
   type CourseProgress,
 } from "@/utils/studentJourney";
 import styles from "./Student.module.css";
-import { completeLesson } from '@/lib/frontendStore';
+import { completeLesson } from "@/lib/frontendStore";
 
 export default function StudentLessonView({
   courseId,
@@ -52,7 +52,8 @@ export default function StudentLessonView({
         if (!expected)
           throw new Error("Not an available lesson in the enrolled course");
         if (isLocalPreview) {
-          if (!controller.signal.aborted) setData({ ...context, lesson:expected });
+          if (!controller.signal.aborted)
+            setData({ ...context, lesson: expected });
           return;
         }
         const { data: response } = await http.get<{ lesson: StudentLesson }>(
@@ -111,7 +112,8 @@ export default function StudentLessonView({
               <Play size={40} />
               <h2>{data.lesson.title}</h2>
               <p>
-                درس تفاعلي: اقرأ المحتوى، وطبّق الفكرة، ثم احفظ تقدمك وانتقل للخطوة التالية.
+                درس تفاعلي: اقرأ المحتوى، وطبّق الفكرة، ثم احفظ تقدمك وانتقل
+                للخطوة التالية.
               </p>
             </div>
           )}
@@ -121,8 +123,12 @@ export default function StudentLessonView({
             <p>
               {data.lesson.content || "لا يوجد محتوى نصي إضافي لهذا الدرس."}
             </p>
-            <button type="button" disabled={done} onClick={()=>completeLesson(lessonId)}>
-              {done ? 'تم إكمال الدرس' : 'أكملت الدرس — حفظ تقدمي'}
+            <button
+              type="button"
+              disabled={done}
+              onClick={() => completeLesson(lessonId)}
+            >
+              {done ? "تم إكمال الدرس" : "أكملت الدرس — حفظ تقدمي"}
             </button>
           </article>
         </div>

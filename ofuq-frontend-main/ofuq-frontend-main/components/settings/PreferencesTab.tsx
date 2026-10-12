@@ -1,6 +1,4 @@
-'use client';
-
-import React from 'react';
+"use client";
 
 interface Preferences {
   notifications: boolean;
@@ -15,11 +13,10 @@ interface PreferencesTabProps {
   onSave: () => void;
 }
 
-export default function PreferencesTab({ 
-  preferences, 
-  onPreferenceToggle, 
-  onLanguageChange, 
-  onSave 
+export default function PreferencesTab({
+  preferences,
+  onPreferenceToggle,
+  onSave,
 }: PreferencesTabProps) {
   return (
     <div className="preferences-section">
@@ -27,9 +24,9 @@ export default function PreferencesTab({
         <h3 className="preference-title">الإشعارات والتنبيهات</h3>
         <div className="preference-item">
           <span className="preference-label">تفعيل الإشعارات</span>
-          <div 
-            className={`toggle-switch ${preferences.notifications ? 'active' : ''}`}
-            onClick={() => onPreferenceToggle('notifications')}
+          <div
+            className={`toggle-switch ${preferences.notifications ? "active" : ""}`}
+            onClick={() => onPreferenceToggle("notifications")}
           >
             <div className="toggle-slider"></div>
           </div>
@@ -40,9 +37,9 @@ export default function PreferencesTab({
         <h3 className="preference-title">المظهر</h3>
         <div className="preference-item">
           <span className="preference-label">تفعيل المظهر الداكن</span>
-          <div 
-            className={`toggle-switch ${preferences.darkMode ? 'active' : ''}`}
-            onClick={() => onPreferenceToggle('darkMode')}
+          <div
+            className={`toggle-switch ${preferences.darkMode ? "active" : ""}`}
+            onClick={() => onPreferenceToggle("darkMode")}
           >
             <div className="toggle-slider"></div>
           </div>

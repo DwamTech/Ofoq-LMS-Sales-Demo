@@ -1,4 +1,6 @@
 "use client";
+import WorkspaceSelect from "@/components/ui/WorkspaceSelect";
+
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -104,9 +106,9 @@ export function Reports({
         {!beneficiaries && (
           <label>
             البرنامج
-            <select
+            <WorkspaceSelect
               value={diploma}
-              onChange={(e) => setDiploma(e.target.value)}
+              onValueChange={(value) => setDiploma(value)}
             >
               <option value="">كل البرامج</option>
               {diplomas.map((d) => (
@@ -114,7 +116,7 @@ export function Reports({
                   {d.name}
                 </option>
               ))}
-            </select>
+            </WorkspaceSelect>
           </label>
         )}
         <button className={styles.primary} type="submit" data-demo-allow>

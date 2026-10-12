@@ -1,4 +1,6 @@
 "use client";
+import WorkspaceSelect from "@/components/ui/WorkspaceSelect";
+
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpLeft, BookOpen, Search } from "lucide-react";
@@ -13,7 +15,6 @@ import {
   Horizon,
   Intro,
   Metric,
-  MutationNote,
   Pagination,
   Panel,
   Progress,
@@ -47,7 +48,7 @@ export function Catalog({ kind }: { kind: "diplomas" | "courses" }) {
         description={
           kind === "diplomas"
             ? "من البرنامج إلى مقرراته وطلابه؛ العلاقات نفسها التي تظهر في تجربة التعلّم."
-            : "المحتوى الفعلي، منظّمًا داخل برامجه. النشر والمحتوى قابلان للفحص دون تعديل."
+            : "المحتوى الفعلي، منظّمًا داخل برامجه. يمكن تعديل النشر والمحتوى من أدوات الإدارة."
         }
       />
       <div className={styles.toolbar}>
@@ -65,11 +66,14 @@ export function Catalog({ kind }: { kind: "diplomas" | "courses" }) {
         </label>
         <label>
           حالة النشر
-          <select value={status} onChange={(e) => setStatus(e.target.value)}>
+          <WorkspaceSelect
+            value={status}
+            onValueChange={(value) => setStatus(value)}
+          >
             <option value="published">منشور</option>
             <option value="draft">غير منشور</option>
             <option value="all">كل السجلات</option>
-          </select>
+          </WorkspaceSelect>
         </label>
         <Badge>{adminNumber(records.length)} نتيجة</Badge>
       </div>
@@ -174,11 +178,6 @@ export function Catalog({ kind }: { kind: "diplomas" | "courses" }) {
           لا توجد نتائج مطابقة. غيّر البحث أو حالة النشر.
         </div>
       )}
-      <MutationNote
-        label={
-          kind === "diplomas" ? "إضافة وتعديل البرامج" : "إضافة وتعديل المقررات"
-        }
-      />
     </>
   );
 }
@@ -270,7 +269,6 @@ export function DiplomaDetail({ id }: { id: number }) {
           <ReportStudents report={report.data.data} onPage={setPage} />
         </>
       )}
-      <MutationNote label="تعديل البرنامج وحالة النشر" />
     </>
   );
 }
@@ -448,7 +446,6 @@ export function CourseContent({
         ))}
         {!lessons.length && <p>لا توجد دروس مطابقة في هذا السياق.</p>}
       </Panel>
-      <MutationNote label="تعديل الفصول والدروس ورفع المحتوى" />
     </>
   );
 }

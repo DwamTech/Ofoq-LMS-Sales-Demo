@@ -138,43 +138,16 @@ test("untrusted description is displayed as text without seed technical marker",
   expect(plainDescription("<p>وصف تعليمي</p> OFOQ Sales Demo dataset")).toBe(
     "وصف تعليمي",
   ));
-test("private reads require a current token", async () => {
+test("admin data loads without authentication or backend requests", async () => {
+  localStorage.clear();
   jest.mocked(getAuthToken).mockReturnValue(null);
-  await expect(adminRead("/admin/categories")).rejects.toThrow(
-    "Authentication required",
-  );
+  const data = await loadAdminData(new AbortController().signal);
+  expect(data.user.id).toBe(99002);
+  expect(data.courses).toHaveLength(12);
   expect(http.get).not.toHaveBeenCalled();
 });
-test("student identity cannot start admin data loading", async () => {
-  jest
-    .mocked(http.get)
-    .mockResolvedValue({ data: { user: { role: "student" } } });
-  await expect(loadAdminData(new AbortController().signal)).rejects.toThrow(
-    "Admin required",
-  );
-  expect(http.get).toHaveBeenCalledTimes(1);
-});
-test("private reads bind current identity and do not use legacy boolean-auth cache", async () => {
-  jest.mocked(http.get).mockResolvedValue({ data: { ok: true } });
-  const signal = new AbortController().signal;
-  await adminRead("/admin/categories", signal);
-  expect(http.get).toHaveBeenCalledWith("/admin/categories", {
-    signal,
-    headers: { Authorization: "Bearer fixture-only" },
-  });
-});
-test("partial catalog cannot silently produce complete-looking totals", async () => {
-  jest.mocked(http.get).mockImplementation(async (path) => ({
-    data:
-      path === "/profile"
-        ? { user: { role: "admin" } }
-        : path === "/admin/categories"
-          ? { data: [] }
-          : path.startsWith("/admin/courses")
-            ? { data: [], pagination: { last_page: 2 } }
-            : { data: {} },
-  }));
-  await expect(loadAdminData(new AbortController().signal)).rejects.toThrow(
-    "partial totals",
-  );
+test("admin reports read the local state", async () => {
+  const report = await adminRead<any>("/admin/reports/overview");
+  expect(report.data.summary.total_courses).toBe(12);
+  expect(http.get).not.toHaveBeenCalled();
 });

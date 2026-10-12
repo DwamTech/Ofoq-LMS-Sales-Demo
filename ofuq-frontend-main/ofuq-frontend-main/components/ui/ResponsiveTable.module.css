@@ -1,0 +1,227 @@
+.region {
+  container-type: inline-size;
+  container-name: workspace-table;
+  width: 100%;
+  min-width: 0;
+}
+.viewport {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #ddd1e7;
+  border-radius: 16px;
+  background: #fffdf9;
+}
+.viewport:focus-visible {
+  outline: 3px solid #796092;
+  outline-offset: 4px;
+}
+.table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  text-align: start;
+  color: #30273e;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.table caption {
+  text-align: start;
+  padding: 14px 18px;
+  background: #fffdf7;
+  color: #796b84;
+  font-size: 13px;
+}
+.hint {
+  display: block;
+  font-size: 11px;
+  color: #8d7d99;
+  margin-top: 4px;
+}
+.table th {
+  padding: 14px 18px;
+  background: #f0e9f7;
+  color: #635080;
+  border-bottom: 1px solid #e1d7ea;
+  font-weight: 500;
+}
+.cell {
+  padding: 16px 18px;
+  border-bottom: 1px solid #eee8f1;
+  vertical-align: top;
+}
+.table tbody tr:nth-child(even) {
+  background: #faf8fc70;
+}
+.table tbody tr:last-child .cell {
+  border-bottom: 0;
+}
+.table tbody tr:hover .cell {
+  background: #f5f0f9;
+}
+.value {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.value strong {
+  font-weight: 600;
+}
+.value small {
+  display: block;
+  color: #8a7997;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.value a {
+  color: #635080;
+}
+.label {
+  display: none;
+}
+@container workspace-table (max-width:760px) {
+  .viewport {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+  .table caption {
+    display: block;
+    padding: 0 2px 14px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .hint {
+    display: none;
+  }
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .table tbody {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 16px;
+    align-content: start;
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #dfd3e8;
+    border-radius: 18px;
+    background: #fffdf9;
+    box-shadow: 0 5px 18px #392c4d06;
+  }
+  .table tbody tr:nth-child(even) {
+    background: #fffdf9;
+  }
+  .table tbody tr:hover .cell {
+    background: transparent;
+  }
+  .table tbody tr .cell {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    text-align: start;
+  }
+  .label {
+    display: block;
+    color: #8a7997;
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  .value {
+    width: 100%;
+    color: #49385f;
+    line-height: 1.85;
+    white-space: normal;
+  }
+  .table tbody tr .cell:first-child {
+    grid-column: 1/-1;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee8f1;
+    gap: 7px;
+  }
+  .cell:first-child .value {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .cell:first-child .value small {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .table tbody tr .cell[data-action] {
+    grid-column: 1/-1;
+    border-top: 1px solid #eee8f1;
+    padding-top: 12px;
+  }
+  .cell[data-action] .value {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .cell[data-action] .value a,
+  .cell[data-action] .value button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 140px;
+    gap: 8px;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #dfd3e8;
+    border-radius: 11px;
+    background: #f2ecf8;
+    color: #635080;
+    font: inherit;
+    text-decoration: none;
+  }
+}
+@container workspace-table (max-width:560px) {
+  .table tbody {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+@container workspace-table (max-width:340px) {
+  .table tbody tr {
+    padding: 16px;
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+  .table tbody tr .cell:not(:first-child):not([data-action]) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .cell:not(:first-child):not([data-action]) .label {
+    flex: 0 0 82px;
+    padding-block-start: 3px;
+  }
+  .cell:not(:first-child):not([data-action]) .value {
+    flex: 1;
+    min-width: 0;
+    text-align: end;
+  }
+}

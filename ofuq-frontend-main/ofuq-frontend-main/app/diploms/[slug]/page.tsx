@@ -1,27 +1,42 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState, useRef } from 'react';
-export const dynamic = 'force-dynamic';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
-import Link from 'next/link';
-import { FiBook, FiStar, FiDollarSign, FiEye, FiPlay, FiUser } from 'react-icons/fi';
-import HomeHeader from '../../../components/HomeHeader';
-import { ProgramArtwork } from '@/components/brand/ProgramArtwork';
-import { publicDescription, publicPrice } from '@/components/brand/publicContent';
-import education from '@/components/brand/PublicEducation.module.css';
-import Footer from '../../../components/Footer';
-import ScrollToTop from '../../../components/ScrollToTop';
-import { SkeletonImage, SkeletonTitle, SkeletonText, SkeletonButton, SkeletonCourseCard } from '../../../components/Skeleton';
-import SocialMediaFloat from '../../../components/SocialMediaFloat';
-import EnrollmentInfoModal from '../../../components/EnrollmentInfoModal';
-import Toast from '../../../components/Toast';
-import ExamBadge from '../../../components/ExamBadge';
-import '@/styles/toast.css';
-import { getPublicDiplomaDetails, enrollInDiploma, getMyDiplomas, type Diploma, type MyDiploma } from '../../../utils/categoryService';
-import { type Course } from '../../../utils/courseService';
-import { getBackendAssetUrl } from '../../../utils/url';
-import { isAuthenticated } from '../../../utils/authService';
-import styles from '../../diplomas/[slug]/DiplomaDetails.module.css';
+import { useEffect, useState, useRef } from "react";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { FiBook, FiEye, FiPlay, FiUser } from "react-icons/fi";
+import HomeHeader from "../../../components/HomeHeader";
+import { ProgramArtwork } from "@/components/brand/ProgramArtwork";
+import {
+  publicDescription,
+  publicPrice,
+} from "@/components/brand/publicContent";
+import education from "@/components/brand/PublicEducation.module.css";
+import Footer from "../../../components/Footer";
+import ScrollToTop from "../../../components/ScrollToTop";
+import {
+  SkeletonImage,
+  SkeletonTitle,
+  SkeletonText,
+  SkeletonButton,
+  SkeletonCourseCard,
+} from "../../../components/Skeleton";
+import SocialMediaFloat from "../../../components/SocialMediaFloat";
+import EnrollmentInfoModal from "../../../components/EnrollmentInfoModal";
+import Toast from "../../../components/Toast";
+import ExamBadge from "../../../components/ExamBadge";
+import "@/styles/toast.css";
+import {
+  getPublicDiplomaDetails,
+  enrollInDiploma,
+  getMyDiplomas,
+  type Diploma,
+  type MyDiploma,
+} from "../../../utils/categoryService";
+import { type Course } from "../../../utils/courseService";
+import { getBackendAssetUrl } from "../../../utils/url";
+import { isAuthenticated } from "../../../utils/authService";
+import styles from "../../diplomas/[slug]/DiplomaDetails.module.css";
+export const dynamic = "force-dynamic";
 
 type DiplomaDetails = Diploma & { courses?: Course[] };
 
@@ -35,17 +50,28 @@ export default function DiplomaDetailsPage() {
   const [diploma, setDiploma] = useState<DiplomaDetails | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [enrollStatus, setEnrollStatus] = useState<{ type: 'idle' | 'loading' | 'success' | 'error'; message?: string }>({ type: 'idle' });
+  const [enrollStatus, setEnrollStatus] = useState<{
+    type: "idle" | "loading" | "success" | "error";
+    message?: string;
+  }>({ type: "idle" });
   const [isEnrollmentModalOpen, setIsEnrollmentModalOpen] = useState(false);
   const [isEnrolled, setIsEnrolled] = useState<boolean>(false);
   const [authenticated, setAuthenticated] = useState(false);
-  useEffect(() => { setAuthenticated(isAuthenticated()); }, []);
+  useEffect(() => {
+    setAuthenticated(isAuthenticated());
+  }, []);
   const [checkingEnrollment, setCheckingEnrollment] = useState<boolean>(false);
   const [toastVisible, setToastVisible] = useState(false);
-  const [toastMessage, setToastMessage] = useState('');
-  const [toastType, setToastType] = useState<'success' | 'error' | 'warning' | 'info' | 'confirm'>('info');
+  const [toastMessage, setToastMessage] = useState("");
+  const [toastType, setToastType] = useState<
+    "success" | "error" | "warning" | "info" | "confirm"
+  >("info");
 
-  const showToast = (message: string, type: 'success' | 'error' | 'warning' | 'info' | 'confirm' = 'info', duration = 3000) => {
+  const showToast = (
+    message: string,
+    type: "success" | "error" | "warning" | "info" | "confirm" = "info",
+    duration = 3000,
+  ) => {
     setToastMessage(message);
     setToastType(type);
     setToastVisible(true);
@@ -62,8 +88,10 @@ export default function DiplomaDetailsPage() {
     try {
       setCheckingEnrollment(true);
       const myDiplomas = await getMyDiplomas();
-      const enrolled = myDiplomas.some((myDiploma: MyDiploma) =>
-        myDiploma.category?.id === diploma.id || myDiploma.category?.slug === diploma.slug
+      const enrolled = myDiplomas.some(
+        (myDiploma: MyDiploma) =>
+          myDiploma.category?.id === diploma.id ||
+          myDiploma.category?.slug === diploma.slug,
       );
       setIsEnrolled(enrolled);
     } catch {
@@ -81,8 +109,11 @@ export default function DiplomaDetailsPage() {
       try {
         const data = await getPublicDiplomaDetails(String(slug));
         setDiploma(data as unknown as DiplomaDetails);
-      } catch (e: any) {
-        setError(e?.message || 'حدث خطأ أثناء جلب بيانات الدبلومة');
+      } catch (e) {
+        setError(
+          (e instanceof Error ? e.message : undefined) ||
+            "حدث خطأ أثناء جلب بيانات الدبلومة",
+        );
       } finally {
         setLoading(false);
       }
@@ -92,9 +123,13 @@ export default function DiplomaDetailsPage() {
 
   useEffect(() => {
     try {
-      const notice = searchParams?.get('notice');
-      if (notice === 'enroll_required') {
-        showToast('يرجى الاشتراك في الدبلومة لعرض محتويات هذا المقرر', 'warning', 4000);
+      const notice = searchParams?.get("notice");
+      if (notice === "enroll_required") {
+        showToast(
+          "يرجى الاشتراك في الدبلومة لعرض محتويات هذا المقرر",
+          "warning",
+          4000,
+        );
       }
     } catch {}
   }, [searchParams]);
@@ -108,8 +143,8 @@ export default function DiplomaDetailsPage() {
   const scrollToCourses = () => {
     if (coursesRef.current) {
       coursesRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start",
       });
     }
   };
@@ -122,8 +157,11 @@ export default function DiplomaDetailsPage() {
     }
     const loggedIn = isAuthenticated();
     if (!loggedIn) {
-      setEnrollStatus({ type: 'error', message: 'يرجى تسجيل الدخول لإتمام التسجيل' });
-      router.push('/auth');
+      setEnrollStatus({
+        type: "error",
+        message: "يرجى تسجيل الدخول لإتمام التسجيل",
+      });
+      router.push("/auth");
       return;
     }
     setIsEnrollmentModalOpen(true);
@@ -132,28 +170,43 @@ export default function DiplomaDetailsPage() {
   const handleEnrollmentSubmit = async () => {
     if (!diploma) return;
     try {
-      setEnrollStatus({ type: 'loading' });
+      setEnrollStatus({ type: "loading" });
       const res = await enrollInDiploma(diploma.id);
-      setEnrollStatus({ type: 'success', message: res?.message || 'تم التسجيل بنجاح' });
+      setEnrollStatus({
+        type: "success",
+        message:
+          (res instanceof Error ? res.message : undefined) ||
+          "تم التسجيل بنجاح",
+      });
       setIsEnrollmentModalOpen(false);
       setIsEnrolled(true);
       try {
-        router.push('/dashboard/my-diplomas');
+        router.push("/dashboard/my-diplomas");
       } catch {}
-    } catch (e: any) {
-      setEnrollStatus({ type: 'error', message: e?.message || 'فشلت عملية التسجيل بالدبلومة' });
+    } catch (e) {
+      setEnrollStatus({
+        type: "error",
+        message:
+          (e instanceof Error ? e.message : undefined) ||
+          "فشلت عملية التسجيل بالدبلومة",
+      });
     }
   };
 
   const transformCourse = (course: Course) => {
-    const coverRaw = (course as any).cover_image_url || (course as any).coverImage || (course as any).image || course.cover_image || '';
-    const image = getBackendAssetUrl(coverRaw) || '/banner.jpg';
-    const instructorName = (course?.instructor as any)?.name || 'مدرب';
+    const coverRaw =
+      course.cover_image_url ||
+      course.coverImage ||
+      course.image ||
+      course.cover_image ||
+      "";
+    const image = getBackendAssetUrl(coverRaw) || "/banner.jpg";
+    const instructorName = course?.instructor?.name || "مدرب";
     const desc = publicDescription(course?.description);
-    const description = desc.length > 120 ? desc.slice(0, 120) + '…' : desc;
+    const description = desc.length > 120 ? desc.slice(0, 120) + "…" : desc;
     return {
       id: String(course.id),
-      title: course.title || 'مقرر تعليمي',
+      title: course.title || "مقرر تعليمي",
       image,
       description,
       instructorName,
@@ -162,10 +215,10 @@ export default function DiplomaDetailsPage() {
   };
 
   const getButtonText = () => {
-    if (checkingEnrollment) return 'جاري التحقق...';
-    if (enrollStatus.type === 'loading') return 'جارِ التسجيل…';
-    if (isEnrolled) return 'شاهد المقررات';
-    return authenticated ? 'التسجيل في الدبلومة' : 'سجّل الدخول للتسجيل';
+    if (checkingEnrollment) return "جاري التحقق...";
+    if (enrollStatus.type === "loading") return "جارِ التسجيل…";
+    if (isEnrolled) return "شاهد المقررات";
+    return authenticated ? "التسجيل في الدبلومة" : "سجّل الدخول للتسجيل";
   };
 
   return (
@@ -182,7 +235,7 @@ export default function DiplomaDetailsPage() {
               <div className={styles.detailsContent}>
                 <SkeletonTitle width="50%" />
                 <SkeletonText lines={4} />
-                <div style={{ marginTop: '20px' }}>
+                <div style={{ marginTop: "20px" }}>
                   <SkeletonButton width={200} />
                 </div>
               </div>
@@ -203,7 +256,12 @@ export default function DiplomaDetailsPage() {
         <section className={styles.errorSection}>
           <div className={styles.errorBox}>
             <p className={styles.errorMessage}>{error}</p>
-            <button className={styles.retryButton} onClick={() => router.refresh()}>إعادة المحاولة</button>
+            <button
+              className={styles.retryButton}
+              onClick={() => router.refresh()}
+            >
+              إعادة المحاولة
+            </button>
           </div>
         </section>
       )}
@@ -213,12 +271,25 @@ export default function DiplomaDetailsPage() {
           <section className={styles.detailsSection}>
             <div className={styles.detailsGrid}>
               <div className={styles.coverWrapper}>
-                <ProgramArtwork title={diploma.name} identity={diploma.slug} image={getBackendAssetUrl(diploma.cover_image_url || '') || '/banner.jpg'}/>
+                <ProgramArtwork
+                  title={diploma.name}
+                  identity={diploma.slug}
+                  image={
+                    getBackendAssetUrl(diploma.cover_image_url || "") ||
+                    "/banner.jpg"
+                  }
+                />
                 <div className={styles.coverOverlay}>
                   <button
-                    className={isEnrolled ? styles.viewCoursesButton : styles.enrollButton}
+                    className={
+                      isEnrolled
+                        ? styles.viewCoursesButton
+                        : styles.enrollButton
+                    }
                     onClick={handleEnroll}
-                    disabled={enrollStatus.type === 'loading' || checkingEnrollment}
+                    disabled={
+                      enrollStatus.type === "loading" || checkingEnrollment
+                    }
                   >
                     {isEnrolled ? <FiEye /> : <FiPlay />}
                   </button>
@@ -227,8 +298,13 @@ export default function DiplomaDetailsPage() {
               <div className={styles.detailsContent}>
                 <h1 className={styles.heroTitle}>{diploma.name}</h1>
                 <h2 className={styles.detailsTitle}>نبذة عن الدبلومة</h2>
-                <p className={styles.detailsDescription}>{publicDescription(diploma?.description)}</p>
-                <p className={education.priceNote}>برنامج من كتالوج تجربة المنصة. الأسعار قيم للعرض؛ العملة غير محددة لهذا العرض.</p>
+                <p className={styles.detailsDescription}>
+                  {publicDescription(diploma?.description)}
+                </p>
+                <p className={education.priceNote}>
+                  برنامج من كتالوج تجربة المنصة. الأسعار قيم للعرض؛ العملة غير
+                  محددة لهذا العرض.
+                </p>
                 <div className={styles.detailsMeta}>
                   <div className={styles.metaItem}>
                     <strong>السعر:</strong>
@@ -236,18 +312,22 @@ export default function DiplomaDetailsPage() {
                       {publicPrice(diploma.price, diploma.is_free)}
                     </span>
                   </div>
-                  {typeof diploma?.courses_count !== 'undefined' && (
+                  {typeof diploma?.courses_count !== "undefined" && (
                     <div className={styles.metaItem}>
                       <strong>عدد المقررات:</strong>
-                      <span className={styles.countTag}>{diploma?.courses_count}</span>
+                      <span className={styles.countTag}>
+                        {diploma?.courses_count}
+                      </span>
                     </div>
                   )}
                 </div>
                 <div className={styles.detailsActions}>
                   <button
-                    className={`${styles.enrollButtonSecondary} ${isEnrolled ? styles.viewCoursesButtonSecondary : ''}`}
+                    className={`${styles.enrollButtonSecondary} ${isEnrolled ? styles.viewCoursesButtonSecondary : ""}`}
                     onClick={handleEnroll}
-                    disabled={enrollStatus.type === 'loading' || checkingEnrollment}
+                    disabled={
+                      enrollStatus.type === "loading" || checkingEnrollment
+                    }
                     aria-label={getButtonText()}
                   >
                     <span className={styles.buttonText}>{getButtonText()}</span>
@@ -268,35 +348,54 @@ export default function DiplomaDetailsPage() {
             <div className={styles.coursesGrid}>
               {(diploma?.courses || []).length === 0 && (
                 <div className={styles.emptyState}>
-                  <div className={styles.emptyIcon}><FiBook /></div>
+                  <div className={styles.emptyIcon}>
+                    <FiBook />
+                  </div>
                   <p>لا توجد مقررات مرتبطة حالياً.</p>
                 </div>
               )}
               {(diploma?.courses || []).map((course) => {
                 const c = transformCourse(course);
                 return (
-                  <Link href={`/course-details/${c.id}`} key={c.id} className={styles.courseCard}>
+                  <Link
+                    href={`/course-details/${c.id}`}
+                    key={c.id}
+                    className={styles.courseCard}
+                  >
                     <div className={styles.courseImageWrapper}>
-                      <ProgramArtwork title={c.title} identity={String(c.id)} image={c.image}/>
-                      <ExamBadge hasFinalExam={course.has_final_exam} variant="default" />
+                      <ProgramArtwork
+                        title={c.title}
+                        identity={String(c.id)}
+                        image={c.image}
+                      />
+                      <ExamBadge
+                        hasFinalExam={course.has_final_exam}
+                        variant="default"
+                      />
                       <div className={styles.courseOverlay}>
-                        <div className={styles.coursePlayButton}><FiPlay /></div>
+                        <div className={styles.coursePlayButton}>
+                          <FiPlay />
+                        </div>
                       </div>
-                      <div className={styles.courseBadge}>
-                        {c.priceText}
-                      </div>
+                      <div className={styles.courseBadge}>{c.priceText}</div>
                     </div>
                     <div className={styles.courseContent}>
                       <h3 className={styles.courseTitle}>{c.title}</h3>
-                      <p className={styles.courseDescription}>{c.description}</p>
+                      <p className={styles.courseDescription}>
+                        {c.description}
+                      </p>
                       <div className={styles.courseMeta}>
                         <div className={styles.courseInstructor}>
-                          <i className={styles.instructorIcon}><FiUser /></i>
+                          <i className={styles.instructorIcon}>
+                            <FiUser />
+                          </i>
                           <span>المحاضر: {c.instructorName}</span>
                         </div>
                       </div>
                       <div className={styles.courseFooter}>
-                        <span className={styles.courseAction}>تفاصيل المقرر</span>
+                        <span className={styles.courseAction}>
+                          تفاصيل المقرر
+                        </span>
                         <i className={styles.arrowIcon}>←</i>
                       </div>
                     </div>

@@ -1,15 +1,16 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import '../styles/watch-progress.css';
+import { useRouter } from "next/navigation";
+import "../styles/watch-progress.css";
 
 interface Course {
   id: number;
   name: string;
   progress: number;
   image: string;
-  category: string | { id: number; name: string; created_at?: string; updated_at?: string };
+  category:
+    | string
+    | { id: number; name: string; created_at?: string; updated_at?: string };
   instructor: {
     name: string;
     avatar: string;
@@ -24,7 +25,7 @@ interface CourseGridProps {
 
 export default function CourseGrid({
   courses = [],
-  showAll = false
+  showAll = false,
 }: CourseGridProps) {
   const router = useRouter();
 
@@ -35,11 +36,11 @@ export default function CourseGrid({
       tabIndex={0}
       onClick={() => router.push(`/course-details/${course.id}`)}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+        if (e.key === "Enter" || e.key === " ") {
           router.push(`/course-details/${course.id}`);
         }
       }}
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: "pointer" }}
     >
       <div className="course-image">
         <img src={course.image} alt={course.name} />
@@ -61,7 +62,11 @@ export default function CourseGrid({
           <p className="course-progress">{course.progress}% مكتمل</p>
         </div>
         <div className="instructor-info">
-          <img src={course.instructor.avatar} alt={course.instructor.name} className="instructor-avatar" />
+          <img
+            src={course.instructor.avatar}
+            alt={course.instructor.name}
+            className="instructor-avatar"
+          />
           <span className="instructor-name">{course.instructor.name}</span>
         </div>
       </div>
@@ -84,7 +89,7 @@ export default function CourseGrid({
           z-index: 2;
           animation: fadeIn 0.3s ease-in;
         }
-        
+
         @keyframes fadeIn {
           from {
             opacity: 0;
@@ -95,7 +100,7 @@ export default function CourseGrid({
             transform: translateY(0);
           }
         }
-        
+
         .course-image {
           position: relative;
         }

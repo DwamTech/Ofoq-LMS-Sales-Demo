@@ -1,12 +1,4 @@
-import React from 'react';
-import InstructorsManagement from '../../../components/InstructorsManagement';
-
-const InstructorsPage: React.FC = () => {
-  return (
-    <div>
-      <InstructorsManagement />
-    </div>
-  );
-};
-
-export default InstructorsPage;
+// AdminWorkspace selects the local view from the current route.
+export default function AdminPage() {
+  return null;
+}

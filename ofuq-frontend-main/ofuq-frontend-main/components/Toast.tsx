@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React, { useEffect } from 'react';
+import { useEffect } from "react";
 
 interface ToastProps {
   message: string;
-  type: 'success' | 'error' | 'warning' | 'info' | 'confirm';
+  type: "success" | "error" | "warning" | "info" | "confirm";
   isVisible: boolean;
   onClose: () => void;
   onConfirm?: () => void;
@@ -19,10 +19,10 @@ export default function Toast({
   onClose,
   onConfirm,
   onCancel,
-  duration = 5000
+  duration = 5000,
 }: ToastProps) {
   useEffect(() => {
-    if (isVisible && type !== 'confirm') {
+    if (isVisible && type !== "confirm") {
       const timer = setTimeout(() => {
         onClose();
       }, duration);
@@ -34,47 +34,43 @@ export default function Toast({
   if (!isVisible) return null;
 
   // اختيار غلاف العرض: تأكيد = Overlay، غير ذلك = أعلى يمين
-  const wrapperClass = type === 'confirm' ? 'toast-overlay' : 'toast-container';
+  const wrapperClass = type === "confirm" ? "toast-overlay" : "toast-container";
 
   const getToastIcon = () => {
     switch (type) {
-      case 'success':
-        return '✓';
-      case 'error':
-        return '✕';
-      case 'warning':
-        return '⚠';
-      case 'info':
-        return 'ℹ';
-      case 'confirm':
-        return '?';
+      case "success":
+        return "✓";
+      case "error":
+        return "✕";
+      case "warning":
+        return "⚠";
+      case "info":
+        return "ℹ";
+      case "confirm":
+        return "?";
       default:
-        return 'ℹ';
+        return "ℹ";
     }
   };
 
   const getToastClass = () => {
-    return `toast toast-${type} ${isVisible ? 'toast-visible' : ''}`;
+    return `toast toast-${type} ${isVisible ? "toast-visible" : ""}`;
   };
 
   return (
     <div className={wrapperClass}>
       <div className={getToastClass()}>
         <div className="toast-content">
-          <div className="toast-icon">
-            {getToastIcon()}
-          </div>
-          <div className="toast-message">
-            {message}
-          </div>
-          {type !== 'confirm' && (
+          <div className="toast-icon">{getToastIcon()}</div>
+          <div className="toast-message">{message}</div>
+          {type !== "confirm" && (
             <button className="toast-close" onClick={onClose}>
               ×
             </button>
           )}
         </div>
-        
-        {type === 'confirm' && (
+
+        {type === "confirm" && (
           <div className="toast-actions">
             <button className="toast-btn toast-btn-confirm" onClick={onConfirm}>
               تأكيد

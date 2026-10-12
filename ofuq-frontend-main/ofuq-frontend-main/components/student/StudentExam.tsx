@@ -1,17 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowUpLeft, ClipboardList, Check } from "lucide-react";
+import { ArrowUpLeft, ClipboardList } from "lucide-react";
 import { useStudent } from "./StudentProvider";
-import { PageIntro, BackLink, ReadError } from "./LearningPrimitives";
-import {
-  loadActiveExam,
-  examHref,
-  courseHref,
-  type ActiveExam,
-} from "@/utils/studentJourney";
+import { PageIntro } from "./LearningPrimitives";
+import { examHref, courseHref } from "@/utils/studentJourney";
 import styles from "./Student.module.css";
-import LocalExam from './LocalExam';
+import LocalExam from "./LocalExam";
 
 export function StudentExams() {
   const { exams } = useStudent();
@@ -56,13 +50,16 @@ export function StudentExams() {
               )}
               <p>
                 {exam.active_attempt_status === "in_progress"
-                  ? "استرجع أسئلة المحاولة الموجودة للقراءة فقط."
+                  ? "تابع إجاباتك المحفوظة وأكمل الاختبار."
                   : "تابع سياق المقرر ومتطلبات التقييم من سجلاتك."}
               </p>
               <div className={styles.cardActions}>
                 {exam.has_final_exam ? (
                   <Link href={examHref(exam.course_id)} data-active-exam>
-                    {exam.exam_status==='passed'?'إعادة الاختبار':'بدء الاختبار'} <ArrowUpLeft size={17} />
+                    {exam.exam_status === "passed"
+                      ? "إعادة الاختبار"
+                      : "بدء الاختبار"}{" "}
+                    <ArrowUpLeft size={17} />
                   </Link>
                 ) : (
                   <Link href={courseHref(exam.course_id)}>
@@ -77,5 +74,5 @@ export function StudentExams() {
   );
 }
 export function StudentExamShowcase({ courseId }: { courseId: number }) {
-  return <LocalExam courseId={courseId}/>;
+  return <LocalExam courseId={courseId} />;
 }

@@ -1,29 +1,34 @@
-import { brand } from '@/lib/brand'
-import type { Metadata } from 'next';
-import { getPublicDiplomaDetails } from '@/utils/categoryService';
-import { publicDescription } from '@/components/brand/publicContent';
+import { brand } from "@/lib/brand";
+import type { Metadata } from "next";
+import { getPublicDiplomaDetails } from "@/utils/categoryService";
+import { publicDescription } from "@/components/brand/publicContent";
 
 const SITE_TITLE = brand.name;
 
 function trimDescription(text?: string, max = 180): string {
-  if (!text) return 'دبلومات احترافية تجمع بين الأصالة والمعاصرة بمنهج متكامل يدمج المعرفة والمهارات التطبيقية.';
+  if (!text)
+    return "دبلومات احترافية تجمع بين الأصالة والمعاصرة بمنهج متكامل يدمج المعرفة والمهارات التطبيقية.";
   const cleaned = publicDescription(text);
-  return cleaned.length > max ? cleaned.slice(0, max - 1) + '…' : cleaned;
+  return cleaned.length > max ? cleaned.slice(0, max - 1) + "…" : cleaned;
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   try {
     const diploma = await getPublicDiplomaDetails(params.slug);
     const description = trimDescription(diploma?.description);
-    const image = diploma?.cover_image_url || '/logo.png';
+    const image = diploma?.cover_image_url || "/logo.png";
 
     return {
       title: SITE_TITLE,
       description,
       alternates: { canonical: `/diplomas/${params.slug}` },
       openGraph: {
-        type: 'article',
-        locale: 'ar',
+        type: "article",
+        locale: "ar",
         url: `/diplomas/${params.slug}`,
         title: SITE_TITLE,
         description,
@@ -31,7 +36,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         siteName: SITE_TITLE,
       },
       twitter: {
-        card: 'summary_large_image',
+        card: "summary_large_image",
         title: SITE_TITLE,
         description,
         images: [image],
@@ -49,6 +54,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
-export default function DiplomaSlugLayout({ children }: { children: React.ReactNode }) {
+export default function DiplomaSlugLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return <>{children}</>;
 }

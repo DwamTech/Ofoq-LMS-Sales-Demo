@@ -1,11 +1,19 @@
 "use client";
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { ArrowUpLeft, LockKeyhole, BookOpen, GraduationCap, Users, BarChart3 } from "lucide-react";
+import {
+  ArrowUpLeft,
+  LockKeyhole,
+  BookOpen,
+  GraduationCap,
+  Users,
+  BarChart3,
+} from "lucide-react";
 import { adminRead, adminNumber } from "@/utils/adminShowcase";
+import ResponsiveTable from "@/components/ui/ResponsiveTable";
 import styles from "./AdminShowcase.module.css";
-import { BrandLogo } from '@/components/brand/BrandLogo';
-import { FRONTEND_CHANGE } from '@/lib/frontendStore';
+import { BrandLogo } from "@/components/brand/BrandLogo";
+import { FRONTEND_CHANGE } from "@/lib/frontendStore";
 export function useAdminRead<T>(path: string | null) {
   const [state, setState] = useState<{
     path: string | null;
@@ -13,7 +21,11 @@ export function useAdminRead<T>(path: string | null) {
     error: boolean;
   }>({ path: null, data: null, error: false });
   const [retry, setRetry] = useState(0);
-  useEffect(()=>{const refresh=()=>setRetry(value=>value+1);window.addEventListener(FRONTEND_CHANGE,refresh);return()=>window.removeEventListener(FRONTEND_CHANGE,refresh);},[]);
+  useEffect(() => {
+    const refresh = () => setRetry((value) => value + 1);
+    window.addEventListener(FRONTEND_CHANGE, refresh);
+    return () => window.removeEventListener(FRONTEND_CHANGE, refresh);
+  }, []);
   useEffect(() => {
     if (!path) return;
     const controller = new AbortController();
@@ -53,7 +65,7 @@ export function ReadState({
       <p>
         {error
           ? "لا نعرض أرقامًا بديلة. قد تكون الجلسة منتهية أو البيانات غير متاحة."
-          : "من السجلات المحفوظة في المنصة، للقراءة فقط."}
+          : "من البيانات المحلية المحفوظة في المتصفح."}
       </p>
       {error && retry && (
         <button type="button" onClick={retry}>
@@ -175,32 +187,9 @@ export function Table({
   children: ReactNode;
 }) {
   return (
-    <div
-      className={styles.tableScroll}
-      tabIndex={0}
-      role="region"
-      aria-label={caption}
-    >
-      <table className={styles.table}>
-        <caption>
-          {caption}
-          <span className={styles.scrollHint}>
-            مرّر الجدول أفقيًا لرؤية بقية التفاصيل؛ يمكن التركيز عليه واستخدام
-            مفاتيح الأسهم.
-          </span>
-        </caption>
-        <thead>
-          <tr>
-            {headers.map((h) => (
-              <th key={h} scope="col">
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>{children}</tbody>
-      </table>
-    </div>
+    <ResponsiveTable caption={caption} headers={headers}>
+      {children}
+    </ResponsiveTable>
   );
 }
 export function Restricted({
@@ -234,7 +223,7 @@ export function Restricted({
     </>
   );
 }
-export function MutationNote({ label }: { label: string }) {
+export function MutationNote({}: { label: string }) {
   return null;
 }
 export function Pagination({
@@ -269,13 +258,18 @@ export function Pagination({
 }
 export function Horizon() {
   return (
-    <div className={styles.horizon} aria-hidden="true"><svg viewBox="0 0 300 180">
-      <path
-        d="m145 12 78 78-78 78-78-78ZM145 38l52 52-52 52-52-52ZM15 155h55M230 25h55"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.2"
-      />
-    </svg><span className={styles.horizonLogo}><BrandLogo variant="icon" decorative/></span></div>
+    <div className={styles.horizon} aria-hidden="true">
+      <svg viewBox="0 0 300 180">
+        <path
+          d="m145 12 78 78-78 78-78-78ZM145 38l52 52-52 52-52-52ZM15 155h55M230 25h55"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.2"
+        />
+      </svg>
+      <span className={styles.horizonLogo}>
+        <BrandLogo variant="icon" decorative />
+      </span>
+    </div>
   );
 }

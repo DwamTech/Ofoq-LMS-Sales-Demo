@@ -3,6 +3,10 @@
   color: var(--ofq-ink);
   min-height: 100svh;
 }
+.selectFilter {
+  width: min(100%, 280px);
+  margin-block: 20px 26px;
+}
 .scope * {
   box-sizing: border-box;
 }

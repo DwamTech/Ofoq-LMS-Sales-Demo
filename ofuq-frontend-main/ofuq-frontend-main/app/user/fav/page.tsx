@@ -1,13 +1,18 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import DiplomaStyleCard from "../../../components/DiplomaStyleCard";
 import CourseGrid from "../../../components/CourseGrid";
 import type { Course as GridCourse } from "../../../components/CourseGrid";
 
 import "../../../styles/course-cards.css";
 import styles from "./Fav.module.css";
-import { getMyFavoriteCourses, getMyEnrollments, getCourseProgress, Course, removeCourseFromFavorites } from "../../../utils/courseService";
+import {
+  getMyFavoriteCourses,
+  getMyEnrollments,
+  getCourseProgress,
+  removeCourseFromFavorites,
+} from "../../../utils/courseService";
 import { getBackendAssetUrl } from "../../../utils/url";
 
 type CardItem = {
@@ -46,27 +51,29 @@ export default function FavPage() {
         const enrollments = enrollmentsResponse.data;
 
         const isPurchasedId = new Set(enrollments.map((id) => Number(id.id)));
-        const favPurchased = favorites.filter((c) => isPurchasedId.has(Number(c.id)));
-        const favUnpurchased = favorites.filter((c) => !isPurchasedId.has(Number(c.id)));
+        const favPurchased = favorites.filter((c) =>
+          isPurchasedId.has(Number(c.id)),
+        );
+        const favUnpurchased = favorites.filter(
+          (c) => !isPurchasedId.has(Number(c.id)),
+        );
 
         // جهّز عناصر القسم المشتراة مع التقدم
         const progresses = await Promise.all(
-          favPurchased.map((c) => getCourseProgress(c.id).catch(() => 0))
+          favPurchased.map((c) => getCourseProgress(c.id).catch(() => 0)),
         );
         const purchasedItems: GridCourse[] = favPurchased.map((c, idx) => ({
           id: Number(c.id),
           name: c.title,
           progress: Math.max(0, Math.min(100, Number(progresses[idx] ?? 0))),
           image: getBackendAssetUrl(
-            (c as any).cover_image_url || c.cover_image || "/hero-image.png"
+            c.cover_image_url || c.cover_image || "/hero-image.png",
           ),
           category: c.category?.name || "",
           has_final_exam: c.has_final_exam, // إضافة مؤشر الاختبار النهائي
           instructor: {
             name: c.instructor?.name || "مدرب",
-            avatar: getBackendAssetUrl(
-              (c.instructor as any)?.image || "/profile.jpg"
-            ),
+            avatar: getBackendAssetUrl(c.instructor?.image || "/profile.jpg"),
           },
         }));
 
@@ -75,16 +82,16 @@ export default function FavPage() {
           id: String(c.id),
           title: c.title,
           image: getBackendAssetUrl(
-            (c as any).cover_image_url || c.cover_image || "/hero-image.png"
+            c.cover_image_url || c.cover_image || "/hero-image.png",
           ),
           category: c.category?.name || "عام",
           rating: Number(c.instructor?.rating ?? 4.5),
-          studentsCount: Number((c as any).students_count ?? (c as any).enrollments_count ?? 150),
-          duration: (c as any).duration || `${Math.floor(Math.random() * 10) + 5} ساعات`,
-          lessonsCount: Number((c as any).lessons_count ?? (c as any).videos_count ?? Math.floor(Math.random() * 20) + 10),
+          studentsCount: Number(c.students_count ?? c.enrollments_count ?? 150),
+          duration: String(c.duration ?? 0),
+          lessonsCount: Number(c.lessons_count ?? c.videos_count ?? 0),
           instructorName: c.instructor?.name || "مدرب",
           instructorAvatar: getBackendAssetUrl(
-            (c.instructor as any)?.image || "/profile.jpg"
+            c.instructor?.image || "/profile.jpg",
           ),
           price: Number(c.price ?? 0),
         }));
@@ -92,9 +99,12 @@ export default function FavPage() {
         setPurchased(purchasedItems);
         setUnpurchased(unpurchasedItems);
         setError(null);
-      } catch (e: any) {
+      } catch (e) {
         console.error("Error loading favorites page:", e);
-        setError(e?.message ?? "فشل في تحميل المفضلة");
+        setError(
+          (e instanceof Error ? e.message : undefined) ??
+            "فشل في تحميل المفضلة",
+        );
       } finally {
         setLoading(false);
       }
@@ -105,14 +115,14 @@ export default function FavPage() {
   const removePurchased = async (id: number) => {
     try {
       await removeCourseFromFavorites(id);
-    } catch { }
+    } catch {}
     setPurchased((prev) => prev.filter((c) => c.id !== id));
   };
 
   const removeUnpurchased = async (id: string) => {
     try {
       await removeCourseFromFavorites(Number(id));
-    } catch { }
+    } catch {}
     setUnpurchased((prev) => prev.filter((c) => c.id !== id));
   };
 
@@ -128,18 +138,24 @@ export default function FavPage() {
         <h1 className="fav-title">المفضلة</h1>
       </div>
 
-      {loading && (
-        <div className="fav-empty">جاري تحميل بيانات المفضلة...</div>
-      )}
+      {loading && <div className="fav-empty">جاري تحميل بيانات المفضلة...</div>}
       {error && !loading && (
-        <div className="fav-empty" style={{ color: '#e74c3c' }}>{error}</div>
+        <div className="fav-empty" style={{ color: "#e74c3c" }}>
+          {error}
+        </div>
       )}
 
       {/* Top Purchased: grid of 3 cards + More button */}
       <div className="fav-top">
         <div className="fav-top-actions">
           <h2 className="fav-section-title">الدورات المشتراة</h2>
-          <button className="fav-more-btn" onClick={openModal} aria-label="عرض المزيد">عرض المزيد</button>
+          <button
+            className="fav-more-btn"
+            onClick={openModal}
+            aria-label="عرض المزيد"
+          >
+            عرض المزيد
+          </button>
         </div>
         {!loading && purchased.length === 0 ? (
           <div className="fav-empty">لا توجد دورات مشتراة حالياً.</div>
@@ -166,11 +182,22 @@ export default function FavPage() {
 
       {/* Popup Modal: 9 purchased courses */}
       {isModalOpen && (
-        <div className="fav-modal-overlay" role="dialog" aria-modal="true" aria-label="الدورات المشتراة">
+        <div
+          className="fav-modal-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="الدورات المشتراة"
+        >
           <div className="fav-modal">
             <div className="fav-modal-header">
               <h3 className="fav-modal-title">الدورات المشتراة</h3>
-              <button className="fav-close-btn" onClick={closeModal} aria-label="إغلاق">×</button>
+              <button
+                className="fav-close-btn"
+                onClick={closeModal}
+                aria-label="إغلاق"
+              >
+                ×
+              </button>
             </div>
             <div className="fav-modal-grid">
               {purchased.slice(0, 9).map((course) => (
@@ -197,7 +224,13 @@ export default function FavPage() {
       <div className="fav-bottom">
         <div className="fav-top-actions">
           <h2 className="fav-section-title">الدورات غير المشتراة</h2>
-          <button className="fav-more-btn" onClick={openUnpurchasedModal} aria-label="عرض المزيد">عرض المزيد</button>
+          <button
+            className="fav-more-btn"
+            onClick={openUnpurchasedModal}
+            aria-label="عرض المزيد"
+          >
+            عرض المزيد
+          </button>
         </div>
         {!loading && unpurchased.length === 0 ? (
           <div className="fav-empty">لا توجد دورات غير مشتراة حالياً.</div>
@@ -236,11 +269,22 @@ export default function FavPage() {
 
       {/* Popup Modal for Unpurchased Courses */}
       {isUnpurchasedModalOpen && (
-        <div className="fav-modal-overlay" role="dialog" aria-modal="true" aria-label="الدورات غير المشتراة">
+        <div
+          className="fav-modal-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="الدورات غير المشتراة"
+        >
           <div className="fav-modal">
             <div className="fav-modal-header">
               <h3 className="fav-modal-title">الدورات غير المشتراة</h3>
-              <button className="fav-close-btn" onClick={closeUnpurchasedModal} aria-label="إغلاق">×</button>
+              <button
+                className="fav-close-btn"
+                onClick={closeUnpurchasedModal}
+                aria-label="إغلاق"
+              >
+                ×
+              </button>
             </div>
             <div className="fav-modal-grid">
               {unpurchased.map((card) => (

@@ -154,20 +154,11 @@ describe("persisted student journey, not presentation flags", () => {
     expect(
       certificateHref({ source: "legacy-course", id: 2 } as StudentCertificate),
     ).toBe("/student/certificates/legacy-course/2/download"));
-  test("backend admin identity stops private student data fetches", async () => {
-    (http.get as jest.Mock).mockResolvedValue({
-      data: { user: { role: "admin" } },
-    });
-    await expect(
-      loadStudentJourney(new AbortController().signal),
-    ).rejects.toThrow("STUDENT_ROLE_REQUIRED");
-    expect(http.get).toHaveBeenCalledTimes(1);
-  });
-  test("failed profile cannot populate a fake student workspace", async () => {
-    (http.get as jest.Mock).mockRejectedValue(new Error("401"));
-    await expect(
-      loadStudentJourney(new AbortController().signal),
-    ).rejects.toThrow("401");
-    expect(http.get).toHaveBeenCalledTimes(1);
+  test("student journey uses local enrollment and never requests a backend", async () => {
+    localStorage.clear();
+    const data = await loadStudentJourney(new AbortController().signal);
+    expect(data.user.id).toBe(99001);
+    expect(data.courses.map((c) => c.id)).toEqual([2001, 2002]);
+    expect(http.get).not.toHaveBeenCalled();
   });
 });

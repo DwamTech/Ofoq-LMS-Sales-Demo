@@ -1,7 +1,7 @@
-import { brand } from '@/lib/brand'
+import { brand } from "@/lib/brand";
 export default function Head() {
   const description =
-    'اكتشف دبلومات ومنهجيات تدريبية متوازنة تجمع التعلم بالممارسة والتعلم المدمج والمشروعات التطبيقية، مع مدربين خبراء وتقنيات حديثة لرحلة تعليمية فعالة.';
+    "اكتشف دبلومات ومنهجيات تدريبية متوازنة تجمع التعلم بالممارسة والتعلم المدمج والمشروعات التطبيقية، مع مدربين خبراء وتقنيات حديثة لرحلة تعليمية فعالة.";
   return (
     <>
       <meta name="description" content={description} />
@@ -12,11 +12,11 @@ export default function Head() {
         // منظمة + موقع لصفحة المنزل
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
+            "@context": "https://schema.org",
+            "@type": "Organization",
             name: brand.name,
-            url: '/',
-            logo: '/logo.png',
+            url: "/",
+            logo: "/logo.png",
             sameAs: [],
           }),
         }}

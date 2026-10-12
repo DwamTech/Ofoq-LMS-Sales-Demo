@@ -6,6 +6,7 @@ import { useStudent } from "./StudentProvider";
 import { PageIntro, CourseTile, DiplomaTile } from "./LearningPrimitives";
 import { courseState } from "@/utils/studentJourney";
 import styles from "./Student.module.css";
+import WorkspaceSelect from "@/components/ui/WorkspaceSelect";
 
 export default function StudentCatalog() {
   const params = useSearchParams();
@@ -51,21 +52,22 @@ export default function StudentCatalog() {
       </nav>
       {view === "courses" ? (
         <>
-          <div className={styles.filters} aria-label="تصفية المقررات">
-            {[
-              ["all", "كل المقررات"],
-              ["learning", "قيد الرحلة"],
-              ["completed", "المكتملة"],
-            ].map(([key, label]) => (
-              <button
-                key={key}
-                type="button"
-                aria-pressed={filter === key}
-                onClick={() => setFilter(key)}
-              >
-                {label}
-              </button>
-            ))}
+          <div className={styles.selectFilter}>
+            <WorkspaceSelect
+              value={filter}
+              onValueChange={setFilter}
+              ariaLabel="تصفية المقررات"
+            >
+              {[
+                ["all", "كل المقررات"],
+                ["learning", "قيد الرحلة"],
+                ["completed", "المكتملة"],
+              ].map(([key, label]) => (
+                <option key={key} value={key}>
+                  {label}
+                </option>
+              ))}
+            </WorkspaceSelect>
           </div>
           <div className={styles.courseGrid}>
             {visible.map((course) => (
